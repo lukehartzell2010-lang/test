@@ -1,0 +1,34 @@
+being clipped at the edge."],
+        ["Canon boundary", "Gojo never lands Hollow Purple directly on Jogo in the story, so 'very likely fatal' is stronger than the evidence for 'guaranteed in every circumstance.'"]
+      ]
+    },
+    {
+      test: q => /would sukuna(?: s)? malevolent shrine kill gojo instantly|could malevolent shrine kill gojo instantly/.test(q),
+      primary: "gojo",
+      related: ["sukuna", "malevolent-shrine", "simple-domain"],
+      spoiler: "manga",
+      verdict: "No — Malevolent Shrine did not kill Gojo instantly when he was caught inside it.",
+      confidence: "Direct manga event",
+      reasoning: [
+        ["What happened", "Gojo endured the domain's slashes long enough to keep fighting rather than dying on contact."],
+        ["How he survived", "He combined extremely high-output Reverse Cursed Technique with anti-domain measures and continued combat pressure."],
+        ["Still extremely dangerous", "Surviving is not the same as being unharmed; the domain inflicted severe continuous damage and forced Gojo to spend enormous resources."],
+        ["Correct verdict", "Malevolent Shrine can threaten and potentially kill Gojo, but 'instantly' is contradicted by the direct fight."]
+      ]
+    },
+    {
+      test: q => /could (?:jogo(?: s)? domain|coffin of the iron mountain) protect (?:him|jogo) from unlimited void|would jogo(?: s)? domain (?:beat|block|stop) unlimited void/.test(q),
+      primary: "jogo",
+      related: ["coffin-iron-mountain", "unlimited-void", "gojo"],
+      spoiler: "anime",
+      verdict: "No — Jogo's domain did not protect him once Gojo answered with Unlimited Void.",
+      confidence: "Direct domain-clash result",
+      reasoning: [
+        ["What Jogo tried", "Coffin of the Iron Mountain supplied Jogo with a domain environment and sure-hit advantage."],
+        ["Gojo's response", "Gojo opened Unlimited Void inside the confrontation and overwhelmed Jogo's domain."],
+        ["Why", "Domain clashes are decided by factors such as refinement, barrier skill, output, and compatibility; Gojo's domain was decisively superior in their direct clash."],
+        ["Correct distinction", "A domain can normally contest another domain, but merely having one does not guarantee protection against a much more refined opponent."]
+      ]
+    },
+    {
+      test: q => /would hanami die (?:to|from) hollow purple|could hanami su
