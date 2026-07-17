@@ -1,0 +1,350 @@
+  "kinji-hakari",
+      "kirara-hoshi",
+      "culling-game"
+    ]
+  },
+  {
+    "id": "tombs-star-corridor",
+    "title": "Tombs of the Star Corridor",
+    "category": "location",
+    "spoiler": "anime",
+    "aliases": [
+      "tombs of the star corridor",
+      "star corridor",
+      "tengen barrier"
+    ],
+    "keywords": [
+      "tengen",
+      "riko",
+      "hidden inventory"
+    ],
+    "summary": "The Tombs of the Star Corridor are the protected underground chambers beneath Jujutsu High where Tengen resides.",
+    "details": "The site is the intended destination of Riko's merger and later the location where the sorcerers consult Tengen about Kenjaku and the Culling Game.",
+    "points": [
+      "Tengen's barrier network conceals and protects the area.",
+      "Toji enters after exploiting the exhaustion of Gojo's escort team.",
+      "The main chamber becomes central to Kenjaku's attempt to seize Tengen."
+    ],
+    "related": [
+      "tengen",
+      "riko-amanai",
+      "hidden-inventory",
+      "culling-game"
+    ]
+  },
+  {
+    "id": "zenin-estate",
+    "title": "Zenin Estate",
+    "category": "location",
+    "spoiler": "manga",
+    "aliases": [
+      "zenin clan estate",
+      "zenin compound"
+    ],
+    "keywords": [
+      "maki",
+      "mai",
+      "zenin clan"
+    ],
+    "summary": "The Zenin Estate is the clan's compound and cursed-tool storehouse.",
+    "details": "Maki returns to collect weapons for the Culling Game but is drawn into Ogi's attempt to kill her and Mai, beginning the clan's destruction.",
+    "points": [
+      "The estate contains training grounds, warehouses, and spaces controlled by the clan's combat units.",
+      "Mai's sacrifice occurs beneath the compound.",
+      "Maki later confronts the Hei and Kukuru units throughout the grounds."
+    ],
+    "related": [
+      "zenin-clan",
+      "maki",
+      "mai-zenin",
+      "perfect-preparation-arc"
+    ]
+  },
+  {
+    "id": "smallpox-deity-domain",
+    "title": "Smallpox Deity's Graveyard Domain",
+    "category": "domain",
+    "spoiler": "anime",
+    "aliases": [
+      "smallpox domain",
+      "graveyard domain",
+      "coffin domain"
+    ],
+    "keywords": [
+      "smallpox deity",
+      "mei mei",
+      "sure hit"
+    ],
+    "summary": "The Smallpox Deity's unnamed domain traps a selected target in a coffin beneath a gravestone.",
+    "details": "The target is buried and struck by a countdown-based sure-hit. Escaping the coffin and destroying the gravestone within the time limit interrupts the sequence.",
+    "points": [
+      "The domain targets one person at a time.",
+      "Mei Mei uses Ui Ui as a decoy to identify the targeting rule.",
+      "The official story does not provide a proper name for the domain."
+    ],
+    "related": [
+      "smallpox-deity",
+      "mei-mei",
+      "ui-ui",
+      "domain-expansion",
+      "sure-hit-effect"
+    ]
+  },
+  {
+    "id": "miyo-sumo-simple-domain",
+    "title": "Miyo's Sumo Simple Domain",
+    "category": "domain",
+    "spoiler": "manga",
+    "aliases": [
+      "sumo simple domain",
+      "miyo domain",
+      "sumo ring"
+    ],
+    "keywords": [
+      "miyo",
+      "maki",
+      "consent",
+      "time dilation"
+    ],
+    "summary": "Miyo's Simple Domain creates a sumo ring that functions only when both participants agree to a bout.",
+    "details": "Inside, violence is governed by sumo rules and subjective time flows differently, allowing many exchanges to occur while little outside time passes.",
+    "points": [
+      "It has no lethal sure-hit.",
+      "The consensual condition is central to its operation.",
+      "Maki uses repeated bouts to clear her mind and refine her perception."
+    ],
+    "related": [
+      "rokujushi-miyo",
+      "maki",
+      "simple-domain",
+      "sakurajima-colony-arc"
+    ]
+  }
+];
+  const PATCHES = {
+  "gojo": {
+    "keywordsAdd": [
+      "automatic infinity",
+      "blue red purple",
+      "domain clashes",
+      "brain refresh",
+      "strongest"
+    ],
+    "pointsAdd": [
+      "Infinity is the neutral Limitless application; Blue attracts, Red repels, and Hollow Purple combines the two spatial effects.",
+      "The Six Eyes reduce wasted cursed energy and let Gojo read cursed-energy flow with extraordinary precision.",
+      "Gojo continuously refreshes his brain with Reverse Cursed Technique so his automatic Infinity filter can remain active.",
+      "Unlimited Void overwhelms targets with limitless information rather than simply blasting them with raw force."
+    ],
+    "relatedAdd": [
+      "infinity",
+      "cursed-technique-lapse-blue",
+      "cursed-technique-reversal-red",
+      "cursed-energy-efficiency",
+      "domain-clash"
+    ],
+    "detailsAppend": ""
+  },
+  "yuji": {
+    "keywordsAdd": [
+      "vessel cage",
+      "divergent fist",
+      "soul awareness",
+      "physical strength",
+      "black flash"
+    ],
+    "pointsAdd": [
+      "Yuji possessed extraordinary physical ability before learning cursed energy.",
+      "His body normally suppresses Sukuna, making him closer to a cage than a conventional vessel.",
+      "Sharing a body with another soul gives Yuji an instinctive awareness of the soul's outline.",
+      "Divergent Fist began as delayed cursed-energy control, while Black Flash requires near-simultaneous impact."
+    ],
+    "relatedAdd": [
+      "divergent-fist",
+      "vessel-and-incarnation",
+      "soul-damage",
+      "cursed-energy-reinforcement"
+    ],
+    "detailsAppend": ""
+  },
+  "megumi": {
+    "keywordsAdd": [
+      "shadow storage",
+      "totality",
+      "ten shadows shikigami",
+      "incomplete domain"
+    ],
+    "pointsAdd": [
+      "Megumi stores cursed tools inside his shadow but still bears their physical weight.",
+      "Destroyed Ten Shadows shikigami may pass compatible traits to survivors through Totality.",
+      "Chimera Shadow Garden is incomplete in the anime but dramatically expands shadow access, clones, and summoning angles.",
+      "Megumi's tactical strength comes from combining shikigami, terrain, weapons, and deception rather than relying on one summon."
+    ],
+    "relatedAdd": [
+      "shadow-storage",
+      "totality",
+      "divine-dogs",
+      "nue",
+      "max-elephant",
+      "rabbit-escape"
+    ],
+    "detailsAppend": ""
+  },
+  "sukuna": {
+    "keywordsAdd": [
+      "cleave dismantle furnace",
+      "open domain",
+      "binding vow enchain",
+      "heian tools"
+    ],
+    "pointsAdd": [
+      "Shrine includes Dismantle, Cleave, and the fire attack commonly called Furnace.",
+      "Malevolent Shrine manifests without closing a conventional barrier and can strike the exterior of closed domains.",
+      "Yuji's suppression prevents Sukuna from maintaining control whenever he chooses.",
+      "The Enchain binding vow grants a narrow, rule-bound interval rather than permanent possession."
+    ],
+    "relatedAdd": [
+      "cleave",
+      "dismantle",
+      "furnace",
+      "open-barrier-domain",
+      "vessel-and-incarnation",
+      "hiten"
+    ],
+    "detailsAppend": ""
+  },
+  "yuta": {
+    "keywordsAdd": [
+      "five minute connection",
+      "ring rika",
+      "copy conditions",
+      "rct output"
+    ],
+    "pointsAdd": [
+      "Yuta can output Reverse Cursed Technique to heal other people.",
+      "The ring connects him to Rika's full manifestation, external reserves, weapons, and copied techniques for a limited period.",
+      "Copy's storage and activation are tied to Rika, while exact acquisition conditions are explained only partially and can vary by context.",
+      "Yuta combines huge reserves with swordsmanship, domain use, healing, and multiple techniques rather than depending on one ability."
+    ],
+    "relatedAdd": [
+      "yuta-ring",
+      "reverse-cursed-technique-output",
+      "thin-ice-breaker",
+      "jacobs-ladder"
+    ],
+    "detailsAppend": ""
+  },
+  "maki": {
+    "keywordsAdd": [
+      "fully realized heavenly restriction",
+      "soul perception",
+      "zenin estate",
+      "cursed glasses"
+    ],
+    "pointsAdd": [
+      "Before Mai's death, Maki's Heavenly Restriction was incomplete because the twins were treated as one existence by jujutsu.",
+      "After Mai removes the remaining cursed energy, Maki gains perception and physical freedom comparable to Toji.",
+      "Her later senses read air, temperature, surfaces, and the movement of the environment rather than relying on cursed-energy detection.",
+      "Using the Split Soul Katana effectively requires perceiving the soul of the target."
+    ],
+    "relatedAdd": [
+      "maki-glasses",
+      "soul-damage",
+      "perfect-preparation-arc",
+      "sakurajima-colony-arc",
+      "zenin-estate"
+    ],
+    "detailsAppend": ""
+  },
+  "toji": {
+    "keywordsAdd": [
+      "zero cursed energy",
+      "invisible to barriers",
+      "inventory curse",
+      "soul body"
+    ],
+    "pointsAdd": [
+      "Toji's complete absence of cursed energy strengthens his body and makes ordinary cursed-energy sensing ineffective.",
+      "Many barriers treat him like an inanimate object unless their conditions account for him.",
+      "His senses allow him to perceive curses and environmental details without cursed energy.",
+      "The Inventory Curse lets him conceal and carry tools without giving away his position."
+    ],
+    "relatedAdd": [
+      "inventory-curse",
+      "barrier-techniques",
+      "soul",
+      "maki"
+    ],
+    "detailsAppend": ""
+  },
+  "geto": {
+    "keywordsAdd": [
+      "curse storage",
+      "maximum uzumaki",
+      "night parade strategy",
+      "curse extraction"
+    ],
+    "pointsAdd": [
+      "Cursed Spirit Manipulation lets Geto absorb defeated curses and deploy them without an ordinary exorcism ritual.",
+      "Maximum: Uzumaki converts stored curses into one blast and can extract techniques from sufficiently strong curses.",
+      "The Night Parade serves partly as a diversion to isolate Yuta and Rika from Gojo.",
+      "Geto's worldview changes after cumulative trauma, Haibara's death, and the abuse of sorcerers by non-sorcerers."
+    ],
+    "relatedAdd": [
+      "maximum-uzumaki",
+      "yu-haibara",
+      "jjk-zero-arc",
+      "rainbow-dragon"
+    ],
+    "detailsAppend": ""
+  },
+  "kenjaku": {
+    "keywordsAdd": [
+      "body hopping",
+      "host techniques",
+      "barrier master",
+      "culling game merger"
+    ],
+    "pointsAdd": [
+      "Kenjaku preserves identity by transplanting the brain into new bodies and can use the host body's abilities.",
+      "He retained Antigravity System from Kaori Itadori and Cursed Spirit Manipulation from Geto.",
+      "His barrier skill is second only to Tengen among known users.",
+      "The Culling Game gathers cursed energy and forces human evolution toward Kenjaku's planned merger with Tengen."
+    ],
+    "relatedAdd": [
+      "kaori-itadori",
+      "cursed-technique-engraving",
+      "barrier-techniques",
+      "culling-game"
+    ],
+    "detailsAppend": ""
+  },
+  "todo": {
+    "keywordsAdd": [
+      "boogie woogie targets",
+      "clap substitution",
+      "battle intelligence",
+      "black flash"
+    ],
+    "pointsAdd": [
+      "Boogie Woogie swaps positions among targets with sufficient cursed energy when Todo claps.",
+      "The clap is an activation cue, but Todo can bluff or alter the expected swap to manipulate an opponent's decisions.",
+      "His exceptional combat intelligence lets him analyze techniques and coordinate allies almost instantly.",
+      "Todo helps Yuji enter the mental state associated with Black Flash."
+    ],
+    "relatedAdd": [
+      "cursed-energy-control",
+      "black-flash"
+    ],
+    "detailsAppend": ""
+  },
+  "nanami": {
+    "keywordsAdd": [
+      "overtime vow",
+      "ratio weak point",
+      "collapse"
+    ],
+    "pointsAdd": [
+      "Ratio Technique creates a forced weak point at a seven-to-three division on a chosen target.",
+      "Overtime limits Nanami's output during official work hours and increases it afterward through a self-imposed binding vow.",
+      "Collapse appli
