@@ -1,0 +1,26 @@
+
+<script>
+(async()=>{
+  document.documentElement.dataset.intentFandomEngine="loading";
+  try{
+    const waitUntil=async(test,timeout=12000)=>{
+      const start=Date.now();
+      while(!test()){
+        if(Date.now()-start>timeout)throw new Error("Timed out waiting for the base reasoning engines");
+        await new Promise(resolve=>setTimeout(resolve,25));
+      }
+    };
+    await waitUntil(()=>document.documentElement.dataset.motionSystem==="1.1.0"&&document.documentElement.dataset.responseQuality==="5.1.0"&&document.documentElement.dataset.deepDossier==="4.0.0");
+    const response=await fetch(".upgrade/intent-fandom-engine-v6-1.js?v=20260717intent61",{cache:"no-store"});
+    if(!response.ok)throw new Error(`Intent & Fandom Engine returned ${response.status}`);
+    const code=await response.text();
+    if(!code.includes("Intent & Fandom Reasoning Engine v6.1")||!code.includes("performSearchIntentFandomV61")||!code.includes("auditIntentAnswerV61"))throw new Error("Intent & Fandom Engine v6.1 integrity check failed");
+    eval(code);
+    if(document.documentElement.dataset.intentFandomEngine!=="6.1.0")throw new Error("Intent & Fandom Engine v6.1 did not activate");
+  }catch(error){
+    console.error("Intent & Fandom Engine v6.1 failed to load",error);
+    document.documentElement.dataset.intentFandomEngine="failed";
+    try{toast(`Fandom-language reasoning failed: ${error.message||error}`);}catch{}
+  }
+})();
+</script>
