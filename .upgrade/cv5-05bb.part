@@ -1,0 +1,22 @@
+nnection", `${a.title} and ${b.title} are directly connected in the archive, but that link alone does not prove a face-to-face meeting.`]);
+    if (shared.length) factors.push(["Shared records", `Both connect to ${shared.slice(0, 4).map(entry => entry.title).join(", ")}, which suggests overlapping story context but is still not direct proof.`]);
+    if (!factors.length) factors.push(["Archive limit", "No explicit shared event is stored for this pair."]);
+    return {
+      primary: a,
+      related: [b, ...shared],
+      html: answerFrame(
+        `Have ${a.title} and ${b.title} met?`,
+        `The current curated event graph cannot confirm a direct meeting between ${a.title} and ${b.title}.`,
+        factors,
+        { status: "Unconfirmed encounter", note: "This is deliberately not phrased as 'no.' Missing encounter data is not proof that two characters never met." }
+      )
+    };
+  }
+
+  function motiveAnswer(raw) {
+    const q = qnorm(raw);
+    const record = MOTIVES.find(item => item.test(q) && (state.spoiler === "manga" || item.spoiler === "anime"));
+    if (!record) return null;
+    const primary = getEntry(record.primary);
+    const factors = [...record.factors];
+    if (st
