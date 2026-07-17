@@ -1,0 +1,178 @@
+e">${escapeHtml(title)}</h2>
+      <p class="answer-lede">${escapeHtml(lede)}</p>
+      ${sections.filter(section => section?.body || section?.list?.length).map(section => `
+        <div class="answer-section">
+          <h3>${escapeHtml(section.title)}</h3>
+          ${section.list ? `<ul>${section.list.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : `<p>${escapeHtml(section.body)}</p>`}
+        </div>`).join("")}
+      ${note ? `<div class="answer-note">${escapeHtml(note)}</div>` : ""}
+    `;
+  }
+
+  function factAnswer(query) {
+    const q = qnorm(query);
+    const fact = CONFIRMED_FACTS.find(item => item.test(q) && (state.spoiler === "manga" || item.spoiler === "anime"));
+    if (!fact) return null;
+    const primary = getEntry(fact.primary);
+    return {
+      primary,
+      confidence: 100,
+      type: "Direct canon answer",
+      html: answerShell(fact.title, fact.lede, [{ title: "How the rule connects", body: fact.details }], "Answered from a specific canon relationship stored by the question engine."),
+      related: fact.related.map(getEntry).filter(Boolean)
+    };
+  }
+
+  function identityAnswer(subject) {
+    return answerShell(
+      `Who is ${subject.title}?`,
+      subject.summary,
+      [
+        { title: "Role and significance", body: subject.details },
+        ...(subject.points?.length ? [{ title: "Key facts", list: subject.points }] : [])
+      ],
+      `${formatCategory(subject.category)} · ${subject.spoiler === "manga" ? "Manga-level record" : "Anime-safe record"}`
+    );
+  }
+
+  function ownerAnswer(target) {
+    let owners = linkedEntries(target, ["character", "curse"]);
+    const targetNames = [target.title, ...(target.aliases || [])].map(qnorm);
+    owners = owners.filter(owner => {
+      const ownerText = qnorm([owner.summary, owner.details, ...(owner.points || []), ...(owner.keywords || [])].join(" "));
+      const targetText = qnorm([target.summary, target.details, ...(target.points || []), ...(target.keywords || [])].join(" "));
+      return targetNames.some(name => ownerText.includes(name)) || entryNames(owner).some(name => targetText.includes(name));
+    });
+    if (!owners.length) owners = linkedEntries(target, ["character", "curse"]).slice(0, 1);
+    if (!owners.length) return null;
+    const names = owners.map(entry => entry.title);
+    const verb = target.category === "tool" ? "has wielded" : "uses";
+    const ownerLede = names.length > 1
+      ? `${names.join(", ")} are recorded users of ${target.title}.`
+      : `${names[0]} ${verb} ${target.title}.`;
+    return answerShell(
+      `Who uses ${target.title}?`,
+      ownerLede,
+      [{ title: "What the archive records", body: target.details }],
+      names.length > 1 ? "Multiple users can be linked when a technique or tool changes hands, is copied, or is shared." : "The answer comes from the archive’s relationship graph rather than a keyword-only match."
+    );
+  }
+
+  function propertyAnswer(subject, property) {
+    if (!subject || !property) return null;
+    if (property === "user") return ownerAnswer(subject);
+
+    if (["age", "height"].includes(property)) {
+      const regex = property === "age" ? /\b(age|years? old|year-old)\b/ : /\b(height|tall|cm|meter|feet|foot)\b/;
+      const matches = extractTextMatch(subject, regex);
+      if (!matches.length) return null;
+      return answerShell(`${subject.title} — ${PROPERTY_CONFIG[property].label}`, matches[0], [], "The archive only states measurements when a record contains a confirmed value.");
+    }
+
+    if (property === "grade") {
+      const matches = extractTextMatch(subject, /\bgrade\b|\brank\b|\bclassification\b/);
+      if (!matches.length) return null;
+      return answerShell(`${subject.title}’s grade`, matches[0], [{ title: "Context", body: subject.details }]);
+    }
+
+    if (property === "relationship") {
+      const matches = extractTextMatch(subject, /\bfather\b|\bmother\b|\bparent\b|\bbrother\b|\bsister\b|\bson\b|\bdaughter\b|\bfamily\b/);
+      const linked = linkedEntries(subject, ["character", "clan"]);
+      if (!matches.length && !linked.length) return null;
+      return answerShell(
+        `${subject.title}’s relationships`,
+        matches[0] || `${subject.title} is directly connected to ${linked.map(entry => entry.title).join(", ")} in the archive.`,
+        linked.length ? [{ title: "Connected people and clans", list: linked.map(entry => `${entry.title} — ${entry.summary}`) }] : [],
+        "A connection does not automatically specify whether it is family, friendship, rivalry, or mentorship unless the record states it."
+      );
+    }
+
+    const linked = entryLinks(subject, property);
+    if (linked.length) {
+      const label = PROPERTY_CONFIG[property].label;
+      const possessive = subject.title.endsWith("s") ? `${subject.title}’` : `${subject.title}’s`;
+      let ordered = [...linked];
+      if (property === "technique") {
+        const subjectText = qnorm(`${subject.summary} ${subject.details}`);
+        ordered.sort((a, b) => Number(!subjectText.includes(qnorm(a.title))) - Number(!subjectText.includes(qnorm(b.title))));
+      }
+      const names = ordered.map(entry => entry.title);
+      let lede;
+      if (property === "arsenal") lede = `${possessive} recorded arsenal includes ${names.join(", ")}.`;
+      else if (property === "technique" && ordered.length > 1) lede = `${possessive} primary cursed technique is ${ordered[0].title}. Related technique records include ${ordered.slice(1).map(entry => entry.title).join(", ")}.`;
+      else lede = `${possessive} ${label} is ${names.join(names.length > 1 ? ", " : "")}.`;
+      return answerShell(
+        `${subject.title} — ${label}`,
+        lede,
+        ordered.slice(0, 6).map(entry => ({ title: entry.title, body: `${entry.summary} ${entry.details}` })),
+        ordered.length > 1 ? `The archive found ${ordered.length} directly connected ${label} records.` : "This was resolved through a direct character-to-ability relationship."
+      );
+    }
+
+    if (property === "technique") {
+      const relatedCombat = linkedEntries(subject, ["domain", "tool"]);
+      const techniqueText = extractTextMatch(subject, /\btechnique\b|\bjudgeman\b|\bshikigami\b/);
+      if (techniqueText.length || relatedCombat.length) {
+        return answerShell(
+          `${subject.title} — cursed technique`,
+          techniqueText[0] || subject.summary,
+          [
+            { title: "How it manifests", body: subject.details },
+            ...(relatedCombat.length ? [{ title: "Directly connected manifestations", list: relatedCombat.map(entry => `${entry.title} — ${entry.summary}`) }] : [])
+          ],
+          "Some JJK techniques are introduced through a domain, shikigami, or effect before receiving a separate standalone name."
+        );
+      }
+    }
+    if (property === "arsenal") {
+      const text = `${subject.details} ${(subject.points || []).join(" ")}`.trim();
+      return answerShell(`${subject.title} — abilities`, subject.summary, [{ title: "Recorded fighting kit", body: text }]);
+    }
+    return null;
+  }
+
+  function locationAnswer(subject) {
+    if (!subject) return null;
+    if (subject.category === "location") return answerShell(`Where is ${subject.title}?`, subject.summary, [{ title: "What happens there", body: subject.details }], (subject.points || []).join(" "));
+    const locations = linkedEntries(subject, ["location"]);
+    const matches = extractTextMatch(subject, /\b(tokyo|kyoto|shibuya|sendai|sakurajima|school|colony|japan|campus|station|city|district)\b/);
+    if (!locations.length && !matches.length) return null;
+    return answerShell(
+      `Where is ${subject.title} connected to?`,
+      locations.length ? `${subject.title} is directly linked to ${locations.map(entry => entry.title).join(", ")}.` : matches[0],
+      locations.map(entry => ({ title: entry.title, body: `${entry.summary} ${entry.details}` })),
+      matches.length ? matches.join(" ") : "Location links are based on explicit archive relationships."
+    );
+  }
+
+  function timelineAnswer(subject) {
+    if (!subject) return null;
+    const arcs = subject.category === "arc" ? [subject] : linkedEntries(subject, ["arc"]);
+    const timelineSentences = extractTextMatch(subject, /\b(before|after|during|years?|era|period|arc|incident|century|present|past)\b/);
+    if (!arcs.length && !timelineSentences.length) return null;
+    const strongestTimeline = timelineSentences.find(sentence => /\b(before|after|years?|century|era|during)\b/.test(qnorm(sentence))) || timelineSentences[0];
+    const lede = subject.category === "arc"
+      ? (strongestTimeline || subject.summary)
+      : arcs.length ? `${subject.title} is directly connected to ${arcs.map(entry => entry.title).join(", ")} in the story timeline.` : timelineSentences[0];
+    return answerShell(
+      `When does ${subject.title} matter?`,
+      lede,
+      arcs.map(entry => ({ title: entry.title, body: `${entry.summary} ${entry.details}` })),
+      timelineSentences.filter(sentence => sentence !== lede).join(" ") || "For exact episode or chapter numbers, the live archive is consulted when Full Manga mode is enabled."
+    );
+  }
+
+  function mechanicsAnswer(query, subjects) {
+    if (!subjects.length) return null;
+    const primary = subjects[0];
+    const evidence = relevantSentences(query, subjects, 4);
+    const lede = evidence[0]?.sentence || primary.details || primary.summary;
+    return answerShell(
+      `How ${primary.title} works`,
+      lede,
+      [
+        { title: "Core mechanism", body: primary.details },
+        ...(primary.points?.length ? [{ title: "Important limits and applications", list: primary.points }] : []),
+        ...(subjects.length > 1 ? [{ title: `Connection to ${subjects.slice(1).map(entry => entry.title).join(" and ")}`, body: evidence.slice(1).map(item => item.sentence).join(" ") || subjects.slice(1).map(entry => entry.details).join(" ") }] : [])
+      ],
+      "The engine prioritizes mechanism sentences and explicit limitations instead of return
