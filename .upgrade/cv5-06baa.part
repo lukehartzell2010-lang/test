@@ -1,0 +1,11 @@
+olves this exact ${target.title} versus ${mechanism.title} interaction.`]
+    ];
+    return {
+      primary: target,
+      related: unique([mechanism, ...linked(target), ...linked(mechanism)], entry => entry.id),
+      html: answerFrame(
+        `${target.title} versus ${mechanism.title}`,
+        "There is not enough direct canon evidence for an unconditional yes-or-no verdict.",
+        factors,
+        { status: "Conditional matchup analysis", note: "Rather than turning a missing feat into a made-up certainty, the engine identifies the variables that the question leaves unspecified." }
+    
