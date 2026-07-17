@@ -1,0 +1,23 @@
+").textContent = localType;
+    renderRelated(primary, results.slice(1, 10));
+    state.currentAnswerText = $("#answerContent").innerText;
+    updateSaveButton();
+
+    if (!liveUnlocked || !navigator.onLine) return;
+    try {
+      const livePages = await liveWikiSearch(query, 8);
+      if (state.currentQuery !== query || !livePages.length) return;
+      if (needsLive) {
+        $("#answerContent").innerHTML = liveAnswer(query, livePages, intent, primary && topScore >= 8 ? primary : null);
+        $("#answerType").textContent = "Live archive answer";
+        state.currentAnswerText = $("#answerContent").innerText;
+      }
+      renderLiveRelated(livePages, needsLive ? livePages[0]?.title : primary?.title || "");
+    } catch {
+      // Keep the instant curated answer if the live source cannot be reached.
+    }
+    return;
+  }
+
+  if (!liveUnlocked) {
+    $("#answerType").textContent = "Ani
