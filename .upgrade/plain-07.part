@@ -1,0 +1,405 @@
+e lethal sure-hit."
+    ],
+    "related": [
+      "deadly-sentencing",
+      "executioners-sword"
+    ]
+  },
+  {
+    "id": "hajime-kashimo",
+    "title": "Hajime Kashimo",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "kashimo",
+      "hajime"
+    ],
+    "keywords": [
+      "lightning",
+      "mythical beast amber",
+      "reincarnated sorcerer"
+    ],
+    "summary": "Hajime Kashimo is a reincarnated sorcerer from four centuries ago who seeks the strongest possible opponent.",
+    "details": "His cursed energy naturally behaves like electricity. By separating charge between himself and a target, he can produce a lightning discharge that functions like a guaranteed strike without using a domain.",
+    "points": [
+      "Mythical Beast Amber can be used only once because it transforms and destroys his body."
+    ],
+    "related": [
+      "mythical-beast-amber",
+      "reincarnated-sorcerers",
+      "sukuna"
+    ]
+  },
+  {
+    "id": "uraume",
+    "title": "Uraume",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "uraume",
+      "the frozen star"
+    ],
+    "keywords": [
+      "ice formation",
+      "sukuna attendant"
+    ],
+    "summary": "Uraume is an ancient sorcerer and fiercely loyal attendant of Sukuna who specializes in large-scale ice manipulation.",
+    "details": "Ice Formation can freeze groups, immobilize targets, and create lethal ice structures. Uraume also possesses Reverse Cursed Technique and exceptional control.",
+    "points": [
+      "Uraume has served Sukuna since the Heian era."
+    ],
+    "related": [
+      "ice-formation",
+      "sukuna"
+    ]
+  },
+  {
+    "id": "yuki-tsukumo",
+    "title": "Yuki Tsukumo",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "yuki",
+      "yuki tsukumo"
+    ],
+    "keywords": [
+      "star rage",
+      "special grade",
+      "garuda"
+    ],
+    "summary": "Yuki Tsukumo is one of the four modern special-grade sorcerers and researches how to eliminate curses at their source.",
+    "details": "Her technique Star Rage adds virtual mass to herself and Garuda without proportionally slowing them, turning ordinary impacts into catastrophic attacks.",
+    "points": [
+      "She rejects Jujutsu Headquarters’ passive approach to curses.",
+      "Garuda acts as both shikigami and cursed tool."
+    ],
+    "related": [
+      "star-rage",
+      "tengen",
+      "kenjaku"
+    ]
+  },
+  {
+    "id": "angel",
+    "title": "Angel",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "angel"
+    ],
+    "keywords": [
+      "technique extinguishment",
+      "jacobs ladder",
+      "reincarnated sorcerer"
+    ],
+    "summary": "Angel is an incarnated ancient sorcerer whose Technique Extinguishment can nullify cursed techniques and cursed objects.",
+    "details": "Angel shares Hana Kurusu’s body. Their ultimate extension, Jacob’s Ladder, bathes a target in purifying light that extinguishes cursed phenomena.",
+    "points": [
+      "Angel’s goal is to eliminate incarnated players they call the Fallen."
+    ],
+    "related": [
+      "hana-kurusu",
+      "technique-extinguishment",
+      "reincarnated-sorcerers"
+    ]
+  },
+  {
+    "id": "hana-kurusu",
+    "title": "Hana Kurusu",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "hana",
+      "hana kurusu"
+    ],
+    "keywords": [
+      "angel vessel",
+      "jacobs ladder"
+    ],
+    "summary": "Hana Kurusu is the modern vessel who peacefully coexists with Angel and participates in the Culling Game.",
+    "details": "Unlike hostile incarnations, Hana retains control of her body and works with Angel. She has a deep emotional connection to Megumi from a childhood rescue.",
+    "points": [],
+    "related": [
+      "angel",
+      "megumi",
+      "technique-extinguishment"
+    ]
+  },
+  {
+    "id": "yorozu",
+    "title": "Yorozu",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "yorozu"
+    ],
+    "keywords": [
+      "construction",
+      "perfect sphere",
+      "threefold affliction"
+    ],
+    "summary": "Yorozu is a Heian-era sorcerer obsessed with Sukuna and incarnated through Tsumiki Fushiguro.",
+    "details": "Her Construction technique creates matter from cursed energy. She improves its poor efficiency by specializing in liquid metal and an insect-inspired armor.",
+    "points": [
+      "Perfect Sphere exerts theoretically infinite pressure at its point of contact."
+    ],
+    "related": [
+      "construction",
+      "threefold-affliction",
+      "sukuna"
+    ]
+  },
+  {
+    "id": "ryu-ishigori",
+    "title": "Ryu Ishigori",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "ryu",
+      "ishigori",
+      "ryu ishigori"
+    ],
+    "keywords": [
+      "granite blast",
+      "highest output",
+      "sendai"
+    ],
+    "summary": "Ryu Ishigori is a reincarnated Sendai Colony player famous for the greatest cursed-energy output of his era.",
+    "details": "He fires massive blasts of cursed energy through his pompadour and can maintain exceptional output in both ranged and close combat.",
+    "points": [
+      "Granite Blast is raw cursed-energy discharge rather than a complicated technique."
+    ],
+    "related": [
+      "cursed-energy-discharge",
+      "sendai-colony",
+      "yuta"
+    ]
+  },
+  {
+    "id": "takako-uro",
+    "title": "Takako Uro",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "uro",
+      "takako uro"
+    ],
+    "keywords": [
+      "sky manipulation",
+      "thin ice breaker",
+      "sendai"
+    ],
+    "summary": "Takako Uro is a reincarnated sorcerer and former assassin who treats the sky like a tangible surface.",
+    "details": "Sky Manipulation distorts space by grabbing and bending the sky. Thin Ice Breaker strikes the surface of space itself, causing a broad distortion impact.",
+    "points": [],
+    "related": [
+      "sky-manipulation",
+      "sendai-colony",
+      "yuta"
+    ]
+  },
+  {
+    "id": "reggie-star",
+    "title": "Reggie Star",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "reggie",
+      "reggie star"
+    ],
+    "keywords": [
+      "contractual re-creation",
+      "receipts"
+    ],
+    "summary": "Reggie Star is a reincarnated Culling Game player who recreates goods and services recorded on receipts.",
+    "details": "Contractual Re-Creation can summon objects, vehicles, lodging effects, and other purchased services. Reggie combines the technique with traps and strategic preparation.",
+    "points": [],
+    "related": [
+      "contractual-recreation",
+      "megumi"
+    ]
+  },
+  {
+    "id": "fumihiko-takaba",
+    "title": "Fumihiko Takaba",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "takaba",
+      "fumihiko"
+    ],
+    "keywords": [
+      "comedian",
+      "comedian technique"
+    ],
+    "summary": "Fumihiko Takaba is a struggling comedian whose reality-altering technique manifests whatever he sincerely believes would be funny.",
+    "details": "Comedian can override ordinary logic and reproduce scenarios without Takaba consciously understanding the technique. Its power depends on confidence in his own humor.",
+    "points": [
+      "The technique is potentially capable of opposing even top-tier jujutsu."
+    ],
+    "related": [
+      "comedian",
+      "kenjaku"
+    ]
+  },
+  {
+    "id": "mei-mei",
+    "title": "Mei Mei",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "mei mei"
+    ],
+    "keywords": [
+      "black bird manipulation",
+      "bird strike",
+      "grade 1"
+    ],
+    "summary": "Mei Mei is an independent Grade 1 sorcerer who fights with an axe and controls crows.",
+    "details": "Black Bird Manipulation shares her vision with crows and commands them. Bird Strike forces a crow into a suicidal binding vow, producing an attack with enormous output.",
+    "points": [],
+    "related": [
+      "black-bird-manipulation",
+      "ui-ui"
+    ]
+  },
+  {
+    "id": "ui-ui",
+    "title": "Ui Ui",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "ui ui"
+    ],
+    "keywords": [
+      "simple domain",
+      "mei mei brother"
+    ],
+    "summary": "Ui Ui is Mei Mei’s younger brother, assistant, and a capable support sorcerer.",
+    "details": "He can deploy Simple Domain and later demonstrates a spatial technique useful for moving people under specific conditions.",
+    "points": [],
+    "related": [
+      "mei-mei",
+      "simple-domain"
+    ]
+  },
+  {
+    "id": "atsuta-kusakabe",
+    "title": "Atsuya Kusakabe",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "kusakabe",
+      "atsuya"
+    ],
+    "keywords": [
+      "new shadow style",
+      "simple domain",
+      "grade 1"
+    ],
+    "summary": "Atsuya Kusakabe is a Grade 1 sorcerer who lacks an innate technique but is exceptionally skilled with New Shadow Style.",
+    "details": "He uses Simple Domain, swordsmanship, and automatic interception within his range. His caution hides deep experience and strong battlefield judgment.",
+    "points": [],
+    "related": [
+      "simple-domain",
+      "new-shadow-style"
+    ]
+  },
+  {
+    "id": "shoko-ieiri",
+    "title": "Shoko Ieiri",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "shoko",
+      "ieiri"
+    ],
+    "keywords": [
+      "doctor",
+      "reverse cursed technique"
+    ],
+    "summary": "Shoko Ieiri is Jujutsu High’s doctor and one of the rare sorcerers capable of outputting Reverse Cursed Technique to heal others.",
+    "details": "Her medical expertise and positive-energy output make her indispensable, even though she is not primarily a frontline fighter.",
+    "points": [],
+    "related": [
+      "reverse-cursed-technique",
+      "gojo",
+      "geto"
+    ]
+  },
+  {
+    "id": "utahime-iori",
+    "title": "Utahime Iori",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "utahime",
+      "iori utahime"
+    ],
+    "keywords": [
+      "solo forbidden area",
+      "kyoto teacher"
+    ],
+    "summary": "Utahime Iori is a semi-grade 1 sorcerer and teacher at Kyoto Jujutsu High.",
+    "details": "Her technique enhances the cursed-energy output of willing sorcerers within range. Completing its full ritual—including gestures, music, and dance—maximizes the boost.",
+    "points": [],
+    "related": [
+      "kyoto-jujutsu-high",
+      "gojo"
+    ]
+  },
+  {
+    "id": "yoshinobu-gakuganji",
+    "title": "Yoshinobu Gakuganji",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "gakuganji",
+      "yoshinobu"
+    ],
+    "keywords": [
+      "guitar",
+      "sound technique",
+      "principal"
+    ],
+    "summary": "Yoshinobu Gakuganji is the conservative principal of Kyoto Jujutsu High.",
+    "details": "He uses his body as an amplifier and channels cursed energy through an electric guitar, launching sound-based attacks.",
+    "points": [],
+    "related": [
+      "kyoto-jujutsu-high",
+      "panda"
+    ]
+  },
+  {
+    "id": "kokichi-muta",
+    "title": "Kokichi Muta / Mechamaru",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "mechamaru",
+      "kokichi muta",
+      "ultimate mechamaru"
+    ],
+    "keywords": [
+      "puppet manipulation",
+      "heavenly restriction"
+    ],
+    "summary": "Kokichi Muta is a Kyoto student whose Heavenly Restriction gives him immense cursed energy range in exchange for a severely damaged body.",
+    "details": "Puppet Manipulation lets him remotely control mechanical cursed corpses across Japan. Ultimate Mechamaru converts years of stored cursed energy into special-grade-scale firepower.",
+    "points": [],
+    "related": [
+      "puppet-manipulation",
+      "heavenly-restriction",
+      "miwa"
+    ]
+  },
+  {
+    "id": "kasumi-miwa",
+    "title": "Kasumi Miwa",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "miwa",
+      "kasumi"
+    ],
+    "keywords": 
