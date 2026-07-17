@@ -1,0 +1,371 @@
+ shikigami summoned through the Ten Shadows Technique.",
+    "details": "They track scents, locate curses, and fight with claws and fangs. The white dog is destroyed early in the story, allowing its power to pass into the surviving black dog.",
+    "points": [
+      "They are among the first shikigami available to a Ten Shadows user.",
+      "Their tracking ability is useful for rescue and investigation.",
+      "The surviving dog later becomes Divine Dog: Totality."
+    ],
+    "related": [
+      "ten-shadows",
+      "megumi",
+      "divine-dog-totality",
+      "totality"
+    ]
+  },
+  {
+    "id": "divine-dog-totality",
+    "title": "Divine Dog: Totality",
+    "category": "curse",
+    "spoiler": "anime",
+    "aliases": [
+      "divine dog totality",
+      "totality dog"
+    ],
+    "keywords": [
+      "ten shadows",
+      "inheritance",
+      "special grade damage"
+    ],
+    "summary": "Divine Dog: Totality is the surviving Divine Dog strengthened by inheriting the power of its destroyed twin.",
+    "details": "Its larger body, claws, speed, and striking power let it injure far stronger curses than the original pair could handle.",
+    "points": [
+      "It is the clearest example of permanent Totality inheritance.",
+      "It can damage special-grade curses under favorable conditions.",
+      "Its durability is not unlimited, so Megumi often summons it for sudden finishing attacks."
+    ],
+    "related": [
+      "ten-shadows",
+      "megumi",
+      "divine-dogs",
+      "totality"
+    ]
+  },
+  {
+    "id": "nue",
+    "title": "Nue",
+    "category": "curse",
+    "spoiler": "anime",
+    "aliases": [
+      "nue shikigami",
+      "winged shikigami"
+    ],
+    "keywords": [
+      "ten shadows",
+      "electricity",
+      "flight"
+    ],
+    "summary": "Nue is a large winged Ten Shadows shikigami capable of flight and electrical attacks.",
+    "details": "It carries the user or allies, attacks from the air, and discharges electricity through its wings. Its mobility makes it one of Megumi's most versatile summons.",
+    "points": [
+      "Nue supports scouting, transportation, and aerial pressure.",
+      "It can be combined temporarily with Toad through The Well's Unknown Abyss.",
+      "Later composite forms inherit Nue's wings and electrical property."
+    ],
+    "related": [
+      "ten-shadows",
+      "megumi",
+      "wells-unknown-abyss",
+      "merged-beast-agito"
+    ]
+  },
+  {
+    "id": "great-serpent",
+    "title": "Great Serpent",
+    "category": "curse",
+    "spoiler": "anime",
+    "aliases": [
+      "great serpent",
+      "orochi shikigami"
+    ],
+    "keywords": [
+      "ten shadows",
+      "binding",
+      "snake"
+    ],
+    "summary": "Great Serpent is a massive snake shikigami used to restrain or surprise a target.",
+    "details": "It erupts from shadows and coils around enemies, creating openings for the user or another shikigami.",
+    "points": [
+      "Sukuna destroys Great Serpent during Megumi's early fight.",
+      "After destruction, its original form cannot be summoned again.",
+      "Some of its traits are later incorporated into composite shikigami."
+    ],
+    "related": [
+      "ten-shadows",
+      "megumi",
+      "totality",
+      "merged-beast-agito"
+    ]
+  },
+  {
+    "id": "toad",
+    "title": "Toad",
+    "category": "curse",
+    "spoiler": "anime",
+    "aliases": [
+      "toad shikigami",
+      "gama"
+    ],
+    "keywords": [
+      "ten shadows",
+      "tongue",
+      "rescue"
+    ],
+    "summary": "Toad is a Ten Shadows shikigami that restrains or rescues targets with a long tongue.",
+    "details": "It can pull allies away from danger, hold opponents, and coordinate with other summons.",
+    "points": [
+      "Toad prioritizes utility over raw damage.",
+      "Multiple smaller winged toads appear through The Well's Unknown Abyss.",
+      "Its tongue can move people quickly through difficult terrain."
+    ],
+    "related": [
+      "ten-shadows",
+      "megumi",
+      "wells-unknown-abyss"
+    ]
+  },
+  {
+    "id": "max-elephant",
+    "title": "Max Elephant",
+    "category": "curse",
+    "spoiler": "anime",
+    "aliases": [
+      "max elephant",
+      "elephant shikigami"
+    ],
+    "keywords": [
+      "ten shadows",
+      "water",
+      "weight"
+    ],
+    "summary": "Max Elephant is a huge Ten Shadows shikigami that releases a massive volume of water.",
+    "details": "Its weight can crush targets when dropped from above, while its water creates force, flooding, cover, or material for other techniques.",
+    "points": [
+      "Summoning it consumes substantial cursed energy because of its size.",
+      "Megumi can summon only part of it or use its water without maintaining the full body.",
+      "Sukuna later reproduces aspects of its water through advanced Ten Shadows control."
+    ],
+    "related": [
+      "ten-shadows",
+      "megumi",
+      "chimera-shadow-garden"
+    ]
+  },
+  {
+    "id": "rabbit-escape",
+    "title": "Rabbit Escape",
+    "category": "curse",
+    "spoiler": "anime",
+    "aliases": [
+      "rabbit escape",
+      "rabbit shikigami"
+    ],
+    "keywords": [
+      "ten shadows",
+      "decoy",
+      "swarm"
+    ],
+    "summary": "Rabbit Escape creates a large swarm of harmless rabbit shikigami.",
+    "details": "The rabbits obstruct vision, confuse targeting, reveal enemy reactions, and give the user cover to reposition or flee.",
+    "points": [
+      "Destroying individual rabbits does not meaningfully stop the swarm.",
+      "The technique is primarily defensive and tactical.",
+      "The existence of a core or governing rabbit is implied by the shikigami system but not fully explained in the story."
+    ],
+    "related": [
+      "ten-shadows",
+      "megumi"
+    ]
+  },
+  {
+    "id": "round-deer",
+    "title": "Round Deer",
+    "category": "curse",
+    "spoiler": "manga",
+    "aliases": [
+      "round deer",
+      "madoka deer"
+    ],
+    "keywords": [
+      "ten shadows",
+      "reverse cursed technique",
+      "healing",
+      "positive energy"
+    ],
+    "summary": "Round Deer is a Ten Shadows shikigami that emits positive energy.",
+    "details": "Its Reverse Cursed Technique can heal injuries and neutralize cursed energy in nearby phenomena, making it valuable for support and technique disruption.",
+    "points": [
+      "Positive energy is especially dangerous to cursed spirits.",
+      "Its output can interfere with cursed-energy constructs such as Yorozu's liquid metal.",
+      "Round Deer's traits are incorporated into Merged Beast Agito."
+    ],
+    "related": [
+      "ten-shadows",
+      "positive-energy",
+      "reverse-cursed-technique",
+      "merged-beast-agito"
+    ]
+  },
+  {
+    "id": "piercing-ox",
+    "title": "Piercing Ox",
+    "category": "curse",
+    "spoiler": "manga",
+    "aliases": [
+      "piercing ox",
+      "bull shikigami"
+    ],
+    "keywords": [
+      "ten shadows",
+      "charge",
+      "straight line"
+    ],
+    "summary": "Piercing Ox is a Ten Shadows shikigami whose power increases the farther it charges in a straight line.",
+    "details": "The restriction to linear movement creates a binding-vow-like tradeoff: limited maneuverability in exchange for escalating impact.",
+    "points": [
+      "Longer uninterrupted distance produces greater power.",
+      "Changing direction ends or disrupts the accumulated charge.",
+      "The user can manipulate terrain and shadows to create better charging lanes."
+    ],
+    "related": [
+      "ten-shadows",
+      "binding-vow",
+      "sukuna"
+    ]
+  },
+  {
+    "id": "mourning-tiger",
+    "title": "Mourning Tiger",
+    "category": "curse",
+    "spoiler": "manga",
+    "aliases": [
+      "mourning tiger",
+      "tiger funeral"
+    ],
+    "keywords": [
+      "ten shadows",
+      "shikigami",
+      "agito"
+    ],
+    "summary": "Mourning Tiger is one of the Ten Shadows shikigami, but its individual appearance and abilities are never shown directly.",
+    "details": "Canon confirms its existence because its traits are incorporated into Merged Beast Agito. The manga does not provide a reliable standalone moveset.",
+    "points": [
+      "Its original form remains unknown.",
+      "Any detailed claim about its independent ability is speculative.",
+      "The archive separates that missing information from Agito's demonstrated powers."
+    ],
+    "related": [
+      "ten-shadows",
+      "merged-beast-agito",
+      "totality"
+    ]
+  },
+  {
+    "id": "wells-unknown-abyss",
+    "title": "The Well's Unknown Abyss",
+    "category": "curse",
+    "spoiler": "anime",
+    "aliases": [
+      "well's unknown abyss",
+      "bottomless well",
+      "winged toads"
+    ],
+    "keywords": [
+      "ten shadows",
+      "nue",
+      "toad",
+      "temporary combination"
+    ],
+    "summary": "The Well's Unknown Abyss temporarily combines Nue and Toad into multiple winged toad shikigami.",
+    "details": "The fusion gives Toad aerial mobility and creates several disposable restraints. Because it is an extension technique rather than permanent Totality, destruction does not permanently eliminate Nue or Toad.",
+    "points": [
+      "The combination is weaker than the original shikigami in direct combat.",
+      "Its numbers and mobility make it useful for rescue and restraint.",
+      "It demonstrates that Ten Shadows can create temporary hybrids under different rules from inheritance."
+    ],
+    "related": [
+      "ten-shadows",
+      "nue",
+      "toad",
+      "totality"
+    ]
+  },
+  {
+    "id": "merged-beast-agito",
+    "title": "Merged Beast Agito",
+    "category": "curse",
+    "spoiler": "manga",
+    "aliases": [
+      "agito",
+      "merged beast agito",
+      "nue totality"
+    ],
+    "keywords": [
+      "ten shadows",
+      "round deer",
+      "nue",
+      "healing"
+    ],
+    "summary": "Merged Beast Agito is a composite Ten Shadows shikigami built from Nue and inherited traits from several destroyed shikigami.",
+    "details": "It possesses flight, electricity, powerful close combat, and rapid regeneration through Round Deer's positive energy.",
+    "points": [
+      "Agito includes traits associated with Nue, Great Serpent, Round Deer, and Mourning Tiger.",
+      "Its regeneration makes ordinary damage insufficient unless the core is destroyed decisively.",
+      "Gojo eliminates it with Maximum Output: Blue before it can continue supporting Sukuna and Mahoraga."
+    ],
+    "related": [
+      "ten-shadows",
+      "nue",
+      "great-serpent",
+      "round-deer",
+      "mourning-tiger",
+      "gojo"
+    ]
+  },
+  {
+    "id": "moon-dregs",
+    "title": "Moon Dregs",
+    "category": "curse",
+    "spoiler": "anime",
+    "aliases": [
+      "moon dregs",
+      "junpei shikigami",
+      "jellyfish shikigami"
+    ],
+    "keywords": [
+      "junpei",
+      "poison",
+      "shikigami"
+    ],
+    "summary": "Moon Dregs is Junpei Yoshino's jellyfish-like shikigami.",
+    "details": "It shields Junpei with its body and injects poison through its tentacles. Mahito teaches Junpei enough jujutsu to manifest and use it rapidly.",
+    "points": [
+      "The shikigami's membrane can soften physical attacks.",
+      "Its poison is dangerous but not instantly fatal to a reinforced sorcerer.",
+      "Junpei's lack of training limits how far he can develop it."
+    ],
+    "related": [
+      "junpei-yoshino",
+      "shikigami",
+      "mahito"
+    ]
+  },
+  {
+    "id": "garuda",
+    "title": "Garuda",
+    "category": "curse",
+    "spoiler": "manga",
+    "aliases": [
+      "garuda shikigami",
+      "yuki shikigami"
+    ],
+    "keywords": [
+      "yuki",
+      "star rage",
+      "mass",
+      "cursed tool"
+    ],
+    "summary": "Garuda is Yuki Tsukumo's shikigami and can also function like a cursed tool.",
+    "details": "Yuki applies Star Rage's virtual mass to Garuda, turning it into a devastating projectile, whip, or restraint while preserving its ability to move independently.",
+    "points": [
+      "Garuda is the only external target besides Yuki herself that Star Rage can affect.",
+      "I
