@@ -1,0 +1,26 @@
+rContent").innerText;
+    return;
+  }
+
+  let localHtml = "";
+  let localType = "Best curated answer";
+  if (intent === "comparison" && mentions.length >= 2) {
+    const first = mentions[0].entry;
+    const second = mentions.find(item => item.entry.id !== first.id)?.entry;
+    if (second) {
+      localHtml = compareAnswer(first, second);
+      localType = "Curated matchup analysis";
+    }
+  } else if (intent === "list" && results.length >= 3) {
+    localHtml = generateListAnswer(query, results);
+    localType = "Curated archive list";
+  } else if (primary && topScore >= 22) {
+    localHtml = entryAnswer(primary);
+  }
+
+  const liveUnlocked = state.spoiler === "manga";
+  const needsLive = !localHtml || topScore < 52 || ["reasoning", "summary", "list"].includes(intent) || meaningfulWords(query).length >= 5;
+
+  if (localHtml) {
+    $("#answerContent").innerHTML = localHtml;
+    $("#answerType
