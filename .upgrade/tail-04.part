@@ -1,0 +1,14 @@
+ddenBest) {
+    const hidden = hiddenBest.entry;
+    $("#answerType").textContent = "Manga record protected";
+    $("#answerContent").innerHTML = `
+      <h2 class="answer-title">This answer is behind the manga spoiler filter</h2>
+      <p class="answer-lede">The archive found a strong match for <b>${escapeHtml(hidden.title)}</b>, but revealing it could spoil material beyond the anime-safe database.</p>
+      <div class="answer-section">
+        <h3>Full archive available</h3>
+        <p>Switching to Full Manga unlocks all ${entries.length} curated records plus the live ${liveArticleCount.toLocaleString()}+ article lore index.</p>
+      </div>
+      <button class="prompt-chip" data-action="enableManga">Unlock full manga archive</button>
+    `;
+    $("#relatedResults").innerHTML = `<div class="empty-state">Manga-connected records are hidden.</div>`;
+    state.currentAnswerText = $("#answe
