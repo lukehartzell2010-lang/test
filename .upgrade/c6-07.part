@@ -1,0 +1,391 @@
+ether to cooperate with Kenjaku.",
+    "points": [
+      "His cursed technique is not revealed.",
+      "He represents the faction that refuses to accept Kenjaku as Geto.",
+      "Most of his role concerns the fractured loyalties of Geto's former family."
+    ],
+    "related": [
+      "geto",
+      "kenjaku",
+      "manami-suda",
+      "shibuya-incident"
+    ]
+  },
+  {
+    "id": "ogi-zenin",
+    "title": "Ogi Zenin",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "ogi",
+      "ogi zenin"
+    ],
+    "keywords": [
+      "maki father",
+      "mai father",
+      "zenin clan"
+    ],
+    "summary": "Ogi Zenin is Maki and Mai's father and a senior member of the Zenin Clan.",
+    "details": "He resents his daughters and blames them for his failure to become clan head, ultimately attempting to kill them during the clan's internal purge.",
+    "points": [
+      "Ogi uses a sword and a fire-based extension associated with his inherited technique.",
+      "Mai sacrifices herself after Ogi leaves both sisters to die.",
+      "Maki defeats him after her Heavenly Restriction is fully realized."
+    ],
+    "related": [
+      "maki",
+      "mai-zenin",
+      "zenin-clan",
+      "perfect-preparation-arc"
+    ]
+  },
+  {
+    "id": "ranta-zenin",
+    "title": "Ranta Zenin",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "ranta",
+      "ranta zenin"
+    ],
+    "keywords": [
+      "zenin clan",
+      "paralysis gaze",
+      "maki"
+    ],
+    "summary": "Ranta Zenin is a member of the Zenin Clan's elite combat unit.",
+    "details": "His technique immobilizes a target through direct visual focus, allowing allies to attack while he maintains the restraint.",
+    "points": [
+      "Holding Maki places severe strain on his eyes and body.",
+      "His technique is useful for coordinated combat rather than solo finishing power.",
+      "The physical backlash contributes to his death during Maki's assault."
+    ],
+    "related": [
+      "maki",
+      "zenin-clan",
+      "perfect-preparation-arc"
+    ]
+  },
+  {
+    "id": "chojuro-zenin",
+    "title": "Chojuro Zenin",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "chojuro",
+      "chojuro zenin"
+    ],
+    "keywords": [
+      "zenin clan",
+      "stone hands",
+      "maki"
+    ],
+    "summary": "Chojuro Zenin is a Zenin Clan combatant who creates enormous stone hands from the ground.",
+    "details": "He attempts to restrain and crush Maki during the clan's final battle but is defeated before his ability can change the outcome.",
+    "points": [
+      "His technique provides large-area physical control.",
+      "Very little personal history is given.",
+      "He is part of the Hei, the clan's strongest active sorcerer unit."
+    ],
+    "related": [
+      "maki",
+      "zenin-clan",
+      "perfect-preparation-arc"
+    ]
+  },
+  {
+    "id": "jinichi-zenin",
+    "title": "Jinichi Zenin",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "jinichi",
+      "jinichi zenin"
+    ],
+    "keywords": [
+      "toji relative",
+      "zenin clan",
+      "giant fists"
+    ],
+    "summary": "Jinichi Zenin is a senior Zenin sorcerer and a member of the Hei.",
+    "details": "He creates a barrage of enormous cursed-energy fists and helps lead the clan's attempt to eliminate Maki.",
+    "points": [
+      "He is closely related to Toji within the Zenin family.",
+      "His technique emphasizes overwhelming area pressure.",
+      "Maki defeats him during the Perfect Preparation conflict."
+    ],
+    "related": [
+      "maki",
+      "toji",
+      "zenin-clan",
+      "perfect-preparation-arc"
+    ]
+  },
+  {
+    "id": "jin-itadori",
+    "title": "Jin Itadori",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "jin",
+      "jin itadori",
+      "yuji father"
+    ],
+    "keywords": [
+      "yuji parents",
+      "kaori",
+      "kenjaku"
+    ],
+    "summary": "Jin Itadori is Yuji's father and the son of Wasuke Itadori.",
+    "details": "He remained with Kaori's body after Kenjaku took control of it, despite Wasuke's warnings that something was wrong.",
+    "points": [
+      "The manga gives only brief glimpses of Jin's life.",
+      "His relationship to Sukuna's reincarnated twin is major late-series material.",
+      "Yuji's birth was deliberately connected to Kenjaku's long-term plans."
+    ],
+    "related": [
+      "yuji",
+      "kaori-itadori",
+      "wasuke-itadori",
+      "kenjaku",
+      "sukuna"
+    ]
+  },
+  {
+    "id": "kaori-itadori",
+    "title": "Kaori Itadori",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "kaori",
+      "kaori itadori",
+      "yuji mother"
+    ],
+    "keywords": [
+      "kenjaku host",
+      "antigravity system",
+      "yuji"
+    ],
+    "summary": "Kaori Itadori was Yuji's mother and one of Kenjaku's former host bodies.",
+    "details": "Her innate technique, Antigravity System, remained available to Kenjaku after he moved into Geto's body.",
+    "points": [
+      "Kenjaku used Kaori's body to give birth to Yuji.",
+      "The original circumstances of Kaori's death are not explained.",
+      "Antigravity System becomes important in Kenjaku's battle with Yuki."
+    ],
+    "related": [
+      "yuji",
+      "jin-itadori",
+      "kenjaku",
+      "antigravity-system"
+    ]
+  },
+  {
+    "id": "wasuke-itadori",
+    "title": "Wasuke Itadori",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "wasuke",
+      "yuji grandfather",
+      "wasuke itadori"
+    ],
+    "keywords": [
+      "yuji family",
+      "grandfather",
+      "last words"
+    ],
+    "summary": "Wasuke Itadori is Yuji's grandfather and primary guardian.",
+    "details": "Before dying, he urges Yuji to help people and avoid facing death alone, words that become a central influence on Yuji's choices.",
+    "points": [
+      "Wasuke knew troubling information about Yuji's parents.",
+      "Yuji initially avoids hearing the full family story.",
+      "His final request becomes both motivation and emotional burden for Yuji."
+    ],
+    "related": [
+      "yuji",
+      "jin-itadori",
+      "kaori-itadori"
+    ]
+  },
+  {
+    "id": "rin-amai",
+    "title": "Rin Amai",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "amai",
+      "rin amai"
+    ],
+    "keywords": [
+      "culling game",
+      "yuji acquaintance",
+      "sugar technique"
+    ],
+    "summary": "Rin Amai is a former school acquaintance of Yuji who becomes a Culling Game player.",
+    "details": "He can increase the sugar content of substances and uses the technique mainly for support. His knowledge helps Yuji navigate Tokyo No. 1 Colony.",
+    "points": [
+      "Amai previously followed bullies despite feeling guilty.",
+      "He recognizes Yuji and chooses to help him.",
+      "He later provides medical support during the final battle."
+    ],
+    "related": [
+      "yuji",
+      "tokyo-no1-colony",
+      "culling-game"
+    ]
+  },
+  {
+    "id": "yuko-ozawa",
+    "title": "Yuko Ozawa",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "ozawa",
+      "yuko ozawa"
+    ],
+    "keywords": [
+      "yuji classmate",
+      "middle school"
+    ],
+    "summary": "Yuko Ozawa is a former middle-school classmate who developed feelings for Yuji.",
+    "details": "Her reunion with Yuji shows that he remembered her character and habits even after her appearance changed.",
+    "points": [
+      "She is a civilian with no connection to jujutsu.",
+      "Her chapter focuses on Yuji, Nobara, and Megumi outside combat.",
+      "Yuji's respectful memory of her highlights his attention to people rather than appearance."
+    ],
+    "related": [
+      "yuji",
+      "nobara",
+      "megumi"
+    ]
+  },
+  {
+    "id": "saori",
+    "title": "Saori",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "saori",
+      "nobara friend"
+    ],
+    "keywords": [
+      "nobara childhood",
+      "village",
+      "friend"
+    ],
+    "summary": "Saori is an older girl who befriended Nobara after moving to her rural village.",
+    "details": "The villagers' hostility toward Saori's family helped shape Nobara's resentment of the town and her determination to leave.",
+    "points": [
+      "Nobara remembers Saori alongside Fumi as part of her emotional inner circle.",
+      "Saori later lives an ordinary civilian life in Tokyo.",
+      "She does not know the full details of Nobara's jujutsu career."
+    ],
+    "related": [
+      "nobara",
+      "shibuya-incident"
+    ]
+  },
+  {
+    "id": "sword-of-extermination",
+    "title": "Sword of Extermination",
+    "category": "tool",
+    "spoiler": "manga",
+    "aliases": [
+      "sword of extermination",
+      "mahoraga sword"
+    ],
+    "keywords": [
+      "mahoraga",
+      "positive energy",
+      "cursed spirits"
+    ],
+    "summary": "The Sword of Extermination is the blade attached to Mahoraga's arm.",
+    "details": "It is enveloped in positive energy, making it exceptionally lethal to cursed spirits while remaining a powerful physical weapon against other targets.",
+    "points": [
+      "Positive energy directly opposes the negative cursed energy forming a cursed spirit's body.",
+      "Sukuna notes that an ordinary curse would be destroyed by a clean hit.",
+      "Mahoraga can alter its use as adaptation progresses."
+    ],
+    "related": [
+      "mahoraga",
+      "positive-energy"
+    ]
+  },
+  {
+    "id": "hiten",
+    "title": "Hiten",
+    "category": "tool",
+    "spoiler": "manga",
+    "aliases": [
+      "hiten trident",
+      "sukuna trident"
+    ],
+    "keywords": [
+      "sukuna",
+      "heian era",
+      "cursed tool"
+    ],
+    "summary": "Hiten is a trident-like cursed tool wielded by Sukuna during the Heian era.",
+    "details": "The main manga shows the weapon in historical imagery but does not reveal a confirmed cursed technique or detailed set of abilities.",
+    "points": [
+      "Hiten should not be assigned fan-made powers.",
+      "It is visually paired with Kamutoke in depictions of Sukuna's original form.",
+      "Its grade and exact fate are not confirmed in the main series."
+    ],
+    "related": [
+      "sukuna",
+      "kamutoke"
+    ]
+  },
+  {
+    "id": "nobara-hammer-nails",
+    "title": "Nobara's Hammer and Nails",
+    "category": "tool",
+    "spoiler": "anime",
+    "aliases": [
+      "nobara hammer",
+      "nobara nails",
+      "straw doll hammer"
+    ],
+    "keywords": [
+      "nobara",
+      "straw doll technique",
+      "resonance",
+      "hairpin"
+    ],
+    "summary": "Nobara uses a metal hammer, cursed-energy-infused nails, and straw dolls as the physical medium for Straw Doll Technique.",
+    "details": "The hammer launches or drives nails, while the nails establish attack points for Hairpin and Resonance.",
+    "points": [
+      "The tools are important to activation but are not the source of the innate technique itself.",
+      "Nobara can fight directly with the hammer at close range.",
+      "Prepared nails let her control space and trigger delayed attacks."
+    ],
+    "related": [
+      "nobara",
+      "straw-doll-technique",
+      "resonance",
+      "hairpin"
+    ]
+  },
+  {
+    "id": "higuruma-gavel",
+    "title": "Higuruma's Gavel",
+    "category": "tool",
+    "spoiler": "manga",
+    "aliases": [
+      "higuruma gavel",
+      "judge gavel"
+    ],
+    "keywords": [
+      "higuruma",
+      "deadly sentencing",
+      "executioner's sword"
+    ],
+    "summary": "Higuruma's gavel is a technique-created weapon associated with Judgeman and Deadly Sentencing.",
+    "details": "He can dismiss, summon, resize, and reshape it into forms such as a staff, hook, mallet, or hammer during combat.",
+    "points": [
+      "The gavel is part of Higuruma's technique rather than an ordinary stored tool.",
+      "Its changing proportions give him unusual close-range versatility.",
+      "A death sentence replaces or supplements it with the Executione
