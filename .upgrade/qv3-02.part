@@ -1,0 +1,211 @@
+: "How Gojo’s Infinity works",
+      lede: "Infinity manipulates the space between Gojo and an approaching threat so that the remaining distance is divided again and again. The object slows before reaching him rather than striking an invisible solid wall.",
+      details: "Limitless is the broader spatial technique. Infinity is its neutral application, while the Six Eyes give Gojo the perception and efficiency needed to maintain and control it at an exceptional level."
+    }
+  ];
+
+  function qnorm(text) {
+    return normalize(String(text || "").replace(/[’‘]/g, "'"))
+      .replace(/\b([a-z0-9-]+) s\b/g, "$1")
+      .replace(/\bcan t\b/g, "cannot")
+      .replace(/\bcouldn t\b|\bcouldn t\b|\bcould t\b/g, "could not")
+      .replace(/\bdoesn t\b|\bdoesn t\b|\bdoes t\b/g, "does not")
+      .replace(/\bdidn t\b|\bdidn t\b|\bdid t\b/g, "did not")
+      .replace(/\bisn t\b|\bis t\b/g, "is not")
+      .replace(/\baren t\b|\bare t\b/g, "are not");
+  }
+
+  function uniqueEntries(list) {
+    return list.filter(Boolean).filter((entry, index, array) => array.findIndex(other => other.id === entry.id) === index);
+  }
+
+  function visible(entry) {
+    return entry && (state.spoiler === "manga" || entry.spoiler === "anime");
+  }
+
+  function linkedEntries(entry, categories = null) {
+    if (!entry) return [];
+    const direct = (entry.related || []).map(getEntry).filter(Boolean);
+    const reverse = entries.filter(candidate => (candidate.related || []).includes(entry.id));
+    let linked = uniqueEntries([...direct, ...reverse]).filter(visible);
+    if (categories?.length) linked = linked.filter(item => categories.includes(item.category));
+    return linked;
+  }
+
+  function levenshtein(a, b) {
+    if (a === b) return 0;
+    if (!a.length) return b.length;
+    if (!b.length) return a.length;
+    const row = Array.from({ length: b.length + 1 }, (_, i) => i);
+    for (let i = 1; i <= a.length; i++) {
+      let previous = row[0];
+      row[0] = i;
+      for (let j = 1; j <= b.length; j++) {
+        const saved = row[j];
+        row[j] = Math.min(row[j] + 1, row[j - 1] + 1, previous + (a[i - 1] === b[j - 1] ? 0 : 1));
+        previous = saved;
+      }
+    }
+    return row[b.length];
+  }
+
+  function directMentionEntries(query, pool = allowedEntries()) {
+    const q = qnorm(query);
+    return pool.map(entry => {
+      const names = entryNames(entry).sort((a, b) => b.length - a.length);
+      const matched = names.find(name => q.includes(name));
+      return matched ? { entry, matched } : null;
+    }).filter(Boolean).sort((a, b) => b.matched.length - a.matched.length);
+  }
+
+  function fuzzyMentionEntries(query, pool = allowedEntries()) {
+    const q = qnorm(query);
+    const property = detectProperty(q);
+    const intent = detectIntent(q);
+    let direct = uniqueEntries(directMentionEntries(q, pool).map(item => item.entry));
+
+    if (direct.length > 1) {
+      direct = direct.filter(entry => !(
+        (property === "domain" && entry.id === "domain-expansion") ||
+        (property === "technique" && entry.id === "cursed-technique")
+      ));
+    }
+
+    if (direct.length) {
+      direct.sort((a, b) => {
+        const ownerTargetA = ["technique", "domain", "tool"].includes(a.category) ? 0 : 1;
+        const ownerTargetB = ["technique", "domain", "tool"].includes(b.category) ? 0 : 1;
+        const personA = ["character", "curse"].includes(a.category) ? 0 : 1;
+        const personB = ["character", "curse"].includes(b.category) ? 0 : 1;
+        if (intent === "owner") return ownerTargetA - ownerTargetB;
+        if (property && property !== "user") return personA - personB;
+        return 0;
+      });
+      return direct;
+    }
+
+    const tokens = meaningfulWords(q).filter(token => token.length >= 4 && !GENERIC_WORDS.has(token));
+    if (!tokens.length) return [];
+    const ranked = pool.map(entry => {
+      const names = entryNames(entry);
+      let best = 99;
+      for (const token of tokens) {
+        for (const name of names) {
+          for (const nameToken of name.split(" ")) {
+            if (nameToken.length < 4) continue;
+            best = Math.min(best, levenshtein(token, nameToken));
+          }
+        }
+      }
+      return { entry, distance: best };
+    }).filter(item => item.distance <= 2)
+      .sort((a, b) => a.distance - b.distance || a.entry.title.localeCompare(b.entry.title));
+    return uniqueEntries(ranked.slice(0, 2).map(item => item.entry));
+  }
+
+  function detectProperty(query) {
+    const q = qnorm(query);
+    if (/\bwho (?:uses|has|owns|wields|controls|summons|created)\b|\bwhose\b|\buser of\b|\bwielder of\b/.test(q)) return "user";
+    if (/\bdomain(?: expansion)?\b|\bsure hit\b/.test(q)) return "domain";
+    if (/\bcursed technique\b|\binnate technique\b|\btechnique\b/.test(q)) return "technique";
+    if (/\bpower(?:s)?\b|\babilit(?:y|ies)\b|\bmoveset\b|\barsenal\b|\bskillset\b/.test(q)) return "arsenal";
+    if (/\bcursed tool\b|\bweapon\b|\bsword\b|\bstaff\b|\btool\b/.test(q)) return "tool";
+    if (/\bclan\b|\bfamily\b/.test(q)) return "clan";
+    if (/\bgrade\b|\brank\b|\bclassification\b/.test(q)) return "grade";
+    if (/\bfather\b|\bmother\b|\bparent\b|\bbrother\b|\bsister\b|\bson\b|\bdaughter\b|\brelationship\b|\brelated to\b/.test(q)) return "relationship";
+    if (/\bage\b|\bhow old\b/.test(q)) return "age";
+    if (/\bheight\b|\bhow tall\b/.test(q)) return "height";
+    if (/\bwhere\b|\blocation\b|\bplace\b/.test(q)) return "location";
+    if (/\barc\b|\bincident\b/.test(q)) return "arc";
+    return null;
+  }
+
+  detectIntent = function detectIntentV3(query) {
+    const q = qnorm(query);
+    if (/\b(vs|versus|compare|stronger|who wins|would .* beat|can .* beat)\b/.test(q)) return "comparison";
+    if (/^(?:list|name|show)\b|\b(all|every|which characters|which techniques|which domains)\b/.test(q)) return "list";
+    if (/^who\b|\bwho is\b/.test(q)) return detectProperty(q) === "user" ? "owner" : "identity";
+    if (/^where\b/.test(q)) return "location";
+    if (/^when\b|\bwhat (?:episode|chapter|arc|time)\b/.test(q)) return "timeline";
+    if (/^why\b/.test(q)) return "reasoning";
+    if (/^how\b/.test(q)) return "mechanics";
+    if (/^(?:can|could|does|do|did|is|are|was|were|has|have)\b/.test(q)) return "yesno";
+    if (/\bwhat happened\b|\bsummary\b|\brecap\b/.test(q)) return "summary";
+    if (/^what\b|\bwhat is\b|\bwhat are\b/.test(q)) return detectProperty(q) ? "property" : "definition";
+    return "explanation";
+  };
+
+  requestedCategory = function requestedCategoryV3(query) {
+    const property = detectProperty(query);
+    if (property && PROPERTY_CONFIG[property]?.categories?.length === 1) return PROPERTY_CONFIG[property].categories[0];
+    const q = qnorm(query);
+    if (/^who\b/.test(q) && property !== "user") return "character";
+    return null;
+  };
+
+  searchEntries = function searchEntriesV3(query, pool = allowedEntries()) {
+    const base = oldSearchEntries(query, pool);
+    const q = qnorm(query);
+    const property = detectProperty(q);
+    const subjects = fuzzyMentionEntries(q, pool);
+    const subjectIds = subjects.map(entry => entry.id);
+    const wantedCategories = PROPERTY_CONFIG[property]?.categories || [];
+
+    const scores = new Map(base.map(item => [item.entry.id, item.score]));
+    for (const entry of pool) {
+      let score = scores.get(entry.id) || scoreEntry(entry, q);
+      if (subjectIds.includes(entry.id)) score += 115;
+      const relationToSubject = subjects.some(subject => (subject.related || []).includes(entry.id) || (entry.related || []).includes(subject.id));
+      if (relationToSubject) score += 76;
+      if (wantedCategories.includes(entry.category) && (relationToSubject || subjectIds.includes(entry.id) || score > 5)) score += 38;
+      if (property === "user" && ["character", "curse"].includes(entry.category) && relationToSubject) score += 45;
+
+      const titleTokens = qnorm(entry.title).split(" ");
+      for (const queryToken of meaningfulWords(q)) {
+        if (queryToken.length < 4) continue;
+        if (titleTokens.some(titleToken => titleToken.length >= 4 && levenshtein(queryToken, titleToken) <= 1)) score += 20;
+      }
+      if (score >= 6) scores.set(entry.id, score);
+    }
+
+    return pool.map(entry => ({ entry, score: scores.get(entry.id) || 0 }))
+      .filter(item => item.score >= 6)
+      .sort((a, b) => b.score - a.score || a.entry.title.localeCompare(b.entry.title));
+  };
+
+  function sentenceList(entry) {
+    return [entry?.summary, entry?.details, ...(entry?.points || [])]
+      .filter(Boolean)
+      .flatMap(text => String(text).split(/(?<=[.!?])\s+/))
+      .map(text => text.trim())
+      .filter(Boolean);
+  }
+
+  function relevantSentences(query, subjectEntries, limit = 3) {
+    const subjectTokens = new Set(subjectEntries.flatMap(entry => entryNames(entry).flatMap(name => name.split(" "))));
+    const queryTokens = meaningfulWords(qnorm(query)).filter(token => !subjectTokens.has(token) && !GENERIC_WORDS.has(token));
+    const all = subjectEntries.flatMap(entry => sentenceList(entry).map(sentence => ({ entry, sentence })));
+    return all.map(item => {
+      const s = qnorm(item.sentence);
+      let score = 0;
+      queryTokens.forEach(token => { if (s.includes(token)) score += 6; });
+      if (/because|allows|prevents|requires|means|exchange|through|by |so that|in order/.test(s)) score += 4;
+      if (item.sentence === item.entry.details) score += 2;
+      return { ...item, score };
+    }).sort((a, b) => b.score - a.score)
+      .filter((item, index, array) => array.findIndex(other => other.sentence === item.sentence) === index)
+      .slice(0, limit);
+  }
+
+  function entryLinks(entry, property) {
+    const categories = PROPERTY_CONFIG[property]?.categories || [];
+    return linkedEntries(entry, categories);
+  }
+
+  function extractTextMatch(entry, regex) {
+    return sentenceList(entry).filter(sentence => regex.test(qnorm(sentence)));
+  }
+
+  function answerShell(title, lede, sections = [], note = "") {
+    return `
+      <h2 class="answer-titl
