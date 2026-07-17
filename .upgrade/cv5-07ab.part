@@ -1,0 +1,10 @@
+
+    if (!result) return previousPerformSearch(rawQuery);
+    renderComplex(query, parsed.type, result, parsed.entityList);
+  };
+
+  window.parseComplexQuestionV5 = raw => ({ type: classify(raw), entities: mentions(raw).map(item => item.entry.title), grammar: grammarProfile(raw) });
+  document.documentElement.dataset.complexEngine = VERSION;
+  console.info(`[JJK Archive] Complex Reasoning Engine v${VERSION} active`);
+})();
+
