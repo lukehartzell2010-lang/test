@@ -1,0 +1,24 @@
+ate.spoiler === "manga" && record.mangaExtra) factors.push(["Later manga context", record.mangaExtra]);
+    return {
+      primary,
+      related: record.related.map(getEntry).filter(Boolean),
+      html: answerFrame(record.title, record.answer, factors, {
+        status: "Motive and limitation analysis",
+        note: "The answer distinguishes what the character wanted from what the jujutsu rules physically allowed."
+      })
+    };
+  }
+
+  function inferScenarioRoles(raw, entityList) {
+    const q = qnorm(raw);
+    const positioned = entityList.map(entry => {
+      const names = entryNames(entry).sort((a, b) => b.length - a.length);
+      let name = names.find(candidate => namePosition(q, candidate) >= 0) || null;
+      let index = name ? namePosition(q, name) : -1;
+      if (index < 0) {
+        const special = SPECIAL_REFERENCES.find(reference => reference.id === entry.id && namePosition(q, reference.phrase) >= 0);
+        if (special) { name = special.phrase; index = namePosition(q, special.phrase); }
+      }
+      return { entry, index, name: name || qnorm(entry.title) };
+    }).filter(item => item.index >= 0).sort((a, b) => a.index - b.index);
+    const living = positioned.fi
