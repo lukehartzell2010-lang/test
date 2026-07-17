@@ -1,0 +1,306 @@
+es",
+      "revealing-ones-hand",
+      "open-barrier-domain"
+    ],
+    "detailsAppend": ""
+  },
+  "ten-shadows": {
+    "keywordsAdd": [
+      "ten shikigami totality shadow storage hybrids",
+      "taming ritual"
+    ],
+    "pointsAdd": [
+      "A new user begins with Divine Dogs and must defeat other shikigami alone in an exorcism ritual to tame them.",
+      "Outside help invalidates a taming ritual even if the shikigami is defeated.",
+      "Destroyed shikigami may pass compatible traits through Totality and cannot return in their original form.",
+      "The user's shadows also support storage, movement, concealment, and partial manifestation."
+    ],
+    "relatedAdd": [
+      "totality",
+      "shadow-storage",
+      "divine-dogs",
+      "nue",
+      "max-elephant",
+      "mahoraga"
+    ],
+    "detailsAppend": ""
+  },
+  "shrine": {
+    "keywordsAdd": [
+      "cleave dismantle furnace world slash",
+      "cooking motif"
+    ],
+    "pointsAdd": [
+      "Dismantle is the standard ranged slash, while Cleave adjusts force to the target at close range or through the domain.",
+      "Furnace is a fire application opened after the cutting techniques.",
+      "Malevolent Shrine automatically applies different slashes to targets with and without cursed energy.",
+      "World-Cutting Dismantle changes the target from the body to the space containing it."
+    ],
+    "relatedAdd": [
+      "cleave",
+      "dismantle",
+      "furnace",
+      "world-cutting-slash",
+      "malevolent-shrine"
+    ],
+    "detailsAppend": ""
+  },
+  "blood-manipulation": {
+    "keywordsAdd": [
+      "convergence piercing blood supernova flowing red scale blood loss"
+    ],
+    "pointsAdd": [
+      "Blood Manipulation controls blood inside and outside the body down to fine physical properties.",
+      "Convergence prepares compressed blood for Piercing Blood and Supernova.",
+      "Flowing Red Scale enhances the user's physical performance through internal circulation.",
+      "Human users must manage blood loss, while Choso can convert cursed energy into blood."
+    ],
+    "relatedAdd": [
+      "convergence",
+      "piercing-blood",
+      "supernova",
+      "flowing-red-scale"
+    ],
+    "detailsAppend": ""
+  },
+  "cursed-spirit-manipulation": {
+    "keywordsAdd": [
+      "absorb curses command storage uzumaki extraction"
+    ],
+    "pointsAdd": [
+      "A defeated curse can be compressed into an orb and absorbed if the control conditions are satisfied.",
+      "Stored curses retain their abilities and can be deployed individually or in groups.",
+      "Maximum: Uzumaki consumes stored curses and can extract techniques from sufficiently strong ones.",
+      "The technique's strategic value depends heavily on the size and quality of the user's collection."
+    ],
+    "relatedAdd": [
+      "maximum-uzumaki",
+      "rainbow-dragon"
+    ],
+    "detailsAppend": ""
+  },
+  "copy-technique": {
+    "keywordsAdd": [
+      "rika storage five minutes copied techniques conditions"
+    ],
+    "pointsAdd": [
+      "Rika stores copied techniques externally, preventing Yuta's brain from carrying every technique at once.",
+      "Full access is tied to wearing the ring and fully manifesting Rika for a limited period.",
+      "Copied techniques still require enough understanding, cursed energy, and compatible use to apply effectively.",
+      "The exact acquisition condition is not presented as one simple universal rule in every scene."
+    ],
+    "relatedAdd": [
+      "yuta-ring",
+      "thin-ice-breaker",
+      "jacobs-ladder"
+    ],
+    "detailsAppend": ""
+  },
+  "projection-sorcery": {
+    "keywordsAdd": [
+      "24 frames route planning freeze rule touch"
+    ],
+    "pointsAdd": [
+      "Projection Sorcery divides one second into twenty-four predetermined frames of movement.",
+      "The user must follow a physically plausible route chosen in advance or becomes frozen for one second.",
+      "Anyone touched by the user's palm is forced to obey the same twenty-four-frame rule.",
+      "The technique rewards route planning and speed but punishes impossible acceleration or abrupt corrections."
+    ],
+    "relatedAdd": [
+      "time-cell-moon-palace"
+    ],
+    "detailsAppend": ""
+  },
+  "idle-transfiguration": {
+    "keywordsAdd": [
+      "soul contact body follows soul domain sure hit transfigured humans"
+    ],
+    "pointsAdd": [
+      "The technique reshapes the soul, and the physical body changes to match.",
+      "Mahito can modify himself without the same limitations as altering another target.",
+      "Ordinary healing does not automatically reverse a soul shape that has already been changed.",
+      "Self-Embodiment of Perfection removes the need for direct hand contact by making soul contact the sure-hit."
+    ],
+    "relatedAdd": [
+      "soul-damage",
+      "transfigured-humans",
+      "sure-hit-effect"
+    ],
+    "detailsAppend": ""
+  },
+  "heavenly-restriction": {
+    "keywordsAdd": [
+      "inborn exchange complete zero cursed energy mechamaru twins"
+    ],
+    "pointsAdd": [
+      "A Heavenly Restriction is imposed at birth rather than voluntarily selected later.",
+      "Toji and fully realized Maki gain an extreme body through the complete absence of cursed energy.",
+      "Mechamaru receives immense range and cursed energy in exchange for a severely disabled body.",
+      "Maki and Mai's twin condition prevents the physical restriction from becoming complete until Mai's death."
+    ],
+    "relatedAdd": [
+      "maki",
+      "toji",
+      "kokichi-muta",
+      "perfect-preparation-arc"
+    ],
+    "detailsAppend": ""
+  },
+  "six-eyes": {
+    "keywordsAdd": [
+      "energy perception efficiency atomic control brain load"
+    ],
+    "pointsAdd": [
+      "The Six Eyes perceive cursed energy and technique operation at extraordinary resolution.",
+      "Their precision makes Limitless practical and reduces wasted cursed energy to an extremely low level.",
+      "The eyes do not create unlimited reserves; they make expenditure extraordinarily efficient.",
+      "Continuous information processing is burdensome, which is why Gojo covers his eyes outside serious combat."
+    ],
+    "relatedAdd": [
+      "cursed-energy-efficiency",
+      "cursed-energy-control",
+      "limitless"
+    ],
+    "detailsAppend": ""
+  },
+  "simple-domain": {
+    "keywordsAdd": [
+      "anti domain neutralize sure hit new shadow style temporary"
+    ],
+    "pointsAdd": [
+      "Simple Domain establishes a small barrier that disrupts a domain's sure-hit within its area.",
+      "It does not automatically destroy the enemy domain or permanently neutralize the embedded technique.",
+      "A powerful domain can strip the Simple Domain away, requiring movement, renewal, or another defense.",
+      "Some specialized Simple Domains impose rules, automatic counters, or consensual conditions."
+    ],
+    "relatedAdd": [
+      "sure-hit-effect",
+      "barrier-techniques",
+      "miyo-sumo-simple-domain",
+      "solo-forbidden-area"
+    ],
+    "detailsAppend": ""
+  },
+  "malevolent-shrine": {
+    "keywordsAdd": [
+      "open barrier 200 meters cleave dismantle exterior attack furnace"
+    ],
+    "pointsAdd": [
+      "Malevolent Shrine manifests in open space and normally reaches up to roughly two hundred meters when Sukuna chooses maximum range.",
+      "Dismantle targets objects without cursed energy, while Cleave attacks targets with cursed energy.",
+      "Because it lacks a sealed shell, it can attack the exterior of a closed domain's barrier.",
+      "Its processed environment becomes important to Furnace's domain-enhanced destruction."
+    ],
+    "relatedAdd": [
+      "open-barrier-domain",
+      "cleave",
+      "dismantle",
+      "furnace",
+      "domain-clash"
+    ],
+    "detailsAppend": ""
+  },
+  "unlimited-void": {
+    "keywordsAdd": [
+      "information overload 0.2 seconds domain refinement adaptation"
+    ],
+    "pointsAdd": [
+      "Unlimited Void forces limitless sensory information and unfinished actions into the target's mind.",
+      "Even a fraction of a second can incapacitate ordinary people, while longer exposure causes severe neurological harm.",
+      "Gojo's 0.2-second activation in Shibuya balances civilian survival against disabling transfigured humans and disaster curses.",
+      "The domain's sure-hit can be neutralized in a clash or adapted to only after sufficient preparation and exposure."
+    ],
+    "relatedAdd": [
+      "sure-hit-effect",
+      "domain-clash",
+      "mahoraga",
+      "shibuya-incident"
+    ],
+    "detailsAppend": ""
+  },
+  "shibuya-incident": {
+    "keywordsAdd": [
+      "gojo sealing disaster curses sukuna rampage casualties"
+    ],
+    "pointsAdd": [
+      "The curses' central objective is sealing Gojo rather than defeating him normally.",
+      "The 0.2-second Unlimited Void disables the station while limiting civilian exposure.",
+      "Sukuna's temporary control causes massive destruction after Jogo force-feeds Yuji fingers.",
+      "The incident dismantles jujutsu society's stability and directly enables Kenjaku's next phase."
+    ],
+    "relatedAdd": [
+      "prison-realm",
+      "open-barrier-domain",
+      "transfigured-humans",
+      "culling-game"
+    ],
+    "detailsAppend": ""
+  },
+  "culling-game": {
+    "keywordsAdd": [
+      "colonies rules points incarnation barriers merger"
+    ],
+    "pointsAdd": [
+      "The game uses colony barriers, player points, and compulsory participation to produce large-scale cursed-energy conflict.",
+      "Kenjaku awakens modern sorcerers and incarnates ancient sorcerers through marked hosts and cursed objects.",
+      "Players can spend one hundred points to propose new rules, subject to the game's rejection conditions.",
+      "The true purpose is preparing Japan and Tengen for Kenjaku's forced merger."
+    ],
+    "relatedAdd": [
+      "vessel-and-incarnation",
+      "barrier-techniques",
+      "tokyo-no1-colony",
+      "tokyo-no2-colony-arc",
+      "sendai-colony-arc"
+    ],
+    "detailsAppend": ""
+  }
+};
+
+  const clean = value => String(value || "").trim();
+  const mergeUnique = (base, additions) => {
+    const seen = new Set();
+    return [...(base || []), ...(additions || [])].filter(value => {
+      const key = clean(value).toLowerCase();
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  };
+
+  const byId = new Map(entries.map(entry => [entry.id, entry]));
+  let patched = 0;
+  for (const [id, patch] of Object.entries(PATCHES)) {
+    const entry = byId.get(id);
+    if (!entry) continue;
+    entry.keywords = mergeUnique(entry.keywords, patch.keywordsAdd);
+    entry.points = mergeUnique(entry.points, patch.pointsAdd);
+    entry.related = mergeUnique(entry.related, patch.relatedAdd);
+    if (patch.detailsAppend && !clean(entry.details).includes(clean(patch.detailsAppend))) {
+      entry.details = `${clean(entry.details)} ${clean(patch.detailsAppend)}`.trim();
+    }
+    patched += 1;
+  }
+
+  let added = 0;
+  for (const record of NEW_ENTRIES) {
+    if (byId.has(record.id)) continue;
+    entries.push(record);
+    byId.set(record.id, record);
+    added += 1;
+  }
+
+  window.JJK_KNOWLEDGE = entries;
+  window.JJK_CONTENT_META = {
+    version: VERSION,
+    baseRecords: entries.length - added,
+    addedRecords: added,
+    patchedRecords: patched,
+    totalRecords: entries.length,
+    scope: "Original Jujutsu Kaisen manga, anime, and JJK 0; sequel-only material excluded."
+  };
+
+  document.documentElement.dataset.contentExpansion = VERSION;
+  if (typeof renderHome === "function") renderHome();
+  console.info(`[JJK Archive] Content Expansion v${VERSION} active — ${added} added, ${patched} enriched, ${entries.length} total`);
+})();
