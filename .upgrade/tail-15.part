@@ -20,7 +20,7 @@ document.documentElement.dataset.appReady = "true";
   document.documentElement.dataset.questionEngine="loading";
   try{
     const files=[1,2,3,4,5].map(n=>`.upgrade/qv3-${String(n).padStart(2,"0")}.part`);
-    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717complex5")));
+    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717quality51")));
     const code=parts.join("");
     if(!code.includes("Question Engine v3")||!code.includes("performSearchV3"))throw new Error("Question Engine v3 integrity check failed");
     eval(code);
@@ -34,7 +34,7 @@ document.documentElement.dataset.appReady = "true";
 
   document.documentElement.dataset.semanticEngine="loading";
   try{
-    const code=await fetchText(".upgrade/semantic-engine-v4.js","20260717complex5");
+    const code=await fetchText(".upgrade/semantic-engine-v4.js","20260717quality51");
     if(!code.includes("Semantic Question Engine v4")||!code.includes("performSearchSemanticV4")||!code.includes("parseQuestionV4"))throw new Error("Semantic Question Engine v4 integrity check failed");
     eval(code);
     if(document.documentElement.dataset.semanticEngine!=="4.0.0")throw new Error("Semantic Question Engine v4 did not activate");
@@ -72,7 +72,7 @@ document.documentElement.dataset.appReady = "true";
       ".upgrade/cv5-07aa.part",
       ".upgrade/cv5-07ab.part"
     ];
-    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717complex5")));
+    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717quality51")));
     const code=parts.join("");
     if(!code.includes("Complex Reasoning Engine v5")||!code.includes("performSearchComplexV5")||!code.includes("parseComplexQuestionV5"))throw new Error("Complex Reasoning Engine v5 integrity check failed");
     eval(code);
@@ -81,6 +81,19 @@ document.documentElement.dataset.appReady = "true";
     console.error("Complex Reasoning Engine v5 failed to load",error);
     document.documentElement.dataset.complexEngine="failed";
     try{toast(`Complex question understanding failed: ${error.message||error}`);}catch{}
+    return;
+  }
+
+  document.documentElement.dataset.responseQuality="loading";
+  try{
+    const code=await fetchText(".upgrade/response-quality-v5-1.js","20260717quality51");
+    if(!code.includes("Response Quality Engine v5.1")||!code.includes("performSearchResponseQualityV51")||!code.includes("auditResponseV51"))throw new Error("Response Quality Engine v5.1 integrity check failed");
+    eval(code);
+    if(document.documentElement.dataset.responseQuality!=="5.1.0")throw new Error("Response Quality Engine v5.1 did not activate");
+  }catch(error){
+    console.error("Response Quality Engine v5.1 failed to load",error);
+    document.documentElement.dataset.responseQuality="failed";
+    try{toast(`Response review failed: ${error.message||error}`);}catch{}
     return;
   }
 
@@ -95,13 +108,13 @@ document.documentElement.dataset.appReady = "true";
       ".upgrade/dv4-09a.part",
       ".upgrade/dv4-09b.part"
     ];
-    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717complex5")));
+    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717quality51")));
     const code=parts.join("");
     if(!code.includes("Deep Dossier v4")||!code.includes("performSearchV4"))throw new Error("Deep Dossier v4 integrity check failed");
     eval(code);
     if(document.documentElement.dataset.deepDossier!=="4.0.0")throw new Error("Deep Dossier v4 did not activate");
 
-    const css=await fetchText(".upgrade/mobile-layout-v1.css","20260717complex5");
+    const css=await fetchText(".upgrade/mobile-layout-v1.css","20260717quality51");
     let style=document.querySelector("#mobile-layout-v1");
     if(!style){style=document.createElement("style");style.id="mobile-layout-v1";document.head.appendChild(style);}
     style.textContent=css;
@@ -115,7 +128,7 @@ document.documentElement.dataset.appReady = "true";
 
   document.documentElement.dataset.motionSystem="loading";
   try{
-    const code=await fetchText(".upgrade/motion-system-v1.js","20260717complex5");
+    const code=await fetchText(".upgrade/motion-system-v1.js","20260717quality51");
     if(!code.includes("Motion System v1.1")||!code.includes("motionPerformSearchSafe"))throw new Error("Motion System v1.1 integrity check failed");
     eval(code);
     if(document.documentElement.dataset.motionSystem!=="1.1.0")throw new Error("Motion System v1.1 did not activate");
