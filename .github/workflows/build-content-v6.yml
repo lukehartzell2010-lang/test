@@ -1,0 +1,175 @@
+name: Build Content Expansion v6
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-content-v6.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build expanded canon library
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64, gzip, json, re, urllib.parse, urllib.request
+
+          root = Path('.')
+          manifest = root / '.github' / 'content-v6'
+
+          def decode_parts(prefix):
+              text = ''.join(path.read_text().strip() for path in sorted(manifest.glob(f'{prefix}-*.b64')))
+              return json.loads(gzip.decompress(base64.b64decode(text)).decode('utf-8'))
+
+          catalog = decode_parts('catalog')
+          patches = decode_parts('patch')
+          wiki_api = 'https://jujutsu-kaisen.fandom.com/api.php'
+
+          def norm(value):
+              return re.sub(r'[^a-z0-9]+', ' ', str(value or '').lower()).strip()
+
+          def clean(value, limit=1800):
+              value = re.sub(r'\[[0-9]+\]', '', str(value or ''))
+              value = re.sub(r'\s+', ' ', value).strip()
+              if len(value) <= limit:
+                  return value
+              cut = value[:limit]
+              stop = max(cut.rfind('. '), cut.rfind('! '), cut.rfind('? '))
+              return (cut[:stop + 1] if stop > limit * .55 else cut.rsplit(' ', 1)[0]) + '…'
+
+          def fetch_pages(titles):
+              found = {}
+              for start in range(0, len(titles), 35):
+                  batch = titles[start:start + 35]
+                  params = urllib.parse.urlencode({
+                      'action': 'query',
+                      'prop': 'extracts|info',
+                      'titles': '|'.join(batch),
+                      'redirects': '1',
+                      'explaintext': '1',
+                      'exintro': '1',
+                      'exsentences': '7',
+                      'inprop': 'url',
+                      'format': 'json',
+                      'origin': '*'
+                  })
+                  request = urllib.request.Request(
+                      f'{wiki_api}?{params}',
+                      headers={'User-Agent': 'JJKArchiveContentBuilder/6.0 (+GitHub Actions)'}
+                  )
+                  try:
+                      with urllib.request.urlopen(request, timeout=25) as response:
+                          data = json.load(response)
+                  except Exception as error:
+                      print(f'Wiki batch failed: {error}')
+                      continue
+
+                  redirects = {norm(item.get('from')): norm(item.get('to')) for item in data.get('query', {}).get('redirects', [])}
+                  pages = list(data.get('query', {}).get('pages', {}).values())
+                  page_map = {norm(page.get('title')): page for page in pages if 'missing' not in page}
+                  for title in batch:
+                      key = norm(title)
+                      resolved = redirects.get(key, key)
+                      page = page_map.get(resolved) or page_map.get(key)
+                      if page:
+                          found[key] = page
+              return found
+
+          titles = [row[1] for row in catalog]
+          pages = fetch_pages(titles)
+          records = []
+          for row in catalog:
+              record_id, title, category, spoiler_code, aliases_text, related_text = row
+              page = pages.get(norm(title), {})
+              extract = clean(page.get('extract', ''))
+              summary = clean(extract, 360) if extract else f'{title} is indexed in the expanded Jujutsu Kaisen canon library.'
+              details = extract or f'This record improves exact matching for {title}. A longer source extract was unavailable during this build, so the archive avoids inventing unsupported details.'
+              aliases = [item for item in aliases_text.split('|') if item]
+              related = [item for item in related_text.split('|') if item]
+              keywords = list(dict.fromkeys(aliases + re.findall(r'[a-z0-9]+', title.lower())))
+              records.append({
+                  'id': record_id,
+                  'title': title,
+                  'category': category,
+                  'spoiler': 'manga' if spoiler_code == 'm' else 'anime',
+                  'aliases': aliases,
+                  'keywords': keywords,
+                  'summary': summary,
+                  'details': details,
+                  'points': [],
+                  'related': related,
+                  'sourceUrl': page.get('fullurl', ''),
+                  '_contentV6': True
+              })
+
+          patch_rows = []
+          for record_id, keywords_text, related_text, point in patches:
+              patch_rows.append({
+                  'id': record_id,
+                  'keywords': [item for item in keywords_text.split('|') if item],
+                  'related': [item for item in related_text.split('|') if item],
+                  'point': point
+              })
+
+          records_json = json.dumps(records, ensure_ascii=False, separators=(',', ':'))
+          patches_json = json.dumps(patch_rows, ensure_ascii=False, separators=(',', ':'))
+          js = f'''/* JJK Archive Content Expansion v6 — generated canon library */
+          (()=>{{
+            "use strict";
+            const VERSION="6.0.0";
+            if(document.documentElement.dataset.contentExpansion===VERSION)return;
+            const RECORDS={records_json};
+            const PATCHES={patches_json};
+            const unique=list=>[...new Set((list||[]).filter(Boolean))];
+            const byId=new Map(entries.map(entry=>[entry.id,entry]));
+            for(const patch of PATCHES){{
+              const entry=byId.get(patch.id);
+              if(!entry)continue;
+              entry.keywords=unique([...(entry.keywords||[]),...patch.keywords]);
+              entry.related=unique([...(entry.related||[]),...patch.related]);
+              if(patch.point)entry.points=unique([...(entry.points||[]),patch.point]);
+            }}
+            let added=0;
+            for(const record of RECORDS){{
+              if(byId.has(record.id))continue;
+              entries.push(record);
+              byId.set(record.id,record);
+              added+=1;
+            }}
+            window.JJK_KNOWLEDGE=entries;
+            window.JJK_CONTENT_META={{version:VERSION,baseRecords:173,addedRecords:added,patchedRecords:PATCHES.length,totalRecords:entries.length,scope:"Original Jujutsu Kaisen manga, anime, and JJK 0; sequel-only material excluded."}};
+            document.documentElement.dataset.contentExpansion=VERSION;
+            if(typeof renderHome==="function")renderHome();
+            console.info(`[JJK Archive] Content Expansion v${{VERSION}} active — ${{added}} added, ${{PATCHES.length}} enriched, ${{entries.length}} total`);
+          }})();
+          '''
+
+          output = root / '.upgrade' / 'content-expansion-v6.js'
+          output.parent.mkdir(parents=True, exist_ok=True)
+          output.write_text(js, encoding='utf-8')
+          print(f'Generated {output} with {len(records)} records and {len(patch_rows)} patches ({len(js.encode("utf-8"))} bytes).')
+          PY
+
+      - name: Commit generated library
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .upgrade/content-expansion-v6.js
+          if git diff --cached --quiet; then
+            echo 'No generated changes.'
+            exit 0
+          fi
+          git commit -m 'Build Content Expansion v6 [skip ci]'
+          git push
