@@ -1,0 +1,57 @@
+(entry);
+    const sections = record ? [...coreSections, ...generic.filter(section => !["Full overview", "Role and overview"].includes(section.title))] : generic;
+    const visibleSections = sections.filter(section => section.spoiler !== "manga" || state.spoiler === "manga");
+    const verifiedLabel = record?.verified ? "Manually checked core dossier" : "Structured curated dossier";
+    const relatedCount = linked(entry).length;
+
+    return `<article class="deep-dive-v4" data-deep-entry="${escapeHtml(entry.id)}">
+      <header class="dossier-head">
+        <div class="dossier-badges">
+          <span>${escapeHtml(formatCategory(entry.category))}</span>
+          <span>${entry.spoiler === "manga" ? "Manga record" : "Anime-safe record"}</span>
+          <span class="verified">${escapeHtml(verifiedLabel)}</span>
+        </div>
+        <h2>${escapeHtml(entry.title)}</h2>
+        <p>${escapeHtml(entry.summary)}</p>
+        <div class="dossier-stats">
+          <span><b>${visibleSections.length}</b> information sections</span>
+          <span><b>${relatedCount}</b> connected records</span>
+          <span><b>${Math.max(2, Math.ceil((entry.summary.length + entry.details.length + JSON.stringify(visibleSections).length) / 1100))} min</b> estimated read</span>
+        </div>
+      </header>
+      <nav class="dossier-nav" aria-label="Article sections">
+        ${visibleSections.map((section, index) => `<a href="#dossier-${index}">${escapeHtml(section.title)}</a>`).join("")}
+      </nav>
+      <div class="dossier-body">
+        ${visibleSections.map(renderSection).join("")}
+        <section class="dossier-section canon-section">
+          <h3>Canon status and sourcing</h3>
+          <p>This article is a paraphrased reference entry. The manga and anime are the primary canon; the linked Jujutsu Kaisen Wiki page is a secondary index that cites appearances and chapters. The archive separates confirmed facts from missing information instead of silently filling gaps with fan theory.</p>
+          ${record?.first ? `<p><b>Appearance reference:</b> ${escapeHtml(record.first)}</p>` : ""}
+          <a class="source-link" href="${escapeHtml(sourceUrl(entry, record))}" target="_blank" rel="noopener">Open the cited secondary record ↗</a>
+        </section>
+      </div>
+    </article>`;
+  }
+
+  function selectDossierTarget(query) {
+    const primary = getEntry(state.currentEntryId);
+    if (!primary) return null;
+    const q = normalize(String(query || ""));
+    const connections = linked(primary);
+    if (["character", "curse"].includes(primary.category)) {
+      if (/\bdomain(?: expansion)?\b/.test(q)) return connections.find(item => item.category === "domain") || primary;
+      if (/\b(?:cursed )?technique\b|\bability\b|\bpower\b/.test(q)) return connections.find(item => item.category === "technique") || primary;
+      if (/\bweapon\b|\bcursed tool\b/.test(q)) return connections.find(item => item.category === "tool") || primary;
+    }
+    return primary;
+  }
+
+  function installStyles() {
+    if (document.querySelector("#deep-dive-v4-styles")) return;
+    const style = document.createElement("style");
+    style.id = "deep-dive-v4-styles";
+    style.textContent = `
+      .deep-dive-v4{margin-top:24px;border:1px solid rgba(159,102,255,.22);border-radius:22px;overflow:hidden;background:linear-gradient(155deg,rgba(159,102,255,.065),rgba(255,255,255,.012) 28%,rgba(0,0,0,.08))}
+      .answer-content>.deep-dive-v4:first-child{margin-top:0}
+      .dossier-head{padding:
