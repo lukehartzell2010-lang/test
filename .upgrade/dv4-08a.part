@@ -1,0 +1,84 @@
+y, entry.details, ...(entry.points || [])]
+      .filter(Boolean)
+      .flatMap(text => String(text).split(/(?<=[.!?])\s+/))
+      .map(text => text.trim())
+      .filter(Boolean);
+  }
+
+  function genericSections(entry) {
+    const connections = linked(entry);
+    const abilityLinks = connections.filter(item => ["technique", "domain", "tool", "concept"].includes(item.category));
+    const storyLinks = connections.filter(item => ["character", "curse", "arc", "location", "clan"].includes(item.category));
+    const limits = sentenceArray(entry).filter(sentence => LIMIT_WORDS.test(sentence));
+    const sections = [];
+
+    sections.push({
+      title: entry.category === "character" || entry.category === "curse" ? "Role and overview" : "Full overview",
+      paragraphs: [entry.summary, entry.details].filter(Boolean)
+    });
+
+    if (entry.points?.length) {
+      sections.push({ title: "Confirmed key facts", bullets: entry.points });
+    }
+
+    if (abilityLinks.length) {
+      sections.push({
+        title: entry.category === "character" || entry.category === "curse" ? "Abilities, equipment, and mechanics" : "Users and connected mechanics",
+        cards: abilityLinks.slice(0, 8)
+      });
+    }
+
+    if (storyLinks.length) {
+      sections.push({
+        title: entry.category === "arc" ? "People and places connected to this arc" : "Story connections and significance",
+        cards: storyLinks.slice(0, 8)
+      });
+    }
+
+    if (limits.length) {
+      sections.push({ title: "Rules, limits, or conditions stated in the record", bullets: uniqueText(limits).slice(0, 6) });
+    }
+
+    if (!entry.points?.length && !abilityLinks.length && !storyLinks.length) {
+      sections.push({
+        title: "What is currently confirmed",
+        paragraphs: ["This record is intentionally limited to information directly established by the curated archive. The app does not fill missing canon with fan theories or invented abilities."]
+      });
+    }
+
+    return sections;
+  }
+
+  function uniqueText(list) {
+    return list.filter((item, index, array) => array.indexOf(item) === index);
+  }
+
+  function renderParagraphs(paragraphs = []) {
+    return paragraphs.filter(Boolean).map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join("");
+  }
+
+  function renderSection(section, index) {
+    if (section.spoiler === "manga" && state.spoiler !== "manga") return "";
+    const bullets = section.bullets?.length ? `<ul>${section.bullets.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : "";
+    const cards = section.cards?.length ? `<div class="dossier-cards">${section.cards.map(item => `
+      <button class="dossier-card" data-entry="${escapeHtml(item.id)}">
+        <span>${escapeHtml(formatCategory(item.category))}</span>
+        <b>${escapeHtml(item.title)}</b>
+        <p>${escapeHtml(item.summary)}</p>
+      </button>`).join("")}</div>` : "";
+    return `<section class="dossier-section" id="dossier-${index}">
+      <h3>${escapeHtml(section.title)}</h3>
+      ${renderParagraphs(section.paragraphs)}${bullets}${cards}
+    </section>`;
+  }
+
+  function sourceUrl(entry, record) {
+    const path = record?.source || SOURCE_OVERRIDES[entry.id] || entry.title.replace(/\s+/g, "_");
+    return `https://jujutsu-kaisen.fandom.com/wiki/${encodeURIComponent(path).replace(/%3A/g, ":")}`;
+  }
+
+  function dossier(entry, options = {}) {
+    if (!entry) return "";
+    const record = CORE[entry.id];
+    const coreSections = record?.sections || [];
+    const generic = genericSections
