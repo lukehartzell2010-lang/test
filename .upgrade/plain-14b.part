@@ -1,0 +1,100 @@
+s("domains") ? "domain" : null);
+
+  if (cat) filtered = allowedEntries().filter(entry => entry.category === cat);
+  filtered = filtered.slice(0, 20);
+
+  const rows = filtered.map(entry => `
+    <li><b>${escapeHtml(entry.title)}</b> — ${escapeHtml(entry.summary)}</li>
+  `).join("");
+
+  return `
+    <h2 class="answer-title">${cat ? formatCategory(cat) : "Matching JJK records"}</h2>
+    <p class="answer-lede">Here are the strongest archive matches for your request.</p>
+    <div class="answer-section">
+      <ul>${rows || "<li>No matching records were found.</li>"}</ul>
+    </div>
+  `;
+}
+
+function renderRelated(primary, results) {
+  let related = [];
+  if (primary?.related) {
+    related.push(...primary.related.map(getEntry).filter(Boolean));
+  }
+  related.push(...results.map(item => item.entry));
+  related = related
+    .filter(entry => entry && entry.id !== primary?.id)
+    .filter((entry, index, arr) => arr.findIndex(other => other.id === entry.id) === index)
+    .filter(entry => state.spoiler === "manga" || entry.spoiler === "anime")
+    .slice(0, 7);
+
+  $("#relatedResults").innerHTML = related.length ? related.map(entry => `
+    <button class="related-card" data-entry="${entry.id}">
+      <div class="entry-meta"><span class="tag purple">${escapeHtml(formatCategory(entry.category))}</span></div>
+      <h4>${escapeHtml(entry.title)}</h4>
+      <p>${escapeHtml(entry.summary)}</p>
+    </button>
+  `).join("") : `<div class="empty-state">No connected records yet.</div>`;
+}
+
+
+const WIKI_API = "https://jujutsu-kaisen.fandom.com/api.php";
+const WIKI_HOME = "https://jujutsu-kaisen.fandom.com/wiki/";
+const LIVE_CACHE_KEY = "jjk-live-cache-v2";
+let liveArticleCount = 1000;
+
+function getLiveCache() {
+  try {
+    const parsed = JSON.parse(safeStorage.getItem(LIVE_CACHE_KEY) || "{}");
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch { return {}; }
+}
+
+function setLiveCache(key, value) {
+  try {
+    const cache = getLiveCache();
+    cache[key] = { time: Date.now(), value };
+    const keys = Object.keys(cache).sort((a,b) => cache[b].time - cache[a].time).slice(0, 24);
+    const trimmed = Object.fromEntries(keys.map(k => [k, cache[k]]));
+    safeStorage.setItem(LIVE_CACHE_KEY, JSON.stringify(trimmed));
+  } catch {}
+}
+
+function cleanWikiQuery(query) {
+  const stop = new Set(["who","what","when","where","why","how","does","do","did","is","are","was","were","the","a","an","of","in","on","to","for","with","about","explain","tell","me","jjk","jujutsu","kaisen","could","would","can","and"]);
+  const useful = words(query).filter(word => !stop.has(word) && word.length > 1);
+  return useful.join(" ") || query;
+}
+
+function stripMarkup(text) {
+  const temp = document.createElement("div");
+  temp.innerHTML = text || "";
+  return (temp.textContent || "").replace(/\s+/g, " ").trim();
+}
+
+function shorten(text, limit = 420) {
+  const clean = stripMarkup(text).replace(/\[[0-9]+\]/g, "").trim();
+  if (clean.length <= limit) return clean;
+  const cut = clean.slice(0, limit);
+  const sentence = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf("! "), cut.lastIndexOf("? "));
+  return (sentence > limit * .55 ? cut.slice(0, sentence + 1) : cut.replace(/\s+\S*$/, "")) + "…";
+}
+
+async function fetchJson(url, timeout = 9000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeout);
+  try {
+    const response = await fetch(url, { signal: controller.signal, headers: { "Accept": "application/json" } });
+    if (!response.ok) throw new Error(`Archive request failed (${response.status})`);
+    return await response.json();
+  } finally { clearTimeout(timer); }
+}
+
+async function refreshLiveCount() {
+  try {
+    const url = `${WIKI_API}?action=query&meta=siteinfo&siprop=statistics&format=json&origin=*`;
+    const data = await fetchJson(url, 6000);
+    const count = Number(data?.query?.statistics?.articles);
+    if (count) liveArticleCount = count;
+  } catch {}
+  const el = document.querySelector("#liveCoun
