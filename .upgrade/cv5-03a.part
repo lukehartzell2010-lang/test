@@ -1,0 +1,30 @@
+multiple Black Flashes plus Playful Cloud—would have killed Jogo."],
+        ["Best verdict", "A single clean Yuji-level Black Flash would badly hurt Jogo but is not confirmed as an instant kill. The complete Goodwill Event barrage is treated as fatal to him."]
+      ],
+      distinction: "The safe answer is conditional: specify the Black Flash user, whether it lands cleanly, and whether you mean one strike or the entire barrage."
+    },
+    {
+      test: q => /could yuji(?: itadori)? black flash kill mahito|would yuji(?: itadori)? black flash kill mahito/.test(q),
+      primary: "mahito",
+      related: ["yuji", "black-flash", "idle-transfiguration"],
+      spoiler: "anime",
+      verdict: "Yes, it could contribute to killing Mahito—but one Black Flash is not automatically a guaranteed finish.",
+      confidence: "Direct mechanic plus conditional outcome",
+      reasoning: [
+        ["Why Yuji is different", "Yuji's strikes reach Mahito's soul, so Mahito cannot dismiss them as ordinary bodily damage."],
+        ["What Black Flash adds", "Black Flash greatly amplifies the underlying soul-reaching strike and can sharply reduce Mahito's remaining condition."],
+        ["Why the answer is not simply yes", "Mahito's current soul damage, cursed-energy reserves, form, and the cleanliness of the hit determine whether that specific strike finishes him."],
+        ["Canon example", "Yuji landed Black Flash on Mahito and dealt severe damage, but the outcome still depended on the rest of the fight rather than the name of the move alone."]
+      ]
+    },
+    {
+      test: q => /would gojo(?: s)? hollow purple kill jogo|could gojo(?: s)? hollow purple kill jogo/.test(q),
+      primary: "jogo",
+      related: ["gojo", "hollow-purple"],
+      spoiler: "anime",
+      verdict: "A clean, full-power Hollow Purple would very likely be fatal to Jogo, but the exact matchup is an inference rather than a directly shown hit.",
+      confidence: "Strong canon-based inference",
+      reasoning: [
+        ["Attack scale", "Hollow Purple is one of Gojo's highest-output destructive attacks and tears through a broad path with enormous force."],
+        ["Jogo's durability", "Jogo is a powerful special-grade curse, but he is portrayed as less durable than Hanami."],
+        ["Direct-hit condition", "The conclusion assumes Jogo takes the main attack cleanly rather than escaping the path or 
