@@ -1,0 +1,29 @@
+;
+    $("#answerContent").innerHTML = result.html;
+    const related = unique([...(result.related || []), ...entityList], entry => entry?.id).filter(Boolean);
+    renderRelated(result.primary, related.map(entry => ({ entry, score: 1 })));
+    showView("#resultsView");
+    state.currentAnswerText = $("#answerContent").innerText;
+    updateSaveButton();
+  }
+
+  function shouldUse(raw) {
+    const type = classify(raw);
+    if (!type) return null;
+    const entityList = mentions(raw).map(item => item.entry);
+    if (!entityList.length) return null;
+    return { type, entityList };
+  }
+
+  installStyles();
+
+  performSearch = async function performSearchComplexV5(rawQuery) {
+    const query = String(rawQuery || "").trim();
+    if (!query) { toast("Type a JJK question first."); return; }
+    const parsed = shouldUse(query);
+    if (!parsed) return previousPerformSearch(rawQuery);
+
+    let result = null;
+    if (parsed.type === "encounter") result = encounterAnswer(query, parsed.entityList);
+    else if (parsed.type === "motive") result = motiveAnswer(query) || genericMotive(query, parsed.entityList);
+    else if (parsed.type === "scenario") result = scenarioAnswer(query, parsed.entityList);
