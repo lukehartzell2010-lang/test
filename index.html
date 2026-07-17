@@ -28,7 +28,7 @@
     async function loadArchive(){
       try{
         const parts=await Promise.all(files.map(async file=>{
-          const response=await fetch(`${file}?v=20260717content6`,{cache:"no-store"});
+          const response=await fetch(`${file}?v=20260717content6b`,{cache:"no-store"});
           if(!response.ok)throw new Error(`${file} returned ${response.status}`);
           return response.text();
         }));
@@ -37,8 +37,13 @@
           "window.JJK_KNOWLEDGE",
           "document.documentElement.dataset.appReady",
           ".upgrade/c6-01.part",
+          ".upgrade/c6-04b.b64",
+          ".upgrade/c6-08a.b64",
+          ".upgrade/c6-08b0.b64",
+          ".upgrade/c6-08b1.b64",
           "Content Expansion v6",
           "JJK_CONTENT_META",
+          "code.length!==131710",
           ".upgrade/semantic-engine-v4.js",
           "Semantic Question Engine v4",
           ".upgrade/cv5-01.part",
