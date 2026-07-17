@@ -1,0 +1,21 @@
+navigator.onLine) {
+    try { livePages = await liveWikiSearch(query, 8); }
+    catch (error) { liveError = error; }
+  }
+
+  let html = "";
+  if (livePages.length) {
+    html = liveAnswer(query, livePages, intent, primary && topScore >= 8 ? primary : null);
+    $("#answerType").textContent = "Live archive answer";
+    renderLiveRelated(livePages, livePages[0]?.title);
+  } else if (primary && topScore >= 7) {
+    html = entryAnswer(primary);
+    $("#answerType").textContent = "Closest curated match";
+    renderRelated(primary, results.slice(1, 10));
+  } else {
+    html = `
+      <h2 class="answer-title">The deep archive could not resolve that one</h2>
+      <p class="answer-lede">No confident curated or live record matched the wording of your question.</p>
+      <div class="answer-section">
+        <h3>Make the subject explicit</h3>
+        <p>Include the exact character, technique, domain
