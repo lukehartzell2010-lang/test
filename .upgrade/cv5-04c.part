@@ -1,0 +1,31 @@
+ocess a phenomenon before adaptation develops."],
+        ["Survival is the gate", "If Hollow Purple destroys Mahoraga before enough adaptation occurs, there is no completed counter."],
+        ["Repeated exposure changes the answer", "Prior adaptation to related Limitless phenomena can improve its chances, but the exact result depends on what has already been processed and the attack's output."]
+      ]
+    },
+    {
+      test: q => /would domain amplification bypass infinity|can domain amplification bypass infinity/.test(q),
+      primary: "limitless",
+      related: ["gojo", "domain-expansion"],
+      spoiler: "anime",
+      verdict: "Yes — Domain Amplification can neutralize Infinity at the point of contact.",
+      confidence: "Direct demonstrated interaction",
+      reasoning: [
+        ["How it works", "The user envelops themselves in an empty domain-like layer that absorbs or neutralizes the opposing technique on contact."],
+        ["Tradeoff", "While maintaining Domain Amplification, the user generally cannot activate their innate cursed technique at the same time."],
+        ["Not an automatic win", "Bypassing Infinity only allows contact; the attacker still has to contend with Gojo's speed, reinforcement, recovery, and counterattacks."]
+      ]
+    }
+  ];
+
+  function classify(raw) {
+    const q = qnorm(raw);
+    if (/\b(?:have|has|had|did|do|does)\b.*\b(?:meet|met|fight|fought|encounter|encountered|interact|interacted|know each other|seen each other)\b|\b(?:meet|met|fought|encountered)\b/.test(q)) return "encounter";
+    if (/^why\b.*\b(?:not|never|could not|would not|did not|does not|has not|have not)\b|^why did\b|^why does\b|^why was\b|^why is\b/.test(q)) return "motive";
+    if (/\b(?:would|could|can)\b.*\b(?:die|survive|kill|beat|win|lose|tank|resist|bypass|stop|cancel|protect|work|affect|damage|hurt|hit|reach|land|escape|adapt)\b|^(?:did|has|have)\b.*\b(?:survive|die|kill|hurt|damage|escape|work)\b|\bwhat (?:would happen|happens) if\b/.test(q)) return "scenario";
+    return null;
+  }
+
+  function actionPhrase(raw) {
+    const q = qnorm(raw);
+    const verbs = ["take over", "meet", "fight", "survive", "die", "kill", "beat", "bypass", "stop", "prot
