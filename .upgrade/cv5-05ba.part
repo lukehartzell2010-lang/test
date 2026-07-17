@@ -1,0 +1,27 @@
+extra)}</div>` : ""}
+      <div class="answer-note"><b>Reasoning boundary:</b> ${escapeHtml(note)}</div>
+    </div>`;
+  }
+
+  function encounterAnswer(raw, entityList) {
+    const people = entityList.filter(entry => ["character", "curse"].includes(entry.category));
+    if (people.length < 2) return null;
+    const [a, b] = people;
+    const record = ENCOUNTERS[pairKey(a.id, b.id)];
+    if (record && (state.spoiler === "manga" || record.spoiler === "anime")) {
+      return {
+        primary: a,
+        related: [b, ...record.events.flatMap(() => [])],
+        html: answerFrame(
+          `Have ${a.title} and ${b.title} met?`,
+          record.verdict,
+          record.events.map((event, index) => [`Encounter ${index + 1}`, event]),
+          { status: "Direct encounter history", note: record.note || "The verdict is based on explicit shared scenes or stated relationships in the curated event graph." }
+        )
+      };
+    }
+
+    const directlyLinked = (a.related || []).includes(b.id) || (b.related || []).includes(a.id);
+    const shared = linked(a).filter(entry => linked(b).some(other => other.id === entry.id));
+    const factors = [];
+    if (directlyLinked) factors.push(["Known co
