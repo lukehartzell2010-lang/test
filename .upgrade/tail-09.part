@@ -1,0 +1,25 @@
+, chapter event, or arc. For example: “Why could Mahito not transfigure Yuji?”</p>
+      </div>
+      ${liveError ? `<div class="live-fail">The live wiki connection failed. Check your connection and try again.</div>` : `<div class="live-fail">The live archive is unavailable while offline.</div>`}
+    `;
+    $("#answerType").textContent = "No confident match";
+    $("#relatedResults").innerHTML = `<div class="empty-state">No connected records found.</div>`;
+  }
+
+  $("#answerContent").innerHTML = html;
+  state.currentAnswerText = $("#answerContent").innerText;
+  updateSaveButton();
+}
+
+function openEntry(id) {
+  const entry = getEntry(id);
+  if (!entry) return;
+  performSearch(`Explain ${entry.title}`);
+}
+
+function updateSaveButton() {
+  const isSaved = state.currentEntryId && state.saved.includes(state.currentEntryId);
+  $("#saveAnswer").textContent = isSaved ? "★" : "☆";
+}
+
+functi
