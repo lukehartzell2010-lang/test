@@ -1,0 +1,415 @@
+ler": "anime",
+    "aliases": [
+      "death painting arc",
+      "origin of obedience"
+    ],
+    "keywords": [
+      "eso",
+      "kechizu",
+      "bridge curse"
+    ],
+    "summary": "The Death Painting arc investigates a curse connected to Yasohachi Bridge and incarnated Death Painting brothers.",
+    "details": "Yuji and Nobara synchronize Black Flash and defeat Eso and Kechizu, while Megumi expands Chimera Shadow Garden against a finger bearer.",
+    "points": [],
+    "related": [
+      "eso",
+      "kechizu",
+      "megumi",
+      "nobara"
+    ]
+  },
+  {
+    "id": "shinjuku-showdown",
+    "title": "Shinjuku Showdown Arc",
+    "category": "arc",
+    "spoiler": "manga",
+    "aliases": [
+      "shinjuku showdown",
+      "final arc",
+      "gojo vs sukuna"
+    ],
+    "keywords": [
+      "sukuna",
+      "gojo",
+      "final battle"
+    ],
+    "summary": "The Shinjuku Showdown arc is the final large-scale battle against Sukuna and Kenjaku’s remaining plans.",
+    "details": "Gojo’s duel with Sukuna establishes the battlefield, after which a rotating alliance of sorcerers uses domains, binding vows, soul attacks, cursed tools, and layered contingencies to wear Sukuna down.",
+    "points": [],
+    "related": [
+      "gojo",
+      "sukuna",
+      "world-cutting-slash"
+    ]
+  },
+  {
+    "id": "kyoto-jujutsu-high",
+    "title": "Kyoto Jujutsu High",
+    "category": "location",
+    "spoiler": "anime",
+    "aliases": [
+      "kyoto school",
+      "kyoto jujutsu high"
+    ],
+    "keywords": [
+      "students",
+      "gakuganji"
+    ],
+    "summary": "Kyoto Jujutsu High is Japan’s second school for training jujutsu sorcerers.",
+    "details": "Its students compete with Tokyo during the Goodwill Event, and its leadership generally follows Jujutsu Headquarters more closely than Gojo does.",
+    "points": [],
+    "related": [
+      "yoshinobu-gakuganji",
+      "utahime-iori",
+      "kyoto-goodwill"
+    ]
+  },
+  {
+    "id": "shibuya",
+    "title": "Shibuya",
+    "category": "location",
+    "spoiler": "anime",
+    "aliases": [
+      "shibuya"
+    ],
+    "keywords": [
+      "october 31",
+      "station",
+      "incident"
+    ],
+    "summary": "Shibuya is the Tokyo district sealed by layered Curtains during the October 31 operation.",
+    "details": "Its stations, underground platforms, streets, and crowds are weaponized to isolate Gojo and divide the responding sorcerers.",
+    "points": [],
+    "related": [
+      "shibuya-incident",
+      "curtain"
+    ]
+  },
+  {
+    "id": "sendai-colony",
+    "title": "Sendai Colony",
+    "category": "location",
+    "spoiler": "manga",
+    "aliases": [
+      "sendai colony"
+    ],
+    "keywords": [
+      "yuta",
+      "ryu",
+      "uro",
+      "kurourushi"
+    ],
+    "summary": "Sendai Colony is one of the deadliest Culling Game colonies and initially contains four dominant players in a balance of power.",
+    "details": "Yuta disrupts the deadlock by defeating Dhruv, Kurourushi, Uro, and Ryu through consecutive battles.",
+    "points": [],
+    "related": [
+      "yuta",
+      "ryu-ishigori",
+      "takako-uro",
+      "kurourushi"
+    ]
+  },
+  {
+    "id": "tokyo-no1-colony",
+    "title": "Tokyo No. 1 Colony",
+    "category": "location",
+    "spoiler": "manga",
+    "aliases": [
+      "tokyo number 1 colony",
+      "tokyo no 1 colony"
+    ],
+    "keywords": [
+      "yuji",
+      "megumi",
+      "higuruma",
+      "reggie"
+    ],
+    "summary": "Tokyo No. 1 Colony is where Yuji and Megumi enter the Culling Game to seek Higuruma and change its rules.",
+    "details": "The pair are separated, leading Yuji into Higuruma’s courtroom and Megumi into Reggie’s group and a brutal strategic fight.",
+    "points": [],
+    "related": [
+      "hiromi-higuruma",
+      "reggie-star",
+      "culling-game"
+    ]
+  },
+  {
+    "id": "sakurajima-colony",
+    "title": "Sakurajima Colony",
+    "category": "location",
+    "spoiler": "manga",
+    "aliases": [
+      "sakurajima colony"
+    ],
+    "keywords": [
+      "maki",
+      "naoya",
+      "sumo",
+      "katana"
+    ],
+    "summary": "Sakurajima Colony is the site of Maki’s battle against cursed Naoya.",
+    "details": "Intervention from Hagane Daido and Rokujushi Miyo helps Maki refine her perception of the environment, enabling her to fully realize the freedom of her Heavenly Restriction.",
+    "points": [],
+    "related": [
+      "maki",
+      "naoya-zenin",
+      "time-cell-moon-palace"
+    ]
+  }
+,
+
+  {
+    "id": "charles-bernard",
+    "title": "Charles Bernard",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "charles",
+      "charles bernard"
+    ],
+    "keywords": [
+      "g warstaff",
+      "manga artist",
+      "culling game"
+    ],
+    "summary": "Charles Bernard is a French manga creator and Culling Game player who fights Hakari in Tokyo No. 2 Colony.",
+    "details": "His technique manifests through G Warstaff, a pen-shaped spear. Drawing an opponent’s blood adds manga panels that let Charles see slightly into that person’s future.",
+    "points": [],
+    "related": [
+      "g-warstaff",
+      "kinji-hakari"
+    ]
+  },
+  {
+    "id": "g-warstaff",
+    "title": "G Warstaff",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "g warstaff",
+      "charles technique"
+    ],
+    "keywords": [
+      "future sight",
+      "manga panels",
+      "pen spear"
+    ],
+    "summary": "G Warstaff is Charles Bernard’s cursed technique and weapon, shaped like a giant manga pen.",
+    "details": "After the nib draws a target’s blood, a manga panel appears on them and gives Charles one second of future sight. Additional successful hits extend how far ahead he can see.",
+    "points": [],
+    "related": [
+      "charles-bernard"
+    ]
+  },
+  {
+    "id": "dhruv-lakdawalla",
+    "title": "Dhruv Lakdawalla",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "dhruv",
+      "dhruv lakdawalla"
+    ],
+    "keywords": [
+      "shikigami",
+      "sendai colony",
+      "reincarnated sorcerer"
+    ],
+    "summary": "Dhruv Lakdawalla is an ancient reincarnated sorcerer who once conquered Japan during an earlier incarnation.",
+    "details": "In Sendai, he controls two enormous shikigami and uses their orbiting paths to create domains that cut or attack anything crossing the traced territory.",
+    "points": [],
+    "related": [
+      "sendai-colony",
+      "reincarnated-sorcerers",
+      "shikigami"
+    ]
+  },
+  {
+    "id": "hagane-daido",
+    "title": "Hagane Daido",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "daido",
+      "hagane daido"
+    ],
+    "keywords": [
+      "katana",
+      "swordsman",
+      "sakurajima"
+    ],
+    "summary": "Hagane Daido is an incarnated master swordsman who has no cursed energy but possesses extraordinary perception and weapon skill.",
+    "details": "By wielding the Split Soul Katana, he demonstrates the ability to perceive and cut the souls of objects, helping Maki understand what her own senses were missing.",
+    "points": [],
+    "related": [
+      "split-soul-katana",
+      "maki",
+      "sakurajima-colony"
+    ]
+  },
+  {
+    "id": "rokujushi-miyo",
+    "title": "Rokujushi Miyo",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "miyo",
+      "rokujushi miyo"
+    ],
+    "keywords": [
+      "sumo",
+      "simple domain",
+      "sakurajima"
+    ],
+    "summary": "Rokujushi Miyo is an incarnated sumo enthusiast whose Simple Domain creates a consensual sumo ring.",
+    "details": "Time flows differently during the bouts, letting Maki experience many exchanges and regain her mental clarity. The domain imposes sumo rules rather than a lethal sure-hit.",
+    "points": [],
+    "related": [
+      "simple-domain",
+      "maki",
+      "sakurajima-colony"
+    ]
+  },
+  {
+    "id": "iori-hazenoki",
+    "title": "Iori Hazenoki",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "hazenoki",
+      "iori hazenoki"
+    ],
+    "keywords": [
+      "explosive flesh",
+      "reggie group"
+    ],
+    "summary": "Iori Hazenoki is a Culling Game player allied with Reggie Star who turns detached body parts into explosives.",
+    "details": "He removes teeth, eyes, and other pieces, detonates them with cursed energy, and uses Reverse Cursed Technique to repair the damage afterward.",
+    "points": [],
+    "related": [
+      "explosive-flesh",
+      "reggie-star",
+      "reverse-cursed-technique"
+    ]
+  },
+  {
+    "id": "explosive-flesh",
+    "title": "Explosive Flesh",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "hazenoki technique",
+      "explosive flesh"
+    ],
+    "keywords": [
+      "body part bombs",
+      "explosions"
+    ],
+    "summary": "Explosive Flesh turns the user’s detached body parts into cursed explosives.",
+    "details": "Iori Hazenoki combines the technique with Reverse Cursed Technique, repeatedly sacrificing small pieces of his body as bombs and regenerating them.",
+    "points": [],
+    "related": [
+      "iori-hazenoki",
+      "reverse-cursed-technique"
+    ]
+  },
+  {
+    "id": "remi",
+    "title": "Remi",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "remi"
+    ],
+    "keywords": [
+      "scorpion hair",
+      "culling game"
+    ],
+    "summary": "Remi is a Culling Game player who lures newcomers toward Reggie Star’s group.",
+    "details": "Her hair forms a scorpion-like tail that she can extend and use as a stabbing weapon. She survives mainly through alliances and deception rather than overwhelming power.",
+    "points": [],
+    "related": [
+      "reggie-star",
+      "tokyo-no1-colony"
+    ]
+  },
+  {
+    "id": "takuma-ino",
+    "title": "Takuma Ino",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "ino",
+      "takuma ino"
+    ],
+    "keywords": [
+      "auspicious beasts summon",
+      "nanami mentee"
+    ],
+    "summary": "Takuma Ino is a Grade 2 sorcerer who deeply respects Nanami and fights by covering his face to become a spiritual medium.",
+    "details": "Auspicious Beasts Summon grants four different abilities, making Ino a flexible close- and mid-range fighter whose effectiveness depends on keeping his face concealed.",
+    "points": [],
+    "related": [
+      "auspicious-beasts-summon",
+      "nanami"
+    ]
+  },
+  {
+    "id": "masamichi-yaga",
+    "title": "Masamichi Yaga",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "yaga",
+      "masamichi yaga"
+    ],
+    "keywords": [
+      "cursed corpse",
+      "principal",
+      "panda creator"
+    ],
+    "summary": "Masamichi Yaga is Tokyo Jujutsu High’s principal and a specialist in creating cursed corpses.",
+    "details": "He discovered how to make self-sustaining cursed corpses by placing three compatible soul cores inside one body and allowing them to observe one another until cursed energy develops.",
+    "points": [],
+    "related": [
+      "cursed-corpse",
+      "panda",
+      "gakuganji"
+    ]
+  },
+  {
+    "id": "arata-nitta",
+    "title": "Arata Nitta",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "arata",
+      "arata nitta"
+    ],
+    "keywords": [
+      "pain killer",
+      "kyoto student"
+    ],
+    "summary": "Arata Nitta is a first-year Kyoto student whose support technique prevents existing injuries from worsening.",
+    "details": "Pain Killer does not heal damage already taken, but it stops bleeding, pain, and further deterioration, buying time for actual medical treatment.",
+    "points": [],
+    "related": [
+      "pain-killer",
+      "reverse-cursed-technique"
+    ]
+  },
+  {
+    "id": "pain-killer",
+    "title": "Pain Killer",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "arata technique",
+      "pain killer"
+    ],
+    "keywords": [
+      "injury stabilization",
+      "support"
+    ],
+    "summary": "Pain Killer freezes the current state of an injury so it does not worsen.",
+    "detai
