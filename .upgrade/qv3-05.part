@@ -1,0 +1,156 @@
+ class="break-chip">${escapeHtml(label)}<b>${escapeHtml(value)}</b></span>`).join("");
+  };
+
+  function focusedLiveAnswer(query, pages, intent, localResult = null) {
+    const top = pages[0];
+    if (!top) return "";
+    const subjectEntries = localResult?.primary ? [localResult.primary] : [];
+    const queryTokens = meaningfulWords(qnorm(query)).filter(token => !GENERIC_WORDS.has(token));
+    const candidates = pages.flatMap(page => String(page.extract || page.description || "").split(/(?<=[.!?])\s+/).map(sentence => ({ page, sentence: sentence.trim() }))).filter(item => item.sentence);
+    const ranked = candidates.map(item => {
+      const s = qnorm(item.sentence);
+      let score = 0;
+      queryTokens.forEach(token => { if (s.includes(token)) score += 5; });
+      if (intent === "timeline" && /\b(before|after|during|year|chapter|episode|arc|incident)\b/.test(s)) score += 8;
+      if (intent === "location" && /\b(tokyo|kyoto|shibuya|city|school|colony|station|district|japan)\b/.test(s)) score += 8;
+      if (intent === "reasoning" && /because|therefore|which|allow|prevent|result|due to/.test(s)) score += 7;
+      if (intent === "mechanics" && /by |allows|causes|creates|uses|works|requires/.test(s)) score += 6;
+      return { ...item, score };
+    }).sort((a, b) => b.score - a.score);
+    const best = ranked[0]?.sentence || top.extract || top.description;
+    const heading = intent === "timeline" ? `When — ${top.title}` : intent === "location" ? `Where — ${top.title}` : top.title;
+    const localSection = localResult ? `<div class="answer-section"><h3>Curated answer</h3><div>${localResult.html}</div></div>` : "";
+    return `
+      <div class="live-source"><i></i> Question-aware live archive</div>
+      <h2 class="answer-title">${escapeHtml(heading)}</h2>
+      <p class="answer-lede">${escapeHtml(shorten(best, 650))}</p>
+      ${localSection}
+      <div class="answer-section"><h3>Supporting record</h3><p>${escapeHtml(shorten(top.extract || top.description, 500))}</p></div>
+      <a class="source-link" href="${escapeHtml(top.url)}" target="_blank" rel="noopener">Read the full ${escapeHtml(top.title)} record ↗</a>
+      <div class="wiki-attribution">Live excerpts are attributed to the fan-maintained Jujutsu Kaisen Wiki and remain subject to its CC BY-SA licensing.</div>
+    `;
+  }
+
+  performSearch = async function performSearchV3(rawQuery) {
+    const query = String(rawQuery || "").trim();
+    if (!query) { toast("Type a JJK question first."); return; }
+
+    state.currentQuery = query;
+    $("#searchInput").value = query;
+    $("#autocomplete").hidden = true;
+    $("#queryTitle").textContent = query;
+
+    const results = searchEntries(query);
+    const unrestricted = state.spoiler === "anime" ? searchEntries(query, entries) : results;
+    const exactAllMentions = directMentionEntries(query, entries).map(item => item.entry);
+    const hiddenExact = state.spoiler === "anime" ? exactAllMentions.find(entry => entry.spoiler === "manga") : null;
+    const local = hiddenExact ? null : buildSpecificAnswer(query, results);
+    const intent = detectIntent(query);
+    const primary = local?.primary || results[0]?.entry || null;
+    const topScore = results[0]?.score || 0;
+    const hiddenBest = hiddenExact ? { entry: hiddenExact, score: 999 } : (state.spoiler === "anime" && unrestricted[0]?.entry?.spoiler === "manga" && unrestricted[0].score >= Math.max(50, topScore + 18) ? unrestricted[0] : null);
+
+    state.currentEntryId = primary?.id || null;
+    createBreakdown(query, results);
+    $("#answerType").textContent = "Question Engine v3";
+    $("#answerContent").innerHTML = loadingAnswer();
+    $("#relatedResults").innerHTML = `<div class="empty-state">Tracing subjects, properties, and connected records…</div>`;
+    showView("#resultsView");
+
+    if (hiddenBest) {
+      const hidden = hiddenBest.entry;
+      $("#answerType").textContent = "Manga record protected";
+      $("#answerContent").innerHTML = answerShell(
+        "This answer is behind the manga spoiler filter",
+        `The engine found a strong match for ${hidden.title}, but revealing it could spoil material beyond the anime-safe archive.`,
+        [{ title: "Full archive available", body: `Full Manga mode unlocks all ${entries.length} curated records plus the live ${liveArticleCount.toLocaleString()}+ article index.` }]
+      ) + `<button class="prompt-chip" data-action="enableManga">Unlock full manga archive</button>`;
+      $("#relatedResults").innerHTML = `<div class="empty-state">Manga-connected records are hidden.</div>`;
+      state.currentAnswerText = $("#answerContent").innerText;
+      return;
+    }
+
+    if (local) {
+      $("#answerType").textContent = local.type;
+      $("#answerContent").innerHTML = local.html;
+      const relatedItems = uniqueEntries([...(local.related || []), ...results.slice(1, 10).map(item => item.entry)]).filter(entry => entry.id !== primary?.id);
+      oldRenderRelated(primary, relatedItems.map(entry => ({ entry, score: 1 })));
+      state.currentAnswerText = $("#answerContent").innerText;
+      updateSaveButton();
+
+      const shouldEnrich = state.spoiler === "manga" && navigator.onLine && (local.confidence < 78 || ["timeline", "location", "reasoning", "summary"].includes(intent));
+      if (!shouldEnrich) return;
+      try {
+        const pages = await liveWikiSearch(query, 8);
+        if (state.currentQuery !== query || !pages.length) return;
+        // Preserve the direct answer. Add live evidence beneath it instead of replacing it.
+        const source = pages[0];
+        $("#answerContent").insertAdjacentHTML("beforeend", `
+          <div class="answer-section">
+            <h3>Live archive evidence</h3>
+            <p>${escapeHtml(shorten(source.extract || source.description, 450))}</p>
+            <a class="source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noopener">Open ${escapeHtml(source.title)} ↗</a>
+          </div>
+          <div class="wiki-attribution">Live excerpts are attributed to the fan-maintained Jujutsu Kaisen Wiki and remain subject to its CC BY-SA licensing.</div>
+        `);
+        $("#answerType").textContent = `${local.type} + live evidence`;
+        oldRenderLiveRelated(pages, source.title);
+        state.currentAnswerText = $("#answerContent").innerText;
+      } catch (_) {
+        // The curated answer remains intact when the network source fails.
+      }
+      return;
+    }
+
+    if (state.spoiler !== "manga") {
+      $("#answerType").textContent = "Anime-safe archive limit";
+      $("#answerContent").innerHTML = answerShell(
+        "No anime-safe answer matched confidently",
+        "The unrestricted live index may contain manga spoilers, so it remains locked in Anime mode.",
+        [{ title: "Try a more explicit question", body: "Include the exact character, technique, domain, location, arc, or relationship. Example: “What is Jogo’s Domain Expansion?”" }]
+      ) + `<button class="prompt-chip" data-action="enableManga">Unlock full manga archive</button>`;
+      $("#relatedResults").innerHTML = `<div class="empty-state">Live records are locked by the spoiler filter.</div>`;
+      state.currentAnswerText = $("#answerContent").innerText;
+      return;
+    }
+
+    let pages = [];
+    let liveError = null;
+    if (navigator.onLine) {
+      try { pages = await liveWikiSearch(query, 8); } catch (error) { liveError = error; }
+    }
+    if (pages.length) {
+      $("#answerType").textContent = "Question-aware live answer";
+      $("#answerContent").innerHTML = focusedLiveAnswer(query, pages, intent, null);
+      oldRenderLiveRelated(pages, pages[0].title);
+    } else {
+      $("#answerType").textContent = "No confident match";
+      $("#answerContent").innerHTML = answerShell(
+        "The archive could not resolve that question",
+        "No confident curated or live record matched the wording.",
+        [{ title: "Make the relationship explicit", body: "Use a structure such as “Who uses ___?”, “What is ___’s domain?”, “Why could ___ not ___?”, “Where did ___ happen?”, or “When did ___ occur?”" }],
+        liveError ? "The live archive connection also failed." : "The live archive may be unavailable while offline."
+      );
+      $("#relatedResults").innerHTML = `<div class="empty-state">No connected records found.</div>`;
+    }
+    state.currentAnswerText = $("#answerContent").innerText;
+    updateSaveButton();
+  };
+
+  // Add better example questions without removing the original visual design.
+  const promptRow = document.querySelector(".prompt-row");
+  if (promptRow) {
+    promptRow.innerHTML = `<span>Try asking</span>
+      <button class="prompt-chip">What is Hakari’s domain?</button>
+      <button class="prompt-chip">Who uses Boogie Woogie?</button>
+      <button class="prompt-chip">Why can’t Mahito transfigure Yuji?</button>
+      <button class="prompt-chip">Can Megumi use Domain Expansion?</button>`;
+    promptRow.addEventListener("click", event => {
+      const button = event.target.closest(".prompt-chip");
+      if (button && !button.dataset.action) performSearch(button.textContent.trim());
+    });
+  }
+
+  document.documentElement.dataset.questionEngine = VERSION;
+  console.info(`[JJK Archive] Question Engine v${VERSION} active`);
+})();
