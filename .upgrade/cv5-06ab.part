@@ -1,0 +1,20 @@
+     html: answerFrame(raw.replace(/[?]+$/, ""), exact.verdict, exact.reasoning, {
+          status: exact.confidence,
+          extra: exact.distinction || "",
+          note: "Conditional language is used whenever the manga does not provide one fixed outcome for every possible user, output, duration, or hit location."
+        })
+      };
+    }
+
+    const roles = inferScenarioRoles(raw, entityList);
+    const { target, attacker, mechanism } = roles;
+    if (!target || !mechanism) return null;
+
+    const targetText = [target.summary, target.details, ...(target.points || [])].filter(Boolean).join(" ");
+    const mechanismText = [mechanism.summary, mechanism.details, ...(mechanism.points || [])].filter(Boolean).join(" ");
+    const factors = [
+      ["Target profile", targetText],
+      ["Attack or mechanic", mechanismText],
+      ...(attacker ? [["Attacker or user", `${attacker.title} is the acting character identified by the sentence structure.`]] : []),
+      ["Missing variables", "The exact output, preparation, distance, number of hits, and whether the target can defend or regenerate may change the result."],
+      ["Canon status", `The archive has no direct stored scene that res
