@@ -1,0 +1,396 @@
+
+      "roots",
+      "cursed buds",
+      "forest"
+    ],
+    "summary": "Hanami manipulates plants, roots, wooden projectiles, and cursed-energy-draining buds.",
+    "details": "The technique controls terrain and restrains groups. Hanami can also convert surrounding plant life into cursed energy for a powerful flower-based attack.",
+    "points": [],
+    "related": [
+      "hanami"
+    ]
+  },
+  {
+    "id": "idle-death-gamble",
+    "title": "Idle Death Gamble",
+    "category": "domain",
+    "spoiler": "manga",
+    "aliases": [
+      "hakari domain",
+      "idle death gamble"
+    ],
+    "keywords": [
+      "jackpot",
+      "pachinko",
+      "unlimited cursed energy"
+    ],
+    "summary": "Idle Death Gamble is Hakari’s pachinko-themed domain, built around scenes from Private Pure Love Train.",
+    "details": "Its harmless sure-hit transfers the game’s rules instantly, giving it fast activation and strong clash performance. A jackpot grants Hakari unlimited cursed energy and automatic healing for four minutes and eleven seconds.",
+    "points": [],
+    "related": [
+      "kinji-hakari",
+      "private-pure-love-train",
+      "domain-expansion"
+    ]
+  },
+  {
+    "id": "deadly-sentencing",
+    "title": "Deadly Sentencing",
+    "category": "domain",
+    "spoiler": "manga",
+    "aliases": [
+      "higuruma domain",
+      "deadly sentencing"
+    ],
+    "keywords": [
+      "courtroom",
+      "judgeman",
+      "confiscation"
+    ],
+    "summary": "Deadly Sentencing creates a courtroom where violence is prohibited and Judgeman prosecutes the target.",
+    "details": "The defendant can deny, confess, or present arguments against evidence. Guilty verdicts may apply Confiscation, and a death penalty creates the Executioner’s Sword.",
+    "points": [],
+    "related": [
+      "hiromi-higuruma",
+      "executioners-sword",
+      "domain-expansion"
+    ]
+  },
+  {
+    "id": "time-cell-moon-palace",
+    "title": "Time Cell Moon Palace",
+    "category": "domain",
+    "spoiler": "manga",
+    "aliases": [
+      "naoya domain",
+      "time cell moon palace"
+    ],
+    "keywords": [
+      "projection sorcery",
+      "cells"
+    ],
+    "summary": "Time Cell Moon Palace is cursed Naoya’s Domain Expansion and applies Projection Sorcery to individual cells.",
+    "details": "Any movement that violates the twenty-four-frame rule causes cells to freeze and tear the body apart, turning normal motion into self-destruction.",
+    "points": [],
+    "related": [
+      "naoya-zenin",
+      "projection-sorcery"
+    ]
+  },
+  {
+    "id": "womb-profusion",
+    "title": "Womb Profusion",
+    "category": "domain",
+    "spoiler": "manga",
+    "aliases": [
+      "kenjaku domain",
+      "womb profusion"
+    ],
+    "keywords": [
+      "open barrier",
+      "gravity"
+    ],
+    "summary": "Womb Profusion is Kenjaku’s open-barrier Domain Expansion.",
+    "details": "Like Malevolent Shrine, it manifests without fully enclosing a separate space. Its sure-hit overwhelms targets with the technique Kenjaku imbues into the domain, demonstrated through crushing force.",
+    "points": [],
+    "related": [
+      "kenjaku",
+      "domain-expansion"
+    ]
+  },
+  {
+    "id": "threefold-affliction",
+    "title": "Threefold Affliction",
+    "category": "domain",
+    "spoiler": "manga",
+    "aliases": [
+      "yorozu domain",
+      "threefold affliction"
+    ],
+    "keywords": [
+      "perfect sphere",
+      "construction"
+    ],
+    "summary": "Threefold Affliction is Yorozu’s Domain Expansion and guarantees contact with her constructed creations.",
+    "details": "Its most lethal combination is Perfect Sphere: the domain removes the sphere’s ordinary difficulty of landing, producing a theoretically unavoidable point of infinite pressure.",
+    "points": [],
+    "related": [
+      "yorozu",
+      "construction"
+    ]
+  },
+  {
+    "id": "authentic-mutual-love",
+    "title": "Authentic Mutual Love",
+    "category": "domain",
+    "spoiler": "manga",
+    "aliases": [
+      "yuta domain",
+      "authentic mutual love",
+      "all encompassing unequivocal love"
+    ],
+    "keywords": [
+      "copy",
+      "katanas",
+      "sure hit"
+    ],
+    "summary": "Authentic Mutual Love fills Yuta’s domain with countless katanas containing copied cursed techniques.",
+    "details": "Yuta chooses one copied technique for the sure-hit while other techniques are distributed randomly among the swords, allowing rapid adaptation and layered attacks.",
+    "points": [],
+    "related": [
+      "yuta",
+      "copy-technique",
+      "domain-expansion"
+    ]
+  },
+  {
+    "id": "coffin-iron-mountain",
+    "title": "Coffin of the Iron Mountain",
+    "category": "domain",
+    "spoiler": "anime",
+    "aliases": [
+      "jogo domain",
+      "coffin of the iron mountain"
+    ],
+    "keywords": [
+      "volcano",
+      "heat"
+    ],
+    "summary": "Coffin of the Iron Mountain is Jogo’s volcanic Domain Expansion.",
+    "details": "The environment resembles the inside of a volcano and produces extreme heat. Disaster Flames become guaranteed to hit unless neutralized by another domain or anti-domain technique.",
+    "points": [],
+    "related": [
+      "jogo",
+      "disaster-flames"
+    ]
+  },
+  {
+    "id": "horizon-skandha",
+    "title": "Horizon of the Captivating Skandha",
+    "category": "domain",
+    "spoiler": "anime",
+    "aliases": [
+      "dagon domain",
+      "horizon skandha"
+    ],
+    "keywords": [
+      "beach",
+      "death swarm"
+    ],
+    "summary": "Horizon of the Captivating Skandha is Dagon’s tropical-ocean Domain Expansion.",
+    "details": "Its sure-hit Death Swarm creates endless aquatic shikigami directly on targets, bypassing the moment of approach and overwhelming groups through continuous attacks.",
+    "points": [],
+    "related": [
+      "dagon",
+      "disaster-tides"
+    ]
+  },
+  {
+    "id": "domain-amplification",
+    "title": "Domain Amplification",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "domain amplification",
+      "domain coating"
+    ],
+    "keywords": [
+      "anti technique",
+      "neutralize"
+    ],
+    "summary": "Domain Amplification wraps the user in a fluid, empty domain that absorbs or neutralizes cursed techniques on contact.",
+    "details": "It can bypass defenses such as Infinity, but the user generally cannot activate their innate technique at the same time because the amplification must remain empty.",
+    "points": [],
+    "related": [
+      "domain-expansion",
+      "limitless"
+    ]
+  },
+  {
+    "id": "hollow-wicker-basket",
+    "title": "Hollow Wicker Basket",
+    "category": "concept",
+    "spoiler": "manga",
+    "aliases": [
+      "hollow wicker basket",
+      "hwb"
+    ],
+    "keywords": [
+      "anti domain",
+      "basket hand sign"
+    ],
+    "summary": "Hollow Wicker Basket is an ancient anti-domain technique that neutralizes a domain’s sure-hit effect.",
+    "details": "It does not erase the domain itself. Maintaining the hand sign can occupy the user’s arms, and a powerful domain may still pressure them through ordinary attacks.",
+    "points": [],
+    "related": [
+      "domain-expansion",
+      "simple-domain"
+    ]
+  },
+  {
+    "id": "falling-blossom-emotion",
+    "title": "Falling Blossom Emotion",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "falling blossom emotion",
+      "fbe"
+    ],
+    "keywords": [
+      "anti domain",
+      "great clans"
+    ],
+    "summary": "Falling Blossom Emotion is a secret anti-domain art passed down in the Three Great Families.",
+    "details": "Rather than creating a separate barrier, it automatically counters a sure-hit attack with cursed energy at the instant of contact. It is less useful against nonstandard rule-based domains.",
+    "points": [],
+    "related": [
+      "domain-expansion",
+      "simple-domain"
+    ]
+  },
+  {
+    "id": "maximum-technique",
+    "title": "Maximum Technique",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "maximum technique",
+      "gokunoban"
+    ],
+    "keywords": [
+      "uzumaki",
+      "meteor",
+      "ultimate move"
+    ],
+    "summary": "A Maximum Technique is the highest-output extension of an innate technique outside Domain Expansion.",
+    "details": "Maximum techniques distill a technique’s core into an ultimate application, such as Maximum: Uzumaki or Maximum: Meteor.",
+    "points": [],
+    "related": [
+      "cursed-technique",
+      "geto",
+      "jogo"
+    ]
+  },
+  {
+    "id": "maximum-output",
+    "title": "Maximum Output",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "maximum output",
+      "stack"
+    ],
+    "keywords": [
+      "output",
+      "full power",
+      "maximum"
+    ],
+    "summary": "Maximum Output means channeling the greatest possible cursed-energy output into a technique or application.",
+    "details": "It is not automatically a unique named Maximum Technique. A sorcerer can use maximum output on an existing move, barrier, or reinforcement method.",
+    "points": [],
+    "related": [
+      "cursed-energy",
+      "maximum-technique"
+    ]
+  },
+  {
+    "id": "technique-reversal",
+    "title": "Cursed Technique Reversal",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "technique reversal",
+      "ctr"
+    ],
+    "keywords": [
+      "positive energy",
+      "red",
+      "gravity"
+    ],
+    "summary": "Cursed Technique Reversal powers an innate technique with positive energy to invert its normal effect.",
+    "details": "Gojo reverses Blue’s attraction into Red’s repulsion, while Kenjaku reverses Antigravity System into intensified gravity.",
+    "points": [],
+    "related": [
+      "reverse-cursed-technique",
+      "limitless",
+      "antigravity-system"
+    ]
+  },
+  {
+    "id": "technique-burnout",
+    "title": "Cursed Technique Burnout",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "technique burnout",
+      "domain burnout"
+    ],
+    "keywords": [
+      "after domain",
+      "brain"
+    ],
+    "summary": "Cursed Technique Burnout is the temporary instability that follows Domain Expansion.",
+    "details": "The innate technique becomes difficult or impossible to activate until it naturally recovers. Advanced users can shorten recovery by damaging and healing the brain’s technique region, but the process is extremely dangerous.",
+    "points": [],
+    "related": [
+      "domain-expansion",
+      "reverse-cursed-technique"
+    ]
+  },
+  {
+    "id": "curtain",
+    "title": "Curtain / Veil",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "curtain",
+      "veil",
+      "barrier"
+    ],
+    "keywords": [
+      "concealment",
+      "conditions"
+    ],
+    "summary": "A Curtain is a large simple barrier used to hide jujutsu activity and control who can enter or leave an area.",
+    "details": "Barrier users can add conditions targeting civilians, sorcerers, specific individuals, or communication. Strong restrictions require corresponding tradeoffs.",
+    "points": [],
+    "related": [
+      "domain-expansion",
+      "binding-vow"
+    ]
+  },
+  {
+    "id": "innate-domain",
+    "title": "Innate Domain",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "innate domain",
+      "mental landscape"
+    ],
+    "keywords": [
+      "soul",
+      "domain expansion"
+    ],
+    "summary": "An innate domain is the metaphysical space reflecting a person’s mind, soul, and cursed technique.",
+    "details": "Domain Expansion externalizes this inner landscape through cursed energy and barrier construction. Incomplete manifestations may provide environmental advantages without a sure-hit.",
+    "points": [],
+    "related": [
+      "domain-expansion",
+      "soul"
+    ]
+  },
+  {
+    "id": "shikigami",
+    "title": "Shikigami",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "shikigami",
+      "summoned familiar"
+    ],
+    "keywords": [
+      "summon",
+      "medium"
+    ],
+    
