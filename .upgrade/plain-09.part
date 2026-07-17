@@ -1,0 +1,393 @@
+    ],
+    "keywords": [
+      "pachinko",
+      "romance manga"
+    ],
+    "summary": "Private Pure Love Train is Hakari’s innate technique and the fictional romance series used by his pachinko-style domain.",
+    "details": "Outside the domain, Hakari can manifest train doors and other visual effects from the game. Inside Idle Death Gamble, its scenes and probability events determine jackpot chances.",
+    "points": [],
+    "related": [
+      "kinji-hakari",
+      "idle-death-gamble"
+    ]
+  },
+  {
+    "id": "love-rendezvous",
+    "title": "Love Rendezvous",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "kirara technique",
+      "love rendezvous"
+    ],
+    "keywords": [
+      "southern cross",
+      "stars",
+      "magnetism"
+    ],
+    "summary": "Love Rendezvous assigns five Southern Cross star marks to cursed-energy targets and enforces a route between them.",
+    "details": "Targets with different marks cannot approach freely; they must move through the constellation order. Identical marks attract, letting Kirara build complex spatial locks.",
+    "points": [],
+    "related": [
+      "kirara-hoshi"
+    ]
+  },
+  {
+    "id": "mythical-beast-amber",
+    "title": "Mythical Beast Amber",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "kashimo technique",
+      "mythical beast amber"
+    ],
+    "keywords": [
+      "electric transformation",
+      "one use"
+    ],
+    "summary": "Mythical Beast Amber reconstructs Kashimo’s flesh into phenomena produced by electricity.",
+    "details": "It grants enhanced perception, speed, electromagnetic attacks, and sonic or radiation-like effects. The transformation exceeds the limits of a human body, so the technique can be used only once and ends in death.",
+    "points": [],
+    "related": [
+      "hajime-kashimo"
+    ]
+  },
+  {
+    "id": "sky-manipulation",
+    "title": "Sky Manipulation",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "uro technique",
+      "sky manipulation"
+    ],
+    "keywords": [
+      "thin ice breaker",
+      "space"
+    ],
+    "summary": "Sky Manipulation treats the sky as a tangible surface that can be grabbed, folded, and distorted.",
+    "details": "Uro bends attacks away, warps her position, and uses Thin Ice Breaker to strike the surface of space, creating a broad impact that bypasses ordinary guarding angles.",
+    "points": [],
+    "related": [
+      "takako-uro"
+    ]
+  },
+  {
+    "id": "cursed-energy-discharge",
+    "title": "Cursed Energy Discharge",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "granite blast",
+      "ryu technique"
+    ],
+    "keywords": [
+      "output",
+      "beam"
+    ],
+    "summary": "Ryu Ishigori’s technique releases cursed energy at exceptionally high output.",
+    "details": "Granite Blast fires a concentrated beam from his pompadour. His defining strength is that his output remains extremely high even without complicated activation conditions.",
+    "points": [],
+    "related": [
+      "ryu-ishigori"
+    ]
+  },
+  {
+    "id": "contractual-recreation",
+    "title": "Contractual Re-Creation",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "reggie technique",
+      "receipt technique"
+    ],
+    "keywords": [
+      "receipts",
+      "contracts"
+    ],
+    "summary": "Contractual Re-Creation manifests objects or services described on receipts and contracts.",
+    "details": "A paid item can become physically real, while services such as lodging can reproduce their benefits. Used receipts burn away, making preparation and inventory central to the technique.",
+    "points": [],
+    "related": [
+      "reggie-star"
+    ]
+  },
+  {
+    "id": "technique-extinguishment",
+    "title": "Technique Extinguishment",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "angel technique",
+      "jacobs ladder"
+    ],
+    "keywords": [
+      "nullification",
+      "barriers",
+      "cursed objects"
+    ],
+    "summary": "Technique Extinguishment nullifies cursed techniques, barriers, and cursed objects.",
+    "details": "Angel can pass through barriers and erase technique effects. Jacob’s Ladder greatly amplifies the extinguishment effect against a targeted area or incarnated sorcerer.",
+    "points": [],
+    "related": [
+      "angel",
+      "hana-kurusu"
+    ]
+  },
+  {
+    "id": "star-rage",
+    "title": "Star Rage",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "yuki technique",
+      "bom ba ye",
+      "virtual mass"
+    ],
+    "keywords": [
+      "mass",
+      "garuda"
+    ],
+    "summary": "Star Rage adds virtual mass to Yuki and Garuda without normally increasing their inertia.",
+    "details": "The added mass massively strengthens physical blows and can make Garuda a devastating projectile or whip. At an extreme threshold, the technique can create a black hole.",
+    "points": [],
+    "related": [
+      "yuki-tsukumo"
+    ]
+  },
+  {
+    "id": "antigravity-system",
+    "title": "Antigravity System",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "kaori itadori technique",
+      "antigravity"
+    ],
+    "keywords": [
+      "kenjaku",
+      "gravity reversal"
+    ],
+    "summary": "Antigravity System is the technique engraved in Kaori Itadori’s body and retained by Kenjaku.",
+    "details": "Its normal effect counters gravity in a limited area. Kenjaku uses cursed technique reversal to intensify gravity instead, crushing nearby targets downward.",
+    "points": [],
+    "related": [
+      "kenjaku",
+      "technique-reversal"
+    ]
+  },
+  {
+    "id": "ice-formation",
+    "title": "Ice Formation",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "uraume technique",
+      "ice formation"
+    ],
+    "keywords": [
+      "freeze",
+      "frost calm",
+      "icefall"
+    ],
+    "summary": "Ice Formation creates and controls ice by supercooling cursed energy.",
+    "details": "Uraume can freeze large groups instantly, pin targets, form projectiles, and shatter frozen bodies. The scale and speed make it dangerous even to elite sorcerers.",
+    "points": [],
+    "related": [
+      "uraume"
+    ]
+  },
+  {
+    "id": "puppet-manipulation",
+    "title": "Puppet Manipulation",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "mechamaru technique",
+      "puppet manipulation"
+    ],
+    "keywords": [
+      "robots",
+      "remote control"
+    ],
+    "summary": "Puppet Manipulation remotely controls cursed corpses over enormous distances.",
+    "details": "Kokichi channels cursed energy and sensory information through Mechamaru units. His Heavenly Restriction expands range and output, while stored energy powers Ultimate Mechamaru.",
+    "points": [],
+    "related": [
+      "kokichi-muta",
+      "cursed-corpse"
+    ]
+  },
+  {
+    "id": "black-bird-manipulation",
+    "title": "Black Bird Manipulation",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "mei mei technique",
+      "crow manipulation"
+    ],
+    "keywords": [
+      "bird strike",
+      "crows"
+    ],
+    "summary": "Black Bird Manipulation controls crows and shares their senses with the user.",
+    "details": "Its deadliest extension is Bird Strike, where a crow sacrifices its life through a binding vow and converts that loss into overwhelming attack power.",
+    "points": [],
+    "related": [
+      "mei-mei",
+      "binding-vow"
+    ]
+  },
+  {
+    "id": "auspicious-beasts-summon",
+    "title": "Auspicious Beasts Summon",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "ino technique",
+      "auspicious beasts"
+    ],
+    "keywords": [
+      "takuma ino",
+      "mask",
+      "kaichi",
+      "reiki"
+    ],
+    "summary": "Auspicious Beasts Summon turns Takuma Ino into a spiritual medium while his face is hidden.",
+    "details": "Four beasts provide different effects: Kaichi fires a horn, Reiki coats him in water-like cursed energy, Kirin suppresses pain, and Ryu channels a powerful dragon attack.",
+    "points": [],
+    "related": []
+  },
+  {
+    "id": "seance-technique",
+    "title": "Séance Technique",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "granny ogami technique",
+      "seance"
+    ],
+    "keywords": [
+      "body information",
+      "soul information",
+      "toji"
+    ],
+    "summary": "Séance Technique summons the body or soul information of the dead into a living vessel.",
+    "details": "Ogami normally summons only body information to avoid losing control. Toji’s exceptional body overwhelms the vessel and continues moving independently.",
+    "points": [],
+    "related": [
+      "toji",
+      "soul"
+    ]
+  },
+  {
+    "id": "inverse",
+    "title": "Inverse",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "awasaka technique",
+      "inverse"
+    ],
+    "keywords": [
+      "strong weak reversal"
+    ],
+    "summary": "Inverse reverses the effective strength of attacks that hit its user.",
+    "details": "Powerful attacks become weak while weak attacks become strong. The technique has upper and lower limits, so opponents can defeat it by carefully controlling force rather than maximizing it.",
+    "points": [],
+    "related": []
+  },
+  {
+    "id": "miracles",
+    "title": "Miracles",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "haruta technique",
+      "miracles"
+    ],
+    "keywords": [
+      "stored luck"
+    ],
+    "summary": "Miracles stores small daily miracles as marks under Haruta Shigemo’s eyes and automatically spends them to prevent fatal outcomes.",
+    "details": "Haruta is unaware of the exact mechanics. Once all stored miracles are consumed, he loses the protection that made him seem unnaturally lucky.",
+    "points": [],
+    "related": []
+  },
+  {
+    "id": "rot-technique",
+    "title": "Rot Technique",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "decay",
+      "rot technique"
+    ],
+    "keywords": [
+      "eso",
+      "kechizu",
+      "blood"
+    ],
+    "summary": "The Rot Technique uses the Death Painting brothers’ blood to begin rapid decomposition in a marked target.",
+    "details": "When both brothers’ blood conditions are met, Decay progresses through a shared countdown. Their unusual constitution makes their blood poisonous to ordinary humans.",
+    "points": [],
+    "related": [
+      "eso",
+      "kechizu"
+    ]
+  },
+  {
+    "id": "disaster-flames",
+    "title": "Disaster Flames",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "jogo technique",
+      "volcano technique"
+    ],
+    "keywords": [
+      "fire",
+      "lava",
+      "maximum meteor"
+    ],
+    "summary": "Disaster Flames produces volcanic fire, explosive vents, and lava-based attacks.",
+    "details": "Jogo can incinerate groups, summon ember insects, create volcanoes from surfaces, and use Maximum: Meteor for large-scale destruction.",
+    "points": [],
+    "related": [
+      "jogo",
+      "coffin-iron-mountain",
+      "maximum-technique"
+    ]
+  },
+  {
+    "id": "disaster-tides",
+    "title": "Disaster Tides",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "dagon technique",
+      "water technique"
+    ],
+    "keywords": [
+      "water",
+      "sea shikigami"
+    ],
+    "summary": "Disaster Tides creates and manipulates massive volumes of water and aquatic shikigami.",
+    "details": "Dagon uses water for defense and terrain control, while his domain’s sure-hit continuously generates predatory sea creatures directly against targets.",
+    "points": [],
+    "related": [
+      "dagon",
+      "horizon-skandha"
+    ]
+  },
+  {
+    "id": "disaster-plants",
+    "title": "Disaster Plants",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "hanami technique",
+      "plant manipulation"
+    ],
+    "keywords": [
