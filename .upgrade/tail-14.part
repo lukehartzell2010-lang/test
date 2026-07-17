@@ -1,0 +1,24 @@
+e(state.browseCategory, event.target.value);
+  }
+});
+
+$$(".prompt-chip").forEach(button => {
+  button.addEventListener("click", () => performSearch(button.textContent));
+});
+
+$$(".segment").forEach(button => {
+  button.addEventListener("click", () => {
+    state.spoiler = button.dataset.spoiler;
+    safeStorage.setItem("jjk-spoiler", state.spoiler);
+    renderHome();
+    toast(state.spoiler === "manga" ? "Full manga and live archive enabled." : "Anime-only filter enabled.");
+    if (state.currentQuery && $("#resultsView").classList.contains("active")) performSearch(state.currentQuery);
+  });
+});
+
+$(".mobile-menu").addEventListener("click", () => document.body.classList.toggle("menu-open"));
+$("#saveAnswer").addEventListener("click", toggleSave);
+$("#copyAnswer").addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(state.currentAnswerText);
+    toast("An
