@@ -1,0 +1,30 @@
+ve("show"), 1900);
+}
+
+document.addEventListener("click", event => {
+  const entryButton = event.target.closest("[data-entry]");
+  if (entryButton) {
+    openEntry(entryButton.dataset.entry);
+    return;
+  }
+
+  const categoryButton = event.target.closest("[data-category]");
+  if (categoryButton && !categoryButton.classList.contains("nav-item")) {
+    renderBrowse(categoryButton.dataset.category);
+    return;
+  }
+
+  const navCategory = event.target.closest(".nav-item[data-category]");
+  if (navCategory) {
+    renderBrowse(navCategory.dataset.category);
+    return;
+  }
+
+  const action = event.target.closest("[data-action]")?.dataset.action;
+  if (action === "home") showView("#homeView");
+  if (action === "browseAll") renderBrowse("all");
+  if (action === "random") randomEntry();
+  if (action === "saved") showSaved();
+  if (action === "enableManga") {
+    state.spoiler = "manga";
+    safeSto
