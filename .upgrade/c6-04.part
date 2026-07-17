@@ -1,0 +1,346 @@
+acobs ladder",
+      "maximum output jacob's ladder"
+    ],
+    "keywords": [
+      "angel",
+      "hana",
+      "technique extinguishment",
+      "incarnation"
+    ],
+    "summary": "Jacob's Ladder is a high-output application of Technique Extinguishment that bathes a target in purifying light.",
+    "details": "It erases cursed techniques and is especially dangerous to incarnated sorcerers and cursed objects, whose existence depends on a technique-mediated bond with a vessel.",
+    "points": [
+      "The attack can separate an incarnated sorcerer from a host if maintained effectively.",
+      "It also threatens barriers and other technique-based phenomena.",
+      "Hana's emotional hesitation can affect how decisively the attack is completed."
+    ],
+    "related": [
+      "technique-extinguishment",
+      "angel",
+      "hana-kurusu",
+      "vessel-and-incarnation"
+    ]
+  },
+  {
+    "id": "granite-blast",
+    "title": "Granite Blast",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "granite blast",
+      "ryu beam"
+    ],
+    "keywords": [
+      "ryu",
+      "cursed energy discharge",
+      "output"
+    ],
+    "summary": "Granite Blast is Ryu Ishigori's concentrated cursed-energy beam.",
+    "details": "Ryu releases his exceptional output as a powerful long-range blast, either through his pompadour or after opening his domain and suffering technique burnout.",
+    "points": [
+      "Ryu's output remains unusually high even when his innate technique is burned out.",
+      "The blast can be redirected or fired repeatedly in combat.",
+      "Its power comes from both his technique and his exceptional natural output."
+    ],
+    "related": [
+      "ryu-ishigori",
+      "cursed-energy-discharge",
+      "cursed-energy-output"
+    ]
+  },
+  {
+    "id": "thin-ice-breaker",
+    "title": "Thin Ice Breaker",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "thin ice breaker",
+      "ice breaker"
+    ],
+    "keywords": [
+      "uro",
+      "sky manipulation",
+      "space"
+    ],
+    "summary": "Thin Ice Breaker strikes the surface of the sky as though shattering a thin sheet.",
+    "details": "Uro distorts space around the target and breaks the manipulated surface, transferring a heavy impact that bypasses ordinary guarding angles.",
+    "points": [
+      "It is an extension of Sky Manipulation rather than literal ice manipulation.",
+      "The attack warps the target's surrounding space before the impact reaches them.",
+      "Yuta can reproduce it through Copy."
+    ],
+    "related": [
+      "takako-uro",
+      "sky-manipulation",
+      "copy-technique",
+      "yuta"
+    ]
+  },
+  {
+    "id": "bird-strike",
+    "title": "Bird Strike",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "bird strike",
+      "black bird suicide attack"
+    ],
+    "keywords": [
+      "mei mei",
+      "black bird manipulation",
+      "binding vow"
+    ],
+    "summary": "Bird Strike turns a controlled crow into a lethal suicide attack through a binding vow.",
+    "details": "Mei Mei commands the bird to sacrifice its life, removing the normal limit on its cursed energy and producing a high-speed impact strong enough to threaten powerful curses.",
+    "points": [
+      "The crow's death is the price that creates the extreme output.",
+      "Only very durable or exceptional opponents are expected to survive a clean hit.",
+      "Black Bird Manipulation lets Mei Mei direct the attack from a distance."
+    ],
+    "related": [
+      "mei-mei",
+      "black-bird-manipulation",
+      "binding-vow"
+    ]
+  },
+  {
+    "id": "solo-forbidden-area",
+    "title": "Solo Forbidden Area",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "solo forbidden area",
+      "kusakabe technique"
+    ],
+    "keywords": [
+      "kusakabe",
+      "new shadow style",
+      "automatic interception"
+    ],
+    "summary": "Solo Forbidden Area is Kusakabe's New Shadow Style technique for automatically intercepting threats inside his range.",
+    "details": "Within a defined area, his body responds to incoming attacks with trained sword movements, letting him defend and counter without relying on an innate technique.",
+    "points": [
+      "It is based on New Shadow Style rather than a personal innate technique.",
+      "Its effectiveness depends on Kusakabe's perception, sword skill, and positioning.",
+      "He can expand or alter the range to protect nearby allies."
+    ],
+    "related": [
+      "atsuta-kusakabe",
+      "new-shadow-style",
+      "simple-domain"
+    ]
+  },
+  {
+    "id": "cloning-technique",
+    "title": "Cloning Technique",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "cloning technique",
+      "bag mask technique",
+      "five clones"
+    ],
+    "keywords": [
+      "bag mask curse user",
+      "clones",
+      "hidden inventory"
+    ],
+    "summary": "Cloning Technique divides the user into five identical bodies that share one consciousness.",
+    "details": "Damage and attention can be distributed among the bodies, making it difficult to identify a single original. The clones can coordinate simultaneous attacks while acting as one person.",
+    "points": [
+      "All five bodies are genuine manifestations rather than simple illusions.",
+      "The technique's user fought Gojo during the Hidden Inventory escort mission.",
+      "Overwhelming all bodies at once prevents the user from exploiting their shared presence."
+    ],
+    "related": [
+      "hidden-inventory",
+      "gojo"
+    ]
+  },
+  {
+    "id": "tool-manipulation",
+    "title": "Tool Manipulation",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "tool manipulation",
+      "momo technique",
+      "broom manipulation"
+    ],
+    "keywords": [
+      "momo",
+      "cursed tools",
+      "telekinesis"
+    ],
+    "summary": "Tool Manipulation allows the user to control a chosen cursed tool from a distance.",
+    "details": "Momo Nishimiya primarily uses the technique on a broom, enabling flight, rapid repositioning, and wind-based attacks produced through movement.",
+    "points": [
+      "The technique is tied to controlled tools rather than unrestricted telekinesis.",
+      "Flight provides scouting and support value even when direct damage is limited.",
+      "Losing access to the tool greatly reduces the technique's usefulness."
+    ],
+    "related": [
+      "kyoto-jujutsu-high"
+    ]
+  },
+  {
+    "id": "cursed-energy-electrification",
+    "title": "Electrified Cursed Energy",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "kashimo lightning",
+      "electric cursed energy",
+      "charge separation"
+    ],
+    "keywords": [
+      "kashimo",
+      "lightning",
+      "positive negative charge"
+    ],
+    "summary": "Kashimo's cursed energy naturally behaves like electricity and transfers charge through contact.",
+    "details": "By assigning opposite charges to himself and a target, Kashimo creates a lightning discharge that travels directly between them without behaving like a conventional projectile.",
+    "points": [
+      "The discharge is extremely difficult to dodge after charge has been established.",
+      "Kashimo can also release stored charge through his staff and the surrounding environment.",
+      "This property is separate from Mythical Beast Amber."
+    ],
+    "related": [
+      "hajime-kashimo",
+      "cursed-energy-trait",
+      "mythical-beast-amber"
+    ]
+  },
+  {
+    "id": "totality",
+    "title": "Ten Shadows: Totality",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "totality",
+      "shikigami inheritance",
+      "well's unknown abyss",
+      "ten shadows totality",
+      "ten shadows inheritance"
+    ],
+    "keywords": [
+      "ten shadows",
+      "divine dog totality",
+      "inheritance"
+    ],
+    "summary": "Totality transfers compatible traits from a destroyed Ten Shadows shikigami into another shikigami.",
+    "details": "The inheritance is governed by rules rather than allowing any arbitrary combination. Divine Dog: Totality is the clearest example, while later composite shikigami combine several inherited traits.",
+    "points": [
+      "A destroyed shikigami cannot be summoned again in its original form.",
+      "Not every destroyed shikigami is compatible with every survivor.",
+      "Temporary combinations such as The Well's Unknown Abyss are not the same as permanent Totality inheritance."
+    ],
+    "related": [
+      "ten-shadows",
+      "divine-dog-totality",
+      "merged-beast-agito",
+      "wells-unknown-abyss"
+    ]
+  },
+  {
+    "id": "shadow-storage",
+    "title": "Shadow Storage",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "megumi shadow storage",
+      "store tools in shadows",
+      "shadow inventory"
+    ],
+    "keywords": [
+      "megumi",
+      "ten shadows",
+      "weight"
+    ],
+    "summary": "The Ten Shadows Technique lets its user store objects inside shadows.",
+    "details": "Megumi carries cursed tools and other items in his own shadow, retrieving them when needed. The stored weight is still borne by the user, preventing limitless inventory.",
+    "points": [
+      "Living beings can be hidden or moved through shadows under special conditions.",
+      "Entering an enemy's shadow can create surprise attacks and positional advantages.",
+      "The technique becomes more flexible inside Chimera Shadow Garden, where shadows spread throughout the environment."
+    ],
+    "related": [
+      "ten-shadows",
+      "megumi",
+      "chimera-shadow-garden"
+    ]
+  },
+  {
+    "id": "immortality",
+    "title": "Immortality",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "tengen immortality",
+      "immortality technique"
+    ],
+    "keywords": [
+      "tengen",
+      "star plasma vessel",
+      "evolution"
+    ],
+    "summary": "Immortality prevents Tengen from dying of age but does not stop aging or physical evolution.",
+    "details": "Roughly every five hundred years, Tengen must merge with a compatible Star Plasma Vessel to reset the body and preserve human identity. Failure causes uncontrolled evolution into a more curse-like state.",
+    "points": [
+      "The technique does not make Tengen invulnerable to attack.",
+      "Evolution increases Tengen's connection to barriers and to humanity as a whole.",
+      "The merger system is central to the Hidden Inventory incident."
+    ],
+    "related": [
+      "tengen",
+      "star-plasma-vessel",
+      "riko-amanai",
+      "hidden-inventory"
+    ]
+  },
+  {
+    "id": "prayer-song",
+    "title": "Solo Solo Kinku / Prayer Song",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "prayer song",
+      "utahime technique",
+      "solo solo kinku"
+    ],
+    "keywords": [
+      "utahime",
+      "ritual",
+      "output boost"
+    ],
+    "summary": "Prayer Song amplifies the cursed-energy output of willing sorcerers within its effective range.",
+    "details": "Utahime can perform the technique quickly, but completing its full ritual—incantation, hand signs, dance, and music—maximizes the amplification by deliberately omitting none of its steps.",
+    "points": [
+      "The technique strengthens allies rather than directly attacking an enemy.",
+      "Its full preparation demonstrates how ritual steps can raise technique effectiveness.",
+      "Utahime used it to support Gojo's opening Hollow Purple in Shinjuku."
+    ],
+    "related": [
+      "utahime-iori",
+      "maximum-output",
+      "hollow-purple",
+      "shinjuku-showdown"
+    ]
+  },
+  {
+    "id": "divine-dogs",
+    "title": "Divine Dogs",
+    "category": "curse",
+    "spoiler": "anime",
+    "aliases": [
+      "divine dogs",
+      "jade hounds",
+      "white dog",
+      "black dog"
+    ],
+    "keywords": [
+      "ten shadows",
+      "tracking",
+      "shikigami"
+    ],
+    "summary": "Divine Dogs are twin canine 
