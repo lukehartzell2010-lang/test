@@ -1,0 +1,120 @@
+o end the technique.",
+            "Cleave and Dismantle are not identical attacks even though both produce slashes.",
+            "The 200-meter figure is an adjustable maximum range, not a mandatory radius every time Sukuna opens the domain."
+          ]
+        }
+      ]
+    },
+
+    "idle-transfiguration": {
+      verified: true,
+      source: "Idle_Transfiguration",
+      sections: [
+        {
+          title: "Soul first, body second",
+          paragraphs: [
+            "Idle Transfiguration changes the shape of a soul through contact. In Jujutsu Kaisen's metaphysics, the body follows the shape of the soul, so altering the soul forces the target's flesh to transform.",
+            "This is why Mahito can reshape people without performing ordinary surgery and can remodel his own body for movement, defense, weapons, and deception."
+          ]
+        },
+        {
+          title: "Offensive use",
+          paragraphs: [
+            "Direct contact lets Mahito distort a victim's soul, usually with catastrophic results. He can also pre-transform humans and store or deploy them as altered servants.",
+            "The exact amount of contact and effort depends on the target. Stronger awareness or protection of the soul can resist an immediate transformation, meaning a single touch is not equally decisive against every opponent."
+          ]
+        },
+        {
+          title: "Why ordinary damage is unreliable",
+          paragraphs: [
+            "Mahito maintains his form by preserving the shape of his soul. Damage that affects only the body can be reshaped away as long as he has the cursed energy and concentration to maintain himself.",
+            "Attacks that reach the soul, force him to expend too much cursed energy, or prevent him from operating the technique can meaningfully injure him. Yuji is especially dangerous because sharing a body with Sukuna gives him awareness of the soul's outline."
+          ]
+        },
+        {
+          title: "Self-Embodiment of Perfection",
+          paragraphs: [
+            "Mahito's Domain Expansion makes contact with the target's soul into the sure-hit effect. Inside the completed barrier, he no longer needs to physically place his hand on the victim in the ordinary way.",
+            "This removes the primary activation hurdle of Idle Transfiguration, making the domain an almost guaranteed victory unless the target has an anti-domain response, wins a clash, or possesses a unique soul-related defense."
+          ]
+        },
+        {
+          title: "Common misconceptions",
+          bullets: [
+            "Idle Transfiguration is not simple biological shapeshifting; its core target is the soul.",
+            "Mahito is not absolutely immune to physical attacks. He can be exhausted, disrupted, and damaged through the soul.",
+            "A single touch is not guaranteed to instantly defeat every target under every condition.",
+            "Mahito's own transformations still consume cursed energy and depend on maintaining his soul's shape."
+          ]
+        }
+      ]
+    },
+
+    "simple-domain": {
+      verified: true,
+      source: "Simple_Domain",
+      sections: [
+        {
+          title: "What Simple Domain does",
+          paragraphs: [
+            "Simple Domain creates a small barrier around the user that interferes with a Domain Expansion's barrier technique and neutralizes the guaranteed-hit effect within that protected space.",
+            "It is often described as a domain for the weak because it gives someone without a full Domain Expansion a way to survive long enough to fight back or escape."
+          ]
+        },
+        {
+          title: "What it does not do",
+          paragraphs: [
+            "Simple Domain does not automatically erase the enemy's innate technique or make the user immune to every attack inside the domain. The opponent can still attack physically or use effects that are not dependent on the neutralized sure-hit.",
+            "A powerful or unusual domain can strip away the Simple Domain over time, forcing the user to maintain, recast, or combine it with other defenses."
+          ]
+        },
+        {
+          title: "New Shadow Style",
+          paragraphs: [
+            "Simple Domain is strongly associated with New Shadow Style, which pairs barrier defense with programmed sword responses. Different practitioners adapt the basic anti-domain principle to their own fighting style.",
+            "Other techniques can resemble Simple Domain in appearance while imposing specialized rules, so every circular barrier should not automatically be assumed to function identically."
+          ]
+        },
+        {
+          title: "Common misconceptions",
+          bullets: [
+            "Simple Domain does not defeat a full domain by itself.",
+            "It primarily counters the sure-hit, not every environmental advantage inside the enemy's domain.",
+            "Its durability depends on the user and the opposing domain.",
+            "It is a barrier technique, not an innate cursed technique unique to one bloodline."
+          ]
+        }
+      ]
+    },
+
+    "heavenly-restriction": {
+      verified: true,
+      source: "Heavenly_Restriction",
+      sections: [
+        {
+          title: "An inborn exchange",
+          paragraphs: [
+            "Heavenly Restriction is a binding condition placed on a person from birth. It removes or limits one aspect of their body or cursed energy and grants an extraordinary return elsewhere.",
+            "Unlike an ordinary self-imposed binding vow, the affected person does not choose the condition. The exchange is part of their existence from the beginning."
+          ]
+        },
+        {
+          title: "Physical-type restrictions",
+          paragraphs: [
+            "Toji Fushiguro possesses absolutely no cursed energy and receives a physically perfected body, senses sharp enough to perceive curses through environmental information, and freedom from many forms of cursed-energy detection.",
+            "Maki was born with a partial version because her twin relationship prevented the exchange from becoming complete. Later events allow the restriction to reach its full physical result."
+          ]
+        },
+        {
+          title: "Other types",
+          paragraphs: [
+            "Kokichi Muta demonstrates the opposite direction of exchange: a severely restricted and fragile body in return for enormous cursed-energy range and output.",
+            "This shows that Heavenly Restriction is not one standardized power. The benefit follows the nature and severity of the sacrifice."
+          ]
+        },
+        {
+          title: "Jujutsu interactions",
+          bullets: [
+            "A person with zero cursed energy can be difficult for barriers and sorcerers to detect.",
+            "Their body may be treated differently by domain targeting rules that distinguish objects with and without cursed energy.",
+            "The physical ret
