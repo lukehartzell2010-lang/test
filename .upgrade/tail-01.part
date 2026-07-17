@@ -1,0 +1,16 @@
+pporting.map(page => `
+          <div class="live-record">
+            <h4>${escapeHtml(page.title)}</h4>
+            <p>${escapeHtml(shorten(page.extract, 300))}</p>
+            <a class="source-link" href="${escapeHtml(page.url)}" target="_blank" rel="noopener">Open source record ↗</a>
+          </div>`).join("")}
+      </div>
+    </div>` : "";
+
+  return `
+    <div class="live-source"><i></i> ${escapeHtml(intentLabels[intent] || "Live archive")}</div>
+    <h2 class="answer-title">${escapeHtml(top.title)}</h2>
+    <p class="answer-lede">${escapeHtml(shorten(top.extract || top.description, 600))}</p>
+    ${local}
+    ${evidence}
+    <div class="answer-note">This answer was expanded beyond the built-in database by searching the live JJK lore archive. For complicated “why” or hypothetical questions, treat the retrieved records as canon evidence rather than an official author verdict.
