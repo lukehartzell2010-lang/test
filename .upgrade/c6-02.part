@@ -1,0 +1,326 @@
+a much wider effective range. The domain still uses barrier technique; it simply does not close the boundary like an ordinary domain.",
+    "points": [
+      "Malevolent Shrine is the clearest anime example.",
+      "An open domain can attack the exterior of a closed domain's barrier.",
+      "Open-barrier domains are extremely rare and require exceptional barrier skill."
+    ],
+    "related": [
+      "malevolent-shrine",
+      "womb-profusion",
+      "domain-expansion",
+      "binding-vow",
+      "barrier-techniques"
+    ]
+  },
+  {
+    "id": "revealing-ones-hand",
+    "title": "Revealing One's Hand",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "revealing your hand",
+      "explain technique binding vow",
+      "revealing one's technique"
+    ],
+    "keywords": [
+      "binding vow",
+      "explanation",
+      "power increase"
+    ],
+    "summary": "Revealing one's hand is a binding vow in which a sorcerer explains how their technique works to strengthen its effectiveness.",
+    "details": "The user gives the opponent useful information and receives a corresponding increase in power or reliability. The benefit depends on how meaningful the disclosed information is.",
+    "points": [
+      "A misleading explanation may weaken the value of the vow.",
+      "The technique does not become stronger merely because the user talks; the risk created by disclosure is the exchange.",
+      "Many experienced sorcerers reveal only the information that benefits them tactically."
+    ],
+    "related": [
+      "binding-vow",
+      "cursed-technique"
+    ]
+  },
+  {
+    "id": "vessel-and-incarnation",
+    "title": "Vessels and Incarnation",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "vessel",
+      "incarnation",
+      "reincarnated sorcerer",
+      "host body"
+    ],
+    "keywords": [
+      "sukuna",
+      "yuji",
+      "cursed object",
+      "possession"
+    ],
+    "summary": "A vessel is a human body capable of hosting a cursed object or incarnated sorcerer.",
+    "details": "Most hosts are overwritten when the sealed personality incarnates, but compatibility varies. Yuji is exceptional because he can contain Sukuna as a separate soul and normally suppress control.",
+    "points": [
+      "Incarnation restores the sorcerer's form and abilities through the host body.",
+      "Some vessels retain a degree of consciousness; others are almost completely submerged.",
+      "Technique Extinguishment can threaten incarnated beings by separating or erasing the cursed object sustaining them."
+    ],
+    "related": [
+      "cursed-object",
+      "reincarnated-sorcerers",
+      "yuji",
+      "sukuna",
+      "technique-extinguishment"
+    ]
+  },
+  {
+    "id": "cursed-energy-trait",
+    "title": "Cursed Energy Traits",
+    "category": "concept",
+    "spoiler": "manga",
+    "aliases": [
+      "cursed energy property",
+      "special cursed energy trait",
+      "rough cursed energy"
+    ],
+    "keywords": [
+      "hakari",
+      "kashimo",
+      "electricity",
+      "texture"
+    ],
+    "summary": "Some sorcerers possess cursed energy with an unusual physical property that affects anyone who contacts it.",
+    "details": "Hakari's energy feels rough or serrated, while Kashimo's behaves like electricity and transfers charge through combat. These traits are separate from innate cursed techniques.",
+    "points": [
+      "A trait can strengthen ordinary reinforcement and contact attacks.",
+      "Kashimo can build opposite charges and discharge lightning without using his one-time innate technique.",
+      "The manga does not establish that every sorcerer can develop a unique energy property through training."
+    ],
+    "related": [
+      "kinji-hakari",
+      "hajime-kashimo",
+      "cursed-energy-electrification",
+      "cursed-energy"
+    ]
+  },
+  {
+    "id": "soul-damage",
+    "title": "Soul Damage",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "damage to the soul",
+      "soul attacks",
+      "soul injury"
+    ],
+    "keywords": [
+      "mahito",
+      "yuji",
+      "split soul katana",
+      "idle transfiguration"
+    ],
+    "summary": "Soul damage affects the underlying shape or boundary of a being rather than only injuring the physical body.",
+    "details": "Mahito protects himself by preserving his soul and reshaping his body around it, so attacks that perceive or strike the soul are unusually effective against him. Soul-aware attacks can also complicate normal healing.",
+    "points": [
+      "Yuji can strike Mahito's soul because he shares a body with another soul.",
+      "The Split Soul Katana ignores conventional toughness when its user can perceive the soul of the target.",
+      "Soul damage is not automatically unhealable, but restoring it requires awareness of the soul's shape."
+    ],
+    "related": [
+      "soul",
+      "mahito",
+      "yuji",
+      "idle-transfiguration",
+      "split-soul-katana"
+    ]
+  },
+  {
+    "id": "transfigured-humans",
+    "title": "Transfigured Humans",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "transfigured human",
+      "modified humans",
+      "mahito victims"
+    ],
+    "keywords": [
+      "idle transfiguration",
+      "souls",
+      "curses"
+    ],
+    "summary": "Transfigured humans are people whose souls and bodies have been reshaped by Mahito's Idle Transfiguration.",
+    "details": "They remain human rather than becoming true cursed spirits, but their bodies are distorted into weapons, shields, or unstable forms controlled by Mahito.",
+    "points": [
+      "Their altered bodies can die quickly from the strain.",
+      "Mahito can store and release large numbers of transfigured humans.",
+      "Because the soul was changed first, ordinary medical treatment cannot simply restore the original body."
+    ],
+    "related": [
+      "idle-transfiguration",
+      "mahito",
+      "soul"
+    ]
+  },
+  {
+    "id": "cursed-technique-engraving",
+    "title": "Cursed Technique Engraving",
+    "category": "concept",
+    "spoiler": "manga",
+    "aliases": [
+      "technique engraved in the brain",
+      "engraved technique"
+    ],
+    "keywords": [
+      "brain",
+      "innate technique",
+      "body"
+    ],
+    "summary": "An innate cursed technique is physically engraved into the user's brain and body.",
+    "details": "This explains why technique burnout is tied to the brain, why body possession can grant access to a host's technique, and why destroying and repairing the relevant brain region can forcibly refresh a burned-out technique at extreme risk.",
+    "points": [
+      "The technique is not stored as a detachable spell separate from the body.",
+      "Kenjaku can access techniques tied to bodies he has inhabited under specific conditions.",
+      "Repeatedly damaging the brain to restore a technique can cause catastrophic loss of function."
+    ],
+    "related": [
+      "cursed-technique",
+      "technique-burnout",
+      "kenjaku",
+      "reverse-cursed-technique"
+    ]
+  },
+  {
+    "id": "binding-vow-types",
+    "title": "Binding Vow Types",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "self binding vow",
+      "binding vow with another person",
+      "vow types"
+    ],
+    "keywords": [
+      "conditions",
+      "penalty",
+      "tradeoff"
+    ],
+    "summary": "Binding vows can be imposed on oneself or formed between multiple people, and the consequences differ.",
+    "details": "A self-imposed vow trades freedom, range, safety, or another advantage for power. A vow between people creates an agreement whose violation carries an uncertain but feared penalty.",
+    "points": [
+      "A self-imposed vow can often be abandoned by surrendering the benefit.",
+      "Breaking a vow with another person is treated as far more dangerous.",
+      "The exact penalty for violating a mutual vow is deliberately left uncertain in canon."
+    ],
+    "related": [
+      "binding-vow",
+      "revealing-ones-hand"
+    ]
+  },
+  {
+    "id": "infinity",
+    "title": "Infinity",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "neutral limitless",
+      "infinity barrier",
+      "untouchable space"
+    ],
+    "keywords": [
+      "gojo",
+      "limitless",
+      "space",
+      "automatic defense"
+    ],
+    "summary": "Infinity is the neutral application of Limitless that slows approaching objects through an endlessly divided distance.",
+    "details": "Rather than creating a physical wall, Infinity manipulates the space between Gojo and an incoming target so the target approaches without reaching him. Gojo can filter threats automatically by factors such as mass, speed, shape, and cursed energy.",
+    "points": [
+      "Infinity can be bypassed by domain sure-hits, Domain Amplification, or techniques and tools that nullify cursed techniques.",
+      "Gojo can intentionally allow selected people or objects through.",
+      "Maintaining the automatic filter depends on Six Eyes precision and continuous brain refresh through Reverse Cursed Technique."
+    ],
+    "related": [
+      "limitless",
+      "gojo",
+      "six-eyes",
+      "domain-amplification",
+      "inverted-spear"
+    ]
+  },
+  {
+    "id": "cursed-technique-lapse-blue",
+    "title": "Cursed Technique Lapse: Blue",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "blue",
+      "limitless blue",
+      "azure glow"
+    ],
+    "keywords": [
+      "gojo",
+      "attraction",
+      "negative distance",
+      "maximum output blue"
+    ],
+    "summary": "Blue strengthens Limitless's attractive effect by creating an impossible negative distance that space attempts to correct.",
+    "details": "Matter is violently pulled toward the selected point. Gojo can use Blue for crushing attraction, high-speed movement, object control, or close-range strikes enhanced by spatial pull.",
+    "points": [
+      "Blue can be concentrated into a small point or expanded through Maximum Output.",
+      "The attraction can tear structures apart as surrounding space collapses toward the anomaly.",
+      "Gojo uses Blue's pull to accelerate his own movement and amplify punches."
+    ],
+    "related": [
+      "limitless",
+      "gojo",
+      "maximum-output",
+      "cursed-technique-reversal-red",
+      "hollow-purple"
+    ]
+  },
+  {
+    "id": "cursed-technique-reversal-red",
+    "title": "Cursed Technique Reversal: Red",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "red",
+      "limitless red",
+      "reversal red"
+    ],
+    "keywords": [
+      "gojo",
+      "repulsion",
+      "positive energy"
+    ],
+    "summary": "Red is the reversed application of Limitless, producing a powerful repulsive force.",
+    "details": "By powering Limitless with positive energy, Gojo reverses Blue's attraction and explosively pushes matter away from the activation point.",
+    "points": [
+      "Red requires Reverse Cursed Technique and is more difficult than ordinary Lapse.",
+      "Its output is generally described as at least twice Blue's ordinary attractive force.",
+      "Red and Blue can be combined to form Hollow Purple."
+    ],
+    "related": [
+      "limitless",
+      "gojo",
+      "positive-energy",
+      "reverse-cursed-technique",
+      "cursed-technique-lapse-blue",
+      "hollow-purple"
+    ]
+  },
+  {
+    "id": "divergent-fist",
+    "title": "Divergent Fist",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "divergent fist",
+      "double impact"
+    ],
+    "keywords": [
+      "yuji",
+      "delayed cursed energy",
+      "punch"
+    ],
+    "summary": "Divergent Fist is a delayed double impact caused by Yuji's cursed energy arriving after his physical strike.",
+    "details": "Yuji's body initially moved faster than his cursed-energy control, producing a normal physical hit followed by a second cursed-energy impact. After improving his control, he can reproduce the delay intentionally as a 
