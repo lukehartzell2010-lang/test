@@ -1,0 +1,5 @@
+PARSER CONFIGURATION
+Question types: hypothetical, possibility, past canon check, explanation.
+Grammar flags: negation, condition, action.
+Breakdown fields: Question type, Entities, Action, Grammar, Evidence mode, Key words used.
+This text file supports the JJK Archive complex question parser and contains no executable behavior.
