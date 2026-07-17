@@ -1,0 +1,11 @@
+  )
+    };
+  }
+
+  function genericMotive(raw, entityList) {
+    const subject = entityList.find(entry => ["character", "curse"].includes(entry.category));
+    if (!subject) return null;
+    const corpus = [subject, ...linked(subject)].flatMap(entry => [entry.summary, entry.details, ...(entry.points || [])].filter(Boolean).map(text => ({ entry, text })));
+    const words = qnorm(raw).split(" ").filter(word => word.length >= 4 && !["why", "did", "does", "would", "could", "have", "that", "this", "with", "from"].includes(word));
+    const ranked = corpus.map(item => {
+      const text = qnorm(item
