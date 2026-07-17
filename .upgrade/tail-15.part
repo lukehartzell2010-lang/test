@@ -1,0 +1,13 @@
+swer copied.");
+  } catch {
+    toast("Copy was blocked by the browser.");
+  }
+});
+
+renderHome();
+refreshLiveCount();
+document.documentElement.dataset.appReady = "true";
+
+</script>
+</body>
+</html>
