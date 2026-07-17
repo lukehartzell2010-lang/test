@@ -1,0 +1,21 @@
+entry || living[0]?.entry || null;
+      attacker = living.find(item => item.entry.id !== target?.id && item.index > verbIndex)?.entry || null;
+    } else if (["bypass", "stop", "cancel", "protect", "work"].includes(verb) && verbIndex >= 0) {
+      target = positioned.find(item => item.index > verbIndex && item.entry.id !== mechanism?.id)?.entry || living[0]?.entry || positioned.at(-1)?.entry || null;
+      attacker = living.find(item => item.index < verbIndex)?.entry || null;
+    }
+
+    if (!target) target = living[0]?.entry || positioned[0]?.entry || null;
+    if (!mechanism) mechanism = positioned.find(item => item.entry.id !== target?.id && item.entry.id !== attacker?.id)?.entry || null;
+    if (mechanism?.id === target?.id) mechanism = positioned.find(item => item.entry.id !== target.id)?.entry || null;
+    return { target, attacker, mechanism, verb };
+  }
+
+  function scenarioAnswer(raw, entityList) {
+    const q = qnorm(raw);
+    const exact = SCENARIOS.find(item => item.test(q) && (state.spoiler === "manga" || item.spoiler === "anime"));
+    if (exact) {
+      return {
+        primary: getEntry(exact.primary),
+        related: exact.related.map(getEntry).filter(Boolean),
+   
