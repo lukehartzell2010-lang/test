@@ -1,0 +1,100 @@
+t");
+  if (el) el.textContent = `${liveArticleCount.toLocaleString()}+`;
+}
+
+async function liveWikiSearch(query, limit = 7) {
+  const key = normalize(query);
+  const cached = getLiveCache()[key];
+  if (cached && Date.now() - cached.time < 1000 * 60 * 60 * 24 * 7) return cached.value;
+
+  const search = cleanWikiQuery(query);
+  const params = new URLSearchParams({
+    action: "query",
+    generator: "search",
+    gsrsearch: search,
+    gsrnamespace: "0",
+    gsrlimit: String(limit),
+    prop: "extracts|info",
+    exintro: "1",
+    explaintext: "1",
+    exsentences: "4",
+    inprop: "url",
+    redirects: "1",
+    format: "json",
+    origin: "*"
+  });
+  const data = await fetchJson(`${WIKI_API}?${params.toString()}`);
+  const pages = Object.values(data?.query?.pages || {})
+    .filter(page => page?.title && !/^(Category|Template|File|User|Forum|Thread):/i.test(page.title))
+    .sort((a,b) => (a.index || 999) - (b.index || 999))
+    .map(page => ({
+      id: `wiki-${page.pageid}`,
+      title: page.title,
+      extract: shorten(page.extract || page.description || "", 520),
+      description: shorten(page.description || "", 150),
+      url: page.fullurl || `${WIKI_HOME}${encodeURIComponent(page.title.replace(/ /g,"_"))}`,
+      source: "Jujutsu Kaisen Wiki"
+    }))
+    .filter(page => page.extract || page.description);
+  setLiveCache(key, pages);
+  return pages;
+}
+
+function renderLiveRelated(pages, primaryTitle = "") {
+  const unique = pages.filter(page => normalize(page.title) !== normalize(primaryTitle)).slice(0, 7);
+  if (!unique.length) return;
+  $("#relatedResults").innerHTML = unique.map(page => `
+    <article class="live-related-card">
+      <div class="entry-meta"><span class="tag purple">Live wiki</span></div>
+      <h4>${escapeHtml(page.title)}</h4>
+      <p>${escapeHtml(shorten(page.description || page.extract, 145))}</p>
+      <a class="source-link" href="${escapeHtml(page.url)}" target="_blank" rel="noopener">Open record ↗</a>
+    </article>
+  `).join("");
+}
+
+function liveAnswer(query, pages, intent, localEntry = null) {
+  const top = pages[0];
+  const supporting = pages.slice(1, 4);
+  const intentLabels = {
+    identity: "Who / identity",
+    mechanics: "Mechanics",
+    reasoning: "Canon evidence",
+    summary: "Story summary",
+    list: "Archive list",
+    comparison: "Comparison records",
+    explanation: "Explanation"
+  };
+
+  if (intent === "comparison" && pages.length >= 2) {
+    return `
+      <div class="live-source"><i></i> Live archive synthesis</div>
+      <h2 class="answer-title">${escapeHtml(pages[0].title)} vs ${escapeHtml(pages[1].title)}</h2>
+      <p class="answer-lede">The live archive found canon records for both sides. This gives you the factual foundation without pretending that every matchup has one official answer.</p>
+      <div class="compare-grid">
+        ${pages.slice(0,2).map((page,index) => `
+          ${index ? '<div class="versus">VS</div>' : ''}
+          <div class="compare-card">
+            <span class="tag purple">Live wiki record</span>
+            <h3>${escapeHtml(page.title)}</h3>
+            <p>${escapeHtml(shorten(page.extract, 430))}</p>
+            <a class="source-link" href="${escapeHtml(page.url)}" target="_blank" rel="noopener">Read full record ↗</a>
+          </div>
+        `).join("")}
+      </div>
+      <div class="answer-note">A real matchup verdict still depends on versions, conditions, knowledge, equipment, domain access, and starting distance.</div>
+      <div class="wiki-attribution">Live excerpts are attributed to the fan-maintained Jujutsu Kaisen Wiki and remain subject to its CC BY-SA licensing.</div>
+    `;
+  }
+
+  const local = localEntry ? `
+    <div class="answer-section">
+      <h3>Curated foundation</h3>
+      <p>${escapeHtml(localEntry.summary)} ${escapeHtml(localEntry.details)}</p>
+    </div>` : "";
+
+  const evidence = supporting.length ? `
+    <div class="answer-section">
+      <h3>Connected canon records</h3>
+      <div class="live-records">
+        ${su
