@@ -1,0 +1,411 @@
+[
+      "new shadow style",
+      "simple domain"
+    ],
+    "summary": "Kasumi Miwa is a Kyoto student who uses New Shadow Style swordsmanship and Simple Domain.",
+    "details": "Her Batto Sword Drawing automatically counters anything entering her Simple Domain radius, but her combat power is limited compared with elite sorcerers.",
+    "points": [],
+    "related": [
+      "simple-domain",
+      "kokichi-muta"
+    ]
+  },
+  {
+    "id": "mai-zenin",
+    "title": "Mai Zenin",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "mai",
+      "mai zenin"
+    ],
+    "keywords": [
+      "construction",
+      "revolver",
+      "maki twin"
+    ],
+    "summary": "Mai Zenin is Maki’s twin sister and a Kyoto student whose Construction technique creates matter from cursed energy.",
+    "details": "Because Construction is extremely inefficient and Mai has limited reserves, she can normally create only one bullet per day.",
+    "points": [
+      "Jujutsu treats identical twins as one individual, deeply affecting both sisters."
+    ],
+    "related": [
+      "construction",
+      "maki",
+      "zenin-clan"
+    ]
+  },
+  {
+    "id": "noritoshi-kamo-student",
+    "title": "Noritoshi Kamo",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "noritoshi kamo student",
+      "kamo"
+    ],
+    "keywords": [
+      "blood manipulation",
+      "kyoto student"
+    ],
+    "summary": "Noritoshi Kamo is a Kyoto student and heir candidate of the Kamo clan who uses Blood Manipulation.",
+    "details": "He carries prepared blood for ranged attacks and uses Flowing Red Scale to enhance his body. His disciplined exterior comes from clan pressure and concern for his mother.",
+    "points": [],
+    "related": [
+      "blood-manipulation",
+      "kamo-clan"
+    ]
+  },
+  {
+    "id": "naobito-zenin",
+    "title": "Naobito Zenin",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "naobito",
+      "naobito zenin"
+    ],
+    "keywords": [
+      "projection sorcery",
+      "zenin head"
+    ],
+    "summary": "Naobito Zenin is the head of the Zenin clan and an elite Grade 1 sorcerer known for extreme speed.",
+    "details": "Projection Sorcery divides one second into twenty-four frames. Targets touched by the user must follow the same preplanned movement rule or become frozen in an animation frame.",
+    "points": [],
+    "related": [
+      "projection-sorcery",
+      "zenin-clan",
+      "naoya-zenin"
+    ]
+  },
+  {
+    "id": "naoya-zenin",
+    "title": "Naoya Zenin",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "naoya",
+      "naoya zenin",
+      "cursed naoya"
+    ],
+    "keywords": [
+      "projection sorcery",
+      "time cell moon palace"
+    ],
+    "summary": "Naoya Zenin is a cruel Zenin heir candidate and Projection Sorcery user who later returns as a vengeful cursed spirit.",
+    "details": "As a human he weaponizes frame-based speed. As a curse, his speed and durability increase dramatically and his domain applies Projection Sorcery at a cellular level.",
+    "points": [],
+    "related": [
+      "projection-sorcery",
+      "time-cell-moon-palace",
+      "maki"
+    ]
+  },
+  {
+    "id": "miguel",
+    "title": "Miguel",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "miguel"
+    ],
+    "keywords": [
+      "black rope",
+      "african sorcerer"
+    ],
+    "summary": "Miguel is a foreign sorcerer recruited by Geto and one of the few fighters able to delay Gojo in direct combat.",
+    "details": "His physical reinforcement and unusual rhythm make him difficult to read. He formerly wielded Black Rope, which disrupts cursed techniques.",
+    "points": [],
+    "related": [
+      "black-rope",
+      "gojo",
+      "yuta"
+    ]
+  },
+  {
+    "id": "larue",
+    "title": "Larue",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "larue"
+    ],
+    "keywords": [
+      "heart catch",
+      "geto family"
+    ],
+    "summary": "Larue is a former member of Geto’s group whose technique can seize a target’s attention and create a large spectral hand.",
+    "details": "The hand can grab or restrain from a distance, while the follow-up effect forces the target’s awareness toward Larue.",
+    "points": [],
+    "related": [
+      "geto"
+    ]
+  },
+  {
+    "id": "riko-amanai",
+    "title": "Riko Amanai",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "riko",
+      "riko amanai"
+    ],
+    "keywords": [
+      "star plasma vessel",
+      "hidden inventory"
+    ],
+    "summary": "Riko Amanai is the Star Plasma Vessel protected by teenage Gojo and Geto during the Hidden Inventory mission.",
+    "details": "Although jujutsu society treats her merger with Tengen as a duty, Riko is a normal teenager with her own attachments and desire to keep living.",
+    "points": [],
+    "related": [
+      "star-plasma-vessel",
+      "hidden-inventory",
+      "toji"
+    ]
+  },
+  {
+    "id": "junpei-yoshino",
+    "title": "Junpei Yoshino",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "junpei",
+      "junpei yoshino"
+    ],
+    "keywords": [
+      "moon dregs",
+      "jellyfish shikigami"
+    ],
+    "summary": "Junpei Yoshino is a bullied student manipulated by Mahito after gaining the ability to use cursed energy.",
+    "details": "His shikigami Moon Dregs secretes poison through its tendrils. Junpei’s tragedy teaches Yuji how cruel curses and sorcerer conflicts can be.",
+    "points": [],
+    "related": [
+      "mahito",
+      "yuji",
+      "shikigami"
+    ]
+  },
+  {
+    "id": "eso",
+    "title": "Eso",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "eso"
+    ],
+    "keywords": [
+      "death painting",
+      "rot technique",
+      "wing king"
+    ],
+    "summary": "Eso is one of the incarnated Death Painting Wombs and fights alongside his younger brother Kechizu.",
+    "details": "His Rot Technique marks targets with corrosive blood. Maximum: Wing King forms large blood wings and spreads the technique over a wider area.",
+    "points": [],
+    "related": [
+      "kechizu",
+      "rot-technique",
+      "death-painting-wombs"
+    ]
+  },
+  {
+    "id": "kechizu",
+    "title": "Kechizu",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "kechizu"
+    ],
+    "keywords": [
+      "death painting",
+      "rot technique"
+    ],
+    "summary": "Kechizu is a Death Painting Womb whose blood and bodily fluids help activate the brothers’ Rot Technique.",
+    "details": "He is less refined than Eso but shares the same fatal corrosion effect once both brothers’ blood conditions are satisfied.",
+    "points": [],
+    "related": [
+      "eso",
+      "rot-technique",
+      "death-painting-wombs"
+    ]
+  },
+  {
+    "id": "kurourushi",
+    "title": "Kurourushi",
+    "category": "curse",
+    "spoiler": "manga",
+    "aliases": [
+      "kurourushi",
+      "cockroach curse"
+    ],
+    "keywords": [
+      "festering life sword",
+      "sendai"
+    ],
+    "summary": "Kurourushi is a special-grade cockroach cursed spirit released into the Sendai Colony.",
+    "details": "It commands enormous swarms and wields the Festering Life Sword, whose strikes implant insect-like curses that erupt from wounds.",
+    "points": [],
+    "related": [
+      "festering-life-sword",
+      "sendai-colony",
+      "yuta"
+    ]
+  },
+  {
+    "id": "smallpox-deity",
+    "title": "Smallpox Deity",
+    "category": "curse",
+    "spoiler": "anime",
+    "aliases": [
+      "smallpox deity",
+      "smallpox hag"
+    ],
+    "keywords": [
+      "disease curse",
+      "domain"
+    ],
+    "summary": "Smallpox Deity is a special-grade disease curse used by Kenjaku during the Shibuya Incident.",
+    "details": "Its domain traps a target in a coffin, buries them beneath a gravestone, and begins a lethal countdown unless the target escapes the sequence.",
+    "points": [],
+    "related": [
+      "domain-expansion",
+      "mei-mei",
+      "kenjaku"
+    ]
+  },
+  {
+    "id": "finger-bearer",
+    "title": "Finger Bearer",
+    "category": "curse",
+    "spoiler": "anime",
+    "aliases": [
+      "finger bearer",
+      "sukuna finger curse"
+    ],
+    "keywords": [
+      "special grade curse",
+      "detention center"
+    ],
+    "summary": "Finger Bearers are cursed spirits empowered by consuming one of Sukuna’s fingers.",
+    "details": "They possess large cursed-energy reserves and incomplete innate domains, but their skill varies and remains far below Sukuna himself.",
+    "points": [],
+    "related": [
+      "sukuna",
+      "cursed-object",
+      "fearsome-womb"
+    ]
+  },
+  {
+    "id": "grasshopper-curse",
+    "title": "Ko-Guy",
+    "category": "curse",
+    "spoiler": "anime",
+    "aliases": [
+      "ko guy",
+      "grasshopper curse",
+      "grasshopper"
+    ],
+    "keywords": [
+      "shibuya curse"
+    ],
+    "summary": "Ko-Guy is a grasshopper cursed spirit encountered by Yuji during the Shibuya Incident.",
+    "details": "It relies on physical strength, extra limbs, and simple cursed-energy reinforcement while boasting about its intelligence.",
+    "points": [],
+    "related": [
+      "yuji",
+      "shibuya-incident"
+    ]
+  },
+  {
+    "id": "cursed-speech",
+    "title": "Cursed Speech",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "inumaki technique",
+      "cursed speech"
+    ],
+    "keywords": [
+      "command words",
+      "snake eyes and fangs"
+    ],
+    "summary": "Cursed Speech reinforces spoken commands with cursed energy and compels anyone who hears them.",
+    "details": "The stronger the target and command, the more recoil damages the user’s throat. Users protect allies by limiting ordinary speech and can amplify commands through communication devices.",
+    "points": [],
+    "related": [
+      "toge-inumaki",
+      "yuta"
+    ]
+  },
+  {
+    "id": "projection-sorcery",
+    "title": "Projection Sorcery",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "24 frames technique",
+      "projection sorcery"
+    ],
+    "keywords": [
+      "naobito",
+      "naoya",
+      "frames"
+    ],
+    "summary": "Projection Sorcery divides one second into twenty-four predetermined frames of movement.",
+    "details": "The user traces a movement path and moves through it at extreme speed. Anyone touched must obey the same frame rule or freeze for one second, making minor mistakes devastating.",
+    "points": [],
+    "related": [
+      "naobito-zenin",
+      "naoya-zenin",
+      "time-cell-moon-palace"
+    ]
+  },
+  {
+    "id": "construction",
+    "title": "Construction",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "construction technique"
+    ],
+    "keywords": [
+      "mai",
+      "yorozu",
+      "create matter"
+    ],
+    "summary": "Construction converts cursed energy into physical matter that remains after the technique ends.",
+    "details": "Its energy cost is notoriously severe. Mai can create a single bullet, while Yorozu reduces waste through specialized liquid metal and biological armor designs.",
+    "points": [],
+    "related": [
+      "mai-zenin",
+      "yorozu"
+    ]
+  },
+  {
+    "id": "comedian",
+    "title": "Comedian",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "takaba technique",
+      "comedian"
+    ],
+    "keywords": [
+      "reality warping",
+      "funny"
+    ],
+    "summary": "Comedian makes anything its user genuinely considers funny become reality.",
+    "details": "The effect can alter damage, surroundings, timing, and logic itself. It weakens when Takaba loses confidence or becomes unable to find the situation funny.",
+    "points": [],
+    "related": [
+      "fumihiko-takaba",
+      "kenjaku"
+    ]
+  },
+  {
+    "id": "private-pure-love-train",
+    "title": "Private Pure Love Train",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "hakari technique",
+      "private pure love train"
