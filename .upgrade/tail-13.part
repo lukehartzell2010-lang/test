@@ -1,0 +1,24 @@
+rage.setItem("jjk-spoiler", state.spoiler);
+    renderHome();
+    performSearch(state.currentQuery);
+  }
+
+  if (!event.target.closest(".search-box")) $("#autocomplete").hidden = true;
+});
+
+$("#searchForm").addEventListener("submit", event => {
+  event.preventDefault();
+  performSearch($("#searchInput").value);
+});
+
+$("#searchInput").addEventListener("input", event => renderAutocomplete(event.target.value));
+$("#browseSearch").addEventListener("input", event => {
+  if (state.browseCategory === "saved") {
+    const q = normalize(event.target.value);
+    const savedEntries = state.saved.map(getEntry).filter(Boolean)
+      .filter(entry => !q || scoreEntry(entry, q) > 3);
+    $("#browseGrid").innerHTML = savedEntries.length
+      ? savedEntries.map(entry => entryCard(entry, "browse-card")).join("")
+      : `<div class="empty-state">No saved records matched.</div>`;
+  } else {
+    renderBrows
