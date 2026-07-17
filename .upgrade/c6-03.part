@@ -1,0 +1,364 @@
+feint.",
+    "points": [
+      "It began as a flaw rather than an innate technique.",
+      "Skilled opponents can adapt to the predictable delay if overused.",
+      "The delayed rhythm is fundamentally different from Black Flash's near-simultaneous impact."
+    ],
+    "related": [
+      "yuji",
+      "cursed-energy-control",
+      "black-flash"
+    ]
+  },
+  {
+    "id": "resonance",
+    "title": "Resonance",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "straw doll resonance",
+      "resonance technique"
+    ],
+    "keywords": [
+      "nobara",
+      "straw doll",
+      "soul",
+      "effigy"
+    ],
+    "summary": "Resonance lets Nobara transmit damage through a meaningful piece of the target.",
+    "details": "She places blood, flesh, a severed body part, or another strong connection into a straw doll and drives a nail through it. The technique sends the attack back to the linked target, often bypassing distance and conventional defense.",
+    "points": [
+      "Effectiveness depends on the value of the connection and the difference in power between user and target.",
+      "Resonance can strike the soul when the linked material shares a soul connection.",
+      "It can affect an original body through a separated double or fragment."
+    ],
+    "related": [
+      "straw-doll-technique",
+      "nobara",
+      "hairpin",
+      "soul"
+    ]
+  },
+  {
+    "id": "hairpin",
+    "title": "Hairpin",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "hairpin",
+      "nail explosion"
+    ],
+    "keywords": [
+      "nobara",
+      "nails",
+      "detonation"
+    ],
+    "summary": "Hairpin detonates nails that Nobara has already infused with cursed energy.",
+    "details": "After positioning nails in a target or environment, Nobara triggers them remotely, creating localized cursed-energy explosions that can attack from unexpected angles.",
+    "points": [
+      "Hairpin rewards preparation and battlefield placement.",
+      "The nails can be used as delayed traps rather than only direct projectiles.",
+      "It is an extension of Straw Doll Technique distinct from Resonance."
+    ],
+    "related": [
+      "straw-doll-technique",
+      "nobara",
+      "resonance"
+    ]
+  },
+  {
+    "id": "convergence",
+    "title": "Convergence",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "blood convergence",
+      "compress blood"
+    ],
+    "keywords": [
+      "blood manipulation",
+      "piercing blood",
+      "supernova"
+    ],
+    "summary": "Convergence compresses blood to its limit before releasing it through another Blood Manipulation technique.",
+    "details": "The compressed blood becomes the preparation stage for high-speed Piercing Blood and other dense projectiles. Maintaining the compression requires control and available blood.",
+    "points": [
+      "Convergence itself is preparation rather than the final attack.",
+      "Choso can generate blood from cursed energy because of his Death Painting physiology.",
+      "Human Kamo users must manage blood loss and may prepare blood bags."
+    ],
+    "related": [
+      "blood-manipulation",
+      "piercing-blood",
+      "supernova",
+      "choso",
+      "noritoshi-kamo-student"
+    ]
+  },
+  {
+    "id": "piercing-blood",
+    "title": "Piercing Blood",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "piercing blood",
+      "blood beam"
+    ],
+    "keywords": [
+      "choso",
+      "kamo",
+      "convergence",
+      "supersonic"
+    ],
+    "summary": "Piercing Blood fires a compressed stream of blood at extremely high speed.",
+    "details": "After Convergence, the user releases blood through a narrow channel, producing a long-range piercing attack whose direction can be adjusted during release.",
+    "points": [
+      "The initial shot can exceed the speed of sound.",
+      "The stream loses speed and pressure over distance.",
+      "Choso can redirect or alter the blood after the initial release more freely than a normal human user."
+    ],
+    "related": [
+      "blood-manipulation",
+      "convergence",
+      "choso",
+      "noritoshi-kamo-student"
+    ]
+  },
+  {
+    "id": "flowing-red-scale",
+    "title": "Flowing Red Scale",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "flowing red scale",
+      "red scale stack"
+    ],
+    "keywords": [
+      "blood manipulation",
+      "physical enhancement",
+      "choso"
+    ],
+    "summary": "Flowing Red Scale controls internal blood circulation to enhance physical performance.",
+    "details": "By increasing pulse, temperature, oxygen delivery, and related bodily functions, the user boosts strength, speed, reflexes, and visual processing.",
+    "points": [
+      "Flowing Red Scale: Stack is a more extreme version used by Choso.",
+      "The technique places substantial strain on the body and requires precise internal control.",
+      "It enhances the user rather than launching external blood."
+    ],
+    "related": [
+      "blood-manipulation",
+      "choso",
+      "noritoshi-kamo-student",
+      "cursed-energy-reinforcement"
+    ]
+  },
+  {
+    "id": "supernova",
+    "title": "Supernova",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "supernova blood",
+      "blood mines"
+    ],
+    "keywords": [
+      "choso",
+      "convergence",
+      "explosion"
+    ],
+    "summary": "Supernova detonates multiple compressed blood spheres around a target.",
+    "details": "Choso creates small masses through Convergence, positions them in the environment, and makes them burst outward as a close-range area attack.",
+    "points": [
+      "The scattered projectiles can attack from several directions at once.",
+      "Its compact setup makes it useful in confined spaces.",
+      "The technique is derived from Choso's unusual control and abundant blood supply."
+    ],
+    "related": [
+      "blood-manipulation",
+      "convergence",
+      "choso"
+    ]
+  },
+  {
+    "id": "cleave",
+    "title": "Cleave",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "cleave slash",
+      "sukuna cleave"
+    ],
+    "keywords": [
+      "sukuna",
+      "shrine",
+      "adaptive slash",
+      "contact"
+    ],
+    "summary": "Cleave is Shrine's cutting attack that adjusts its force to the target's toughness and cursed energy.",
+    "details": "It is normally used at close range or through Malevolent Shrine's sure-hit, allowing Sukuna to cut durable targets efficiently instead of applying one fixed level of force.",
+    "points": [
+      "Cleave is distinct from Dismantle, which is the more general ranged slash.",
+      "Inside Malevolent Shrine, Cleave targets entities with cursed energy.",
+      "Adjustment does not mean unlimited power; sufficient durability, output, healing, or anti-domain measures can still matter."
+    ],
+    "related": [
+      "shrine",
+      "sukuna",
+      "dismantle",
+      "malevolent-shrine"
+    ]
+  },
+  {
+    "id": "dismantle",
+    "title": "Dismantle",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "dismantle slash",
+      "sukuna slash"
+    ],
+    "keywords": [
+      "sukuna",
+      "shrine",
+      "ranged slash"
+    ],
+    "summary": "Dismantle is Shrine's standard flying slash.",
+    "details": "Sukuna releases an invisible cutting attack over distance. Its power and targeting can be altered, and later applications change the target of the slash itself.",
+    "points": [
+      "Dismantle is usually the default ranged cut against objects and ordinary targets.",
+      "Malevolent Shrine applies Dismantle broadly to objects without cursed energy.",
+      "World-Cutting Dismantle is a specialized extension with additional targeting and activation requirements."
+    ],
+    "related": [
+      "shrine",
+      "sukuna",
+      "cleave",
+      "world-cutting-slash",
+      "malevolent-shrine"
+    ]
+  },
+  {
+    "id": "furnace",
+    "title": "Furnace",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "fuga",
+      "open furnace",
+      "divine flame",
+      "flame arrow"
+    ],
+    "keywords": [
+      "sukuna",
+      "shrine",
+      "fire",
+      "malevolent shrine"
+    ],
+    "summary": "Furnace is Sukuna's high-temperature fire attack associated with Shrine.",
+    "details": "Sukuna opens the technique after using Cleave and Dismantle, forms a flame like an arrow, and releases it with overwhelming heat and explosive force.",
+    "points": [
+      "Its exact relationship to Shrine is explained more fully in manga material.",
+      "In Shibuya, it overpowers Jogo's fire and destroys Mahoraga after adaptation to slashing attacks.",
+      "Its domain-enhanced use creates far greater destruction by igniting material processed within Malevolent Shrine."
+    ],
+    "related": [
+      "shrine",
+      "sukuna",
+      "cleave",
+      "dismantle",
+      "malevolent-shrine",
+      "jogo",
+      "mahoraga"
+    ]
+  },
+  {
+    "id": "maximum-uzumaki",
+    "title": "Maximum: Uzumaki",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "uzumaki",
+      "maximum uzumaki"
+    ],
+    "keywords": [
+      "geto",
+      "kenjaku",
+      "cursed spirit manipulation",
+      "extraction"
+    ],
+    "summary": "Maximum: Uzumaki compresses stored cursed spirits into a concentrated blast.",
+    "details": "The user combines any number of absorbed curses into a spiral of cursed energy. When a semi-grade 1 or stronger curse is used, its innate technique can be extracted for a single later use.",
+    "points": [
+      "Using many curses increases the attack's available energy but consumes those stored spirits.",
+      "Geto used Uzumaki as the maximum expression of Cursed Spirit Manipulation.",
+      "Kenjaku exploited technique extraction to obtain Idle Transfiguration."
+    ],
+    "related": [
+      "maximum-technique",
+      "cursed-spirit-manipulation",
+      "geto",
+      "kenjaku",
+      "idle-transfiguration"
+    ]
+  },
+  {
+    "id": "maximum-meteor",
+    "title": "Maximum: Meteor",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "maximum meteor",
+      "meteor"
+    ],
+    "keywords": [
+      "jogo",
+      "disaster flames",
+      "maximum technique"
+    ],
+    "summary": "Maximum: Meteor creates a colossal burning mass that crashes down with immense destructive force.",
+    "details": "Jogo forms a gigantic meteor of rock and flame and hurls it at the target. The attack is slow enough for fast sorcerers to escape, but a direct hit carries catastrophic heat and impact.",
+    "points": [
+      "It is Jogo's Maximum Technique.",
+      "Sukuna chose to remain near the impact and avoided it at the last moment.",
+      "Large area and raw power do not guarantee a hit against top-speed opponents."
+    ],
+    "related": [
+      "jogo",
+      "disaster-flames",
+      "maximum-technique"
+    ]
+  },
+  {
+    "id": "maximum-wing-king",
+    "title": "Maximum: Wing King",
+    "category": "technique",
+    "spoiler": "anime",
+    "aliases": [
+      "wing king",
+      "maximum wing king"
+    ],
+    "keywords": [
+      "eso",
+      "rot technique",
+      "blood wings"
+    ],
+    "summary": "Maximum: Wing King manifests large blood wings that extend and reshape for attack or movement.",
+    "details": "Eso forms wing-like structures from his blood and controls their reach and shape. The maximum technique improves mobility and creates sweeping or piercing attacks.",
+    "points": [
+      "Wing King cannot be used simultaneously with Decay.",
+      "The blood remains part of Rot Technique and can help establish the technique's poisonous conditions.",
+      "It is one of the earliest named Maximum Techniques shown."
+    ],
+    "related": [
+      "eso",
+      "rot-technique",
+      "maximum-technique"
+    ]
+  },
+  {
+    "id": "jacobs-ladder",
+    "title": "Jacob's Ladder",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "j
