@@ -1,0 +1,25 @@
+on toggleSave() {
+  if (!state.currentEntryId) return;
+  if (state.saved.includes(state.currentEntryId)) {
+    state.saved = state.saved.filter(id => id !== state.currentEntryId);
+    toast("Removed from saved records.");
+  } else {
+    state.saved.push(state.currentEntryId);
+    toast("Saved to your notebook.");
+  }
+  safeStorage.setItem("jjk-saved", JSON.stringify(state.saved));
+  $("#savedCount").textContent = state.saved.length;
+  updateSaveButton();
+}
+
+function showSaved() {
+  const savedEntries = state.saved.map(getEntry).filter(Boolean);
+  $("#browseTitle").textContent = "Saved records";
+  $("#browseGrid").innerHTML = savedEntries.length
+    ? savedEntries.map(entry => entryCard(entry, "browse-card")).join("")
+    : `<div class="empty-state">You have not saved any records yet.</div>`;
+  $("#browseSearch").value = "";
+  state.browseCategory = "saved";
+  showView("#browseView");
+}
+
