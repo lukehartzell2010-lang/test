@@ -1,0 +1,23 @@
+ect", "transfigure", "adapt", "hurt", "damage", "hit", "reach", "land", "save", "use", "work"];
+    return verbs.find(verb => q.includes(verb)) || "complex relationship";
+  }
+
+  function grammarProfile(raw) {
+    const q = qnorm(raw);
+    return {
+      modality: q.indexOf("would") >= 0 ? "hypothetical" : q.indexOf("could") >= 0 || q.indexOf("can") >= 0 ? "possibility" : q.indexOf("have") >= 0 || q.indexOf("has") >= 0 || q.indexOf("did") >= 0 ? "past/canon check" : "explanation",
+      negated: q.indexOf("not") >= 0 || q.indexOf("never") >= 0 || q.indexOf("cannot") >= 0,
+      conditional: q.indexOf("if") >= 0 || q.indexOf("would") >= 0 || q.indexOf("could") >= 0,
+      action: actionPhrase(raw)
+    };
+  }
+
+  function setBreakdown(raw, type, entityList, extra = []) {
+    const profile = grammarProfile(raw);
+    const ignored = new Set(["who","what","where","when","why","how","would","could","have","has","did","does","the","and","but","with","from","that","this","into","over"]);
+    const contentWords = qnorm(raw).split(" ").filter(word => word.length > 2 && !ignored.has(word));
+    const chips = [
+      ["Question type", type],
+      ["Entities", entityList.map(entry => entry.title).join(" + ") || "Unresolved"],
+      ["Action", profile.action],
+      ["Grammar", profile.modality + (profile.negated ? " + negation" : "")
