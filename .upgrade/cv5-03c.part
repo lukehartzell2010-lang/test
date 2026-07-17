@@ -1,0 +1,29 @@
+rvive hollow purple/.test(q),
+      primary: "hanami",
+      related: ["hollow-purple", "gojo"],
+      spoiler: "anime",
+      verdict: "Hanami survived being caught at the edge of Hollow Purple's path, but a clean central hit would likely be fatal.",
+      confidence: "Direct event plus conditional inference",
+      reasoning: [
+        ["Direct canon example", "During the Goodwill Event, Hanami escaped after Gojo fired Hollow Purple but suffered severe damage."],
+        ["Hit quality matters", "Escaping or being clipped by the attack is not equivalent to absorbing its full center mass."],
+        ["Hanami's advantage", "Hanami has exceptional durability compared with many cursed spirits."],
+        ["Best verdict", "The story proves survival from a partial or glancing exposure, not survival from a clean full-power hit."]
+      ]
+    },
+    {
+      test: q => /(?:domain amplification.*black flash|black flash.*domain amplification).*(?:hit|reach|bypass).*(?:gojo|infinity)|(?:hit|reach) gojo.*domain amplification.*black flash/.test(q),
+      primary: "gojo",
+      related: ["domain-amplification", "black-flash", "limitless"],
+      spoiler: "anime",
+      verdict: "In principle, Domain Amplification could create contact and a Black Flash could amplify that physical hit—but the combination has not been directly demonstrated.",
+      confidence: "Rule-based theoretical interaction",
+      reasoning: [
+        ["Infinity counter", "Domain Amplification can neutralize Infinity at the point of contact."],
+        ["Black Flash compatibility", "Black Flash is a cursed-energy timing phenomenon attached to a physical strike, not an innate cursed technique that must be activated separately."],
+        ["Practical difficulty", "The fighter would need to maintain Domain Amplification, physically connect with Gojo, and achieve Black Flash's microscopic timing window in the same exchange."],
+        ["Canon boundary", "The rules do not clearly forbid the combination, but no character has performed this exact sequence on-panel."]
+      ]
+    },
+    {
+      test: q => /could jogo(?: s)? domain beat dagon(?: s)? domain|would jogo(?: s)? domain beat dagon(?: s)? domain/.test(q),
