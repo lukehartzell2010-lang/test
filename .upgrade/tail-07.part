@@ -1,0 +1,18 @@
+me-safe archive limit";
+    $("#answerContent").innerHTML = `
+      <h2 class="answer-title">No anime-safe record matched confidently</h2>
+      <p class="answer-lede">The unrestricted live index may contain manga spoilers, so it stays locked while Anime mode is active.</p>
+      <div class="answer-section">
+        <h3>Search the complete lore archive</h3>
+        <p>Full Manga mode searches all ${entries.length} curated records and can retrieve obscure topics from the live ${liveArticleCount.toLocaleString()}+ article index.</p>
+      </div>
+      <button class="prompt-chip" data-action="enableManga">Unlock full manga archive</button>
+    `;
+    $("#relatedResults").innerHTML = `<div class="empty-state">Live records are locked by the spoiler filter.</div>`;
+    state.currentAnswerText = $("#answerContent").innerText;
+    return;
+  }
+
+  let livePages = [];
+  let liveError = null;
+  if (
