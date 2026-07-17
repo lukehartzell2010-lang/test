@@ -1,0 +1,408 @@
+"summary": "Shikigami are supernatural familiars summoned and controlled through jujutsu.",
+    "details": "They normally require a medium such as shadows, talismans, hair, or a technique. Some are simple support creatures, while others possess independent abilities or serve as part of a domain.",
+    "points": [],
+    "related": [
+      "ten-shadows",
+      "junpei-yoshino"
+    ]
+  },
+  {
+    "id": "cursed-corpse",
+    "title": "Cursed Corpse",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "cursed corpse",
+      "puppet"
+    ],
+    "keywords": [
+      "panda",
+      "yaga",
+      "core"
+    ],
+    "summary": "A cursed corpse is an inanimate object animated by a cursed-energy core.",
+    "details": "Most require energy from a creator, but self-sustaining mutated cursed corpses contain multiple compatible cores that generate cursed energy independently.",
+    "points": [],
+    "related": [
+      "panda",
+      "puppet-manipulation"
+    ]
+  },
+  {
+    "id": "cursed-object",
+    "title": "Cursed Objects",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "cursed object",
+      "special grade object"
+    ],
+    "keywords": [
+      "sukuna fingers",
+      "incarnation",
+      "relic"
+    ],
+    "summary": "Cursed objects are items infused with cursed energy, often containing the remains or power of sorcerers and curses.",
+    "details": "Powerful objects can survive for centuries and resist destruction. When compatible humans ingest incarnated objects, an ancient sorcerer may manifest through the vessel.",
+    "points": [],
+    "related": [
+      "sukuna",
+      "prison-realm",
+      "reincarnated-sorcerers"
+    ]
+  },
+  {
+    "id": "death-painting-wombs",
+    "title": "Cursed Womb: Death Paintings",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "death paintings",
+      "death painting wombs"
+    ],
+    "keywords": [
+      "choso",
+      "eso",
+      "kechizu",
+      "kenjaku"
+    ],
+    "summary": "The Death Paintings are nine special-grade cursed objects created from human–curse pregnancies during Kenjaku’s experiments.",
+    "details": "Choso, Eso, and Kechizu incarnate through human vessels and share a supernatural sibling connection. Their bodies combine human and cursed-spirit traits.",
+    "points": [],
+    "related": [
+      "choso",
+      "eso",
+      "kechizu",
+      "kenjaku"
+    ]
+  },
+  {
+    "id": "reincarnated-sorcerers",
+    "title": "Reincarnated Sorcerers",
+    "category": "concept",
+    "spoiler": "manga",
+    "aliases": [
+      "incarnated sorcerer",
+      "reincarnated player"
+    ],
+    "keywords": [
+      "culling game",
+      "vessel",
+      "cursed object"
+    ],
+    "summary": "Reincarnated sorcerers are historical fighters returned through cursed objects implanted in modern vessels.",
+    "details": "Kenjaku made binding vows with sorcerers across centuries, converted them into objects, and activated their incarnations for the Culling Game.",
+    "points": [],
+    "related": [
+      "cursed-object",
+      "culling-game",
+      "kenjaku"
+    ]
+  },
+  {
+    "id": "soul",
+    "title": "The Soul",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "soul",
+      "shape of the soul"
+    ],
+    "keywords": [
+      "mahito",
+      "body",
+      "sukuna"
+    ],
+    "summary": "The soul is a real and interactable part of JJK’s power system, though different techniques perceive its relationship with the body differently.",
+    "details": "Mahito reshapes bodies by altering souls, while fighters who can perceive soul boundaries can damage incarnated beings more effectively. The body and soul can also influence one another in exceptional cases.",
+    "points": [],
+    "related": [
+      "mahito",
+      "idle-transfiguration",
+      "seance-technique"
+    ]
+  },
+  {
+    "id": "world-cutting-slash",
+    "title": "World-Cutting Dismantle",
+    "category": "technique",
+    "spoiler": "manga",
+    "aliases": [
+      "world cutting slash",
+      "world slash",
+      "space slash"
+    ],
+    "keywords": [
+      "sukuna",
+      "mahoraga",
+      "infinity"
+    ],
+    "summary": "World-Cutting Dismantle expands Sukuna’s slashing target from a person or object to the space and world containing them.",
+    "details": "By cutting the occupied space itself, the attack bypasses defenses based on distance such as Infinity. After a binding vow, later uses require additional conditions including a hand sign, chant, and directional aim.",
+    "points": [],
+    "related": [
+      "sukuna",
+      "shrine",
+      "mahoraga",
+      "binding-vow"
+    ]
+  },
+  {
+    "id": "new-shadow-style",
+    "title": "New Shadow Style",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "new shadow style"
+    ],
+    "keywords": [
+      "simple domain",
+      "sword school"
+    ],
+    "summary": "New Shadow Style is a school of jujutsu centered on Simple Domain and sword techniques.",
+    "details": "It lets sorcerers without powerful innate techniques defend against domains and automate sword responses within a limited range.",
+    "points": [],
+    "related": [
+      "simple-domain",
+      "atsuta-kusakabe",
+      "kasumi-miwa"
+    ]
+  },
+  {
+    "id": "split-soul-katana",
+    "title": "Split Soul Katana",
+    "category": "tool",
+    "spoiler": "anime",
+    "aliases": [
+      "split soul katana",
+      "soul liberation blade"
+    ],
+    "keywords": [
+      "maki",
+      "toji",
+      "soul damage"
+    ],
+    "summary": "The Split Soul Katana ignores physical hardness and cuts the soul directly.",
+    "details": "Its full ability requires the wielder to perceive the souls of objects and living beings. In the right hands it can bypass extraordinary durability and hinder healing.",
+    "points": [],
+    "related": [
+      "maki",
+      "toji",
+      "soul"
+    ]
+  },
+  {
+    "id": "dragon-bone",
+    "title": "Dragon-Bone",
+    "category": "tool",
+    "spoiler": "manga",
+    "aliases": [
+      "dragon bone",
+      "ryu bone"
+    ],
+    "keywords": [
+      "maki cursed tool",
+      "kinetic energy"
+    ],
+    "summary": "Dragon-Bone is a cursed sword that stores kinetic force and cursed energy before ejecting it from the back of the blade.",
+    "details": "The release increases striking power and can alter momentum during weapon clashes.",
+    "points": [],
+    "related": [
+      "maki"
+    ]
+  },
+  {
+    "id": "chain-thousand-miles",
+    "title": "Chain of a Thousand Miles",
+    "category": "tool",
+    "spoiler": "anime",
+    "aliases": [
+      "chain of a thousand miles",
+      "infinite chain"
+    ],
+    "keywords": [
+      "toji",
+      "hidden inventory"
+    ],
+    "summary": "The Chain of a Thousand Miles continues extending as long as one end remains hidden from view.",
+    "details": "Toji conceals its end inside his inventory curse, allowing the chain to reach seemingly impossible lengths and connect to other cursed tools.",
+    "points": [],
+    "related": [
+      "toji",
+      "inverted-spear"
+    ]
+  },
+  {
+    "id": "black-rope",
+    "title": "Black Rope",
+    "category": "tool",
+    "spoiler": "anime",
+    "aliases": [
+      "black rope"
+    ],
+    "keywords": [
+      "miguel",
+      "technique disruption"
+    ],
+    "summary": "Black Rope is a foreign cursed tool woven over generations that disturbs and cancels cursed techniques it touches.",
+    "details": "Each use burns away part of the rope, making it powerful but finite. Miguel uses it to interfere with Gojo’s Limitless.",
+    "points": [],
+    "related": [
+      "miguel",
+      "limitless"
+    ]
+  },
+  {
+    "id": "slaughter-demon",
+    "title": "Slaughter Demon",
+    "category": "tool",
+    "spoiler": "anime",
+    "aliases": [
+      "slaughter demon"
+    ],
+    "keywords": [
+      "yuji weapon",
+      "knife"
+    ],
+    "summary": "Slaughter Demon is a cursed combat knife lent to Yuji for early missions.",
+    "details": "Its cursed energy allows a non-technique user to damage curses reliably, though it is a relatively ordinary tool compared with special-grade weapons.",
+    "points": [],
+    "related": [
+      "yuji"
+    ]
+  },
+  {
+    "id": "kamutoke",
+    "title": "Kamutoke",
+    "category": "tool",
+    "spoiler": "manga",
+    "aliases": [
+      "kamutoke",
+      "supreme martial solution"
+    ],
+    "keywords": [
+      "sukuna cursed tool",
+      "lightning"
+    ],
+    "summary": "Kamutoke is a cursed tool associated with Sukuna that releases powerful lightning.",
+    "details": "It is especially dangerous as an independent ranged weapon, though its effect is ineffective against Kashimo because of his electrical nature.",
+    "points": [],
+    "related": [
+      "sukuna",
+      "hajime-kashimo"
+    ]
+  },
+  {
+    "id": "executioners-sword",
+    "title": "Executioner’s Sword",
+    "category": "tool",
+    "spoiler": "manga",
+    "aliases": [
+      "executioner sword",
+      "executioners sword"
+    ],
+    "keywords": [
+      "higuruma",
+      "death penalty",
+      "judgeman"
+    ],
+    "summary": "The Executioner’s Sword appears when Deadly Sentencing delivers a death-penalty verdict.",
+    "details": "Any person judged guilty by Judgeman dies from contact with the blade, making it an absolute punishment rather than a conventional durability-based attack.",
+    "points": [],
+    "related": [
+      "hiromi-higuruma",
+      "deadly-sentencing"
+    ]
+  },
+  {
+    "id": "festering-life-sword",
+    "title": "Festering Life Sword",
+    "category": "tool",
+    "spoiler": "manga",
+    "aliases": [
+      "festering life sword"
+    ],
+    "keywords": [
+      "kurourushi",
+      "cockroach eggs"
+    ],
+    "summary": "The Festering Life Sword is Kurourushi’s cursed tool and launches parasitic cursed organisms into wounds.",
+    "details": "A successful hit can cause insect-like curses to erupt from the target, making even a shallow wound extremely dangerous.",
+    "points": [],
+    "related": [
+      "kurourushi"
+    ]
+  },
+  {
+    "id": "fearsome-womb",
+    "title": "Fearsome Womb Arc",
+    "category": "arc",
+    "spoiler": "anime",
+    "aliases": [
+      "fearsome womb arc",
+      "detention center arc"
+    ],
+    "keywords": [
+      "finger bearer",
+      "yuji death"
+    ],
+    "summary": "The Fearsome Womb arc sends Yuji, Megumi, and Nobara into a detention center occupied by a finger-bearing special-grade curse.",
+    "details": "The mission exposes how badly Jujutsu Headquarters can endanger students and leads to Sukuna taking control, tearing out Yuji’s heart, and creating the conditions for the Enchain vow.",
+    "points": [],
+    "related": [
+      "finger-bearer",
+      "yuji",
+      "sukuna"
+    ]
+  },
+  {
+    "id": "vs-mahito",
+    "title": "Vs. Mahito Arc",
+    "category": "arc",
+    "spoiler": "anime",
+    "aliases": [
+      "vs mahito arc",
+      "junpei arc"
+    ],
+    "keywords": [
+      "junpei",
+      "nanami",
+      "mahito"
+    ],
+    "summary": "The Vs. Mahito arc follows Yuji and Nanami as they investigate murders caused by transfigured humans.",
+    "details": "Mahito manipulates Junpei, forcing Yuji to confront the cruelty of curses and the limits of his desire to save everyone.",
+    "points": [],
+    "related": [
+      "mahito",
+      "junpei-yoshino",
+      "nanami"
+    ]
+  },
+  {
+    "id": "kyoto-goodwill",
+    "title": "Kyoto Goodwill Event Arc",
+    "category": "arc",
+    "spoiler": "anime",
+    "aliases": [
+      "kyoto goodwill arc",
+      "exchange event"
+    ],
+    "keywords": [
+      "todo",
+      "hanami",
+      "baseball"
+    ],
+    "summary": "The Kyoto Goodwill Event arc begins as a school competition and becomes a coordinated curse attack.",
+    "details": "Yuji returns publicly, Todo trains him during battle, Hanami invades the event, and Gojo demonstrates Hollow Purple.",
+    "points": [],
+    "related": [
+      "todo",
+      "hanami",
+      "hollow-purple"
+    ]
+  },
+  {
+    "id": "death-painting-arc",
+    "title": "Death Painting Arc",
+    "category": "arc",
+    "spoi
