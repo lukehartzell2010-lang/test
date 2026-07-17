@@ -1,0 +1,105 @@
+conscious.",
+      events: ["Jogo force-fed Yuji a large number of Sukuna's fingers in an attempt to awaken Sukuna."]
+    },
+    [pairKey("maki", "sukuna")]: {
+      spoiler: "manga",
+      verdict: "Yes — Maki directly fought Sukuna during the final battle.",
+      events: ["Maki used her physical perception, speed, and Split Soul Katana against Sukuna in close combat."]
+    },
+    [pairKey("sukuna", "yuta")]: {
+      spoiler: "manga",
+      verdict: "Yes — Yuta fought Sukuna during the final battle.",
+      events: ["Yuta confronted Sukuna with Rika, copied techniques, and Domain Expansion as part of the coordinated sorcerer strategy."]
+    },
+    [pairKey("kinji-hakari", "hajime-kashimo")]: {
+      spoiler: "manga",
+      verdict: "Yes — Hakari and Kashimo fought in the Tokyo No. 2 Colony.",
+      events: ["Their battle centered on Idle Death Gamble, jackpot regeneration, and Kashimo's charged cursed energy."]
+    },
+    [pairKey("higuruma", "yuji")]: {
+      spoiler: "manga",
+      verdict: "Yes — Yuji and Higuruma fought and later reached an understanding.",
+      events: ["Deadly Sentencing forced Yuji to confront responsibility for the Shibuya massacre before Higuruma chose to help him."]
+    }
+  };
+
+  const MOTIVES = [
+    {
+      test: q => /why (?:did not sukuna|did sukuna not|could sukuna not|sukuna did not|sukuna never) take over yuji|why did yuji keep control.*sukuna/.test(q),
+      primary: "sukuna",
+      related: ["yuji", "binding-vow"],
+      spoiler: "anime",
+      title: "Why Sukuna could not simply keep control of Yuji",
+      answer: "Yuji is an unusually effective vessel whose body normally suppresses Sukuna. Sukuna can surface when Yuji is unconscious, loses control, or is overwhelmed by a sudden influx of fingers, but he cannot simply choose permanent control while Yuji's suppression is functioning.",
+      factors: [
+        ["Yuji's vessel trait", "Yuji is closer to a cage than a normal host: he can contain Sukuna and usually retake control."],
+        ["Temporary openings", "Sukuna gained longer control when Yuji was incapacitated or force-fed many fingers at once, showing that control depends on Yuji's condition rather than Sukuna's preference alone."],
+        ["Binding-vow access", "The 'Enchain' agreement gave Sukuna a narrow future window under specific rules; it was not unrestricted ownership of Yuji's body."]
+      ],
+      mangaExtra: "In later manga material, Sukuna deliberately saved that limited window for a plan involving Megumi rather than wasting it on a temporary rampage inside Yuji."
+    },
+    {
+      test: q => /why (?:did not gojo|did gojo not|gojo did not|gojo never) kill jogo (?:the )?first time|why did gojo let jogo live/.test(q),
+      primary: "gojo",
+      related: ["jogo", "hanami"],
+      spoiler: "anime",
+      title: "Why Gojo did not finish Jogo in their first fight",
+      answer: "Gojo intentionally kept Jogo alive long enough to question him about his allies and plans. Before that interrogation could produce more information, Hanami intervened and escaped with Jogo.",
+      factors: [
+        ["Interrogation", "Gojo wanted intelligence, not merely an immediate exorcism."],
+        ["Outside rescue", "Hanami's intervention ended Gojo's chance to finish the interrogation and kill Jogo afterward."]
+      ]
+    },
+    {
+      test: q => /why (?:did not mahito|did mahito not|mahito did not|mahito never) transfigure yuji|why could mahito not transfigure yuji/.test(q),
+      primary: "mahito",
+      related: ["yuji", "sukuna", "idle-transfiguration"],
+      spoiler: "anime",
+      title: "Why Mahito could not safely transfigure Yuji",
+      answer: "Touching Yuji's soul also brings Mahito into contact with Sukuna's soul. Sukuna retaliates when Mahito crosses that boundary, making Idle Transfiguration on Yuji an immediate lethal risk for Mahito.",
+      factors: [
+        ["Shared body", "Yuji and Sukuna occupy the same body as separate souls."],
+        ["Soul retaliation", "Mahito's technique requires contact with the soul, which exposes him to Sukuna."],
+        ["Not ordinary immunity", "Yuji is not simply immune to soul techniques; the danger comes from the second soul inside him."]
+      ]
+    },
+    {
+      test: q => /why (?:did )?sukuna save megumi|why was sukuna interested in megumi/.test(q),
+      primary: "sukuna",
+      related: ["megumi", "ten-shadows", "mahoraga"],
+      spoiler: "anime",
+      title: "Why Sukuna protected and watched Megumi",
+      answer: "Sukuna recognized unusual potential in Megumi's Ten Shadows Technique and wanted him alive long enough to develop it. Early in the story, the exact purpose is intentionally withheld.",
+      factors: [
+        ["Technique interest", "Megumi's shadow-based technique and Mahoraga ritual caught Sukuna's attention."],
+        ["Future value", "Sukuna's behavior shows that Megumi was more useful alive than dead." ]
+      ],
+      mangaExtra: "Later manga chapters reveal that Sukuna intended to use Megumi as a new vessel and exploit the Ten Shadows Technique."
+    },
+    {
+      test: q => /why could yuji (?:hurt|damage) mahito (?:but|while|when) nanami (?:mostly )?could not|why can yuji hit mahito but nanami/.test(q),
+      primary: "yuji",
+      related: ["mahito", "nanami", "sukuna", "idle-transfiguration"],
+      spoiler: "anime",
+      title: "Why Yuji could damage Mahito more directly than Nanami",
+      answer: "Yuji naturally perceives the outline of the soul because he shares his body with Sukuna. His strikes therefore reach Mahito's soul, while Nanami's normal attacks mainly damage a body Mahito can reshape around his soul.",
+      factors: [
+        ["Yuji's soul awareness", "Sharing a body with another soul taught Yuji the soul's outline instinctively."],
+        ["Mahito's defense", "Mahito preserves his soul's shape and repairs the body around it, making ordinary bodily damage inefficient."],
+        ["Nanami was not powerless", "Nanami could pressure Mahito and force him to spend cursed energy, but he lacked Yuji's direct soul-damaging property."]
+      ]
+    }
+  ];
+
+  const SCENARIOS = [
+    {
+      test: q => /would jogo die (?:to|from) (?:a )?black flash|could jogo survive (?:a )?black flash/.test(q),
+      primary: "jogo",
+      related: ["black-flash", "hanami", "yuji", "todo"],
+      spoiler: "anime",
+      verdict: "Not every Black Flash is automatically a one-hit kill, but Jogo would be in serious danger.",
+      confidence: "Conditional canon answer",
+      reasoning: [
+        ["The attacker matters", "Black Flash amplifies the physical strike that produced it, so a Black Flash from different fighters does not have one fixed damage value."],
+        ["One hit versus a barrage", "Canon never states that one unspecified Black Flash from any user automatically kills Jogo."],
+        ["Durability comparison", "Jogo is portrayed as less durable than Hanami. The author indicated that the full sequence Hanami endured from Yuji and Todo—
