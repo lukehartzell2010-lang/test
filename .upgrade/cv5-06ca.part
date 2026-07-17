@@ -1,0 +1,12 @@
+     factors,
+        { status: factors[0][0] === "No explicit motive stored" ? "Motive not confirmed" : "Evidence-ranked motive analysis", note: "A biography is not treated as an answer to a 'why didn't' question. The engine only gives a motive when causal evidence is available." }
+      )
+    };
+  }
+
+  function installStyles() {
+    if (document.querySelector("#complex-engine-v5-styles")) return;
+    const style = document.createElement("style");
+    style.id = "complex-engine-v5-styles";
+    style.textContent = `
+      .complex-answer-v5{min-width:0;max-width:100%}.complex-verdict-kicker{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#aa78ff;margin-bottom:10px}.complex-verdict{font:500 clamp(20px,3.5vw,30px)/1.4 Georgia,serif;color:#f0eaff;margin:0 0 20px;padding-left:15px;border-left:2px solid #9f66ff;overflow-wrap:anywhere}.complex-factor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.complex-factor{min-width:0;border:1px solid var(--border);border-radius:15px;background:rgba(255,255,255,.018);padding:15px}.complex-factor h4{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:#b384ff;margin:0 0 8px}.complex-factor p{
