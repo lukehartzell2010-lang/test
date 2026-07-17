@@ -1,0 +1,161 @@
+/* JJK Archive Complex Reasoning Engine v5
+   Handles hypotheticals, motives, encounter history, conditional outcomes, and evidence-aware yes/no questions. */
+(() => {
+  "use strict";
+
+  const VERSION = "5.0.0";
+  const previousPerformSearch = performSearch;
+
+  const qnorm = text => {
+    const expanded = String(text || "").toLowerCase().replace(/[’‘]/g, "'")
+      .replace(/\bcan't\b/g, "cannot")
+      .replace(/\bcouldn't\b/g, "could not")
+      .replace(/\bwouldn't\b/g, "would not")
+      .replace(/\bdidn't\b/g, "did not")
+      .replace(/\bdoesn't\b/g, "does not")
+      .replace(/\bhasn't\b/g, "has not")
+      .replace(/\bhaven't\b/g, "have not")
+      .replace(/\bisn't\b/g, "is not")
+      .replace(/\baren't\b/g, "are not");
+    return normalize(expanded).replace(/\b([a-z0-9-]+) s\b/g, "$1");
+  };
+
+  const unique = (list, key = item => item) => {
+    const seen = new Set();
+    return list.filter(item => {
+      const value = key(item);
+      if (seen.has(value)) return false;
+      seen.add(value);
+      return true;
+    });
+  };
+
+  const visible = entry => !!entry && (state.spoiler === "manga" || entry.spoiler === "anime");
+
+  function linked(entry, categories = null) {
+    if (!entry) return [];
+    const direct = (entry.related || []).map(getEntry).filter(Boolean);
+    const reverse = entries.filter(candidate => (candidate.related || []).includes(entry.id));
+    let result = unique([...direct, ...reverse], item => item.id).filter(visible);
+    if (categories?.length) result = result.filter(item => categories.includes(item.category));
+    return result;
+  }
+
+  const escapeRegex = text => String(text).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+  function namePosition(query, name) {
+    const match = new RegExp(`(^|\\s)${escapeRegex(name)}(?=$|\\s)`).exec(query);
+    return match ? match.index + match[1].length : -1;
+  }
+
+  const SPECIAL_REFERENCES = [
+    { phrase: "maximum meteor", id: "disaster-flames" },
+    { phrase: "jogo domain", id: "coffin-iron-mountain" },
+    { phrase: "dagon domain", id: "horizon-skandha" }
+  ];
+
+  function mentions(raw, pool = allowedEntries()) {
+    const q = qnorm(raw);
+    const found = [];
+    for (const entry of pool) {
+      const names = entryNames(entry).sort((a, b) => b.length - a.length);
+      let matched = null;
+      let index = -1;
+      for (const name of names) {
+        const position = namePosition(q, name);
+        if (position >= 0) { matched = name; index = position; break; }
+      }
+      if (matched) found.push({ entry, matched, index });
+    }
+    for (const reference of SPECIAL_REFERENCES) {
+      const index = namePosition(q, reference.phrase);
+      const entry = getEntry(reference.id);
+      if (index >= 0 && entry && pool.some(candidate => candidate.id === entry.id)) {
+        found.push({ entry, matched: reference.phrase, index });
+      }
+    }
+    return unique(found.sort((a, b) => a.index - b.index || b.matched.length - a.matched.length), item => item.entry.id);
+  }
+
+  const pairKey = (a, b) => [a, b].sort().join("|");
+
+  const ENCOUNTERS = {
+    [pairKey("gojo", "hanami")]: {
+      spoiler: "anime",
+      verdict: "Yes — Gojo and Hanami directly encountered each other multiple times.",
+      events: [
+        "Hanami rescued Jogo after Gojo defeated and questioned him during their first clash.",
+        "During the Kyoto Goodwill Event, Gojo broke through the curtain and struck Hanami's escape route with Hollow Purple.",
+        "In Shibuya, Hanami fought Gojo at close range and Gojo ultimately exorcised Hanami."
+      ],
+      note: "This is not merely an indirect connection; they saw and fought one another on-screen."
+    },
+    [pairKey("gojo", "jogo")]: {
+      spoiler: "anime",
+      verdict: "Yes — Gojo and Jogo fought directly more than once.",
+      events: [
+        "Jogo challenged Gojo early in the story and was overwhelmed by Infinity and Unlimited Void.",
+        "They fought again in Shibuya as part of the disaster curses' plan to seal Gojo."
+      ]
+    },
+    [pairKey("yuji", "hanami")]: {
+      spoiler: "anime",
+      verdict: "Yes — Yuji fought Hanami during the Kyoto Goodwill Event.",
+      events: ["Yuji and Todo pressured Hanami with Boogie Woogie, repeated Black Flashes, and Playful Cloud support."]
+    },
+    [pairKey("todo", "hanami")]: {
+      spoiler: "anime",
+      verdict: "Yes — Todo fought Hanami alongside Yuji.",
+      events: ["Todo used Boogie Woogie to disrupt Hanami's defense and create openings for Yuji's Black Flashes."]
+    },
+    [pairKey("sukuna", "jogo")]: {
+      spoiler: "anime",
+      verdict: "Yes — Sukuna and Jogo met and fought in Shibuya.",
+      events: ["Jogo attempted to recruit or awaken Sukuna, after which Sukuna forced him into a lethal battle."]
+    },
+    [pairKey("gojo", "toji")]: {
+      spoiler: "anime",
+      verdict: "Yes — Gojo and Toji fought twice during the Hidden Inventory incident.",
+      events: [
+        "Toji exhausted Gojo's attention and defenses before ambushing and defeating him.",
+        "After learning Reverse Cursed Technique, Gojo returned and won the rematch with Hollow Purple."
+      ]
+    },
+    [pairKey("mahito", "nanami")]: {
+      spoiler: "anime",
+      verdict: "Yes — Mahito and Nanami fought directly.",
+      events: ["Their first battle established how difficult Mahito is to damage without reaching the soul."]
+    },
+    [pairKey("mahito", "nobara")]: {
+      spoiler: "anime",
+      verdict: "Yes — Nobara fought Mahito's double in Shibuya.",
+      events: ["Resonance could affect Mahito through the connection between his divided bodies and soul."]
+    },
+    [pairKey("mahito", "yuji")]: {
+      spoiler: "anime",
+      verdict: "Yes — Yuji and Mahito are recurring direct enemies.",
+      events: ["Yuji's awareness of the soul lets his strikes threaten Mahito in a way ordinary physical attacks cannot."]
+    },
+    [pairKey("todo", "yuki-tsukumo")]: {
+      spoiler: "anime",
+      verdict: "Yes — Yuki Tsukumo trained Todo.",
+      events: ["Todo identifies Yuki as his teacher, establishing a direct mentor-student relationship."]
+    },
+    [pairKey("geto", "yuta")]: {
+      spoiler: "anime",
+      verdict: "Yes — Geto and Yuta fought during the Night Parade of a Hundred Demons.",
+      events: ["Geto targeted Rika and fought Yuta at Tokyo Jujutsu High."]
+    },
+    [pairKey("gojo", "yuta")]: {
+      spoiler: "anime",
+      verdict: "Yes — Gojo is Yuta's teacher and sponsor within jujutsu society.",
+      events: ["Gojo enrolled Yuta at Jujutsu High and guided him as a special-grade student."]
+    },
+    [pairKey("gojo", "mahito")]: {
+      spoiler: "anime",
+      verdict: "Yes — Gojo and Mahito directly encountered each other in Shibuya.",
+      events: ["Mahito joined the disaster curses' confrontation with Gojo and was caught by the 0.2-second Unlimited Void."]
+    },
+    [pairKey("jogo", "yuji")]: {
+      spoiler: "anime",
+      verdict: "Yes — Jogo and Yuji were in direct contact in Shibuya, although Yuji was un
