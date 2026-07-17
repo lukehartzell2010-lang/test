@@ -13,7 +13,7 @@
   <main class="loader" id="loading">
     <div class="mark">呪</div>
     <h1>Opening the deeper archive…</h1>
-    <p>Assembling 173 curated records, Question Engine v3, and Deep Dossier v4.</p>
+    <p>Assembling 173 curated records, Question Engine v3, Deep Dossier v4, and the mobile layout fix.</p>
     <div class="orb"></div>
   </main>
   <script>
@@ -28,7 +28,7 @@
     async function loadArchive(){
       try{
         const parts=await Promise.all(files.map(async file=>{
-          const response=await fetch(`${file}?v=20260717q4plain1`,{cache:"no-store"});
+          const response=await fetch(`${file}?v=20260717mobile1`,{cache:"no-store"});
           if(!response.ok)throw new Error(`${file} returned ${response.status}`);
           return response.text();
         }));
@@ -36,7 +36,7 @@
         const requiredMarkers=[
           "window.JJK_KNOWLEDGE",
           "document.documentElement.dataset.appReady",
-          ".upgrade/dv4-08a.part"
+          ".upgrade/mobile-layout-v1.css"
         ];
         const missing=requiredMarkers.filter(marker=>!html.includes(marker));
         if(missing.length){
