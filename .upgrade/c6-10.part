@@ -1,0 +1,324 @@
+es the ratio to the environment, allowing Nanami to destroy structures strategically.",
+      "His blunt sword is wrapped to create a striking surface rather than relying on a sharp edge."
+    ],
+    "relatedAdd": [
+      "revealing-ones-hand",
+      "binding-vow"
+    ],
+    "detailsAppend": ""
+  },
+  "choso": {
+    "keywordsAdd": [
+      "death painting blood generation",
+      "poison blood",
+      "supernova",
+      "flowing red scale"
+    ],
+    "pointsAdd": [
+      "As a Death Painting, Choso converts cursed energy into blood and avoids the normal blood-loss limit of a human user.",
+      "His blood is poisonous to ordinary humans because of his mixed cursed-spirit physiology.",
+      "Convergence supports Piercing Blood and Supernova, while Flowing Red Scale enhances his own body.",
+      "Choso can sense transformations and danger affecting his brothers through their shared blood connection."
+    ],
+    "relatedAdd": [
+      "convergence",
+      "piercing-blood",
+      "supernova",
+      "flowing-red-scale"
+    ],
+    "detailsAppend": ""
+  },
+  "kinji-hakari": {
+    "keywordsAdd": [
+      "jackpot 4 minutes 11 seconds",
+      "automatic rct",
+      "rough cursed energy",
+      "probability shifts"
+    ],
+    "pointsAdd": [
+      "A jackpot grants effectively unlimited cursed energy for four minutes and eleven seconds.",
+      "The overflowing energy triggers automatic Reverse Cursed Technique even though Hakari does not consciously perform it.",
+      "Idle Death Gamble can alter probability through consecutive spins and mode-specific rules.",
+      "Hakari's cursed energy has a naturally rough texture that makes ordinary strikes feel sharp."
+    ],
+    "relatedAdd": [
+      "cursed-energy-trait",
+      "cursed-energy-reserves",
+      "reverse-cursed-technique"
+    ],
+    "detailsAppend": ""
+  },
+  "hiromi-higuruma": {
+    "keywordsAdd": [
+      "confiscation death penalty",
+      "judgeman evidence",
+      "gavel forms",
+      "domain rules"
+    ],
+    "pointsAdd": [
+      "Deadly Sentencing forces a trial based on Judgeman's evidence rather than Higuruma's personal knowledge.",
+      "Confiscation removes a cursed technique when possible, but may seize a cursed tool first under certain conditions.",
+      "A death sentence grants the Executioner's Sword, which kills the sentenced target on contact.",
+      "Higuruma's gavel can change size and form throughout close combat."
+    ],
+    "relatedAdd": [
+      "higuruma-gavel",
+      "sure-hit-effect",
+      "binding-vow"
+    ],
+    "detailsAppend": ""
+  },
+  "hajime-kashimo": {
+    "keywordsAdd": [
+      "electric cursed energy",
+      "one use technique",
+      "lightning sure hit without domain"
+    ],
+    "pointsAdd": [
+      "Kashimo's cursed energy transfers electric charge through contact.",
+      "After establishing opposite charges, his lightning discharge follows the charge path and is extremely difficult to avoid.",
+      "Mythical Beast Amber reconstructs his body around electrical phenomena but can be used only once and destroys the body afterward.",
+      "His non-domain lightning is not a formal domain sure-hit, even though charge makes the discharge function with similar reliability."
+    ],
+    "relatedAdd": [
+      "cursed-energy-electrification",
+      "cursed-energy-trait"
+    ],
+    "detailsAppend": ""
+  },
+  "yuki-tsukumo": {
+    "keywordsAdd": [
+      "virtual mass",
+      "garuda",
+      "soul research",
+      "special grade"
+    ],
+    "pointsAdd": [
+      "Star Rage adds virtual mass to Yuki or Garuda without normally burdening their movement.",
+      "The added mass increases striking force and can make conceptual targeting difficult at extreme levels.",
+      "Yuki researched the soul and sought to eliminate curses by addressing cursed energy at its source.",
+      "Garuda acts as both shikigami and weapon under Star Rage."
+    ],
+    "relatedAdd": [
+      "garuda",
+      "soul",
+      "heavenly-restriction"
+    ],
+    "detailsAppend": ""
+  },
+  "angel": {
+    "keywordsAdd": [
+      "technique extinguishment",
+      "incarnation removal",
+      "jacob's ladder"
+    ],
+    "pointsAdd": [
+      "Angel is an incarnated sorcerer who shares Hana's body without fully suppressing her personality.",
+      "Technique Extinguishment neutralizes cursed techniques, barriers, cursed objects, and incarnation bonds.",
+      "Jacob's Ladder is the technique's high-output offensive application.",
+      "Angel's goal is to eliminate incarnated players she considers incompatible with divine law."
+    ],
+    "relatedAdd": [
+      "jacobs-ladder",
+      "vessel-and-incarnation",
+      "cursed-object"
+    ],
+    "detailsAppend": ""
+  },
+  "hana-kurusu": {
+    "keywordsAdd": [
+      "angel vessel",
+      "megumi rescue",
+      "jacob's ladder hesitation"
+    ],
+    "pointsAdd": [
+      "Hana coexists with Angel rather than being completely overwritten.",
+      "Her attachment to Megumi affects decisions involving Sukuna and Jacob's Ladder.",
+      "Hana can fly through Angel's wings and use Technique Extinguishment through their shared body.",
+      "Emotional hesitation can interrupt an otherwise effective technique."
+    ],
+    "relatedAdd": [
+      "jacobs-ladder",
+      "vessel-and-incarnation",
+      "megumi"
+    ],
+    "detailsAppend": ""
+  },
+  "mahito": {
+    "keywordsAdd": [
+      "soul shape",
+      "transfigured humans",
+      "domain touch",
+      "black flash"
+    ],
+    "pointsAdd": [
+      "Idle Transfiguration changes the soul first, causing the body to follow its new shape.",
+      "Mahito preserves his own soul and repairs the body around it, making ordinary bodily damage inefficient.",
+      "Yuji and Resonance can threaten him because they reach the soul through unusual connections.",
+      "Self-Embodiment of Perfection applies soul contact as a domain sure-hit."
+    ],
+    "relatedAdd": [
+      "soul-damage",
+      "transfigured-humans",
+      "resonance",
+      "sure-hit-effect"
+    ],
+    "detailsAppend": ""
+  },
+  "jogo": {
+    "keywordsAdd": [
+      "maximum meteor",
+      "domain heat",
+      "disaster curse durability",
+      "furnace clash"
+    ],
+    "pointsAdd": [
+      "Jogo combines extreme speed, volcanic projectiles, insects, lava, and large-area fire attacks.",
+      "Maximum: Meteor has enormous destructive power but can be avoided by sufficiently fast opponents.",
+      "Coffin of the Iron Mountain imposes lethal heat and volcanic attacks through its domain.",
+      "Jogo's durability is lower than Hanami's, despite his greater speed and destructive output."
+    ],
+    "relatedAdd": [
+      "maximum-meteor",
+      "cursed-energy-output",
+      "furnace"
+    ],
+    "detailsAppend": ""
+  },
+  "hanami": {
+    "keywordsAdd": [
+      "life force absorption",
+      "domain amplification",
+      "durability",
+      "flower field"
+    ],
+    "pointsAdd": [
+      "Hanami converts the life force of plants into cursed energy despite plants normally lacking cursed energy.",
+      "Their extreme durability lets them survive repeated Black Flashes and Playful Cloud strikes.",
+      "The flower field suppresses hostility and creates a momentary opening rather than directly damaging targets.",
+      "Hanami learns Domain Amplification for the Shibuya plan against Gojo."
+    ],
+    "relatedAdd": [
+      "domain-amplification",
+      "black-flash",
+      "playful-cloud"
+    ],
+    "detailsAppend": ""
+  },
+  "mahoraga": {
+    "keywordsAdd": [
+      "adaptation wheel",
+      "multiple solutions",
+      "infinity adaptation",
+      "sword of extermination"
+    ],
+    "pointsAdd": [
+      "Mahoraga adapts to phenomena through exposure and turns of the wheel, but it must survive long enough for progress to complete.",
+      "Adaptation can continue after the first solution, allowing Mahoraga to develop additional counters.",
+      "Adapting to one application does not automatically prove immunity to every technique in the same family.",
+      "The Sword of Extermination uses positive energy and is especially effective against cursed spirits."
+    ],
+    "relatedAdd": [
+      "sword-of-extermination",
+      "totality",
+      "positive-energy",
+      "infinity"
+    ],
+    "detailsAppend": ""
+  },
+  "limitless": {
+    "keywordsAdd": [
+      "infinity blue red purple applications",
+      "spatial manipulation",
+      "six eyes efficiency"
+    ],
+    "pointsAdd": [
+      "Limitless is the inherited spatial technique; Infinity, Blue, Red, and Hollow Purple are distinct applications.",
+      "The Six Eyes are not technically required for Limitless to exist, but they are essential to using it at Gojo's level of precision and efficiency.",
+      "Infinity manipulates approach, Blue creates attraction, and Red produces repulsion.",
+      "Adapting or countering one application does not automatically solve every Limitless phenomenon."
+    ],
+    "relatedAdd": [
+      "infinity",
+      "cursed-technique-lapse-blue",
+      "cursed-technique-reversal-red",
+      "cursed-energy-efficiency"
+    ],
+    "detailsAppend": ""
+  },
+  "black-flash": {
+    "keywordsAdd": [
+      "2.5 exponent",
+      "timing window",
+      "zone",
+      "not voluntary"
+    ],
+    "pointsAdd": [
+      "Black Flash occurs when cursed energy strikes within one millionth of a second of a physical hit.",
+      "Its distortion raises the destructive result of the strike to the power of 2.5 rather than applying one universal damage number.",
+      "No sorcerer can normally activate it on command.",
+      "Experiencing Black Flash deepens intuitive cursed-energy understanding and can place the user in an intense state of concentration."
+    ],
+    "relatedAdd": [
+      "cursed-energy-control",
+      "cursed-energy-reinforcement",
+      "divergent-fist"
+    ],
+    "detailsAppend": ""
+  },
+  "domain-expansion": {
+    "keywordsAdd": [
+      "embedded technique",
+      "sure hit",
+      "barrier conditions",
+      "burnout"
+    ],
+    "pointsAdd": [
+      "Domain Expansion realizes an innate domain, constructs a barrier or open boundary, and imbues a cursed technique into the space.",
+      "Sure-hit effects vary from lethal attacks to compulsory rules and information.",
+      "Domain refinement depends on barrier skill, output, conditions, and the caster's ability to maintain the structure.",
+      "After collapse, the innate technique usually enters burnout even if the user can still reinforce the body."
+    ],
+    "relatedAdd": [
+      "barrier-techniques",
+      "sure-hit-effect",
+      "domain-clash",
+      "open-barrier-domain",
+      "technique-burnout"
+    ],
+    "detailsAppend": ""
+  },
+  "reverse-cursed-technique": {
+    "keywordsAdd": [
+      "positive energy generation",
+      "self healing",
+      "healing others",
+      "brain"
+    ],
+    "pointsAdd": [
+      "Reverse Cursed Technique multiplies cursed energy to create positive energy.",
+      "Healing oneself is more common than outputting positive energy into another person.",
+      "Brain and poison treatment demand greater precision than closing ordinary wounds.",
+      "A user cannot safely regenerate indefinitely if output, reserves, or brain function deteriorate."
+    ],
+    "relatedAdd": [
+      "positive-energy",
+      "reverse-cursed-technique-output",
+      "cursed-energy-efficiency"
+    ],
+    "detailsAppend": ""
+  },
+  "binding-vow": {
+    "keywordsAdd": [
+      "self vow mutual vow penalty",
+      "conditions tradeoff",
+      "revealing hand"
+    ],
+    "pointsAdd": [
+      "Self-imposed vows exchange restrictions or risk for increased effectiveness and can often be abandoned by losing the benefit.",
+      "Mutual vows between people carry an uncertain penalty if broken and are treated with greater caution.",
+      "Domain range, activation steps, targeting, and escape routes can all be modified through vow-like exchanges.",
+      "Revealing one's technique is a common self-imposed vow that trades information for power."
+    ],
+    "relatedAdd": [
+      "binding-vow-typ
