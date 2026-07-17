@@ -1,0 +1,136 @@
+urn includes senses and perception, not only raw muscular strength.",
+            "Cursed tools remain important because a zero-energy fighter cannot power a normal innate cursed technique."
+          ]
+        },
+        {
+          title: "Common misconceptions",
+          bullets: [
+            "Heavenly Restriction is not voluntarily activated.",
+            "Not every restriction removes cursed energy.",
+            "Having zero cursed energy does not make someone literally invisible to normal eyesight.",
+            "The physical benefit is a complete jujutsu tradeoff, not ordinary athletic training."
+          ]
+        }
+      ]
+    },
+
+    "hollow-purple": {
+      verified: true,
+      source: "Hollow_Technique:_Purple",
+      sections: [
+        {
+          title: "How Purple is formed",
+          paragraphs: [
+            "Hollow Purple combines the attractive spatial effect of Blue with the repulsive effect of Red. Bringing those opposing applications together creates a destructive mass of distorted space that travels through and tears apart its path.",
+            "Using it requires mastery of both Cursed Technique Lapse and Cursed Technique Reversal, making it one of Limitless's most advanced offensive applications."
+          ]
+        },
+        {
+          title: "Power and range",
+          paragraphs: [
+            "Purple can be fired as a directed attack, and its scale changes with output, preparation, and the way it is released. The long-range version used against Hanami destroys a vast path, while later uses demonstrate different output and detonation conditions.",
+            "Its speed and area make conventional evasion extremely difficult, but the story still treats distance, warning, durability, and output as meaningful factors."
+          ]
+        },
+        {
+          title: "What canon does and does not say",
+          paragraphs: [
+            "Translations and fan explanations sometimes call Purple imaginary mass, virtual mass, or matter erasure. The safest canon description is that the combined Limitless effects create an extraordinarily destructive spatial attack.",
+            "The manga does not establish a simple universal rule that anything touched by Purple is automatically erased from existence regardless of output or durability. Characters can survive partial or reduced exposure under exceptional conditions."
+          ]
+        },
+        {
+          title: "Common misconceptions",
+          bullets: [
+            "Purple is not a separate inherited technique unrelated to Limitless.",
+            "It is not merely Blue and Red fired side by side; the two effects are combined into a new application.",
+            "Its destructive power is immense, but 'automatic existence erasure' is stronger wording than the canon consistently supports.",
+            "Different Purple attacks should not be assumed to have identical output."
+          ]
+        }
+      ]
+    },
+
+    "boogie-woogie": {
+      verified: true,
+      source: "Boogie_Woogie",
+      sections: [
+        {
+          title: "The swap rule",
+          paragraphs: [
+            "Boogie Woogie changes the positions of two valid targets when Todo performs the technique's activation. A target must possess enough cursed energy to be recognized, which lets Todo swap sorcerers, cursed spirits, and cursed-energy-infused objects.",
+            "Todo can swap himself with another target or exchange two other targets. The technique changes position rather than direction, momentum, injury, or identity."
+          ]
+        },
+        {
+          title: "Why it is so dangerous",
+          paragraphs: [
+            "The raw effect is simple, but Todo's timing and intelligence make it oppressive. Every clap creates several possibilities: a real swap, a swap between different targets, or no swap at all.",
+            "An opponent who reacts to the sound can be punished even when Todo does nothing. This turns the activation cue into a psychological weapon and constantly disrupts targeting, defense, and teamwork."
+          ]
+        },
+        {
+          title: "Team combat",
+          paragraphs: [
+            "Boogie Woogie is especially powerful with a partner who can immediately exploit openings. Todo rapidly teaches Yuji to trust the swaps, allowing Yuji to continue attacking without pausing to visually confirm every new position.",
+            "Because the technique can include the opponent, an ally, Todo, and infused objects, a single battlefield can contain many possible exchange pairs."
+          ]
+        },
+        {
+          title: "Common misconceptions",
+          bullets: [
+            "Todo does not have to swap himself every time.",
+            "A clap can be a feint.",
+            "The technique swaps positions; it does not teleport a target to any arbitrary empty location.",
+            "The apparent simplicity of the rule does not limit the number of tactical combinations."
+          ]
+        },
+        {
+          title: "Later manga development",
+          spoiler: "manga",
+          paragraphs: [
+            "Later manga material introduces a new activation method that massively increases the number and speed of possible swaps. The core rule remains positional exchange, but the new instrument changes the technique's practical ceiling."
+          ]
+        }
+      ]
+    }
+  };
+
+  const SOURCE_OVERRIDES = {
+    "cursed-energy": "Cursed_Energy",
+    "cursed-technique": "Cursed_Technique",
+    "reverse-cursed-technique": "Reverse_Cursed_Technique",
+    "domain-expansion": "Domain_Expansion",
+    "simple-domain": "Simple_Domain",
+    "binding-vow": "Binding_Vow",
+    "black-flash": "Black_Flash",
+    "heavenly-restriction": "Heavenly_Restriction",
+    "six-eyes": "Six_Eyes",
+    "hollow-purple": "Hollow_Technique:_Purple",
+    "unlimited-void": "Unlimited_Void",
+    "ten-shadows": "Ten_Shadows_Technique",
+    "mahoraga": "Eight-Handled_Sword_Divergent_Sila_Divine_General_Mahoraga",
+    "malevolent-shrine": "Malevolent_Shrine",
+    "idle-transfiguration": "Idle_Transfiguration",
+    "boogie-woogie": "Boogie_Woogie"
+  };
+
+  const LIMIT_WORDS = /\b(?:cannot|can't|could not|does not|doesn't|only|requires?|requirement|limit|weakness|risk|cost|burnout|incomplete|temporary|outside help|destroyed|condition|restriction|must|unable|difficult|dangerous|exhaust|invalid|not )\b/i;
+
+  function unique(list) {
+    return list.filter(Boolean).filter((item, index, array) => array.findIndex(other => other.id === item.id) === index);
+  }
+
+  function visible(entry) {
+    return entry && (state.spoiler === "manga" || entry.spoiler === "anime");
+  }
+
+  function linked(entry) {
+    if (!entry) return [];
+    const direct = (entry.related || []).map(getEntry).filter(Boolean);
+    const reverse = entries.filter(candidate => (candidate.related || []).includes(entry.id));
+    return unique([...direct, ...reverse]).filter(visible);
+  }
+
+  function sentenceArray(entry) {
+    return [entry.summar
