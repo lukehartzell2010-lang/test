@@ -1,0 +1,238 @@
+ manga-aware archive.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <div>
+            <small>ENTRY POINTS</small>
+            <h2>Explore the archive</h2>
+          </div>
+          <button class="text-button" data-action="browseAll">View all →</button>
+        </div>
+        <div id="categoryGrid" class="category-grid"></div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-heading">
+          <div>
+            <small>POPULAR RECORDS</small>
+            <h2>Frequently searched</h2>
+          </div>
+        </div>
+        <div id="popularGrid" class="popular-grid"></div>
+      </section>
+    </section>
+
+    <section id="resultsView" class="view">
+      <button class="back-button" data-action="home">← Back to archive</button>
+
+      <div class="results-hero">
+        <small>ARCHIVE RESPONSE</small>
+        <h2 id="queryTitle">Your question</h2>
+        <div id="queryBreakdown" class="breakdown"></div>
+      </div>
+
+      <div class="results-layout">
+        <article class="answer-panel">
+          <div class="panel-topline">
+            <span id="answerType">Best answer</span>
+            <div>
+              <button id="saveAnswer" class="icon-button" title="Save result">☆</button>
+              <button id="copyAnswer" class="icon-button" title="Copy answer">⧉</button>
+            </div>
+          </div>
+          <div id="answerContent"></div>
+        </article>
+
+        <aside class="related-panel">
+          <div class="related-heading">
+            <small>CONNECTED RECORDS</small>
+            <h3>Related knowledge</h3>
+          </div>
+          <div id="relatedResults"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="browseView" class="view">
+      <button class="back-button" data-action="home">← Back to archive</button>
+      <div class="browse-header">
+        <div>
+          <small>KNOWLEDGE INDEX</small>
+          <h2 id="browseTitle">All records</h2>
+        </div>
+        <label class="mini-search">
+          <span>⌕</span>
+          <input id="browseSearch" placeholder="Filter entries" />
+        </label>
+      </div>
+      <div id="browseGrid" class="browse-grid"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script>
+
+const JJK_KNOWLEDGE = [
+  {
+    id: "cursed-energy",
+    title: "Cursed Energy",
+    category: "concept",
+    spoiler: "anime",
+    aliases: ["ce", "negative energy"],
+    keywords: ["emotion", "power system", "control", "reinforcement"],
+    summary: "Cursed energy is the supernatural power produced by negative human emotions. Sorcerers learn to control it, while ordinary people leak it unconsciously.",
+    details: "Sorcerers use cursed energy to reinforce their bodies, power cursed techniques, create barriers, and perform specialized applications. Efficiency, output, reserves, and control are separate traits: a fighter can have enormous reserves but poor efficiency, or precise control without overwhelming output.",
+    points: [
+      "Cursed spirits form from accumulated human fear and negativity.",
+      "Physical reinforcement is the most basic combat use.",
+      "Cursed techniques convert cursed energy into a specific supernatural effect."
+    ],
+    related: ["cursed-technique", "reverse-cursed-technique", "black-flash"]
+  },
+  {
+    id: "cursed-technique",
+    title: "Cursed Techniques",
+    category: "concept",
+    spoiler: "anime",
+    aliases: ["innate technique", "ct"],
+    keywords: ["ability", "inherited", "innate", "sorcerer"],
+    summary: "A cursed technique is an engraved supernatural ability that turns cursed energy into a specific effect.",
+    details: "Most innate techniques are unique to an individual or inherited through a bloodline. A technique has a core rule, but skill can produce extensions, maximum techniques, reversal applications, barriers, shikigami, or a Domain Expansion.",
+    points: [
+      "An inherited technique can become famous within a clan.",
+      "Technique burnout usually follows Domain Expansion.",
+      "Binding vows can alter conditions, power, range, or risk."
+    ],
+    related: ["domain-expansion", "binding-vow", "technique-burnout"]
+  },
+  {
+    id: "reverse-cursed-technique",
+    title: "Reverse Cursed Technique",
+    category: "concept",
+    spoiler: "anime",
+    aliases: ["rct", "positive energy"],
+    keywords: ["healing", "regeneration", "reverse", "positive"],
+    summary: "Reverse Cursed Technique multiplies cursed energy against itself to create positive energy, most commonly used for healing.",
+    details: "RCT is difficult because it demands extremely precise energy manipulation. Some users can heal only themselves, while rare specialists can output positive energy into other people. Positive energy is especially destructive to cursed spirits.",
+    points: [
+      "Healing the brain is dangerous and technically demanding.",
+      "RCT does not automatically restore cursed energy reserves.",
+      "Technique reversal uses positive energy to invert a cursed technique's normal effect."
+    ],
+    related: ["cursed-energy", "gojo", "yuta"]
+  },
+  {
+    id: "domain-expansion",
+    title: "Domain Expansion",
+    category: "domain",
+    spoiler: "anime",
+    aliases: ["domain", "ryoiki tenkai"],
+    keywords: ["barrier", "sure hit", "pinnacle", "clash"],
+    summary: "Domain Expansion manifests a user's innate domain through a barrier and normally grants their cursed technique a guaranteed-hit effect.",
+    details: "A complete domain is the pinnacle of jujutsu. It creates ideal conditions for the user's technique, but costs huge amounts of cursed energy. When domains overlap, refinement, barrier construction, output, and compatibility decide the clash.",
+    points: [
+      "Simple Domain, Hollow Wicker Basket, and Falling Blossom Emotion can counter sure-hit effects.",
+      "Open-barrier domains trade enclosure for extraordinary range and pressure.",
+      "Using a domain usually causes temporary cursed-technique burnout."
+    ],
+    related: ["simple-domain", "malevolent-shrine", "unlimited-void", "chimera-shadow-garden"]
+  },
+  {
+    id: "simple-domain",
+    title: "Simple Domain",
+    category: "concept",
+    spoiler: "anime",
+    aliases: ["new shadow style simple domain"],
+    keywords: ["anti domain", "barrier", "sure hit"],
+    summary: "Simple Domain creates a small defensive barrier that interferes with a Domain Expansion's guaranteed-hit effect.",
+    details: "It does not overpower a full domain. Instead, it buys time by neutralizing or disrupting the sure-hit within its limited area. Strong domains can strip it away quickly, and movement or damage may destabilize it.",
+    points: ["Useful as an anti-domain emergency measure.", "Some schools teach specialized combat forms through New Shadow Style."],
+    related: ["domain-expansion", "falling-blossom-emotion"]
+  },
+  {
+    id: "binding-vow",
+    title: "Binding Vows",
+    category: "concept",
+    spoiler: "anime",
+    aliases: ["vow", "restriction"],
+    keywords: ["tradeoff", "conditions", "risk", "promise"],
+    summary: "A binding vow exchanges a real restriction, risk, or promise for a meaningful jujutsu advantage.",
+    details: "Vows can be made with oneself or another person. Self-imposed vows may increase power, range, speed, or efficiency by adding a limitation. Breaking a mutual vow can produce unpredictable consequences.",
+    points: ["The benefit must correspond to the sacrifice.", "Revealing one's technique can increase its effectiveness."],
+    related: ["heavenly-restriction", "cursed-technique"]
+  },
+  {
+    id: "black-flash",
+    title: "Black Flash",
+    category: "concept",
+    spoiler: "anime",
+    aliases: ["kokusen"],
+    keywords: ["impact", "timing", "2.5", "zone"],
+    summary: "Black Flash occurs when cursed energy lands within an almost impossibly tiny interval after a physical strike, creating spatial distortion and explosive impact.",
+    details: "It cannot be performed reliably on command. Experiencing it places a sorcerer into an elevated state of understanding often described as being 'in the zone,' sharpening their feel for cursed energy.",
+    points: ["Its impact is far beyond an ordinary reinforced strike.", "Multiple consecutive Black Flashes are possible."],
+    related: ["yuji", "mahito", "todo"]
+  },
+  {
+    id: "heavenly-restriction",
+    title: "Heavenly Restriction",
+    category: "concept",
+    spoiler: "anime",
+    aliases: ["heavenly pact"],
+    keywords: ["tradeoff", "body", "zero cursed energy", "maki", "toji"],
+    summary: "Heavenly Restriction is a condition imposed at birth that sacrifices one trait to amplify another beyond normal limits.",
+    details: "The most famous physical type removes or drastically reduces cursed energy in exchange for extraordinary senses and physical ability. Other restrictions may damage the body while granting immense cursed-energy reserves or technique range.",
+    points: ["It is not voluntarily chosen.", "The exact tradeoff differs by person."],
+    related: ["toji", "maki", "mechamaru"]
+  },
+  {
+    id: "gojo",
+    title: "Satoru Gojo",
+    category: "character",
+    spoiler: "anime",
+    aliases: ["gojo", "the strongest", "satoru"],
+    keywords: ["limitless", "six eyes", "teacher", "special grade"],
+    summary: "Satoru Gojo is a special-grade sorcerer who combines the Limitless technique with the Six Eyes, making him the defining powerhouse of the modern era.",
+    details: "Gojo is a teacher at Tokyo Jujutsu High and seeks to reform jujutsu society by raising powerful, independent students. His combat style combines nearly perfect cursed-energy efficiency, spatial control, high-speed analysis, Reverse Cursed Technique, and Domain Expansion.",
+    points: [
+      "Infinity prevents threats from reaching him by infinitely dividing the space between.",
+      "Blue attracts, Red repels, and Hollow Purple combines both effects.",
+      "Unlimited Void overwhelms targets with boundless information."
+    ],
+    related: ["limitless", "six-eyes", "unlimited-void", "hollow-purple", "geto"]
+  },
+  {
+    id: "yuji",
+    title: "Yuji Itadori",
+    category: "character",
+    spoiler: "anime",
+    aliases: ["itadori", "yuji"],
+    keywords: ["sukuna vessel", "divergent fist", "black flash", "main character"],
+    summary: "Yuji Itadori is an exceptionally athletic student who becomes Sukuna's vessel and enters jujutsu society to help people die without regret.",
+    details: "Yuji begins without a conventional innate technique, relying on overwhelming physical ability, cursed-energy reinforcement, Divergent Fist, and an extraordinary instinct for Black Flash. His empathy and refusal to reduce people to numbers drive much of the story.",
+    points: ["He can suppress Sukuna under normal conditions.", "His close-range combat adapts rapidly under pressure."],
+    related: ["sukuna", "megumi", "nobara", "black-flash"]
+  },
+  {
+    id: "megumi",
+    title: "Megumi Fushiguro",
+    category: "character",
+    spoiler: "anime",
+    aliases: ["fushiguro", "megumi"],
+    keywords: ["ten shadows", "shikigami", "zenin", "mahoraga"],
+    summary: "Megumi Fushiguro is a Ten Shadows Technique user whose tactical intelligence and unusual potential make him one of the most important young sorcerers.",
+    details: "Megumi summons shikigami through shadows, stores objects within shadows, and uses darkness as a flexible medium. He is willing to risk himself too easily, but grows by learning to pursue victory rather than sacrifice.",
+    points: ["He inherited the Zenin clan's prized Ten Shadows Technique.", "His incomplete domain is Chimera Shadow Garden."],
+    related: ["ten-shadows", "chimera-shadow-garden", "mahoraga", "toji"]
+  },
+  {
+    id: "nobara",
+    title: "Nobara Kugisaki",
+    category: "character",
+    spoiler: "anime",
+    aliases: ["nobara"
