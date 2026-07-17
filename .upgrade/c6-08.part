@@ -1,0 +1,386 @@
+r's Sword."
+    ],
+    "related": [
+      "hiromi-higuruma",
+      "deadly-sentencing",
+      "executioners-sword"
+    ]
+  },
+  {
+    "id": "yuta-ring",
+    "title": "Yuta's Ring",
+    "category": "tool",
+    "spoiler": "anime",
+    "aliases": [
+      "yuta ring",
+      "rika ring",
+      "engagement ring"
+    ],
+    "keywords": [
+      "yuta",
+      "rika",
+      "copy",
+      "full manifestation"
+    ],
+    "summary": "Yuta's ring is the bond and medium through which he fully manifests Rika.",
+    "details": "Wearing the ring connects Yuta to Rika's external cursed-energy storage and copied techniques for a limited period.",
+    "points": [
+      "The ring originated from Yuta's childhood promise to Rika Orimoto.",
+      "After the original curse is released, the remaining Rika continues to use the ring as their connection.",
+      "Full manifestation is limited to approximately five minutes."
+    ],
+    "related": [
+      "yuta",
+      "rika",
+      "copy-technique"
+    ]
+  },
+  {
+    "id": "maki-glasses",
+    "title": "Maki's Cursed Glasses",
+    "category": "tool",
+    "spoiler": "anime",
+    "aliases": [
+      "maki glasses",
+      "curse seeing glasses"
+    ],
+    "keywords": [
+      "maki",
+      "heavenly restriction",
+      "cursed spirits"
+    ],
+    "summary": "Maki's glasses are cursed tools that let her see cursed spirits despite lacking ordinary cursed-energy perception.",
+    "details": "Before her Heavenly Restriction becomes fully realized, the lenses compensate for her inability to naturally view curses.",
+    "points": [
+      "The glasses do not provide cursed energy or enhance her physical body.",
+      "They can be lost or broken like ordinary equipment.",
+      "After Mai's sacrifice, Maki's senses no longer require them."
+    ],
+    "related": [
+      "maki",
+      "heavenly-restriction"
+    ]
+  },
+  {
+    "id": "megumi-black-sword",
+    "title": "Megumi's Black Sword",
+    "category": "tool",
+    "spoiler": "anime",
+    "aliases": [
+      "megumi sword",
+      "black sword",
+      "megumi cursed tool"
+    ],
+    "keywords": [
+      "megumi",
+      "shadow storage",
+      "ten shadows"
+    ],
+    "summary": "Megumi carries a simple black-bladed cursed tool for close-range combat.",
+    "details": "He stores the weapon inside his shadow and combines swordsmanship with shikigami pressure, feints, and terrain control.",
+    "points": [
+      "The weapon is not shown to possess a unique innate technique.",
+      "Its portability demonstrates the practical value of Shadow Storage.",
+      "Megumi later replaces damaged weapons with another ring-pommel sword."
+    ],
+    "related": [
+      "megumi",
+      "shadow-storage",
+      "ten-shadows"
+    ]
+  },
+  {
+    "id": "jjk-zero-arc",
+    "title": "Cursed Child / Jujutsu Kaisen 0",
+    "category": "arc",
+    "spoiler": "anime",
+    "aliases": [
+      "jjk 0",
+      "jujutsu kaisen 0",
+      "cursed child arc",
+      "night parade"
+    ],
+    "keywords": [
+      "yuta",
+      "rika",
+      "geto",
+      "night parade"
+    ],
+    "summary": "Jujutsu Kaisen 0 follows Yuta Okkotsu's first year at Jujutsu High and the Night Parade of a Hundred Demons.",
+    "details": "Yuta learns to control Rika, forms bonds with Maki, Panda, and Inumaki, and confronts Geto's plan to seize Rika's power.",
+    "points": [
+      "The story occurs before Yuji enters Jujutsu High.",
+      "Geto divides his forces to isolate Yuta and Rika from Gojo.",
+      "Yuta releases the original Rika after defeating Geto."
+    ],
+    "related": [
+      "yuta",
+      "rika",
+      "geto",
+      "maki",
+      "panda",
+      "toge-inumaki"
+    ]
+  },
+  {
+    "id": "itadori-extermination-arc",
+    "title": "Itadori's Extermination Arc",
+    "category": "arc",
+    "spoiler": "manga",
+    "aliases": [
+      "itadori extermination",
+      "yuji execution arc"
+    ],
+    "keywords": [
+      "yuji",
+      "yuta",
+      "naoya",
+      "choso"
+    ],
+    "summary": "After Shibuya, the higher-ups reinstate Yuji's execution and appoint Yuta as his official executioner.",
+    "details": "Yuji and Choso are hunted while Megumi searches for help with Tsumiki and the approaching Culling Game.",
+    "points": [
+      "Yuta accepts a binding vow to kill Yuji but uses Reverse Cursed Technique to revive him immediately.",
+      "Naoya pursues Megumi's position in the Zenin succession.",
+      "The arc reunites Yuji and Megumi before they meet Tengen."
+    ],
+    "related": [
+      "yuji",
+      "yuta",
+      "choso",
+      "naoya-zenin",
+      "culling-game"
+    ]
+  },
+  {
+    "id": "perfect-preparation-arc",
+    "title": "Perfect Preparation Arc",
+    "category": "arc",
+    "spoiler": "manga",
+    "aliases": [
+      "perfect preparation",
+      "zenin massacre arc"
+    ],
+    "keywords": [
+      "maki",
+      "mai",
+      "zenin clan",
+      "tengen"
+    ],
+    "summary": "Perfect Preparation follows the students' preparations for the Culling Game and Maki's confrontation with the Zenin Clan.",
+    "details": "Mai sacrifices herself and removes the last limitation on Maki's Heavenly Restriction, after which Maki destroys the clan's fighting forces.",
+    "points": [
+      "The group first meets Tengen and learns Kenjaku's broader plan.",
+      "Maki seeks cursed tools from the Zenin warehouse.",
+      "The arc transforms Maki into a physical equal to Toji."
+    ],
+    "related": [
+      "maki",
+      "mai-zenin",
+      "zenin-clan",
+      "tengen",
+      "heavenly-restriction"
+    ]
+  },
+  {
+    "id": "tokyo-no2-colony-arc",
+    "title": "Tokyo No. 2 Colony Arc",
+    "category": "arc",
+    "spoiler": "manga",
+    "aliases": [
+      "tokyo number 2 colony arc",
+      "hakari kashimo arc"
+    ],
+    "keywords": [
+      "hakari",
+      "kashimo",
+      "charles",
+      "panda"
+    ],
+    "summary": "The Tokyo No. 2 Colony section centers on Hakari's recruitment and battle with Kashimo.",
+    "details": "Hakari first demonstrates Idle Death Gamble against Charles, while Panda encounters Kashimo before Hakari begins an extended jackpot battle.",
+    "points": [
+      "Hakari's repeated jackpots grant automatic Reverse Cursed Technique.",
+      "Kashimo seeks information about Sukuna.",
+      "The group ultimately recruits Kashimo under an agreement to let him fight Sukuna."
+    ],
+    "related": [
+      "kinji-hakari",
+      "hajime-kashimo",
+      "idle-death-gamble",
+      "charles-bernard",
+      "panda"
+    ]
+  },
+  {
+    "id": "sendai-colony-arc",
+    "title": "Sendai Colony Arc",
+    "category": "arc",
+    "spoiler": "manga",
+    "aliases": [
+      "sendai arc",
+      "sendai colony battle"
+    ],
+    "keywords": [
+      "yuta",
+      "uro",
+      "ryu",
+      "kurourushi",
+      "dhruv"
+    ],
+    "summary": "The Sendai Colony battle follows Yuta as he breaks a four-way deadlock among elite Culling Game players.",
+    "details": "He defeats Dhruv and Kurourushi, then fights Uro and Ryu while selectively revealing Rika, Reverse Cursed Technique, and Copy.",
+    "points": [
+      "Three domains begin to expand simultaneously but collapse before their sure-hits stabilize.",
+      "Yuta gains techniques and points while trying to minimize unnecessary deaths.",
+      "Ryu's desire for a satisfying battle shapes the final exchange."
+    ],
+    "related": [
+      "sendai-colony",
+      "yuta",
+      "takako-uro",
+      "ryu-ishigori",
+      "kurourushi",
+      "dhruv-lakdawalla"
+    ]
+  },
+  {
+    "id": "sakurajima-colony-arc",
+    "title": "Sakurajima Colony Arc",
+    "category": "arc",
+    "spoiler": "manga",
+    "aliases": [
+      "sakurajima arc",
+      "maki naoya colony"
+    ],
+    "keywords": [
+      "maki",
+      "naoya",
+      "daido",
+      "miyo"
+    ],
+    "summary": "The Sakurajima Colony battle completes Maki's awakening against the cursed spirit Naoya.",
+    "details": "Daido and Miyo help Maki recognize the environment without relying on ordinary sight, allowing her to move with the freedom of Toji's fully realized body.",
+    "points": [
+      "Naoya develops Time Cell Moon Palace after becoming a curse.",
+      "Miyo's sumo domain provides accelerated subjective training.",
+      "Maki's new perception lets her avoid and counter Naoya's highest-speed attacks."
+    ],
+    "related": [
+      "sakurajima-colony",
+      "maki",
+      "naoya-zenin",
+      "hagane-daido",
+      "rokujushi-miyo",
+      "time-cell-moon-palace"
+    ]
+  },
+  {
+    "id": "shinjuku",
+    "title": "Shinjuku",
+    "category": "location",
+    "spoiler": "manga",
+    "aliases": [
+      "shinjuku battlefield",
+      "shinjuku city"
+    ],
+    "keywords": [
+      "gojo sukuna fight",
+      "final battle",
+      "showdown"
+    ],
+    "summary": "Shinjuku is the primary battlefield of the final confrontation with Sukuna.",
+    "details": "Gojo and Sukuna begin their duel among evacuated skyscrapers, and the remaining sorcerers later enter through a coordinated sequence of contingency plans.",
+    "points": [
+      "The urban environment is heavily destroyed by domains and large-scale techniques.",
+      "Ui Ui's teleportation and prepared barriers support the operation.",
+      "The location gives the final arc its common name, Shinjuku Showdown."
+    ],
+    "related": [
+      "shinjuku-showdown",
+      "gojo",
+      "sukuna",
+      "ui-ui"
+    ]
+  },
+  {
+    "id": "okinawa",
+    "title": "Okinawa",
+    "category": "location",
+    "spoiler": "anime",
+    "aliases": [
+      "okinawa trip",
+      "okinawa hidden inventory"
+    ],
+    "keywords": [
+      "riko",
+      "kuroi",
+      "hidden inventory"
+    ],
+    "summary": "Okinawa is where Gojo's escort group travels after rescuing Kuroi during the Star Plasma Vessel mission.",
+    "details": "The trip gives Riko a brief period of ordinary happiness, but it also extends Gojo's continuous technique use and contributes to his exhaustion before returning to Jujutsu High.",
+    "points": [
+      "Kuroi's kidnapping draws the group away from Tokyo.",
+      "Gojo keeps Six Eyes and Limitless active for an extended period.",
+      "Toji deliberately allows the bounty pressure to exhaust the escort team."
+    ],
+    "related": [
+      "hidden-inventory",
+      "riko-amanai",
+      "misato-kuroi",
+      "gojo",
+      "toji"
+    ]
+  },
+  {
+    "id": "yasohachi-bridge",
+    "title": "Yasohachi Bridge",
+    "category": "location",
+    "spoiler": "anime",
+    "aliases": [
+      "yasohachi bridge",
+      "origin of obedience bridge"
+    ],
+    "keywords": [
+      "megumi",
+      "death paintings",
+      "finger bearer"
+    ],
+    "summary": "Yasohachi Bridge is the site of a curse connected to Sukuna's finger and the Death Painting investigation.",
+    "details": "Yuji, Nobara, and Megumi trace disappearances to the bridge, leading to separate fights against Eso, Kechizu, and a Finger Bearer.",
+    "points": [
+      "Megumi completes Chimera Shadow Garden for the first time nearby.",
+      "The curse is connected to people who crossed under the bridge at night.",
+      "The case ties Megumi's past and Tsumiki's condition to the broader plot."
+    ],
+    "related": [
+      "death-painting-arc",
+      "megumi",
+      "eso",
+      "kechizu",
+      "finger-bearer"
+    ]
+  },
+  {
+    "id": "gachinko-fight-club",
+    "title": "Gachinko Fight Club",
+    "category": "location",
+    "spoiler": "manga",
+    "aliases": [
+      "gachinko club",
+      "hakari fight club"
+    ],
+    "keywords": [
+      "hakari",
+      "kirara",
+      "underground fights"
+    ],
+    "summary": "Gachinko Fight Club is Hakari's underground venue for sorcerer-versus-sorcerer matches.",
+    "details": "Hakari operates the club after his suspension from Jujutsu High and uses it as the center of his ambition to expand jujutsu entertainment.",
+    "points": [
+      "Yuji and Megumi infiltrate the club to recruit Hakari.",
+      "The operation relies on secrecy because jujutsu society would oppose it.",
+      "Kirara manages security through Love Rendezvous."
+    ],
+    "related": [
+     
