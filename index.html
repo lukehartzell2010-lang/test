@@ -28,19 +28,26 @@
     async function loadArchive(){
       try{
         const parts=await Promise.all(files.map(async file=>{
-          const response=await fetch(`${file}?v=20260717q3`,{cache:"no-cache"});
+          const response=await fetch(`${file}?v=20260717q3fix1`,{cache:"no-store"});
           if(!response.ok)throw new Error(`${file} returned ${response.status}`);
           return response.text();
         }));
         const html=parts.join("");
-        if(!html.includes("window.JJK_KNOWLEDGE")||!html.includes("document.documentElement.dataset.appReady")||!html.includes("qv3-01.part")){
-          throw new Error("The expanded archive failed its integrity check.");
+        const requiredMarkers=[
+          "window.JJK_KNOWLEDGE",
+          "document.documentElement.dataset.appReady",
+          "document.documentElement.dataset.questionEngine=\"loading\"",
+          "performSearchV3"
+        ];
+        const missing=requiredMarkers.filter(marker=>!html.includes(marker));
+        if(missing.length){
+          throw new Error(`Integrity markers missing: ${missing.join(", ")}`);
         }
         document.open();
         document.write(html);
         document.close();
       }catch(error){
-        document.body.innerHTML=`<main class="loader error"><b>The archive could not finish loading.</b><p>Refresh once. If the problem remains, one of the deployed archive pieces is missing.</p><code>${String(error.message||error)}</code></main>`;
+        document.body.innerHTML=`<main class="loader error"><b>The archive could not finish loading.</b><p>The loader found a deployment problem. Try reopening the page after a moment.</p><code>${String(error.message||error)}</code></main>`;
       }
     }
     loadArchive();
