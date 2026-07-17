@@ -1,0 +1,20 @@
+ue = query;
+  $("#autocomplete").hidden = true;
+  $("#queryTitle").textContent = query;
+
+  const results = searchEntries(query);
+  const allResults = state.spoiler === "anime" ? searchEntries(query, entries) : results;
+  const mentions = findMentionedEntries(query);
+  const intent = detectIntent(query);
+  const primary = results[0]?.entry || null;
+  const topScore = results[0]?.score || 0;
+  const hiddenBest = state.spoiler === "anime" && allResults[0]?.entry?.spoiler === "manga" && allResults[0].score >= Math.max(48, topScore + 22) ? allResults[0] : null;
+  state.currentEntryId = primary?.id || null;
+
+  createBreakdown(query, results);
+  $("#answerType").textContent = "Searching curated + live archive";
+  $("#answerContent").innerHTML = loadingAnswer();
+  $("#relatedResults").innerHTML = `<div class="empty-state">Finding connected records…</div>`;
+  showView("#resultsView");
+
+  if (hi
