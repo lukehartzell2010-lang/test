@@ -1,0 +1,15 @@
+lter(item => ["character", "curse"].includes(item.entry.category));
+    const mechanisms = positioned.filter(item => ["technique", "domain", "concept", "tool"].includes(item.entry.category));
+    const verbMatch = /\b(kill|hurt|damage|affect|hit|reach|land|beat|defeat|bypass|stop|cancel|protect|survive|die|tank|resist|adapt|work)\b/.exec(q);
+    const verbIndex = verbMatch?.index ?? -1;
+    const verb = verbMatch?.[1] || "";
+
+    let target = null;
+    let attacker = null;
+    let mechanism = mechanisms[0]?.entry || null;
+
+    if (["kill", "hurt", "damage", "affect", "hit", "reach", "land", "beat", "defeat"].includes(verb) && verbIndex >= 0) {
+      target = living.find(item => item.index > verbIndex)?.entry || living.at(-1)?.entry || null;
+      attacker = living.find(item => item.index < verbIndex)?.entry || null;
+    } else if (["survive", "die", "tank", "resist", "adapt"].includes(verb) && verbIndex >= 0) {
+      target = [...living].reverse().find(item => item.index < verbIndex)?.
