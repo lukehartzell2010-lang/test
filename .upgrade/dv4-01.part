@@ -1,0 +1,105 @@
+/* JJK Archive Deep Dossier v4
+   Expands every record into a structured article and adds manually checked dossiers
+   for the most searched concepts, techniques, domains, and abilities. */
+(() => {
+  "use strict";
+
+  const VERSION = "4.0.0";
+  const previousPerformSearch = performSearch;
+  const previousEntryAnswer = entryAnswer;
+
+  const CORE = {
+    "black-flash": {
+      verified: true,
+      first: "First explained in manga chapter 48 and anime episode 19.",
+      source: "Black_Flash",
+      sections: [
+        {
+          title: "Exact activation rule",
+          paragraphs: [
+            "Black Flash is not a named cursed technique that a sorcerer switches on. It is a jujutsu phenomenon produced when cursed energy is applied to a physical impact within one-millionth of a second. That timing creates a distortion in space and causes the cursed energy around the strike to flash black.",
+            "The series describes the resulting strike as having the destructive force of a normal blow raised to the power of 2.5. That is deliberately different from simply multiplying the attack by 2.5. It is a dramatic power increase, although the manga does not give a universal numerical unit for every fighter's ordinary hit."
+          ]
+        },
+        {
+          title: "Why nobody can reliably use it on command",
+          paragraphs: [
+            "Perfect timing is necessary, but later canon makes clear that timing is not the only variable. The user's cursed energy, the opponent's cursed energy, physical condition, concentration, and surrounding circumstances can all affect whether the spatial distortion occurs.",
+            "Even Satoru Gojo cannot guarantee a Black Flash whenever he wants. A skilled fighter can create better conditions for one, but the final occurrence is still not fully controllable. This is why landing several in succession is extraordinary rather than a repeatable combo input."
+          ]
+        },
+        {
+          title: "The 'zone' after a Black Flash",
+          paragraphs: [
+            "Landing one gives the user an unusually deep, instinctive understanding of cursed energy. Manipulation that normally requires conscious effort begins to feel natural, and the fighter enters a state comparable to an elite athlete being completely 'in the zone.'",
+            "The story describes fighters in this state as operating at roughly 120% of their normal potential. This does not mean their permanent statistics are multiplied forever; it describes a temporary peak in focus, cursed-energy control, and combat performance."
+          ],
+          bullets: [
+            "Black Flash can be chained, but a previous success does not guarantee the next one.",
+            "Both sorcerers and cursed spirits can experience the phenomenon.",
+            "It is a physical impact synchronized with cursed energy, not merely a black-colored energy blast."
+          ]
+        },
+        {
+          title: "Notable canon use",
+          bullets: [
+            "Kento Nanami held a famous record of four consecutive Black Flashes.",
+            "Yuji Itadori matched that consecutive record against Hanami after Todo corrected his cursed-energy timing.",
+            "Yuji and Nobara simultaneously landed Black Flash during the battle with Eso and Kechizu.",
+            "Mahito's Black Flash helped push his understanding of his own soul and technique during Shibuya."
+          ]
+        },
+        {
+          title: "Common misconceptions",
+          bullets: [
+            "It is not a technique unique to Yuji.",
+            "It is not completely random, but it also cannot be guaranteed through skill alone.",
+            "The 120% statement refers to the heightened combat state after the phenomenon, not a permanent transformation.",
+            "The power description is 'to the power of 2.5,' not simply '2.5 times stronger.'"
+          ]
+        },
+        {
+          title: "Later manga clarification",
+          spoiler: "manga",
+          paragraphs: [
+            "Later manga material expands on the variables behind Black Flash and shows that repeated Black Flashes can influence a high-level fighter's ability to recover lost combat output. Those developments deepen the phenomenon, but they do not change the core rule that nobody can simply command it to occur."
+          ]
+        }
+      ]
+    },
+
+    "unlimited-void": {
+      verified: true,
+      first: "First shown in manga chapter 15 and anime episode 7.",
+      source: "Unlimited_Void",
+      sections: [
+        {
+          title: "What the domain actually does",
+          paragraphs: [
+            "Unlimited Void is the Domain Expansion associated with the Limitless. Its sure-hit places the target inside the concept of infinity and forces an endless amount of information into their awareness.",
+            "The victim is not simply shown a large number of images. Their processes of perception, thought, and communication are forced to continue without reaching completion. They receive everything and are therefore unable to meaningfully do anything, leaving them immobilized and mentally overwhelmed."
+          ]
+        },
+        {
+          title: "Sure-hit conditions and immunity",
+          paragraphs: [
+            "As with a completed lethal domain, the information effect is the sure-hit. Ordinary movement or durability does not let someone dodge it after they are properly caught inside the barrier.",
+            "The domain's user is unaffected. Canon also demonstrates that a person physically touching Gojo can avoid Unlimited Void's effect, creating a very specific loophole that an opponent with enough knowledge may exploit."
+          ],
+          bullets: [
+            "The sure-hit attacks cognition and information processing rather than dealing a conventional physical blow.",
+            "A domain clash can prevent the sure-hit from immediately taking effect while the domains remain evenly contested.",
+            "Anti-domain techniques can buy time, but they do not make the target permanently immune."
+          ]
+        },
+        {
+          title: "The 0.2-second expansion in Shibuya",
+          paragraphs: [
+            "Gojo used Unlimited Void for only 0.2 seconds because civilians were trapped around him. A normal full activation would have incapacitated or killed the non-sorcerers along with the curses.",
+            "The extremely brief exposure was still enough to overload everyone nearby with an enormous amount of information and leave the civilians unconscious while giving Gojo a narrow opportunity to eliminate the transfigured humans. The timing was a high-risk judgment, not a universal safe setting for the domain."
+          ]
+        },
+        {
+          title: "Refinement and domain clashes",
+          paragraphs: [
+            "Unlimited Void is exceptionally refined. It overwhelmed Jogo's Coffin of the Iron Mountain almost immediately because Gojo's barrier and domain refinement
