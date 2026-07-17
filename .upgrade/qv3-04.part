@@ -1,0 +1,184 @@
+ing only a general biography."
+    );
+  }
+
+  function bestMechanicSentence(entry) {
+    const ranked = sentenceList(entry).map(sentence => {
+      const text = qnorm(sentence);
+      let score = 0;
+      if (/adapt|bypass|counter|prevent|infinity|technique|domain|ability|attack|defen|sure hit|soul|energy|restriction|barrier/.test(text)) score += 8;
+      if (/allows|causes|creates|uses|requires|exchange|through|by |so that/.test(text)) score += 4;
+      if ((entry.points || []).includes(sentence)) score += 2;
+      return { sentence, score };
+    }).sort((a, b) => b.score - a.score);
+    return ranked[0]?.sentence || entry.details || entry.summary;
+  }
+
+  function reasoningAnswer(query, subjects) {
+    if (!subjects.length) return null;
+    const evidence = relevantSentences(query, subjects, 5);
+    const first = subjects[0];
+    const second = subjects[1];
+    let lede;
+    if (second) {
+      const firstMechanic = bestMechanicSentence(first);
+      const secondMechanic = bestMechanicSentence(second);
+      lede = `${first.title} matters to this question because ${firstMechanic.charAt(0).toLowerCase()}${firstMechanic.slice(1)} The relevant factor for ${second.title} is that ${secondMechanic.charAt(0).toLowerCase()}${secondMechanic.slice(1)}`;
+    } else {
+      lede = evidence[0]?.sentence || first.details || first.summary;
+    }
+    return answerShell(
+      `Why — ${subjects.map(entry => entry.title).join(" and ")}`,
+      lede,
+      evidence.slice(second ? 0 : 1).map(item => ({ title: item.entry.title, body: item.sentence })),
+      second ? "This is a relationship-based explanation assembled from both records. When the canon does not state a direct author verdict, the app separates evidence from inference." : "The explanation is based on the strongest causal and limitation statements in the record."
+    );
+  }
+
+  function yesNoAnswer(query, subjects, property) {
+    if (!subjects.length) return null;
+    const primary = subjects[0];
+    if (property && !["age", "height", "grade", "relationship", "location", "arc", "user"].includes(property)) {
+      const linked = entryLinks(primary, property);
+      if (linked.length) {
+        return answerShell(
+          `Yes — ${primary.title} has a confirmed ${PROPERTY_CONFIG[property].label}`,
+          `${primary.title} is directly linked to ${linked.map(entry => entry.title).join(", ")}.`,
+          linked.map(entry => ({ title: entry.title, body: `${entry.summary} ${entry.details}` })),
+          "A direct archive link counts as confirmed evidence."
+        );
+      }
+      return answerShell(
+        `No confirmed ${PROPERTY_CONFIG[property].label} is recorded for ${primary.title}`,
+        `The current canon archive has no demonstrated ${PROPERTY_CONFIG[property].label} directly linked to ${primary.title}.`,
+        [{ title: "Important distinction", body: `“Not shown or confirmed” does not always mean “fundamentally impossible.” It means the series and this archive do not provide a confirmed example.` }],
+        "This wording avoids turning missing evidence into a stronger claim than the canon supports."
+      );
+    }
+
+    if (subjects.length >= 2) {
+      const [a, b] = subjects;
+      const connected = (a.related || []).includes(b.id) || (b.related || []).includes(a.id);
+      return answerShell(
+        connected ? `Yes — ${a.title} and ${b.title} are directly connected` : `No direct archive link was found`,
+        connected ? `${a.title} and ${b.title} have an explicit relationship in the knowledge graph.` : `The curated graph does not contain a direct link between ${a.title} and ${b.title}.`,
+        [{ title: a.title, body: a.details }, { title: b.title, body: b.details }],
+        connected ? "The exact type of connection is explained by their records." : "No direct link is not proof that they never interact; a live lookup may still find a specific scene."
+      );
+    }
+    return null;
+  }
+
+  function targetedListAnswer(query, results, subjects, property) {
+    const q = qnorm(query);
+    let list = [];
+    let title = "Matching JJK records";
+
+    if (subjects.length && property) {
+      list = linkedEntries(subjects[0], PROPERTY_CONFIG[property]?.categories || []);
+      title = `${subjects[0].title} — ${PROPERTY_CONFIG[property]?.label || "connected records"}`;
+    }
+
+    if (!list.length) {
+      let category = null;
+      if (/\bdomains?\b/.test(q)) category = "domain";
+      else if (/\btechniques?\b/.test(q)) category = "technique";
+      else if (/\bcharacters?|sorcerers?\b/.test(q)) category = "character";
+      else if (/\bcurses?|shikigami\b/.test(q)) category = "curse";
+      else if (/\btools?|weapons?\b/.test(q)) category = "tool";
+      else if (/\barcs?|incidents?\b/.test(q)) category = "arc";
+      else if (/\bclans?|families\b/.test(q)) category = "clan";
+      if (category) {
+        list = allowedEntries().filter(entry => entry.category === category);
+        title = formatCategory(category);
+      }
+    }
+
+    if (/characters?.*(?:with|who (?:have|use)).*domain|sorcerers?.*domain/.test(q)) {
+      list = allowedEntries().filter(entry => entry.category === "character" && linkedEntries(entry, ["domain"]).length);
+      title = "Characters with confirmed Domain Expansions";
+    }
+
+    if (!list.length) list = results.map(item => item.entry);
+    list = uniqueEntries(list).slice(0, 40);
+    return answerShell(
+      title,
+      `The archive found ${list.length} matching record${list.length === 1 ? "" : "s"}.`,
+      [{ title: "Results", list: list.map(entry => `${entry.title} — ${entry.summary}`) }],
+      list.length === 40 ? "Showing the first 40 matches. Narrow the question by category, user, arc, or ability for a shorter answer." : "The list respects the current spoiler filter."
+    );
+  }
+
+  function buildSpecificAnswer(query, results) {
+    const fact = factAnswer(query);
+    if (fact) return fact;
+
+    const intent = detectIntent(query);
+    const property = detectProperty(query);
+    let subjects = fuzzyMentionEntries(query);
+    if (!subjects.length && results[0]?.score >= 24) subjects = [results[0].entry];
+    const primary = subjects[0] || results[0]?.entry || null;
+
+    if (intent === "comparison" && subjects.length >= 2) {
+      return { primary, confidence: 90, type: "Curated matchup analysis", html: oldCompareAnswer(subjects[0], subjects[1]), related: subjects };
+    }
+    if (intent === "list") {
+      return { primary, confidence: 80, type: "Targeted archive list", html: targetedListAnswer(query, results, subjects, property), related: results.slice(0, 10).map(item => item.entry) };
+    }
+    if (intent === "owner") {
+      const target = primary;
+      const html = target && ownerAnswer(target);
+      if (html) return { primary: target, confidence: 92, type: "Direct user lookup", html, related: linkedEntries(target) };
+    }
+    if (intent === "identity" && primary) {
+      if (!["character", "curse"].includes(primary.category) && property === "user") {
+        const html = ownerAnswer(primary);
+        if (html) return { primary, confidence: 90, type: "Direct user lookup", html, related: linkedEntries(primary) };
+      }
+      return { primary, confidence: 88, type: "Direct identity answer", html: identityAnswer(primary), related: linkedEntries(primary) };
+    }
+    if (["property", "definition"].includes(intent) && primary) {
+      if (intent === "definition" || (!property && qnorm(query).includes(qnorm(primary.title)))) {
+        return { primary, confidence: 86, type: "Direct definition", html: entryAnswer(primary), related: linkedEntries(primary) };
+      }
+      const html = propertyAnswer(primary, property);
+      if (html) return { primary, confidence: 94, type: "Direct property answer", html, related: linkedEntries(primary) };
+    }
+    if (intent === "location" && primary) {
+      const html = locationAnswer(primary);
+      if (html) return { primary, confidence: 80, type: "Location answer", html, related: linkedEntries(primary) };
+    }
+    if (intent === "timeline" && primary) {
+      const html = timelineAnswer(primary);
+      if (html) return { primary, confidence: 76, type: "Timeline answer", html, related: linkedEntries(primary) };
+    }
+    if (intent === "mechanics" && primary) {
+      return { primary, confidence: 84, type: "Mechanics answer", html: mechanicsAnswer(query, subjects.length ? subjects : [primary]), related: linkedEntries(primary) };
+    }
+    if (intent === "reasoning" && primary) {
+      return { primary, confidence: subjects.length > 1 ? 68 : 78, type: "Reasoning answer", html: reasoningAnswer(query, subjects.length ? subjects : [primary]), related: subjects.flatMap(linkedEntries) };
+    }
+    if (intent === "yesno" && primary) {
+      const html = yesNoAnswer(query, subjects.length ? subjects : [primary], property);
+      if (html) return { primary, confidence: 82, type: "Careful yes/no answer", html, related: linkedEntries(primary) };
+    }
+    if (primary && results[0]?.score >= 30) {
+      return { primary, confidence: 65, type: "Best curated answer", html: entryAnswer(primary), related: linkedEntries(primary) };
+    }
+    return null;
+  }
+
+  createBreakdown = function createBreakdownV3(query, topResults) {
+    const intent = detectIntent(query);
+    const property = detectProperty(query);
+    const subjects = fuzzyMentionEntries(query).slice(0, 3);
+    const cats = [...new Set(topResults.slice(0, 4).map(item => item.entry.category))];
+    const chips = [
+      ["Question", INTENT_LABELS[intent] || intent],
+      ...(property ? [["Target", PROPERTY_CONFIG[property]?.label || property]] : []),
+      ["Engine", `Relationship-aware v${VERSION}`],
+      ["Spoilers", state.spoiler === "manga" ? "Full manga" : "Anime only"],
+      ...(subjects.length ? [["Subjects", subjects.map(entry => entry.title).join(" + ")]] : []),
+      ...(cats.length ? [["Matches", cats.map(formatCategory).join(", ")]] : [])
+    ];
+    $("#queryBreakdown").innerHTML = chips.map(([label, value]) => `<span
