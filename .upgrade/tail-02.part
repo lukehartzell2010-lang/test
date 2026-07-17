@@ -1,0 +1,25 @@
+</div>
+    <a class="source-link" href="${escapeHtml(top.url)}" target="_blank" rel="noopener">Read the full ${escapeHtml(top.title)} record ↗</a>
+    <div class="wiki-attribution">Live excerpts are attributed to the fan-maintained Jujutsu Kaisen Wiki and remain subject to its CC BY-SA licensing.</div>
+  `;
+}
+
+function loadingAnswer() {
+  return `
+    <div class="loading-orb"></div>
+    <h2 class="answer-title">Searching the deeper archive…</h2>
+    <p class="answer-lede">Checking the curated knowledge graph and the live JJK Wiki index for obscure names, abilities, events, and terminology.</p>
+    <p class="network-note">Live archive answers require an internet connection.</p>
+  `;
+}
+
+
+async function performSearch(rawQuery) {
+  const query = rawQuery.trim();
+  if (!query) {
+    toast("Type a JJK question first.");
+    return;
+  }
+
+  state.currentQuery = query;
+  $("#searchInput").val
