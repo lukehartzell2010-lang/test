@@ -1,0 +1,328 @@
+/* JJK Archive Content Expansion v6
+   Adds broad canon coverage, extension techniques, supporting characters,
+   shikigami, locations, arcs, tools, and deeper facts for core records. */
+(() => {
+  "use strict";
+  const VERSION = "6.0.0";
+  if (document.documentElement.dataset.contentExpansion === VERSION) return;
+
+  const NEW_ENTRIES = [
+  {
+    "id": "barrier-techniques",
+    "title": "Barrier Techniques",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "barrier technique",
+      "barriers",
+      "kekkai jutsu"
+    ],
+    "keywords": [
+      "curtain",
+      "domain",
+      "veil",
+      "coordinates",
+      "conditions"
+    ],
+    "summary": "Barrier techniques create bounded spaces, conceal areas, control entry and exit, or form the framework of a domain.",
+    "details": "A barrier is built by defining a formula, conditions, and a boundary, then supplying cursed energy. Stronger barriers are not simply larger: their rules, stability, targeting, and compatibility with the caster matter.",
+    "points": [
+      "Curtains are comparatively simple barriers used to hide or restrict an area.",
+      "Domain Expansion uses a barrier to realize an innate domain and attach a technique or sure-hit.",
+      "Barriers can trade external strength, internal strength, size, speed, and conditions through binding-vow-like adjustments."
+    ],
+    "related": [
+      "curtain",
+      "domain-expansion",
+      "simple-domain",
+      "tengen"
+    ]
+  },
+  {
+    "id": "cursed-energy-reinforcement",
+    "title": "Cursed Energy Reinforcement",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "reinforcement",
+      "cursed energy coating",
+      "body reinforcement"
+    ],
+    "keywords": [
+      "strength",
+      "durability",
+      "speed",
+      "defense",
+      "weapons"
+    ],
+    "summary": "Cursed energy reinforcement strengthens the body or an object by flowing cursed energy through it.",
+    "details": "Sorcerers use reinforcement for striking power, durability, movement, and weapon handling. Raw reserves help, but timing, output, control, and distribution determine how effective the reinforcement actually is.",
+    "points": [
+      "Reinforcement is a foundational skill rather than an innate cursed technique.",
+      "Poor timing can leave a body part exposed even when the user has large reserves.",
+      "Weapons can be reinforced temporarily without becoming true cursed tools."
+    ],
+    "related": [
+      "cursed-energy",
+      "cursed-energy-control",
+      "cursed-energy-output",
+      "black-flash"
+    ]
+  },
+  {
+    "id": "cursed-energy-output",
+    "title": "Cursed Energy Output",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "ce output",
+      "output",
+      "cursed energy discharge rate"
+    ],
+    "keywords": [
+      "power",
+      "release",
+      "reinforcement",
+      "attack strength"
+    ],
+    "summary": "Cursed energy output is how much cursed energy a user can release at once.",
+    "details": "Output affects the force of reinforcement, blasts, technique activation, and defensive responses. It is different from total reserves: a character may possess a large pool but be unable to discharge all of it at once.",
+    "points": [
+      "Output can drop from injury, exhaustion, brain damage, or technique instability.",
+      "Maximum Output techniques deliberately push an application beyond its normal release.",
+      "Ryu Ishigori is especially known for exceptionally high output."
+    ],
+    "related": [
+      "cursed-energy",
+      "maximum-output",
+      "cursed-energy-reserves",
+      "cursed-energy-discharge"
+    ]
+  },
+  {
+    "id": "cursed-energy-efficiency",
+    "title": "Cursed Energy Efficiency",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "ce efficiency",
+      "energy efficiency",
+      "cursed energy consumption"
+    ],
+    "keywords": [
+      "cost",
+      "waste",
+      "six eyes",
+      "stamina"
+    ],
+    "summary": "Cursed energy efficiency describes how little energy is wasted while producing a desired effect.",
+    "details": "Efficient control lets a sorcerer fight longer, maintain techniques, and recover more effectively without necessarily having the largest reserves. The Six Eyes give Gojo extraordinary precision, reducing the practical cost of Limitless to an extreme degree.",
+    "points": [
+      "Efficiency is not identical to output or reserves.",
+      "Reverse Cursed Technique is especially expensive because it requires generating positive energy.",
+      "A technically efficient fighter can outlast someone with a larger but wasteful energy pool."
+    ],
+    "related": [
+      "cursed-energy",
+      "six-eyes",
+      "reverse-cursed-technique",
+      "cursed-energy-control"
+    ]
+  },
+  {
+    "id": "cursed-energy-reserves",
+    "title": "Cursed Energy Reserves",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "ce reserves",
+      "energy pool",
+      "amount of cursed energy"
+    ],
+    "keywords": [
+      "stamina",
+      "capacity",
+      "yuta",
+      "sukuna"
+    ],
+    "summary": "Cursed energy reserves are the total amount of cursed energy available to a person or curse.",
+    "details": "Large reserves support prolonged reinforcement, repeated technique use, domains, and healing, but they do not automatically guarantee superior output, efficiency, or skill.",
+    "points": [
+      "Yuta is repeatedly noted for immense reserves.",
+      "Sukuna combines enormous reserves with elite efficiency and output.",
+      "Running low can weaken reinforcement and make advanced techniques harder to sustain."
+    ],
+    "related": [
+      "cursed-energy",
+      "cursed-energy-output",
+      "cursed-energy-efficiency",
+      "yuta",
+      "sukuna"
+    ]
+  },
+  {
+    "id": "cursed-energy-control",
+    "title": "Cursed Energy Control",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "ce control",
+      "energy control",
+      "cursed energy manipulation"
+    ],
+    "keywords": [
+      "timing",
+      "precision",
+      "flow",
+      "black flash"
+    ],
+    "summary": "Cursed energy control is the ability to direct, time, shape, and regulate cursed energy precisely.",
+    "details": "Control affects reinforcement, technique activation, energy concealment, healing, and the delay between a physical strike and cursed-energy impact. Black Flash occurs only when cursed energy lands within an extremely narrow interval after a physical hit.",
+    "points": [
+      "Good control reduces waste and protects vulnerable areas.",
+      "Yuji's early Divergent Fist came from cursed energy lagging behind his physical movement.",
+      "Black Flash cannot normally be activated on command despite requiring precise timing."
+    ],
+    "related": [
+      "cursed-energy",
+      "divergent-fist",
+      "black-flash",
+      "cursed-energy-efficiency"
+    ]
+  },
+  {
+    "id": "positive-energy",
+    "title": "Positive Energy",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "positive cursed energy",
+      "positive energy"
+    ],
+    "keywords": [
+      "reverse cursed technique",
+      "healing",
+      "cursed spirits"
+    ],
+    "summary": "Positive energy is created by multiplying cursed energy against itself through Reverse Cursed Technique.",
+    "details": "It can restore living tissue and is especially destructive to cursed spirits, whose bodies are made from negative cursed energy. Producing and directing it requires far more skill than ordinary cursed-energy use.",
+    "points": [
+      "Positive energy is the output generated by Reverse Cursed Technique, not ordinary pleasant emotion.",
+      "Some users can heal only themselves, while rare experts can output it into others.",
+      "The Sword of Extermination carries positive energy that is highly effective against curses."
+    ],
+    "related": [
+      "reverse-cursed-technique",
+      "reverse-cursed-technique-output",
+      "sword-of-extermination"
+    ]
+  },
+  {
+    "id": "reverse-cursed-technique-output",
+    "title": "Reverse Cursed Technique Output",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "rct output",
+      "healing others",
+      "output positive energy"
+    ],
+    "keywords": [
+      "shoko",
+      "yuta",
+      "sukuna",
+      "healing"
+    ],
+    "summary": "Reverse Cursed Technique output is the rare ability to send positive energy into another person instead of using it only for self-healing.",
+    "details": "External healing is harder and usually less efficient than healing oneself. Shoko Ieiri and Yuta Okkotsu are among the clearest users, while Sukuna has also restored another body under special circumstances.",
+    "points": [
+      "Not every Reverse Cursed Technique user can heal other people.",
+      "The healer must understand the injury and supply enough positive energy without losing control.",
+      "Soul-related or highly complex injuries may be much harder to restore."
+    ],
+    "related": [
+      "reverse-cursed-technique",
+      "positive-energy",
+      "shoko-ieiri",
+      "yuta",
+      "sukuna"
+    ]
+  },
+  {
+    "id": "sure-hit-effect",
+    "title": "Sure-Hit Effect",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "sure hit",
+      "guaranteed hit",
+      "domain sure-hit"
+    ],
+    "keywords": [
+      "domain expansion",
+      "targeting",
+      "barrier"
+    ],
+    "summary": "A sure-hit effect is the guaranteed application of a technique or rule inside a completed domain.",
+    "details": "The domain's barrier and embedded technique remove the normal requirement to aim or establish contact. A sure-hit can be a lethal attack, forced information, a courtroom rule, or another compulsory effect depending on the domain.",
+    "points": [
+      "Sure-hit does not always mean instant death.",
+      "Domain Amplification, Simple Domain, Hollow Wicker Basket, and domain clashes can interfere with sure-hits.",
+      "Some domains enforce rules before producing a lethal punishment."
+    ],
+    "related": [
+      "domain-expansion",
+      "simple-domain",
+      "hollow-wicker-basket",
+      "domain-amplification",
+      "domain-clash"
+    ]
+  },
+  {
+    "id": "domain-clash",
+    "title": "Domain Clash",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "domain battle",
+      "clashing domains",
+      "domain tug of war"
+    ],
+    "keywords": [
+      "refinement",
+      "barrier",
+      "sure hit",
+      "collapse"
+    ],
+    "summary": "A domain clash occurs when overlapping domains compete for control of the enclosed space.",
+    "details": "Refinement, barrier construction, cursed-energy output, conditions, and compatibility determine which domain gains the advantage. While the domains contest each other, their sure-hits may be neutralized or disrupted.",
+    "points": [
+      "A clash is not decided by raw reserves alone.",
+      "A domain can collapse because its barrier is broken or because its caster is injured too severely to maintain it.",
+      "Open-barrier and closed-barrier domains interact differently because one can attack the other's outer shell."
+    ],
+    "related": [
+      "domain-expansion",
+      "sure-hit-effect",
+      "open-barrier-domain",
+      "malevolent-shrine",
+      "unlimited-void"
+    ]
+  },
+  {
+    "id": "open-barrier-domain",
+    "title": "Open-Barrier Domain",
+    "category": "concept",
+    "spoiler": "anime",
+    "aliases": [
+      "open domain",
+      "barrierless domain",
+      "domain without closing a barrier"
+    ],
+    "keywords": [
+      "malevolent shrine",
+      "womb profusion",
+      "escape route"
+    ],
+    "summary": "An open-barrier domain manifests its technique into real space without sealing targets inside a conventional closed shell.",
+    "details": "By leaving an escape route, the caster gains an enormous binding-vow advantage, commonly expressed as 
