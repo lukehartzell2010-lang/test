@@ -1,0 +1,30 @@
+ng:14px;text-align:left;cursor:pointer}.dossier-card:hover{border-color:rgba(159,102,255,.45);transform:translateY(-1px)}.dossier-card span{font-size:8px;letter-spacing:.11em;text-transform:uppercase;color:#9f66ff}.dossier-card b{display:block;margin:8px 0 7px;font-size:14px}.dossier-card p{font-size:11px;line-height:1.55;margin:0;color:#9991a5}
+      .canon-section{border:1px solid rgba(125,249,164,.14);background:rgba(125,249,164,.025);border-radius:16px;padding:18px;margin-top:10px}.canon-section h3{color:#9eeeb5}.deep-dossier-divider{display:flex;align-items:center;gap:12px;margin:28px 0 5px;color:#8f879c;font-size:9px;letter-spacing:.16em;text-transform:uppercase}.deep-dossier-divider:before,.deep-dossier-divider:after{content:"";height:1px;flex:1;background:var(--border)}
+      @media(max-width:700px){.dossier-cards{grid-template-columns:1fr}.dossier-body{padding-left:18px;padding-right:18px}.dossier-head{padding:22px 18px}.dossier-stats{gap:7px}}
+    `;
+    document.head.appendChild(style);
+  }
+
+  installStyles();
+
+  entryAnswer = function entryAnswerV4(entry) {
+    return dossier(entry);
+  };
+
+  performSearch = async function performSearchV4(rawQuery) {
+    await previousPerformSearch(rawQuery);
+    const container = document.querySelector("#answerContent");
+    if (!container || container.querySelector(".deep-dive-v4")) return;
+    const type = document.querySelector("#answerType")?.textContent || "";
+    if (/protected|no confident|archive limit|failed/i.test(type)) return;
+    const target = selectDossierTarget(rawQuery);
+    if (!target || !visible(target)) return;
+    container.insertAdjacentHTML("beforeend", `<div class="deep-dossier-divider">Full canon dossier</div>${dossier(target, { embedded: true })}`);
+    const answerType = document.querySelector("#answerType");
+    if (answerType && !/full dossier/i.test(answerType.textContent)) answerType.textContent += " + full dossier";
+    state.currentAnswerText = container.innerText;
+  };
+
+  document.documentElement.dataset.deepDossier = VERSION;
+  console.info(`[JJK Archive] Deep Dossier v${VERSION} active`);
+})();
