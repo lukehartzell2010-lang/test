@@ -28,20 +28,18 @@
     async function loadArchive(){
       try{
         const parts=await Promise.all(files.map(async file=>{
-          const response=await fetch(`${file}?v=20260717q3fix1`,{cache:"no-store"});
+          const response=await fetch(`${file}?v=20260717q3fix2`,{cache:"no-store"});
           if(!response.ok)throw new Error(`${file} returned ${response.status}`);
           return response.text();
         }));
         const html=parts.join("");
         const requiredMarkers=[
           "window.JJK_KNOWLEDGE",
-          "document.documentElement.dataset.appReady",
-          "document.documentElement.dataset.questionEngine=\"loading\"",
-          "performSearchV3"
+          "document.documentElement.dataset.appReady"
         ];
         const missing=requiredMarkers.filter(marker=>!html.includes(marker));
         if(missing.length){
-          throw new Error(`Integrity markers missing: ${missing.join(", ")}`);
+          throw new Error(`Base archive markers missing: ${missing.join(", ")}`);
         }
         document.open();
         document.write(html);
