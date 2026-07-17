@@ -11,21 +11,43 @@ document.documentElement.dataset.appReady = "true";
 </script>
 <script>
 (async()=>{
-  const files=[1,2,3,4,5].map(n=>`.upgrade/qv3-${String(n).padStart(2,"0")}.part`);
+  async function fetchText(path, version){
+    const response=await fetch(`${path}?v=${version}`,{cache:"no-store"});
+    if(!response.ok)throw new Error(`${path} returned ${response.status}`);
+    return response.text();
+  }
+
   document.documentElement.dataset.questionEngine="loading";
   try{
-    const parts=await Promise.all(files.map(async file=>{
-      const response=await fetch(`${file}?v=20260717q3`,{cache:"no-cache"});
-      if(!response.ok)throw new Error(`${file} returned ${response.status}`);
-      return response.text();
-    }));
+    const files=[1,2,3,4,5].map(n=>`.upgrade/qv3-${String(n).padStart(2,"0")}.part`);
+    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717q4")));
     const code=parts.join("");
-    if(!code.includes("Question Engine v3")||!code.includes("performSearchV3"))throw new Error("Question engine integrity check failed");
+    if(!code.includes("Question Engine v3")||!code.includes("performSearchV3"))throw new Error("Question Engine v3 integrity check failed");
     eval(code);
+    if(document.documentElement.dataset.questionEngine!=="3.0.0")throw new Error("Question Engine v3 did not activate");
   }catch(error){
     console.error("Question Engine v3 failed to load",error);
     document.documentElement.dataset.questionEngine="failed";
-    try{toast("The upgraded question engine failed to load. Refresh once.");}catch{}
+    try{toast("The question engine failed to load. Refresh once.");}catch{}
+    return;
+  }
+
+  document.documentElement.dataset.deepDossier="loading";
+  try{
+    const encoded=(await fetchText(".upgrade/deep-dive-v4.gz.b64","20260717q4")).trim();
+    const binary=atob(encoded);
+    const bytes=new Uint8Array(binary.length);
+    for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);
+    if(typeof DecompressionStream!=="function")throw new Error("This browser does not support the dossier decompressor");
+    const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+    const code=await new Response(stream).text();
+    if(!code.includes("Deep Dossier v4")||!code.includes("performSearchV4"))throw new Error("Deep Dossier v4 integrity check failed");
+    eval(code);
+    if(document.documentElement.dataset.deepDossier!=="4.0.0")throw new Error("Deep Dossier v4 did not activate");
+  }catch(error){
+    console.error("Deep Dossier v4 failed to load",error);
+    document.documentElement.dataset.deepDossier="failed";
+    try{toast("The expanded descriptions failed to load. Refresh once.");}catch{}
   }
 })();
 </script>
