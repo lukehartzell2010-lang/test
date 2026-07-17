@@ -1,0 +1,253 @@
+s. A user born with both becomes an overwhelming historical force.",
+    points: ["The clan's political weight is heavily tied to Satoru.", "Six Eyes and Limitless do not always appear together."],
+    related: ["gojo", "limitless", "six-eyes"]
+  },
+  {
+    id: "kamo-clan",
+    title: "Kamo Clan",
+    category: "clan",
+    spoiler: "anime",
+    aliases: ["kamo family"],
+    keywords: ["blood manipulation", "great clan", "noritoshi"],
+    summary: "The Kamo clan is one of the Three Great Sorcerer Families and places great value on bloodline, tradition, and Blood Manipulation.",
+    details: "The clan's prestige was scarred by the historical figure known as Noritoshi Kamo, later revealed to have been connected to Kenjaku's body-hopping.",
+    points: ["Blood Manipulation is the clan's prized inherited technique.", "The clan is deeply political and conservative."],
+    related: ["blood-manipulation", "kenjaku"]
+  },
+  {
+    id: "blood-manipulation",
+    title: "Blood Manipulation",
+    category: "technique",
+    spoiler: "anime",
+    aliases: ["kamo technique", "piercing blood"],
+    keywords: ["choso", "noritoshi", "red scale", "blood"],
+    summary: "Blood Manipulation controls the user's blood for ranged attacks, physical enhancement, bindings, and precision projectiles.",
+    details: "Its applications include Convergence, Piercing Blood, Flowing Red Scale, Supernova, and blood shaping. Human users must manage blood loss, while Death Painting users have unusual biological advantages.",
+    points: ["Convergence compresses blood for advanced attacks.", "Piercing Blood launches a highly pressurized stream."],
+    related: ["kamo-clan", "choso"]
+  },
+  {
+    id: "choso",
+    title: "Choso",
+    category: "character",
+    spoiler: "anime",
+    aliases: ["death painting choso"],
+    keywords: ["blood manipulation", "death painting", "brother"],
+    summary: "Choso is a Death Painting Womb incarnation and a master of Blood Manipulation.",
+    details: "His hybrid body lets him convert cursed energy into blood, reducing the usual danger of blood loss. His identity is built around loyalty to his brothers.",
+    points: ["He can use advanced techniques such as Supernova.", "He senses transformations in his brothers through their shared connection."],
+    related: ["blood-manipulation", "yuji", "kenjaku"]
+  },
+  {
+    id: "tengen",
+    title: "Master Tengen",
+    category: "character",
+    spoiler: "manga",
+    aliases: ["tengen"],
+    keywords: ["barriers", "immortality", "star plasma vessel"],
+    summary: "Tengen is an immortal barrier specialist whose techniques support much of Japan's jujutsu infrastructure.",
+    details: "Tengen does not remain physically unchanged. Periodic merger with a compatible Star Plasma Vessel prevents evolution beyond ordinary humanity.",
+    points: ["Their barriers strengthen jujutsu society across Japan.", "Failure to merge causes accelerated evolution."],
+    related: ["star-plasma-vessel", "kenjaku", "six-eyes"]
+  },
+  {
+    id: "star-plasma-vessel",
+    title: "Star Plasma Vessel",
+    category: "concept",
+    spoiler: "anime",
+    aliases: ["rika amanai", "vessel for tengen"],
+    keywords: ["tengen", "merger", "hidden inventory"],
+    summary: "A Star Plasma Vessel is a person compatible with merging into Tengen to reset Tengen's physical evolution.",
+    details: "Riko Amanai is selected for the merger during the Hidden Inventory arc. The mission surrounding her becomes a turning point for Gojo, Geto, Toji, and the future of jujutsu society.",
+    points: ["The vessel retains emotional and personal agency.", "The merger is treated as necessary by jujutsu leadership."],
+    related: ["tengen", "hidden-inventory", "gojo", "geto", "toji"]
+  },
+  {
+    id: "hidden-inventory",
+    title: "Hidden Inventory / Premature Death",
+    category: "arc",
+    spoiler: "anime",
+    aliases: ["gojo past arc", "hidden inventory arc"],
+    keywords: ["riko amanai", "toji", "geto", "gojo"],
+    summary: "The Hidden Inventory arc follows teenage Gojo and Geto as they escort Star Plasma Vessel Riko Amanai.",
+    details: "The mission collides with Toji Fushiguro and permanently alters all four lives. It explains Gojo's awakening, Geto's collapse, and the ideological divide that shapes the present.",
+    points: ["Set years before Yuji enters Jujutsu High.", "It is one of the story's most important cause-and-effect arcs."],
+    related: ["gojo", "geto", "toji", "star-plasma-vessel"]
+  },
+  {
+    id: "shibuya-incident",
+    title: "Shibuya Incident",
+    category: "arc",
+    spoiler: "anime",
+    aliases: ["shibuya", "shibuya arc"],
+    keywords: ["october 31", "prison realm", "gojo sealed"],
+    summary: "The Shibuya Incident is a coordinated curse-user operation designed to isolate and seal Satoru Gojo.",
+    details: "Multiple battles unfold simultaneously across Shibuya, overwhelming jujutsu society through planning, barriers, hostages, and special-grade threats. Its consequences reshape the entire story.",
+    points: ["The enemy strategy centers on the Prison Realm.", "The arc forces nearly every major character into crisis."],
+    related: ["gojo", "kenjaku", "mahito", "sukuna"]
+  },
+  {
+    id: "culling-game",
+    title: "Culling Game",
+    category: "arc",
+    spoiler: "manga",
+    aliases: ["culling games"],
+    keywords: ["colonies", "players", "kenjaku", "rules"],
+    summary: "The Culling Game is a nationwide ritual organized by Kenjaku, forcing awakened and reincarnated sorcerers into lethal barrier colonies.",
+    details: "Players gain points by defeating others and can spend points to add rules. Beneath the battle-royale structure, the game functions as a massive barrier and evolution ritual.",
+    points: ["Each colony has its own battles and conditions.", "The protagonists enter to rescue people and alter the rules."],
+    related: ["kenjaku", "tengen"]
+  },
+  {
+    id: "jujutsu-high",
+    title: "Tokyo Jujutsu High",
+    category: "location",
+    spoiler: "anime",
+    aliases: ["tokyo metropolitan curse technical college", "jujutsu tech"],
+    keywords: ["school", "gojo", "students"],
+    summary: "Tokyo Jujutsu High is both a school for sorcerers and an operational base for curse-related missions.",
+    details: "Students receive combat training, academic instruction, missions, and mentorship. The campus is protected by barriers and houses cursed objects and specialized facilities.",
+    points: ["Gojo teaches at the Tokyo school.", "Kyoto has a separate sister school."],
+    related: ["gojo", "yuji", "megumi", "nobara"]
+  },
+  {
+    id: "prison-realm",
+    title: "Prison Realm",
+    category: "tool",
+    spoiler: "anime",
+    aliases: ["gokumonkyo"],
+    keywords: ["seal", "gojo", "special grade object"],
+    summary: "The Prison Realm is a special-grade cursed object capable of sealing nearly anything once its activation conditions are fulfilled.",
+    details: "Its target must remain within a restricted distance for a subjective minute inside the target's mind. Kenjaku exploits Gojo's memories and shock to satisfy this condition.",
+    points: ["It has a front and back gate.", "Sealing is different from defeating or killing the target."],
+    related: ["gojo", "kenjaku", "shibuya-incident"]
+  },
+  {
+    id: "grade-system",
+    title: "Jujutsu Grade System",
+    category: "concept",
+    spoiler: "anime",
+    aliases: ["grades", "special grade", "grade 1"],
+    keywords: ["ranking", "sorcerer", "curse"],
+    summary: "Jujutsu society ranks sorcerers and cursed spirits from Grade 4 up through Grade 1 and Special Grade.",
+    details: "The system estimates what level of threat a sorcerer can handle. Special Grade is not simply the next numeric step; it describes anomalies with power or potential that the normal system cannot contain.",
+    points: ["Sorcerers are generally assigned missions around their grade.", "Special-grade sorcerers and curses vary enormously in ability."],
+    related: ["cursed-energy", "gojo", "yuta", "geto"]
+  },
+
+  {
+    "id": "panda",
+    "title": "Panda",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "panda"
+    ],
+    "keywords": [
+      "cursed corpse",
+      "yaga",
+      "gorilla core"
+    ],
+    "summary": "Panda is a self-sustaining mutated cursed corpse created by Masamichi Yaga, not an actual panda.",
+    "details": "He contains multiple independent cores that let him change combat forms. His normal Panda form is balanced, while Gorilla Mode emphasizes raw close-range power and unblockable internal shock.",
+    "points": [
+      "His cores function like distinct personalities and combat configurations.",
+      "Destroying a core seriously limits him."
+    ],
+    "related": [
+      "cursed-corpse",
+      "gakuganji"
+    ]
+  },
+  {
+    "id": "toge-inumaki",
+    "title": "Toge Inumaki",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "inumaki",
+      "toge"
+    ],
+    "keywords": [
+      "cursed speech",
+      "rice ball ingredients"
+    ],
+    "summary": "Toge Inumaki is a Tokyo student who limits his normal vocabulary because his inherited Cursed Speech can force commands onto listeners.",
+    "details": "He coats spoken words in cursed energy to compel targets. Stronger commands create greater backlash against his throat, especially when used on powerful opponents.",
+    "points": [
+      "He uses rice-ball ingredients to avoid accidentally cursing people.",
+      "Cough medicine helps manage technique recoil."
+    ],
+    "related": [
+      "cursed-speech",
+      "yuta"
+    ]
+  },
+  {
+    "id": "kinji-hakari",
+    "title": "Kinji Hakari",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "hakari",
+      "kinji"
+    ],
+    "keywords": [
+      "idle death gamble",
+      "jackpot",
+      "third year"
+    ],
+    "summary": "Kinji Hakari is a suspended third-year whose domain can grant temporary unlimited cursed energy and automatic healing after a jackpot.",
+    "details": "Hakari fights through gambling-themed probabilities. When Idle Death Gamble hits a jackpot, cursed energy floods his body for four minutes and eleven seconds, causing automatic Reverse Cursed Technique.",
+    "points": [
+      "His rough cursed energy feels serrated.",
+      "Repeated jackpots can make him extraordinarily difficult to kill."
+    ],
+    "related": [
+      "idle-death-gamble",
+      "private-pure-love-train",
+      "kirara"
+    ]
+  },
+  {
+    "id": "kirara-hoshi",
+    "title": "Kirara Hoshi",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "kirara",
+      "kirara hoshi"
+    ],
+    "keywords": [
+      "love rendezvous",
+      "southern cross"
+    ],
+    "summary": "Kirara Hoshi is Hakari’s ally and the user of Love Rendezvous, a technique based on the Southern Cross constellation.",
+    "details": "The technique marks cursed-energy targets with stars. Marked targets must approach one another in the constellation’s assigned order, creating invisible routing rules that repel incorrect approaches.",
+    "points": [
+      "Kirara excels at controlling movement rather than direct damage."
+    ],
+    "related": [
+      "love-rendezvous",
+      "kinji-hakari"
+    ]
+  },
+  {
+    "id": "hiromi-higuruma",
+    "title": "Hiromi Higuruma",
+    "category": "character",
+    "spoiler": "manga",
+    "aliases": [
+      "higuruma",
+      "hiromi"
+    ],
+    "keywords": [
+      "judgeman",
+      "deadly sentencing",
+      "lawyer"
+    ],
+    "summary": "Hiromi Higuruma is a gifted lawyer whose awakened technique manifests a courtroom domain and the shikigami Judgeman.",
+    "details": "Deadly Sentencing puts an opponent on trial using evidence selected by Judgeman. Guilty verdicts can confiscate cursed techniques or cursed energy, and severe cases can produce the Executioner’s Sword.",
+    "points": [
+      "He learned advanced jujutsu at an abnormal speed.",
+      "His domain is an old-style rule-enforcing domain rather than an immediat
