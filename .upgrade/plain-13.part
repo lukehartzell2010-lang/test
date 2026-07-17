@@ -1,0 +1,327 @@
+ls": "It can stop bleeding and reduce pain, but it cannot restore lost tissue or undo damage that has already occurred.",
+    "points": [],
+    "related": [
+      "arata-nitta"
+    ]
+  },
+  {
+    "id": "akari-nitta",
+    "title": "Akari Nitta",
+    "category": "character",
+    "spoiler": "anime",
+    "aliases": [
+      "akari",
+      "akari nitta"
+    ],
+    "keywords": [
+      "assistant manager",
+      "driver"
+    ],
+    "summary": "Akari Nitta is a Jujutsu High assistant manager who transports sorcerers, coordinates missions, and supports field operations.",
+    "details": "She is not a frontline combatant, but her logistical role keeps students informed and mobile during dangerous assignments.",
+    "points": [],
+    "related": [
+      "jujutsu-high",
+      "arata-nitta"
+    ]
+  }
+
+];
+
+window.JJK_KNOWLEDGE = JJK_KNOWLEDGE;
+
+</script>
+  <script>
+
+const entries = window.JJK_KNOWLEDGE || [];
+
+// iPhone attachment previews and file:// pages may block localStorage.
+// The app falls back to in-memory storage instead of crashing.
+const safeStorage = (() => {
+  const memory = {};
+  try {
+    const testKey = "__jjk_archive_test__";
+    window.localStorage.setItem(testKey, "1");
+    window.localStorage.removeItem(testKey);
+    return {
+      getItem: key => window.localStorage.getItem(key),
+      setItem: (key, value) => window.localStorage.setItem(key, value)
+    };
+  } catch (error) {
+    return {
+      getItem: key => Object.prototype.hasOwnProperty.call(memory, key) ? memory[key] : null,
+      setItem: (key, value) => { memory[key] = String(value); }
+    };
+  }
+})();
+
+function readSavedRecords() {
+  try {
+    const value = JSON.parse(safeStorage.getItem("jjk-saved") || "[]");
+    return Array.isArray(value) ? value : [];
+  } catch (error) {
+    return [];
+  }
+}
+
+const state = {
+  spoiler: safeStorage.getItem("jjk-spoiler") || "anime",
+  saved: readSavedRecords(),
+  currentQuery: "",
+  currentAnswerText: "",
+  currentEntryId: null,
+  browseCategory: "all"
+};
+
+const categoryConfig = {
+  character: { label: "Characters", symbol: "人", icon: "◉" },
+  technique: { label: "Techniques", symbol: "術", icon: "∞" },
+  domain: { label: "Domains", symbol: "領", icon: "◌" },
+  curse: { label: "Curses & Shikigami", symbol: "呪", icon: "♨" },
+  arc: { label: "Story Arcs", symbol: "篇", icon: "▤" },
+  clan: { label: "Clans", symbol: "家", icon: "◇" },
+  concept: { label: "Jujutsu Concepts", symbol: "理", icon: "✦" },
+  tool: { label: "Cursed Tools", symbol: "具", icon: "⌁" },
+  location: { label: "Locations", symbol: "地", icon: "⌖" }
+};
+
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => [...document.querySelectorAll(selector)];
+
+function allowedEntries() {
+  return entries.filter(entry => state.spoiler === "manga" || entry.spoiler === "anime");
+}
+
+function normalize(text) {
+  return (text || "")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[^\w\s:.-]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function escapeHtml(text) {
+  return String(text ?? "").replace(/[&<>"']/g, ch => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+  }[ch]));
+}
+
+function getEntry(id) {
+  return entries.find(entry => entry.id === id);
+}
+
+const SEARCH_STOP_WORDS = new Set([
+  "a","an","and","are","as","at","be","because","can","could","did","do","does","for","from","had","has","have","he","her","his","how","i","in","is","it","its","jjk","jujutsu","kaisen","me","of","on","or","s","she","tell","that","the","their","them","they","this","to","was","were","what","when","where","which","who","why","with","work","would","you"
+]);
+
+function words(text) {
+  return normalize(text).split(" ").filter(Boolean);
+}
+
+function meaningfulWords(text) {
+  return words(text).filter(token => token.length > 1 && !SEARCH_STOP_WORDS.has(token));
+}
+
+function entryNames(entry) {
+  return [entry.title, ...(entry.aliases || [])].map(normalize).filter(name => name.length > 2);
+}
+
+function directMentionIds(query, pool) {
+  const q = normalize(query);
+  return pool.filter(entry => entryNames(entry).some(name => q.includes(name))).map(entry => entry.id);
+}
+
+function requestedCategory(query) {
+  const q = normalize(query);
+  if (/\bdomain\b|sure hit|barrier clash/.test(q)) return "domain";
+  if (/\btechnique\b|\bability\b|\bpower\b|innate technique/.test(q)) return "technique";
+  if (/\bcurse\b|cursed spirit|\bshikigami\b/.test(q)) return "curse";
+  if (/\barc\b|\bincident\b|what happened|story event/.test(q)) return "arc";
+  if (/\bclan\b|\bfamily\b/.test(q)) return "clan";
+  if (/\bweapon\b|cursed tool|\btool\b|\bsword\b/.test(q)) return "tool";
+  if (/\bwhere\b|\blocation\b|\bcolony\b|\bschool\b/.test(q)) return "location";
+  if (/^who\b|who is/.test(q)) return "character";
+  return null;
+}
+
+function scoreEntry(entry, query) {
+  const q = normalize(query);
+  const tokens = meaningfulWords(q);
+  const title = normalize(entry.title);
+  const aliases = (entry.aliases || []).map(normalize);
+  const keywords = (entry.keywords || []).map(normalize);
+  const haystack = normalize([
+    entry.title,
+    ...(entry.aliases || []),
+    ...(entry.keywords || []),
+    entry.summary,
+    entry.details,
+    ...(entry.points || [])
+  ].join(" "));
+
+  let score = 0;
+  if (title === q || aliases.includes(q)) score += 160;
+  if (q.includes(title) && title.length > 3) score += 72;
+  aliases.forEach(alias => {
+    if (alias.length > 2 && q.includes(alias)) score += alias.split(" ").length > 1 ? 66 : 48;
+  });
+  keywords.forEach(keyword => {
+    if (keyword.length > 2 && q.includes(keyword)) score += keyword.split(" ").length > 1 ? 30 : 18;
+  });
+
+  let tokenMatches = 0;
+  tokens.forEach(token => {
+    let matched = false;
+    if (title.split(" ").includes(token)) { score += 22; matched = true; }
+    else if (title.includes(token)) { score += 14; matched = true; }
+    if (aliases.some(alias => alias.split(" ").includes(token))) { score += 18; matched = true; }
+    else if (aliases.some(alias => alias.includes(token))) { score += 10; matched = true; }
+    if (keywords.some(keyword => keyword.includes(token))) { score += 9; matched = true; }
+    if (haystack.includes(token)) { score += 2; matched = true; }
+    if (matched) tokenMatches += 1;
+  });
+
+  if (tokens.length && tokenMatches === tokens.length) score += 18;
+  if (tokens.length >= 2 && tokenMatches / tokens.length < .5) score -= 12;
+  return Math.max(0, score);
+}
+
+function searchEntries(query, pool = allowedEntries()) {
+  const mentions = directMentionIds(query, pool);
+  const category = requestedCategory(query);
+  return pool
+    .map(entry => {
+      let score = scoreEntry(entry, query);
+      const related = entry.related || [];
+      const relationshipMatch = mentions.some(id => related.includes(id)) || mentions.some(id => (getEntry(id)?.related || []).includes(entry.id));
+      if (relationshipMatch) score += 62;
+      if (category && entry.category === category && score > 0) score += 24;
+      return { entry, score };
+    })
+    .filter(item => item.score >= 6)
+    .sort((a, b) => b.score - a.score || a.entry.title.localeCompare(b.entry.title));
+}
+
+function detectIntent(query) {
+  const q = normalize(query);
+  if (/\b(vs|versus|compare|stronger|win|beat)\b/.test(q)) return "comparison";
+  if (/\b(list|all|every|name)\b/.test(q)) return "list";
+  if (q.startsWith("who") || /\bwho is\b/.test(q)) return "identity";
+  if (/\bhow does\b|\bhow do\b|\bhow can\b/.test(q)) return "mechanics";
+  if (/\bwhy\b/.test(q)) return "reasoning";
+  if (/\bwhat happened\b|\bsummary\b|\brecap\b/.test(q)) return "summary";
+  return "explanation";
+}
+
+function detectCategories(query) {
+  const q = normalize(query);
+  return Object.entries(categoryConfig)
+    .filter(([key, config]) => q.includes(key) || q.includes(config.label.toLowerCase().replace("s", "")))
+    .map(([key]) => key);
+}
+
+function findMentionedEntries(query) {
+  const q = normalize(query);
+  return allowedEntries()
+    .map(entry => {
+      const names = [entry.title, ...(entry.aliases || [])].map(normalize).filter(n => n.length > 2);
+      const matched = names.filter(name => q.includes(name)).sort((a,b) => b.length - a.length)[0];
+      return matched ? { entry, matched } : null;
+    })
+    .filter(Boolean)
+    .sort((a,b) => b.matched.length - a.matched.length)
+    .filter((item, index, arr) => arr.findIndex(other => other.entry.id === item.entry.id) === index);
+}
+
+function formatCategory(category) {
+  return categoryConfig[category]?.label || category;
+}
+
+function showView(viewId) {
+  $$(".view").forEach(view => view.classList.remove("active"));
+  $(viewId).classList.add("active");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  document.body.classList.remove("menu-open");
+}
+
+function renderHome() {
+  $("#entryCount").textContent = allowedEntries().length;
+  const liveEl = $("#liveCount");
+  if (liveEl) liveEl.textContent = `${liveArticleCount.toLocaleString()}+`;
+  $("#savedCount").textContent = state.saved.length;
+
+  $$(".segment").forEach(btn => btn.classList.toggle("active", btn.dataset.spoiler === state.spoiler));
+
+  const categories = Object.entries(categoryConfig)
+    .map(([key, config]) => {
+      const count = allowedEntries().filter(entry => entry.category === key).length;
+      return { key, ...config, count };
+    })
+    .filter(item => item.count > 0);
+
+  $("#categoryGrid").innerHTML = categories.map(item => `
+    <button class="category-card" data-category="${item.key}" data-symbol="${item.symbol}">
+      <div class="cat-icon">${item.icon}</div>
+      <strong>${escapeHtml(item.label)}</strong>
+      <small>${item.count} indexed records</small>
+    </button>
+  `).join("");
+
+  const popularIds = ["gojo", "sukuna", "yuji", "megumi", "limitless", "domain-expansion", "mahoraga", "shibuya-incident"];
+  const popular = popularIds.map(getEntry).filter(Boolean).filter(entry => state.spoiler === "manga" || entry.spoiler === "anime");
+  $("#popularGrid").innerHTML = popular.map(entryCard).join("");
+}
+
+function entryCard(entry, className = "popular-card") {
+  return `
+    <button class="${className}" data-entry="${entry.id}">
+      <div class="entry-meta">
+        <span class="tag purple">${escapeHtml(formatCategory(entry.category))}</span>
+        <span class="tag">${entry.spoiler === "manga" ? "Manga spoilers" : "Anime safe"}</span>
+      </div>
+      <h3>${escapeHtml(entry.title)}</h3>
+      <p>${escapeHtml(entry.summary)}</p>
+    </button>
+  `;
+}
+
+function renderBrowse(category = "all", search = "") {
+  state.browseCategory = category;
+  const label = category === "all" ? "All records" : categoryConfig[category]?.label || "Records";
+  $("#browseTitle").textContent = label;
+  $("#browseSearch").value = search;
+
+  let list = allowedEntries().filter(entry => category === "all" || entry.category === category);
+  if (normalize(search)) {
+    list = list.filter(entry => scoreEntry(entry, search) > 3);
+  }
+
+  $("#browseGrid").innerHTML = list.length
+    ? list.map(entry => entryCard(entry, "browse-card")).join("")
+    : `<div class="empty-state">No archive records matched that filter.</div>`;
+
+  showView("#browseView");
+}
+
+function createBreakdown(query, topResults) {
+  const intent = detectIntent(query);
+  const cats = [...new Set(topResults.slice(0, 3).map(item => item.entry.category))];
+  const subjects = findMentionedEntries(query).slice(0, 3).map(item => item.entry.title);
+
+  const chips = [
+    ["Intent", intent],
+    ["Search", "Curated + live wiki"],
+    ["Spoilers", state.spoiler === "manga" ? "Full manga" : "Anime only"],
+    ...(subjects.length ? [["Subjects", subjects.join(" + ")]] : []),
+    ...(cats.length ? [["Matched", cats.map(formatCategory).join(", ")]] : [])
+  ];
+
+  $("#queryBreakdown").innerHTML = chips.map(([label, value]) => `
+    <span class="break-chip">${escapeHtml(label)}<b>${escapeHtml(value)}</b></span>
+  `).join("");
+}
+
+function entryAnswer(entry) {
+  const relatedNames = (entry.related || []).map(getEntry).filter(Boolean).map(item => item.title);
+  const poi
