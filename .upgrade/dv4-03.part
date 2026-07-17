@@ -1,0 +1,121 @@
+ynchronization at an almost impossibly precise level.",
+            "Experienced sorcerers can read an opponent's cursed-energy flow to anticipate attacks. Elite fighters may disguise, minimize, or deliberately manipulate that flow to create feints."
+          ]
+        },
+        {
+          title: "Common misconceptions",
+          bullets: [
+            "Having more cursed energy does not automatically make someone better at every form of jujutsu.",
+            "Cursed energy itself is not the same thing as a cursed technique.",
+            "Ordinary people usually possess and leak cursed energy even though they cannot consciously use it.",
+            "Positive energy created through Reverse Cursed Technique is a separate product, not ordinary cursed energy with a calmer emotion."
+          ]
+        }
+      ]
+    },
+
+    "reverse-cursed-technique": {
+      verified: true,
+      source: "Reverse_Cursed_Technique",
+      sections: [
+        {
+          title: "How positive energy is produced",
+          paragraphs: [
+            "Reverse Cursed Technique multiplies cursed energy by cursed energy to create positive energy. The series describes the idea as turning two negatives into a positive, but performing that conversion requires extremely precise control.",
+            "The name can be confusing: Reverse Cursed Technique is the energy-conversion process. A Cursed Technique Reversal is what happens when that positive energy is deliberately fed into an innate technique to produce its opposite effect."
+          ]
+        },
+        {
+          title: "Healing",
+          paragraphs: [
+            "Positive energy can regenerate damaged flesh, organs, and in rare cases extremely severe injuries. The difficulty and cursed-energy cost increase with the amount and complexity of tissue being restored.",
+            "Healing oneself is already rare. Outputting positive energy into another person is significantly more difficult, which is why sorcerers such as Shoko and Yuta are especially valuable."
+          ]
+        },
+        {
+          title: "Why it is dangerous to cursed spirits",
+          paragraphs: [
+            "Cursed spirits are bodies made from cursed energy. Direct positive-energy output is therefore highly destructive to them in a way that ordinary healing energy is not to a human body.",
+            "This does not mean every RCT user can casually fire positive energy as an attack. Producing it internally and projecting it outward are different levels of skill."
+          ]
+        },
+        {
+          title: "Limits and risks",
+          bullets: [
+            "Reverse Cursed Technique consumes large amounts of cursed energy.",
+            "Damage to the brain is especially dangerous because jujutsu control and technique operation are tied to it.",
+            "A user must diagnose and reconstruct their body correctly while under combat pressure.",
+            "Not every type of damage is equally easy to repair, and the story avoids treating healing as consequence-free."
+          ]
+        },
+        {
+          title: "Common misconceptions",
+          bullets: [
+            "RCT is not the same thing as Cursed Technique Reversal.",
+            "Knowing RCT does not automatically mean a sorcerer can heal other people.",
+            "Positive energy is generated through cursed-energy manipulation; it is not produced simply by feeling happy.",
+            "Healing does not remove the enormous energy cost or danger of repeated fatal injuries."
+          ]
+        }
+      ]
+    },
+
+    "binding-vow": {
+      verified: true,
+      source: "Binding_Vow",
+      sections: [
+        {
+          title: "The exchange at the center of a vow",
+          paragraphs: [
+            "A binding vow gives jujutsu power to a genuine restriction, risk, promise, or sacrifice. The system rewards real loss of freedom or increased danger; merely announcing a convenient rule does not create free power.",
+            "The benefit can affect output, range, efficiency, activation speed, information, or another property connected to the restriction. The exact exchange depends on what is surrendered and how meaningful it is in context."
+          ]
+        },
+        {
+          title: "Self-imposed vows",
+          paragraphs: [
+            "A sorcerer can place a condition on themself. Revealing how a technique works is a common example: giving the opponent useful information increases risk and can strengthen the technique in return.",
+            "Breaking a self-imposed vow generally causes the user to lose the benefit they gained. However, vows can be complex, and restoring the original state may not always undo every consequence created while the vow was active."
+          ]
+        },
+        {
+          title: "Vows between people",
+          paragraphs: [
+            "A mutual vow is an agreement between multiple parties. The consequences of violating one are treated as far more unpredictable and dangerous than simply abandoning a personal restriction.",
+            "Because the punishment is not fully controlled by either participant, knowledgeable sorcerers take mutual vows extremely seriously."
+          ]
+        },
+        {
+          title: "Barrier vows and range",
+          paragraphs: [
+            "Barrier techniques frequently use tradeoffs. Allowing an escape route can increase a domain's range, while changing a barrier's strength on one side can weaken another side.",
+            "These are not arbitrary loopholes. They follow the same principle: the user accepts a disadvantage that meaningfully changes the technique, and jujutsu returns an advantage elsewhere."
+          ]
+        },
+        {
+          title: "Common misconceptions",
+          bullets: [
+            "A binding vow cannot grant any power imaginable without a corresponding cost or logical connection.",
+            "The user does not always get to choose the punishment for breaking a mutual vow.",
+            "Explaining a technique is useful only because the information genuinely helps the opponent.",
+            "Vows are part of the power system's normal rules, not automatically a last-minute contradiction."
+          ]
+        }
+      ]
+    },
+
+    "limitless": {
+      verified: true,
+      source: "Limitless",
+      sections: [
+        {
+          title: "The inherited technique",
+          paragraphs: [
+            "Limitless is an inherited Gojo clan technique that brings the mathematical concept of infinity into reality and manipulates space. In theory another clan member can inherit it, but the Six Eyes are what make its extreme precision and energy demands practically manageable at Gojo's level.",
+            "Limitless is the whole technique. Infinity, Blue, Red, Hollow Purple, and Unlimited Void are different applications or developments connected to it."
+          ]
+        },
+        {
+          title: "Neutral Limitless: Infinity",
+          paragraphs: [
+            "Infinity
