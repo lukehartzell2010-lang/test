@@ -1,0 +1,17 @@
+.text);
+      const causal = /because|wanted|needed|prevent|could not|unable|plan|goal|in order|so that|intentionally|chose|kept|saved|allowed/.test(text);
+      let score = words.reduce((sum, word) => sum + (text.includes(word) ? 4 : 0), 0);
+      if (causal) score += 5;
+      return { ...item, score, causal };
+    }).sort((a, b) => b.score - a.score).filter(item => item.score > 4);
+    const inactionQuestion = /\bnot\b|\bnever\b|\bcould not\b|\bdid not\b/.test(qnorm(raw));
+    const usable = inactionQuestion ? ranked.filter(item => item.causal && item.score >= 11) : ranked.filter(item => item.score >= 8);
+    const factors = usable.slice(0, 4).map(item => [item.entry.title, item.text]);
+    if (!factors.length) factors.push(["No explicit motive stored", `The archive contains information about ${subject.title}, but not enough evidence to state why this exact action did or did not happen.`]);
+    return {
+      primary: subject,
+      related: linked(subject),
+      html: answerFrame(
+        `Why — ${subject.title}`,
+        factors[0][0] === "No explicit motive stored" ? "The canon archive cannot responsibly infer a motive from the character biography alone." : factors[0][1],
+   
