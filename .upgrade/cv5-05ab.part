@@ -1,0 +1,21 @@
+],
+      ["Evidence mode", "Verdict → conditions → canon basis"],
+      ...(contentWords.length ? [["Key words used", unique(contentWords).slice(0, 10).join(", ")]] : []),
+      ...extra
+    ];
+    $("#queryBreakdown").innerHTML = chips.map(([label, value]) => `<span class="break-chip">${escapeHtml(label)}<b>${escapeHtml(value)}</b></span>`).join("");
+  }
+
+  function factorGrid(factors) {
+    return `<div class="complex-factor-grid">${factors.map(([label, text]) => `<div class="complex-factor"><h4>${escapeHtml(label)}</h4><p>${escapeHtml(text)}</p></div>`).join("")}</div>`;
+  }
+
+  function answerFrame(title, verdict, factors, options = {}) {
+    const status = options.status || "Canon-guided answer";
+    const note = options.note || "The engine separates confirmed events from conditional inference instead of treating every keyword match as an answer.";
+    return `<div class="complex-answer-v5">
+      <div class="complex-verdict-kicker">${escapeHtml(status)}</div>
+      <h2 class="answer-title">${escapeHtml(title)}</h2>
+      <p class="complex-verdict">${escapeHtml(verdict)}</p>
+      ${factorGrid(factors)}
+      ${options.extra ? `<div class="complex-extra">${escapeHtml(options.
