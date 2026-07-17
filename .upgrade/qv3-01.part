@@ -1,0 +1,81 @@
+/* JJK Archive Question Engine v3
+   Adds question-word intent parsing, property/owner lookups, relationship-aware answers,
+   fuzzy name recovery, more cautious yes/no answers, and non-destructive live enrichment. */
+(() => {
+  "use strict";
+
+  const VERSION = "3.0.0";
+  const oldSearchEntries = searchEntries;
+  const oldCompareAnswer = compareAnswer;
+  const oldRenderRelated = renderRelated;
+  const oldRenderLiveRelated = renderLiveRelated;
+
+  const INTENT_LABELS = {
+    identity: "Who / identity",
+    definition: "What / definition",
+    property: "Specific property",
+    owner: "Who uses it",
+    location: "Where / location",
+    timeline: "When / timeline",
+    reasoning: "Why / reasoning",
+    mechanics: "How / mechanics",
+    comparison: "Comparison",
+    list: "List / which",
+    yesno: "Yes or no",
+    summary: "Story summary",
+    explanation: "Explanation"
+  };
+
+  const PROPERTY_CONFIG = {
+    domain: { label: "Domain Expansion", categories: ["domain"], terms: ["domain", "domain expansion", "sure hit"] },
+    technique: { label: "cursed technique", categories: ["technique"], terms: ["technique", "cursed technique", "innate technique", "ability"] },
+    arsenal: { label: "abilities and arsenal", categories: ["technique", "domain", "tool", "concept"], terms: ["power", "powers", "abilities", "moves", "arsenal", "skillset", "kit"] },
+    tool: { label: "cursed tool", categories: ["tool"], terms: ["weapon", "tool", "cursed tool", "sword", "staff"] },
+    clan: { label: "clan or family", categories: ["clan"], terms: ["clan", "family"] },
+    location: { label: "location", categories: ["location"], terms: ["where", "location", "place", "school", "colony"] },
+    arc: { label: "story arc", categories: ["arc"], terms: ["arc", "incident", "story event"] },
+    grade: { label: "grade or rank", categories: [], terms: ["grade", "rank", "classification", "special grade"] },
+    relationship: { label: "relationship", categories: ["character", "clan"], terms: ["father", "mother", "parent", "brother", "sister", "son", "daughter", "related", "relationship"] },
+    age: { label: "age", categories: [], terms: ["age", "old"] },
+    height: { label: "height", categories: [], terms: ["height", "tall"] },
+    user: { label: "user or owner", categories: ["character", "curse"], terms: ["who uses", "who has", "who owns", "whose", "user", "wielder", "owner"] }
+  };
+
+  const GENERIC_WORDS = new Set([
+    "about","against","answer","archive","called","canon","character","curse","cursed","exactly","explain","fact","facts","get","give","important","jjk","jujutsu","kaisen","know","like","main","mean","means","person","question","really","related","series","show","shown","specific","thing","things","use","used","using"
+  ]);
+
+  const CONFIRMED_FACTS = [
+    {
+      test: q => /why (?:can(?:not|'t)|could(?:not|'t)) mahito (?:use )?(?:idle transfiguration|transfigure) (?:on )?yuji/.test(q) || /why (?:does(?:n|'nt| not)) mahito.*transfigur.*yuji/.test(q),
+      spoiler: "anime",
+      primary: "mahito",
+      related: ["yuji", "sukuna", "idle-transfiguration"],
+      title: "Why Mahito cannot freely transfigure Yuji",
+      lede: "Because touching Yuji’s soul also means touching Sukuna’s soul. Sukuna retaliates when Mahito crosses that boundary, so using Idle Transfiguration on Yuji carries an immediate, lethal risk.",
+      details: "Mahito’s technique normally reshapes a target by making contact with the soul. Yuji is an unusual vessel containing another soul that is vastly more dangerous than Mahito, which prevents Mahito from treating him like an ordinary target."
+    },
+    {
+      test: q => /why can yuji (?:hurt|damage|hit) mahito/.test(q),
+      spoiler: "anime",
+      primary: "yuji",
+      related: ["mahito", "sukuna", "idle-transfiguration"],
+      title: "Why Yuji can damage Mahito",
+      lede: "Yuji can perceive the outline of the soul because he shares his body with Sukuna. That lets his physical attacks reach Mahito’s soul instead of only damaging the body Mahito can reshape.",
+      details: "Mahito is unusually resistant to ordinary attacks because Idle Transfiguration preserves the shape of his soul. Yuji’s awareness of souls bypasses that main defense."
+    },
+    {
+      test: q => /why (?:does|did) toji (?:have )?(?:zero|no) cursed energy/.test(q),
+      spoiler: "anime",
+      primary: "toji",
+      related: ["heavenly-restriction"],
+      title: "Why Toji has zero cursed energy",
+      lede: "Toji was born with a Heavenly Restriction that removed his cursed energy in exchange for a physically perfected body and extraordinary senses.",
+      details: "It is an inborn jujutsu condition rather than a technique he activated or a choice he made. The total absence of cursed energy is what produces the extreme physical return."
+    },
+    {
+      test: q => /how does (?:gojo'?s )?(?:infinity|limitless) work/.test(q),
+      spoiler: "anime",
+      primary: "limitless",
+      related: ["gojo", "six-eyes"],
+      title:
