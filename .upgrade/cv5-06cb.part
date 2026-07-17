@@ -1,0 +1,14 @@
+font-size:12px;line-height:1.72;color:#beb6ca;margin:0;overflow-wrap:anywhere}.complex-extra{margin-top:14px;padding:14px 15px;border-radius:12px;background:rgba(159,102,255,.055);border:1px solid rgba(159,102,255,.16);font-size:12px;line-height:1.7;color:#c9c1d4}.complex-answer-v5 .answer-note{margin-top:16px}@media(max-width:700px){.complex-factor-grid{grid-template-columns:1fr}.complex-verdict{font-size:21px}.complex-factor{padding:14px}}
+    `;
+    document.head.appendChild(style);
+  }
+
+  function renderComplex(raw, type, result, entityList) {
+    const query = String(raw || "").trim();
+    state.currentQuery = query;
+    state.currentEntryId = result.primary?.id || entityList[0]?.id || null;
+    $("#searchInput").value = query;
+    $("#autocomplete").hidden = true;
+    $("#queryTitle").textContent = query;
+    $("#answerType").textContent = `Complex Reasoning Engine v${VERSION}`;
+    setBreakdown(query, type, entityList, [["Answer structure", "Direct verdict + why + conditions"]])
