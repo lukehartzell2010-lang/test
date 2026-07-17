@@ -20,7 +20,7 @@ document.documentElement.dataset.appReady = "true";
   document.documentElement.dataset.questionEngine="loading";
   try{
     const files=[1,2,3,4,5].map(n=>`.upgrade/qv3-${String(n).padStart(2,"0")}.part`);
-    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717motion1")));
+    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717motion11")));
     const code=parts.join("");
     if(!code.includes("Question Engine v3")||!code.includes("performSearchV3"))throw new Error("Question Engine v3 integrity check failed");
     eval(code);
@@ -43,13 +43,13 @@ document.documentElement.dataset.appReady = "true";
       ".upgrade/dv4-09a.part",
       ".upgrade/dv4-09b.part"
     ];
-    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717motion1")));
+    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717motion11")));
     const code=parts.join("");
     if(!code.includes("Deep Dossier v4")||!code.includes("performSearchV4"))throw new Error("Deep Dossier v4 integrity check failed");
     eval(code);
     if(document.documentElement.dataset.deepDossier!=="4.0.0")throw new Error("Deep Dossier v4 did not activate");
 
-    const css=await fetchText(".upgrade/mobile-layout-v1.css","20260717motion1");
+    const css=await fetchText(".upgrade/mobile-layout-v1.css","20260717motion11");
     let style=document.querySelector("#mobile-layout-v1");
     if(!style){style=document.createElement("style");style.id="mobile-layout-v1";document.head.appendChild(style);}
     style.textContent=css;
@@ -63,12 +63,12 @@ document.documentElement.dataset.appReady = "true";
 
   document.documentElement.dataset.motionSystem="loading";
   try{
-    const code=await fetchText(".upgrade/motion-system-v1.js","20260717motion1");
-    if(!code.includes("Motion System v1")||!code.includes("motionPerformSearch"))throw new Error("Motion System v1 integrity check failed");
+    const code=await fetchText(".upgrade/motion-system-v1.js","20260717motion11");
+    if(!code.includes("Motion System v1.1")||!code.includes("motionPerformSearchSafe"))throw new Error("Motion System v1.1 integrity check failed");
     eval(code);
-    if(document.documentElement.dataset.motionSystem!=="1.0.0")throw new Error("Motion System v1 did not activate");
+    if(document.documentElement.dataset.motionSystem!=="1.1.0")throw new Error("Motion System v1.1 did not activate");
   }catch(error){
-    console.error("Motion System v1 failed to load",error);
+    console.error("Motion System v1.1 failed to load",error);
     document.documentElement.dataset.motionSystem="failed";
     try{toast(`Animations failed: ${error.message||error}`);}catch{}
   }
