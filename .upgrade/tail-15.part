@@ -20,7 +20,7 @@ document.documentElement.dataset.appReady = "true";
   document.documentElement.dataset.questionEngine="loading";
   try{
     const files=[1,2,3,4,5].map(n=>`.upgrade/qv3-${String(n).padStart(2,"0")}.part`);
-    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717q4")));
+    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717q4plain1")));
     const code=parts.join("");
     if(!code.includes("Question Engine v3")||!code.includes("performSearchV3"))throw new Error("Question Engine v3 integrity check failed");
     eval(code);
@@ -28,26 +28,30 @@ document.documentElement.dataset.appReady = "true";
   }catch(error){
     console.error("Question Engine v3 failed to load",error);
     document.documentElement.dataset.questionEngine="failed";
-    try{toast("The question engine failed to load. Refresh once.");}catch{}
+    try{toast(`Question engine failed: ${error.message||error}`);}catch{}
     return;
   }
 
+  // Legacy deployment marker: deep-dive-v4.gz.b64
+  // The live build now loads ordinary text chunks and does not require DecompressionStream.
   document.documentElement.dataset.deepDossier="loading";
   try{
-    const encoded=(await fetchText(".upgrade/deep-dive-v4.gz.b64","20260717q4")).trim();
-    const binary=atob(encoded);
-    const bytes=new Uint8Array(binary.length);
-    for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);
-    if(typeof DecompressionStream!=="function")throw new Error("This browser does not support the dossier decompressor");
-    const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
-    const code=await new Response(stream).text();
+    const files=[
+      ...Array.from({length:7},(_,i)=>`.upgrade/dv4-${String(i+1).padStart(2,"0")}.part`),
+      ".upgrade/dv4-08a.part",
+      ".upgrade/dv4-08b.part",
+      ".upgrade/dv4-09a.part",
+      ".upgrade/dv4-09b.part"
+    ];
+    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717q4plain1")));
+    const code=parts.join("");
     if(!code.includes("Deep Dossier v4")||!code.includes("performSearchV4"))throw new Error("Deep Dossier v4 integrity check failed");
     eval(code);
     if(document.documentElement.dataset.deepDossier!=="4.0.0")throw new Error("Deep Dossier v4 did not activate");
   }catch(error){
     console.error("Deep Dossier v4 failed to load",error);
     document.documentElement.dataset.deepDossier="failed";
-    try{toast("The expanded descriptions failed to load. Refresh once.");}catch{}
+    try{toast(`Expanded descriptions failed: ${error.message||error}`);}catch{}
   }
 })();
 </script>
