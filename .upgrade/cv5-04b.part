@@ -1,0 +1,39 @@
+ues pressuring the surrounding area."],
+        ["Durability of the defense", "A powerful domain can strip Simple Domain away, so the user must escape, counterattack, or renew another defense before it collapses."]
+      ]
+    },
+    {
+      test: q => /would jogo survive unlimited void|did jogo survive unlimited void|could jogo survive gojo domain/.test(q),
+      primary: "jogo",
+      related: ["unlimited-void", "gojo"],
+      spoiler: "anime",
+      verdict: "Jogo survived a deliberately brief exposure, but that does not mean he could withstand a full Unlimited Void.",
+      confidence: "Direct event plus limitation",
+      reasoning: [
+        ["Direct canon example", "In Shibuya, Jogo and the other disaster curses survived Gojo's 0.2-second Domain Expansion, although they were left incapacitated."],
+        ["Why the duration matters", "Gojo shortened the domain to reduce harm to nearby civilians, not because the curses could freely endure Unlimited Void."],
+        ["Longer exposure", "A normal sustained capture would continue flooding Jogo with information. The exact fatal time is not stated, but his brief survival cannot be generalized to full exposure."]
+      ]
+    },
+    {
+      test: q => /what would happen if mahito (?:tried to )?transfigure yuji|would idle transfiguration work on yuji/.test(q),
+      primary: "mahito",
+      related: ["yuji", "sukuna", "idle-transfiguration"],
+      spoiler: "anime",
+      verdict: "Mahito would risk immediate retaliation from Sukuna before he could treat Yuji like an ordinary target.",
+      confidence: "Direct demonstrated interaction",
+      reasoning: [
+        ["Technique requirement", "Idle Transfiguration reaches into the target's soul."],
+        ["Yuji's unusual condition", "Reaching Yuji also exposes Mahito to Sukuna's soul."],
+        ["Demonstrated consequence", "Sukuna has attacked Mahito for touching that boundary, so repeated attempts are dangerous rather than safely repeatable."]
+      ]
+    },
+    {
+      test: q => /(?:would|can|could) mahoraga adapt to hollow purple/.test(q),
+      primary: "mahoraga",
+      related: ["hollow-purple", "gojo"],
+      spoiler: "manga",
+      verdict: "Potentially—but adaptation is not the same as automatic survival.",
+      confidence: "Conditional mechanic answer",
+      reasoning: [
+        ["Exposure is required", "Mahoraga's wheel needs to experience and pr
