@@ -20,7 +20,7 @@ document.documentElement.dataset.appReady = "true";
   document.documentElement.dataset.questionEngine="loading";
   try{
     const files=[1,2,3,4,5].map(n=>`.upgrade/qv3-${String(n).padStart(2,"0")}.part`);
-    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717q4plain1")));
+    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717mobile1")));
     const code=parts.join("");
     if(!code.includes("Question Engine v3")||!code.includes("performSearchV3"))throw new Error("Question Engine v3 integrity check failed");
     eval(code);
@@ -43,11 +43,17 @@ document.documentElement.dataset.appReady = "true";
       ".upgrade/dv4-09a.part",
       ".upgrade/dv4-09b.part"
     ];
-    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717q4plain1")));
+    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717mobile1")));
     const code=parts.join("");
     if(!code.includes("Deep Dossier v4")||!code.includes("performSearchV4"))throw new Error("Deep Dossier v4 integrity check failed");
     eval(code);
     if(document.documentElement.dataset.deepDossier!=="4.0.0")throw new Error("Deep Dossier v4 did not activate");
+
+    const css=await fetchText(".upgrade/mobile-layout-v1.css","20260717mobile1");
+    let style=document.querySelector("#mobile-layout-v1");
+    if(!style){style=document.createElement("style");style.id="mobile-layout-v1";document.head.appendChild(style);}
+    style.textContent=css;
+    document.documentElement.dataset.mobileLayout="1.0.0";
   }catch(error){
     console.error("Deep Dossier v4 failed to load",error);
     document.documentElement.dataset.deepDossier="failed";
