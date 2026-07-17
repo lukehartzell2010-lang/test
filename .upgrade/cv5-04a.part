@@ -1,0 +1,36 @@
+
+      primary: "jogo",
+      related: ["coffin-iron-mountain", "dagon", "horizon-skandha"],
+      spoiler: "anime",
+      verdict: "Jogo would be the likely favorite, but the series never shows this exact domain clash, so it is not a confirmed automatic win.",
+      confidence: "Comparative canon inference",
+      reasoning: [
+        ["Overall combat portrayal", "Jogo is generally portrayed as the more powerful and faster disaster curse."],
+        ["Domain evidence", "Both possess complete lethal domains, but the story does not directly rank their barrier refinement against each other."],
+        ["Why refinement matters", "A domain clash is not decided by destructive output alone; barrier construction, refinement, output, and compatibility all matter."],
+        ["Best verdict", "Coffin of the Iron Mountain is favored because of Jogo's overall level, while a guaranteed clash result would go beyond the evidence."]
+      ]
+    },
+    {
+      test: q => /would (?:a )?black flash bypass infinity|can black flash (?:get through|bypass|hit through) infinity/.test(q),
+      primary: "black-flash",
+      related: ["gojo", "limitless"],
+      spoiler: "anime",
+      verdict: "No — Black Flash does not inherently bypass Infinity.",
+      confidence: "Direct rule interaction",
+      reasoning: [
+        ["What Black Flash changes", "It massively amplifies a physical strike through cursed-energy timing."],
+        ["What it does not change", "It does not nullify cursed techniques, erase distance, or grant automatic contact with Gojo."],
+        ["Required first step", "The attacker would still need a separate Infinity counter—such as Domain Amplification, a domain sure-hit, or a technique-nullifying effect—before the strike could connect."]
+      ]
+    },
+    {
+      test: q => /would simple domain (?:stop|cancel|block) malevolent shrine|can simple domain protect.*malevolent shrine/.test(q),
+      primary: "simple-domain",
+      related: ["malevolent-shrine", "domain-expansion"],
+      spoiler: "anime",
+      verdict: "It can protect the user temporarily, but it does not completely stop Malevolent Shrine.",
+      confidence: "Direct mechanic answer",
+      reasoning: [
+        ["Local protection", "Simple Domain interferes with the sure-hit effect inside its small defensive area."],
+        ["It does not erase the domain", "Malevolent Shrine remains active and contin
