@@ -1,0 +1,33 @@
+function randomEntry() {
+  const pool = allowedEntries();
+  const entry = pool[Math.floor(Math.random() * pool.length)];
+  if (entry) openEntry(entry.id);
+}
+
+function renderAutocomplete(value) {
+  const box = $("#autocomplete");
+  if (normalize(value).length < 2) {
+    box.hidden = true;
+    return;
+  }
+  const matches = searchEntries(value).slice(0, 5);
+  if (!matches.length) {
+    box.hidden = true;
+    return;
+  }
+  box.innerHTML = matches.map(({ entry }) => `
+    <button type="button" class="auto-item" data-entry="${entry.id}">
+      <b>${escapeHtml(entry.title)}</b>
+      <small>${escapeHtml(formatCategory(entry.category))}</small>
+    </button>
+  `).join("");
+  box.hidden = false;
+}
+
+let toastTimer;
+function toast(message) {
+  const el = $("#toast");
+  el.textContent = message;
+  el.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remo
