@@ -1,0 +1,49 @@
+name: Build Contextual Reasoning Engine v7
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-reasoning-v7.yml'
+      - '.github/reasoning-v7/source-*.b64'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-contextual-reasoning-v7
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reconstruct verified engine
+        shell: bash
+        run: |
+          mkdir -p .upgrade
+          cat .github/reasoning-v7/source-*.b64 | tr -d '\r\n\t ' | base64 --decode | bunzip2 > .upgrade/reasoning-engine-v7.js
+          test "$(wc -c < .upgrade/reasoning-engine-v7.js | tr -d ' ')" = "96354"
+          echo "5423cec58a96ec47af5c0819c654a09e46afcf4828c6da349fc2e90c41194a59  .upgrade/reasoning-engine-v7.js" | sha256sum --check --strict
+          grep -q 'Contextual Reasoning Engine v7' .upgrade/reasoning-engine-v7.js
+          grep -q 'performSearchContextualReasoningV7' .upgrade/reasoning-engine-v7.js
+          grep -q 'auditContextualReasoningV7' .upgrade/reasoning-engine-v7.js
+
+      - name: Commit generated engine
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .upgrade/reasoning-engine-v7.js
+          if git diff --cached --quiet; then
+            echo 'Generated engine already matches.'
+            exit 0
+          fi
+          git commit -m 'Build Contextual Reasoning Engine v7 [skip ci]'
+          git pull --rebase origin main
+          git push origin HEAD:main
