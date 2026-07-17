@@ -1,0 +1,114 @@
+ were vastly superior.",
+            "A domain is not judged only by raw cursed energy. Barrier construction, refinement, sure-hit compatibility, and the conditions imposed on the barrier all influence a clash."
+          ]
+        },
+        {
+          title: "Common misconceptions",
+          bullets: [
+            "Unlimited Void does not literally teach the target all knowledge in a useful form.",
+            "The target is immobilized because their cognition is overloaded, not because gravity or telekinesis pins them down.",
+            "The 0.2-second feat does not mean every person can safely endure exactly that amount under every circumstance.",
+            "Infinity, the defensive neutral application of Limitless, is separate from Unlimited Void's sure-hit."
+          ]
+        },
+        {
+          title: "Later manga developments",
+          spoiler: "manga",
+          paragraphs: [
+            "The battle between Gojo and Sukuna shows much more advanced manipulation of Unlimited Void's barrier conditions, including changes to the barrier's size and the strength of its inner and outer surfaces. These sequences demonstrate that even an established Domain Expansion can be reconfigured by an elite barrier user during repeated clashes."
+          ]
+        }
+      ]
+    },
+
+    "domain-expansion": {
+      verified: true,
+      first: "The system is formally explained during Gojo's battle with Jogo.",
+      source: "Domain_Expansion",
+      sections: [
+        {
+          title: "Core structure",
+          paragraphs: [
+            "Domain Expansion materializes a user's innate domain and imbues it with a cursed technique. A conventional completed domain encloses the target inside a barrier, creates an environment ideal for the user, and grants the imbued technique a guaranteed-hit effect.",
+            "The visual environment is not merely decoration. It expresses the user's inner world and the logic of the technique while giving that technique its most advantageous possible conditions."
+          ]
+        },
+        {
+          title: "What 'sure-hit' means",
+          paragraphs: [
+            "A sure-hit does not necessarily mean instant death. It means the domain's programmed effect reaches the target according to the domain's rules without needing an ordinary projectile or attack trajectory.",
+            "Some domains are lethal and directly attack the target. Older-style or rule-based domains can instead force participation in a trial, game, or other system. The guaranteed effect depends on the user's technique and barrier design."
+          ]
+        },
+        {
+          title: "Domain clashes",
+          paragraphs: [
+            "When domains overlap, their barriers and sure-hit effects compete. Refinement is the most famous factor, but cursed-energy output, barrier skill, compatibility, and the exact construction of each domain can all matter.",
+            "If one domain is overwhelmingly superior, it can suppress the other. If they are close enough, the sure-hits may cancel while the barriers continue to struggle, turning the clash into a fight over who can maintain their domain and damage the other user first."
+          ]
+        },
+        {
+          title: "Costs and weaknesses",
+          bullets: [
+            "Domain Expansion consumes a huge amount of cursed energy.",
+            "After the barrier ends, the user's cursed technique is normally unstable or temporarily unusable because of technique burnout.",
+            "A barrier can be attacked from outside, where conventional domains are often less resistant because they are designed to trap targets inside.",
+            "Simple Domain, Hollow Wicker Basket, and Falling Blossom Emotion can counter or reduce sure-hit effects in different ways, but none is a universal victory button."
+          ]
+        },
+        {
+          title: "Open-barrier domains",
+          paragraphs: [
+            "Sukuna and Kenjaku demonstrate domains that manifest their technique directly in real space without closing a conventional outer shell. This is treated as an extraordinary barrier feat.",
+            "Leaving an escape route can function as a binding vow that greatly expands effective range. An open domain also interacts differently with closed barriers because it can attack the outside of the opponent's shell."
+          ]
+        },
+        {
+          title: "Common misconceptions",
+          bullets: [
+            "A Domain Expansion is not automatically stronger just because its user has more cursed energy.",
+            "Not every domain has an instant-kill sure-hit.",
+            "An incomplete domain can still provide major environmental advantages even without a completed barrier or sure-hit.",
+            "Using a domain does not permanently remove a cursed technique; the usual consequence is temporary burnout."
+          ]
+        }
+      ]
+    },
+
+    "cursed-energy": {
+      verified: true,
+      source: "Cursed_Energy",
+      sections: [
+        {
+          title: "Where cursed energy comes from",
+          paragraphs: [
+            "Cursed energy is generated from negative human emotions such as fear, anger, grief, and hatred. Most people leak this energy without control. Over time, pooled negativity can give birth to cursed spirits associated with shared fears and locations.",
+            "Sorcerers are different because they can perceive and deliberately control the energy they produce. Their goal is not to eliminate all emotion, but to prevent waste and shape cursed energy into useful jujutsu."
+          ]
+        },
+        {
+          title: "The four traits people often confuse",
+          bullets: [
+            "Reserves: the total amount of cursed energy a person can draw from.",
+            "Output: how much energy can be released at once.",
+            "Efficiency: how little energy is wasted while producing an effect.",
+            "Control: the precision of timing, reinforcement, and technique operation."
+          ],
+          paragraphs: [
+            "These traits are related but not identical. A sorcerer can possess enormous reserves without the highest output, or exceptional efficiency without having the largest total supply."
+          ]
+        },
+        {
+          title: "Basic applications",
+          bullets: [
+            "Reinforcing the body to increase strength, durability, and speed.",
+            "Imbuing weapons and physical strikes with cursed energy.",
+            "Powering an innate cursed technique.",
+            "Creating barriers, shikigami, and domain techniques.",
+            "Reading residual cursed energy left behind after jujutsu is used."
+          ]
+        },
+        {
+          title: "Flow and timing",
+          paragraphs: [
+            "Poor timing can cause cursed energy to lag behind a physical hit, as seen with Yuji's early Divergent Fist. Better control normally synchronizes the energy with the body, while Black Flash requires s
