@@ -1,0 +1,72 @@
+nts = (entry.points || []).map(point => `<li>${escapeHtml(point)}</li>`).join("");
+
+  return `
+    <h2 class="answer-title">${escapeHtml(entry.title)}</h2>
+    <p class="answer-lede">${escapeHtml(entry.summary)}</p>
+    <div class="answer-section">
+      <h3>How it works / why it matters</h3>
+      <p>${escapeHtml(entry.details)}</p>
+    </div>
+    ${points ? `
+      <div class="answer-section">
+        <h3>Key details</h3>
+        <ul>${points}</ul>
+      </div>
+    ` : ""}
+    <div class="answer-note">
+      Archive classification: ${escapeHtml(formatCategory(entry.category))} ·
+      ${entry.spoiler === "manga" ? "Contains manga-level information." : "Safe for the current anime coverage."}
+      ${relatedNames.length ? ` Connected to ${escapeHtml(relatedNames.slice(0, 4).join(", "))}.` : ""}
+    </div>
+  `;
+}
+
+function compareAnswer(first, second) {
+  const shared = (first.related || []).filter(id => (second.related || []).includes(id)).map(getEntry).filter(Boolean);
+  const verdict = buildComparisonVerdict(first, second);
+
+  return `
+    <h2 class="answer-title">${escapeHtml(first.title)} vs ${escapeHtml(second.title)}</h2>
+    <p class="answer-lede">This comparison separates their abilities, advantages, and the matchup factors that matter most instead of treating power as a single number.</p>
+    <div class="compare-grid">
+      <div class="compare-card">
+        <span class="tag purple">${escapeHtml(formatCategory(first.category))}</span>
+        <h3>${escapeHtml(first.title)}</h3>
+        <p>${escapeHtml(first.summary)}</p>
+        <p>${escapeHtml(first.details)}</p>
+      </div>
+      <div class="versus">VS</div>
+      <div class="compare-card">
+        <span class="tag purple">${escapeHtml(formatCategory(second.category))}</span>
+        <h3>${escapeHtml(second.title)}</h3>
+        <p>${escapeHtml(second.summary)}</p>
+        <p>${escapeHtml(second.details)}</p>
+      </div>
+    </div>
+    <div class="answer-section">
+      <h3>Matchup read</h3>
+      <p>${escapeHtml(verdict)}</p>
+    </div>
+    ${shared.length ? `<div class="answer-note">Shared connections: ${escapeHtml(shared.map(item => item.title).join(", "))}.</div>` : ""}
+  `;
+}
+
+function buildComparisonVerdict(a, b) {
+  const pair = new Set([a.id, b.id]);
+  if (pair.has("gojo") && pair.has("sukuna")) {
+    return "Gojo controls space, defense, speed, and information through Limitless, the Six Eyes, and Unlimited Void. Sukuna counters with superior slashing lethality, an open-barrier domain, elite adaptation, and extraordinary jujutsu knowledge. The result depends heavily on versions, available techniques, domain strategy, and whether the question follows the exact manga circumstances.";
+  }
+  if (pair.has("toji") && pair.has("maki")) {
+    return "Both are defined by physically perfected Heavenly Restriction. Toji has broader assassination experience and a famous anti-technique arsenal, while Maki develops comparable physical perception and direct combat power. Equipment, era, and chosen version decide the edge.";
+  }
+  if (pair.has("yuji") && pair.has("todo")) {
+    return "Todo is the more sophisticated battlefield tactician, while Yuji brings relentless close-range pressure and explosive growth. Together they are more dangerous than either one alone because Boogie Woogie creates ideal openings for Yuji's physical attacks.";
+  }
+  return `${a.title} is strongest when the fight follows the rules described by ${formatCategory(a.category).toLowerCase()}, while ${b.title} gains the advantage when their own conditions are established. A reliable verdict needs the exact versions, location, starting distance, knowledge, and whether domains or cursed tools are available.`;
+}
+
+function generateListAnswer(query, results) {
+  const q = normalize(query);
+  let filtered = results.map(item => item.entry);
+  const cat = Object.keys(categoryConfig).find(key => q.includes(key)) ||
+    (q.includes("characters") ? "character" : q.includes("techniques") ? "technique" : q.include
