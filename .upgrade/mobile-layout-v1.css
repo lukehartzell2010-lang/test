@@ -1,0 +1,18 @@
+/* JJK Archive mobile results width hotfix v1 */
+html,body{max-width:100%;overflow-x:hidden}
+.main-shell,.view,.results-layout,.answer-panel,.related-panel,.panel-topline,#answerContent,.deep-dive-v4,.dossier-head,.dossier-body,.dossier-section,.dossier-cards,.dossier-card{min-width:0;max-width:100%}
+.results-layout{width:100%}
+.answer-panel,.related-panel{width:100%;overflow:hidden}
+#answerContent{width:100%;overflow-wrap:anywhere;word-break:normal}
+.deep-dive-v4{width:100%;box-sizing:border-box}
+.dossier-nav{width:100%;max-width:100%;min-width:0;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.dossier-nav a{flex:0 0 auto;max-width:none}
+.dossier-section p,.dossier-section li,.dossier-card p,.answer-lede,.answer-section p,.answer-section li{overflow-wrap:anywhere}
+@media(max-width:740px){
+  .results-layout{grid-template-columns:minmax(0,1fr)!important}
+  .answer-panel,.related-panel{min-width:0!important;width:100%!important}
+  .panel-topline{min-width:0;gap:10px}
+  .panel-topline>span{min-width:0;overflow-wrap:anywhere}
+  .deep-dive-v4{border-radius:17px}
+  .dossier-nav{padding-left:14px;padding-right:14px}
+}
