@@ -17,10 +17,26 @@ document.documentElement.dataset.appReady = "true";
     return response.text();
   }
 
+  document.documentElement.dataset.contentExpansion="loading";
+  try{
+    const files=Array.from({length:11},(_,i)=>`.upgrade/c6-${String(i+1).padStart(2,"0")}.part`);
+    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717content6")));
+    const code=parts.join("");
+    if(!code.includes("Content Expansion v6")||!code.includes("JJK_CONTENT_META")||!code.includes("addedRecords"))throw new Error("Content Expansion v6 integrity check failed");
+    eval(code);
+    if(document.documentElement.dataset.contentExpansion!=="6.0.0")throw new Error("Content Expansion v6 did not activate");
+    if(window.JJK_CONTENT_META?.totalRecords!==278)throw new Error(`Content Expansion v6 expected 278 records but found ${window.JJK_CONTENT_META?.totalRecords||"unknown"}`);
+  }catch(error){
+    console.error("Content Expansion v6 failed to load",error);
+    document.documentElement.dataset.contentExpansion="failed";
+    try{toast(`Content expansion failed: ${error.message||error}`);}catch{}
+    return;
+  }
+
   document.documentElement.dataset.questionEngine="loading";
   try{
     const files=[1,2,3,4,5].map(n=>`.upgrade/qv3-${String(n).padStart(2,"0")}.part`);
-    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717ui2")));
+    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717content6")));
     const code=parts.join("");
     if(!code.includes("Question Engine v3")||!code.includes("performSearchV3"))throw new Error("Question Engine v3 integrity check failed");
     eval(code);
@@ -34,7 +50,7 @@ document.documentElement.dataset.appReady = "true";
 
   document.documentElement.dataset.semanticEngine="loading";
   try{
-    const code=await fetchText(".upgrade/semantic-engine-v4.js","20260717ui2");
+    const code=await fetchText(".upgrade/semantic-engine-v4.js","20260717content6");
     if(!code.includes("Semantic Question Engine v4")||!code.includes("performSearchSemanticV4")||!code.includes("parseQuestionV4"))throw new Error("Semantic Question Engine v4 integrity check failed");
     eval(code);
     if(document.documentElement.dataset.semanticEngine!=="4.0.0")throw new Error("Semantic Question Engine v4 did not activate");
@@ -72,7 +88,7 @@ document.documentElement.dataset.appReady = "true";
       ".upgrade/cv5-07aa.part",
       ".upgrade/cv5-07ab.part"
     ];
-    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717ui2")));
+    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717content6")));
     const code=parts.join("");
     if(!code.includes("Complex Reasoning Engine v5")||!code.includes("performSearchComplexV5")||!code.includes("parseComplexQuestionV5"))throw new Error("Complex Reasoning Engine v5 integrity check failed");
     eval(code);
@@ -86,7 +102,7 @@ document.documentElement.dataset.appReady = "true";
 
   document.documentElement.dataset.responseQuality="loading";
   try{
-    const code=await fetchText(".upgrade/response-quality-v5-1.js","20260717ui2");
+    const code=await fetchText(".upgrade/response-quality-v5-1.js","20260717content6");
     if(!code.includes("Response Quality Engine v5.1")||!code.includes("performSearchResponseQualityV51")||!code.includes("auditResponseV51"))throw new Error("Response Quality Engine v5.1 integrity check failed");
     eval(code);
     if(document.documentElement.dataset.responseQuality!=="5.1.0")throw new Error("Response Quality Engine v5.1 did not activate");
@@ -108,13 +124,13 @@ document.documentElement.dataset.appReady = "true";
       ".upgrade/dv4-09a.part",
       ".upgrade/dv4-09b.part"
     ];
-    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717ui2")));
+    const parts=await Promise.all(files.map(file=>fetchText(file,"20260717content6")));
     const code=parts.join("");
     if(!code.includes("Deep Dossier v4")||!code.includes("performSearchV4"))throw new Error("Deep Dossier v4 integrity check failed");
     eval(code);
     if(document.documentElement.dataset.deepDossier!=="4.0.0")throw new Error("Deep Dossier v4 did not activate");
 
-    const css=await fetchText(".upgrade/mobile-layout-v1.css","20260717ui2");
+    const css=await fetchText(".upgrade/mobile-layout-v1.css","20260717content6");
     let style=document.querySelector("#mobile-layout-v1");
     if(!style){style=document.createElement("style");style.id="mobile-layout-v1";document.head.appendChild(style);}
     style.textContent=css;
@@ -128,7 +144,7 @@ document.documentElement.dataset.appReady = "true";
 
   document.documentElement.dataset.uiPolish="loading";
   try{
-    const css=await fetchText(".upgrade/ui-polish-v2.css","20260717ui2");
+    const css=await fetchText(".upgrade/ui-polish-v2.css","20260717content6");
     if(!css.includes("iPhone-first UI Polish v2")||!css.includes("--ui-reading-max"))throw new Error("UI Polish v2 integrity check failed");
     let style=document.querySelector("#ui-polish-v2");
     if(!style){style=document.createElement("style");style.id="ui-polish-v2";document.head.appendChild(style);}
@@ -143,7 +159,7 @@ document.documentElement.dataset.appReady = "true";
 
   document.documentElement.dataset.motionSystem="loading";
   try{
-    const code=await fetchText(".upgrade/motion-system-v1.js","20260717ui2");
+    const code=await fetchText(".upgrade/motion-system-v1.js","20260717content6");
     if(!code.includes("Motion System v1.1")||!code.includes("motionPerformSearchSafe"))throw new Error("Motion System v1.1 integrity check failed");
     eval(code);
     if(document.documentElement.dataset.motionSystem!=="1.1.0")throw new Error("Motion System v1.1 did not activate");
